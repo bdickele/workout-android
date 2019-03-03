@@ -4,13 +4,18 @@ import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.reference.Routine;
-import org.dickele.workout.util.Labels;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.dickele.workout.parser.ParserConst.*;
+import static org.dickele.workout.parser.ParserConst.COLUMN_SEPARATOR;
+import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE;
+import static org.dickele.workout.parser.ParserConst.INDICATOR_WORKOUT;
+import static org.dickele.workout.parser.ParserConst.REPS_SEPARATOR;
+import static org.dickele.workout.parser.ParserConst.TABLE_AFTER_HEADER;
+import static org.dickele.workout.parser.ParserConst.TABLE_HEADER;
+import static org.dickele.workout.parser.ParserConst.WORKOUT_DATE_FORMATTER;
 
 public final class FromJavaToMd {
 
@@ -33,7 +38,7 @@ public final class FromJavaToMd {
         final String comment = workout.getComment();
 
         if (previousRoutine == null || previousRoutine != workout.getRoutine()) {
-            result.add(INDICATOR_ROUTINE + Labels.getLabel(routine) + " (" + routine.name() + ")");
+            result.add(INDICATOR_ROUTINE + routine.getLabel() + " (" + routine.name() + ")");
             result.add(EMPTY_LINE);
         }
 

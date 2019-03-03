@@ -10,42 +10,41 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-//@Service
 public class ServiceRead {
 
-    //@Autowired
-    private InMemoryDb db;
+    private InMemoryDb db2;
 
     /**
      * @return Most recent workout
      */
-    public WorkoutSearchResult getLastWorkout() {
+
+    public WorkoutSearchResult getLastWorkout(final InMemoryDb db) {
         final int numberOfWorkouts = db.getNumberOfWorkouts();
         final Workout workout = numberOfWorkouts == 0 ? null : db.getWorkouts().get(numberOfWorkouts - 1);
         return new WorkoutSearchResult(workout, numberOfWorkouts - 1, numberOfWorkouts);
     }
 
-    public WorkoutSearchResult getPreviousWorkout(final int index) {
+    public WorkoutSearchResult getPreviousWorkout(final InMemoryDb db, final int index) {
         final int previousIndex = index - 1;
         final Workout workout = previousIndex < 0 ? null : db.getWorkouts().get(previousIndex);
         return new WorkoutSearchResult(workout, previousIndex, db.getNumberOfWorkouts());
     }
 
-    public WorkoutSearchResult getNextWorkout(final int index) {
+    public WorkoutSearchResult getNextWorkout(final InMemoryDb db, final int index) {
         final int numberOfWorkouts = db.getNumberOfWorkouts();
         final int nextIndex = index >= (numberOfWorkouts - 1) ? -1 : index + 1;
         final Workout workout = nextIndex == -1 ? null : db.getWorkouts().get(nextIndex);
         return new WorkoutSearchResult(workout, nextIndex, numberOfWorkouts);
     }
 
-    public List<WorkoutExercise> getExercises(final Exercise exercise) {
+    public List<WorkoutExercise> getExercises(final InMemoryDb db, final Exercise exercise) {
         return db.getWorkouts().stream()
                 .map(workout -> workout.getExercise(exercise))
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
-    public List<LocalDate> getWorkoutDates() {
+    public List<LocalDate> getWorkoutDates(final InMemoryDb db) {
         return db.getWorkouts().stream()
                 .map(Workout::getDate)
                 .distinct()

@@ -6,33 +6,39 @@ import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.reference.Exercise;
 import org.dickele.workout.reference.Routine;
 
+import java.io.File;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 
 import static java.util.stream.Collectors.toList;
-import static org.dickele.workout.parser.ParserConst.*;
+import static org.dickele.workout.parser.ParserConst.COLUMN_SEPARATOR_FOR_SPLITTING;
+import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE;
+import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE_END;
+import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE_START;
+import static org.dickele.workout.parser.ParserConst.INDICATOR_WORKOUT;
+import static org.dickele.workout.parser.ParserConst.REPS_SEPARATOR;
+import static org.dickele.workout.parser.ParserConst.TABLE_AFTER_HEADER;
+import static org.dickele.workout.parser.ParserConst.TABLE_HEADER;
+import static org.dickele.workout.parser.ParserConst.WORKOUT_DATE_FORMATTER;
 
 public final class FromMdToJava {
 
-    //private static final Logger LOGGER = LoggerFactory.getLogger(FromMdToJava.class);
+    private static final Logger LOGGER = Logger.getLogger(FromMdToJava.class.getSimpleName());
 
-    private static final List<Workout> EMPTY_RESULT = Collections.emptyList();
-
-    public static List<Workout> extractWorkoutsFromFile(final String pathToFile) {
+    public static List<Workout> extractWorkoutsFromFile(final File file) throws Exception {
         try {
-            final List<String> allLines = Files.readAllLines(Path.of(pathToFile)).stream()
+            final List<String> allLines = Files.readAllLines(file.toPath()).stream()
                     .map(String::trim)
                     .collect(toList());
             //System.out.println(allLines);
             return extractWorkoutsFromLines(allLines);
-        } catch (Exception e) {
-            //LOGGER.error("Can't extract repository from file {}", pathToFile, e);
-            throw new Error("Can't extract repository from file " + pathToFile);
+        } catch (final Exception e) {
+            LOGGER.warning("Can't extract repository from file " + file.getName() + " : " + e.getMessage());
+            throw e;
         }
     }
 

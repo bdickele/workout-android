@@ -2,7 +2,7 @@ package org.dickele.workout.parser;
 
 import java.time.format.DateTimeFormatter;
 
-final class ParserConst {
+public final class ParserConst {
 
     static final String INDICATOR_ROUTINE = "# ";
 
@@ -22,6 +22,6 @@ final class ParserConst {
 
     static final String REPS_SEPARATOR = ",";
 
-    static final DateTimeFormatter WORKOUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static final DateTimeFormatter WORKOUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 }
