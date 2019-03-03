@@ -3,6 +3,7 @@ package org.dickele.workout;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import org.apache.commons.io.FileUtils;
 import org.dickele.workout.repository.InMemoryDb;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loadWorkoutFile();
+        ((TextView) findViewById(R.id.workoutNumber)).setText(InMemoryDb.getInstance().getNumberOfWorkouts() + " workouts loaded");
     }
 
     private void loadWorkoutFile() {
