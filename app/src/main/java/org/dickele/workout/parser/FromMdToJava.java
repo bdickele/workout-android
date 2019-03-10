@@ -55,21 +55,32 @@ public final class FromMdToJava {
                 continue;
             }
 
-            // We found a routine
-            final Routine routine = extractRoutine(line);
-            if (routine != null) {
-                currentRoutine = routine;
-                currentWorkout = null;
-                dealingWithExercises = false;
-                continue;
+            try {
+                // We found a routine
+                final Routine routine = extractRoutine(line);
+                if (routine != null) {
+                    currentRoutine = routine;
+                    currentWorkout = null;
+                    dealingWithExercises = false;
+                    continue;
+                }
+            } catch (final Exception e) {
+                LOGGER.severe("Error while treating routine for line " + line + " : " + e.getCause());
+                throw e;
             }
 
             // We found a workout
-            final LocalDate workoutDate = extractWorkoutDate(line);
-            if (workoutDate != null) {
-                currentWorkout = new Workout(currentRoutine, workoutDate);
-                result.add(currentWorkout);
-                continue;
+            try {
+                final LocalDate workoutDate = extractWorkoutDate(line);
+                if (workoutDate != null) {
+                    currentWorkout = new Workout(currentRoutine, workoutDate);
+                    result.add(currentWorkout);
+                    dealingWithExercises = false;
+                    continue;
+                }
+            } catch (final Exception e) {
+                LOGGER.severe("Error while extracting workout date for line " + line + " : " + e.getCause());
+                throw e;
             }
 
             // Line just before list of exercises
@@ -83,7 +94,13 @@ public final class FromMdToJava {
                 continue;
             }
 
-            currentWorkout.addExercise(extractExercise(line));
+            try {
+                final WorkoutExercise workoutExercise = extractExercise(line);
+                currentWorkout.addExercise(workoutExercise);
+            } catch (final Exception e) {
+                LOGGER.severe("Error while extracting workout exercise for line " + line + " : " + e.getCause());
+                throw e;
+            }
         }
 
         return Workout.enhanceAndSortWorkouts(result);

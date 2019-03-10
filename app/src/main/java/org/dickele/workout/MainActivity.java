@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import org.apache.commons.io.FileUtils;
+import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 
 import java.io.File;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,29 +20,49 @@ public class MainActivity extends AppCompatActivity {
 
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getSimpleName());
 
+    private static final String KEY_WORKOUTS = "KEY_WORKOUTS";
+
     private static final String FILE_NAME = "workout.md";
+
+    private List<Workout> workouts = new ArrayList<>();
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        loadWorkoutFile();
-        ((TextView) findViewById(R.id.workoutNumber)).setText(InMemoryDb.getInstance().getNumberOfWorkouts() + " workouts loaded");
+        workouts = InMemoryDb.getInstance().getWorkouts();
+        if (workouts == null || workouts.isEmpty()) {
+            loadWorkoutFile(false);
+        } else {
+            updateDataRelatedToWorkouts();
+        }
+        findViewById(R.id.button_refresh).setOnClickListener(v -> refreshWorkouts());
     }
 
-    private void loadWorkoutFile() {
+    // ====================================================================================
+    // Workout loading
+    // ====================================================================================
+
+    private void refreshWorkouts() {
+        ((TextView) findViewById(R.id.text_workoutNumber)).setText("Refreshing...");
+        loadWorkoutFile(true);
+    }
+
+    private void loadWorkoutFile(final boolean refresh) {
         final File file = new File(getBaseContext().getFilesDir(), FILE_NAME);
         boolean dataLoaded = false;
-        if (file.exists()) {
-            LOGGER.log(Level.INFO, "Workout file found in the device => let's try to extract data");
-            try {
-                InMemoryDb.getInstance().loadWorkouts(file);
-                dataLoaded = true;
-            } catch (final Exception e) {
-                LOGGER.log(Level.WARNING, "Data from workout file could not be extracted");
+        if (!refresh) {
+            if (file.exists()) {
+                LOGGER.log(Level.INFO, "Workout file found in the device => let's try to extract data");
+                try {
+                    InMemoryDb.getInstance().loadWorkouts(file);
+                    dataLoaded = true;
+                } catch (final Exception e) {
+                    LOGGER.log(Level.WARNING, "Data from workout file could not be extracted");
+                }
+            } else {
+                LOGGER.log(Level.INFO, "Workout file not found in the device");
             }
-        } else {
-            LOGGER.log(Level.INFO, "Workout file not found in the device");
         }
         if (!dataLoaded) {
             dataLoaded = loadWorkoutEmbeddedFile(file);
@@ -47,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
         if (!dataLoaded) {
             throw new Error("Could not load workout data");
         }
+        this.workouts = InMemoryDb.getInstance().getWorkouts();
+        updateDataRelatedToWorkouts();
+    }
+
+    private void updateDataRelatedToWorkouts() {
+        ((TextView) findViewById(R.id.text_workoutNumber)).setText(workouts.size() + " workouts loaded");
     }
 
     private boolean loadWorkoutEmbeddedFile(final File targetFile) {
@@ -63,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             InMemoryDb.getInstance().loadWorkouts(targetFile);
             return true;
         } catch (final Exception e) {
-            LOGGER.severe("Data from workout file could not be extracted");
+            LOGGER.severe("Data from workout file could not be extracted : " + e.getCause());
             return false;
         }
     }
