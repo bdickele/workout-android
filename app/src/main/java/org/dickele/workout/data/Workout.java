@@ -1,7 +1,5 @@
 package org.dickele.workout.data;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.dickele.workout.reference.Exercise;
 import org.dickele.workout.reference.Routine;
 import org.dickele.workout.util.WorkoutChronologicalComparator;
@@ -12,6 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 @Data
 @AllArgsConstructor
@@ -34,7 +35,7 @@ public class Workout {
         this(routine, date, comment, new ArrayList<>());
     }
 
-    public Workout addExercise(WorkoutExercise exercise) {
+    public Workout addExercise(final WorkoutExercise exercise) {
         exercise.setDate(date);
         exercises.add(exercise);
         return this;
@@ -49,6 +50,7 @@ public class Workout {
 
     /**
      * Will add informations to data by doing some computations, these computations being not stored
+     *
      * @param workouts List of workouts to complete
      * @return Same list of workouts, sorted by chronological order
      */
@@ -68,16 +70,17 @@ public class Workout {
 
         workouts.sort(new WorkoutChronologicalComparator());
         workouts.forEach(workout ->
-                workout.getExercises().forEach(workoutExercise -> {
-                    final Exercise exercise = workoutExercise.getExercise();
-                    final int totalReps = workoutExercise.getTotal();
+                workout.getExercises().stream()
+                        .filter(workoutExercise -> workoutExercise.getTotal() > 0)
+                        .forEach(workoutExercise -> {
+                            final Exercise exercise = workoutExercise.getExercise();
+                            final int totalReps = workoutExercise.getTotal();
 
-                    mapExerciseToFirstTotalReps.putIfAbsent(exercise, totalReps);
-                    workoutExercise.setDeltaFirstRoutineWorkout(totalReps - mapExerciseToFirstTotalReps.getOrDefault(exercise, totalReps));
+                            mapExerciseToFirstTotalReps.putIfAbsent(exercise, totalReps);
+                            workoutExercise.setDeltaFirstRoutineWorkout(totalReps - mapExerciseToFirstTotalReps.getOrDefault(exercise, totalReps));
 
-                    workoutExercise.setDeltaPreviousRoutineWorkout(totalReps - mapExerciseToPreviousReps.getOrDefault(exercise, totalReps));
-                    mapExerciseToPreviousReps.put(exercise, totalReps);
-                })
-        );
+                            workoutExercise.setDeltaPreviousRoutineWorkout(totalReps - mapExerciseToPreviousReps.getOrDefault(exercise, totalReps));
+                            mapExerciseToPreviousReps.put(exercise, totalReps);
+                        }));
     }
 }
