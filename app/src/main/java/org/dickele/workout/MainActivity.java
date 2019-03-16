@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import org.apache.commons.io.FileUtils;
+import org.dickele.workout.activity.WorkoutActivity;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 
@@ -38,10 +39,8 @@ public class MainActivity extends AppCompatActivity {
         }
         findViewById(R.id.button_refresh).setOnClickListener(v -> refreshWorkouts());
 
-        findViewById(R.id.button_load).setOnClickListener(v -> {
-            final Intent gameActivity = new Intent(MainActivity.this, WorkoutActivity.class);
-            startActivity(gameActivity);
-        });
+        findViewById(R.id.button_load).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, WorkoutActivity.class)));
     }
 
     private void updateDataRelatedToWorkouts() {

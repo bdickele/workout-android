@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import org.dickele.workout.R;
 import org.dickele.workout.data.WorkoutExercise;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -22,14 +23,20 @@ public class WorkoutExerciseMainFragment extends Fragment {
     @BindView(R.id.workout_exercises_recycler_view)
     RecyclerView recyclerView;
 
-    private List<WorkoutExercise> exercises;
+    private WorkoutExerciseAdapter adapter;
+
+    private final List<WorkoutExercise> exercises = new ArrayList<>();
 
     public WorkoutExerciseMainFragment() {
         //
     }
 
-    public void setExercises(final List<WorkoutExercise> exercises) {
-        this.exercises = exercises;
+    public void updateExercises(final List<WorkoutExercise> exercises) {
+        this.exercises.clear();
+        this.exercises.addAll(exercises);
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
+        }
     }
 
     @Override
@@ -37,7 +44,7 @@ public class WorkoutExerciseMainFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_workout_exercise_main, container, false);
         ButterKnife.bind(this, view);
 
-        final WorkoutExerciseAdapter adapter = new WorkoutExerciseAdapter(this.exercises);
+        adapter = new WorkoutExerciseAdapter(this.exercises);
         this.recyclerView.setAdapter(adapter);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 

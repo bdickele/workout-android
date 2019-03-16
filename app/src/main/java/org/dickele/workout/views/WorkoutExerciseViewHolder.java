@@ -3,6 +3,7 @@ package org.dickele.workout.views;
 import android.view.View;
 import android.widget.TextView;
 
+import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
 import org.dickele.workout.data.WorkoutExercise;
 
@@ -24,6 +25,9 @@ public class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.workout_exercise_total)
     TextView textTotal;
 
+    @BindView(R.id.workout_exercise_comment)
+    TextView textComment;
+
     public WorkoutExerciseViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
@@ -32,8 +36,13 @@ public class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
     public void updateExercise(final WorkoutExercise exercise) {
         this.textName.setText(exercise.getExercise().name());
         this.textReps.setText(getStringForReps(exercise.getReps()));
+
+        this.textTotal.setVisibility(exercise.getTotal() == 0 ? View.GONE : View.VISIBLE);
         this.textTotal.setText(getStringForTotal(exercise));
 
+        this.textComment.setVisibility(
+                StringUtils.isEmpty(exercise.getComment()) ? View.GONE : View.VISIBLE);
+        this.textComment.setText(exercise.getComment());
     }
 
     private String getStringForTotal(final WorkoutExercise e) {

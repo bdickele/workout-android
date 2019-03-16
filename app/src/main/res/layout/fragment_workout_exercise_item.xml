@@ -33,6 +33,14 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="4dp" />
 
+        <TextView
+            android:id="@+id/workout_exercise_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:textStyle="italic" />
+
     </LinearLayout>
 
 </LinearLayout>

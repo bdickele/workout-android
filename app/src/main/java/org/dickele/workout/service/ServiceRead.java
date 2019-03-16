@@ -28,17 +28,24 @@ public class ServiceRead {
         return new WorkoutSearchResult(workout, numberOfWorkouts - 1, numberOfWorkouts);
     }
 
+    public int getPreviousWorkoutIndex(final int index) {
+        return index - 1;
+    }
+
     public WorkoutSearchResult getPreviousWorkout(final int index) {
-        final int previousIndex = index - 1;
+        final int previousIndex = getPreviousWorkoutIndex(index);
         final Workout workout = previousIndex < 0 ? null : db.getWorkouts().get(previousIndex);
         return new WorkoutSearchResult(workout, previousIndex, db.getNumberOfWorkouts());
     }
 
+    public int getNextWorkoutIndex(final int index) {
+        return index >= (db.getNumberOfWorkouts() - 1) ? -1 : index + 1;
+    }
+
     public WorkoutSearchResult getNextWorkout(final int index) {
-        final int numberOfWorkouts = db.getNumberOfWorkouts();
-        final int nextIndex = index >= (numberOfWorkouts - 1) ? -1 : index + 1;
+        final int nextIndex = getNextWorkoutIndex(index);
         final Workout workout = nextIndex == -1 ? null : db.getWorkouts().get(nextIndex);
-        return new WorkoutSearchResult(workout, nextIndex, numberOfWorkouts);
+        return new WorkoutSearchResult(workout, nextIndex, db.getNumberOfWorkouts());
     }
 
     public List<WorkoutExercise> getExercises(final Exercise exercise) {
