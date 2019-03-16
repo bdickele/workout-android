@@ -1,5 +1,6 @@
 package org.dickele.workout;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -7,7 +8,6 @@ import android.widget.TextView;
 import org.apache.commons.io.FileUtils;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
-import org.dickele.workout.views.WorkoutMainFragment;
 
 import java.io.File;
 import java.io.InputStream;
@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Workout> workouts = new ArrayList<>();
 
-    private WorkoutMainFragment workoutMainFragment;
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,26 +37,15 @@ public class MainActivity extends AppCompatActivity {
             updateDataRelatedToWorkouts();
         }
         findViewById(R.id.button_refresh).setOnClickListener(v -> refreshWorkouts());
+
+        findViewById(R.id.button_load).setOnClickListener(v -> {
+            final Intent gameActivity = new Intent(MainActivity.this, WorkoutActivity.class);
+            startActivity(gameActivity);
+        });
     }
 
     private void updateDataRelatedToWorkouts() {
         ((TextView) findViewById(R.id.text_workoutNumber)).setText(workouts.size() + " workouts loaded");
-        configureAndShowMainFragment();
-    }
-
-    // ====================================================================================
-    // Workout fragment configuration
-    // ====================================================================================
-
-    private void configureAndShowMainFragment() {
-        workoutMainFragment = (WorkoutMainFragment) getSupportFragmentManager().findFragmentById(R.id.activity_workout_frame_layout);
-
-        if (workoutMainFragment == null) {
-            workoutMainFragment = new WorkoutMainFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.activity_workout_frame_layout, workoutMainFragment)
-                    .commit();
-        }
     }
 
     // ====================================================================================

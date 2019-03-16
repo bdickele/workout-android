@@ -40,6 +40,6 @@ public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExercise
 
     @Override
     public int getItemCount() {
-        return exercises.size();
+        return exercises == null ? 0 : exercises.size();
     }
 }

@@ -29,6 +29,10 @@ public class InMemoryDb {
         return workouts;
     }
 
+    public Workout getWorkout(final int i) {
+        return getWorkouts().get(i);
+    }
+
     public int getNumberOfWorkouts() {
         return workouts == null ? 0 : workouts.size();
     }

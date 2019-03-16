@@ -6,6 +6,9 @@ import android.widget.TextView;
 import org.dickele.workout.R;
 import org.dickele.workout.data.WorkoutExercise;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,11 +31,32 @@ public class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
 
     public void updateExercise(final WorkoutExercise exercise) {
         this.textName.setText(exercise.getExercise().name());
-        //TODO Representation textuelle des reps
-        this.textReps.setText(exercise.getReps().toString());
-        this.textTotal.setText(exercise.getTotal() + " ("
-                + exercise.getDeltaPreviousRoutineWorkout() + " ) ("
-                + exercise.getDeltaFirstRoutineWorkout() + ")");
+        this.textReps.setText(getStringForReps(exercise.getReps()));
+        this.textTotal.setText(getStringForTotal(exercise));
 
     }
+
+    private String getStringForTotal(final WorkoutExercise e) {
+        return e.getTotal() + " "
+                + getStringForDelta(e.getDeltaPreviousRoutineWorkout())
+                + " "
+                + getStringForDelta(e.getDeltaFirstRoutineWorkout());
+    }
+
+    private String getStringForDelta(final int delta) {
+        return "("
+                + (delta < 0 ? "-" : (delta > 0 ? "+" : ""))
+                + delta + ")";
+    }
+
+    private String getStringForReps(final List<Integer> reps) {
+        if (reps == null || reps.isEmpty()) {
+            return "";
+        }
+
+        return reps.stream()
+                .map(i -> "" + i)
+                .collect(Collectors.joining(", "));
+    }
+
 }
