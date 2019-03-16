@@ -8,6 +8,7 @@ import android.widget.TextView;
 import org.apache.commons.io.FileUtils;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
+import org.dickele.workout.views.WorkoutMainFragment;
 
 import java.io.File;
 import java.io.InputStream;
@@ -20,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
     private static final Logger LOGGER = Logger.getLogger(MainActivity.class.getSimpleName());
 
-    private static final String KEY_WORKOUTS = "KEY_WORKOUTS";
-
     private static final String FILE_NAME = "workout.md";
 
     private List<Workout> workouts = new ArrayList<>();
+
+    private WorkoutMainFragment workoutMainFragment;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -37,6 +38,21 @@ public class MainActivity extends AppCompatActivity {
             updateDataRelatedToWorkouts();
         }
         findViewById(R.id.button_refresh).setOnClickListener(v -> refreshWorkouts());
+    }
+
+    // ====================================================================================
+    // Workout fragment configuration
+    // ====================================================================================
+
+    private void configureAndShowMainFragment() {
+        workoutMainFragment = (WorkoutMainFragment) getSupportFragmentManager().findFragmentById(R.id.activity_workout_frame_layout);
+
+        if (workoutMainFragment == null) {
+            workoutMainFragment = new WorkoutMainFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.activity_workout_frame_layout, workoutMainFragment)
+                    .commit();
+        }
     }
 
     // ====================================================================================
@@ -76,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateDataRelatedToWorkouts() {
         ((TextView) findViewById(R.id.text_workoutNumber)).setText(workouts.size() + " workouts loaded");
+        configureAndShowMainFragment();
     }
 
     private boolean loadWorkoutEmbeddedFile(final File targetFile) {
