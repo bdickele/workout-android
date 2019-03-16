@@ -31,14 +31,9 @@ public class Workout {
         this(routine, date, null, new ArrayList<>());
     }
 
-    public Workout(final Routine routine, final LocalDate date, final String comment) {
-        this(routine, date, comment, new ArrayList<>());
-    }
-
-    public Workout addExercise(final WorkoutExercise exercise) {
+    public void addExercise(final WorkoutExercise exercise) {
         exercise.setDate(date);
         exercises.add(exercise);
-        return this;
     }
 
     public WorkoutExercise getExercise(final Exercise exercise) {

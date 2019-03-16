@@ -10,6 +10,7 @@ import org.dickele.workout.data.WorkoutExercise;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,13 +28,12 @@ public class WorkoutExerciseMainFragment extends Fragment {
         //
     }
 
-    public WorkoutExerciseMainFragment setExercises(final List<WorkoutExercise> exercises) {
+    public void setExercises(final List<WorkoutExercise> exercises) {
         this.exercises = exercises;
-        return this;
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_workout_exercise_main, container, false);
         ButterKnife.bind(this, view);
 

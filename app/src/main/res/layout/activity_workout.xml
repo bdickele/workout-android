@@ -8,9 +8,8 @@
         android:id="@+id/workout_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="date"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -18,17 +17,15 @@
         android:id="@+id/workout_routine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:text="routine" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp" />
 
     <TextView
         android:id="@+id/workout_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:text="comment" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp" />
 
     <View
         android:id="@+id/divider"

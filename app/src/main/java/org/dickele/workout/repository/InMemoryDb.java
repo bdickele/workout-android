@@ -37,7 +37,4 @@ public class InMemoryDb {
         return workouts == null ? 0 : workouts.size();
     }
 
-    public boolean isEmpty() {
-        return getNumberOfWorkouts() == 0;
-    }
 }

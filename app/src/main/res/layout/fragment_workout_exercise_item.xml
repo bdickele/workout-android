@@ -9,7 +9,7 @@
         android:id="@+id/workout_exercise_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:minWidth="40dp"
         android:textStyle="bold" />
@@ -23,14 +23,14 @@
             android:id="@+id/workout_exercise_reps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="4dp" />
 
         <TextView
             android:id="@+id/workout_exercise_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="4dp" />
 
     </LinearLayout>
