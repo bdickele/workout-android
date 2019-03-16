@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import org.apache.commons.io.FileUtils;
-import org.dickele.workout.activity.WorkoutActivity;
+import org.dickele.workout.activity.workout.WorkoutActivity;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 

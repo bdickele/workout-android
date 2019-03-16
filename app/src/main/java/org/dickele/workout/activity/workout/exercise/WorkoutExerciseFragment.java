@@ -1,4 +1,4 @@
-package org.dickele.workout.views;
+package org.dickele.workout.activity.workout.exercise;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class WorkoutExerciseMainFragment extends Fragment {
+public class WorkoutExerciseFragment extends Fragment {
 
     @BindView(R.id.workout_exercises_recycler_view)
     RecyclerView recyclerView;
@@ -27,7 +27,7 @@ public class WorkoutExerciseMainFragment extends Fragment {
 
     private final List<WorkoutExercise> exercises = new ArrayList<>();
 
-    public WorkoutExerciseMainFragment() {
+    public WorkoutExerciseFragment() {
         //
     }
 

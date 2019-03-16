@@ -1,4 +1,4 @@
-package org.dickele.workout.views;
+package org.dickele.workout.activity.workout.exercise;
 
 import android.view.View;
 import android.widget.TextView;
