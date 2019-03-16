@@ -1,6 +1,5 @@
 package org.dickele.workout.views;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -9,6 +8,7 @@ import org.dickele.workout.data.Workout;
 
 import java.time.format.DateTimeFormatter;
 
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -19,8 +19,14 @@ public class WorkoutViewHolder extends RecyclerView.ViewHolder {
 
     private static final DateTimeFormatter WORKOUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    @BindView(R.id.workout_item_workout_date)
-    TextView workoutDate;
+    @BindView(R.id.workout_item_date)
+    TextView textDate;
+
+    @BindView(R.id.workout_item_routine)
+    TextView textRoutine;
+
+    @BindView(R.id.workout_item_comment)
+    TextView textComment;
 
     public WorkoutViewHolder(final View itemView) {
         super(itemView);
@@ -28,6 +34,8 @@ public class WorkoutViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void updateWorkout(final Workout workout) {
-        this.workoutDate.setText(workout.getDate().format(WORKOUT_DATE_FORMATTER));
+        this.textDate.setText(workout.getDate().format(WORKOUT_DATE_FORMATTER));
+        this.textRoutine.setText(workout.getRoutine().getLabel());
+        this.textComment.setText(workout.getComment());
     }
 }

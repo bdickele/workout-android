@@ -2,7 +2,6 @@ package org.dickele.workout;
 
 import android.content.res.AssetManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import org.apache.commons.io.FileUtils;
@@ -16,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
             updateDataRelatedToWorkouts();
         }
         findViewById(R.id.button_refresh).setOnClickListener(v -> refreshWorkouts());
+    }
+
+    private void updateDataRelatedToWorkouts() {
+        ((TextView) findViewById(R.id.text_workoutNumber)).setText(workouts.size() + " workouts loaded");
+        configureAndShowMainFragment();
     }
 
     // ====================================================================================
@@ -88,11 +94,6 @@ public class MainActivity extends AppCompatActivity {
         }
         this.workouts = InMemoryDb.getInstance().getWorkouts();
         updateDataRelatedToWorkouts();
-    }
-
-    private void updateDataRelatedToWorkouts() {
-        ((TextView) findViewById(R.id.text_workoutNumber)).setText(workouts.size() + " workouts loaded");
-        configureAndShowMainFragment();
     }
 
     private boolean loadWorkoutEmbeddedFile(final File targetFile) {

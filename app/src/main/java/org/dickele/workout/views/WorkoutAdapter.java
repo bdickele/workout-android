@@ -1,8 +1,6 @@
 package org.dickele.workout.views;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +9,9 @@ import org.dickele.workout.R;
 import org.dickele.workout.data.Workout;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Binds a view (= workout view) and a list of data (= list of workouts)
@@ -33,8 +34,8 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final WorkoutViewHolder workoutViewHolder, final int i) {
-        workoutViewHolder.updateWorkout(this.workouts.get(i));
+    public void onBindViewHolder(@NonNull final WorkoutViewHolder viewHolder, final int i) {
+        viewHolder.updateWorkout(this.workouts.get(i));
     }
 
     @Override
