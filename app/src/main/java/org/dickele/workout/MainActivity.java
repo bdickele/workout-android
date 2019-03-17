@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.app_name);
         setContentView(R.layout.activity_main);
+
         workouts = InMemoryDb.getInstance().getWorkouts();
         if (workouts == null || workouts.isEmpty()) {
             loadWorkoutFile(false);

@@ -29,6 +29,8 @@ public class WorkoutFragment extends Fragment {
 
     private WorkoutExerciseFragment exercisesFragment;
 
+    private Workout workout;
+
     @BindView(R.id.workout_date)
     TextView textDate;
 
@@ -54,15 +56,16 @@ public class WorkoutFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        final int defaultIndex = db.getNumberOfWorkouts() - 1;
-        final int workoutIndex = getArguments().getInt(WORKOUT_INDEX, defaultIndex);
-
-        final Workout workout = db.getWorkout(workoutIndex);
-
         final View view = inflater.inflate(R.layout.fragment_workout, container, false);
         ButterKnife.bind(this, view);
 
+        final int defaultIndex = db.getNumberOfWorkouts() - 1;
+        final int workoutIndex = getArguments().getInt(WORKOUT_INDEX, defaultIndex);
+        workout = db.getWorkout(workoutIndex);
+
         configureAndShowExercisesFragment();
+
+        textRoutine.setOnClickListener(v -> ((WorkoutActivity) getActivity()).gotToRoutine(workout.getRoutine()));
 
         textDate.setText(workout.getDate().format(WORKOUT_DATE_FORMATTER));
         textRoutine.setText(workout.getRoutine().getLabel(getContext()));
@@ -83,4 +86,5 @@ public class WorkoutFragment extends Fragment {
                     .commit();
         }
     }
+
 }
