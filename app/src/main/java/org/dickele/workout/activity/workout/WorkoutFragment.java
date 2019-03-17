@@ -11,8 +11,7 @@ import org.dickele.workout.R;
 import org.dickele.workout.activity.workout.exercise.WorkoutExerciseFragment;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
-
-import java.time.format.DateTimeFormatter;
+import org.dickele.workout.util.StringUtil;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -22,8 +21,6 @@ import butterknife.ButterKnife;
 public class WorkoutFragment extends Fragment {
 
     private static final String WORKOUT_INDEX = "WORKOUT_INDEX";
-
-    private static final DateTimeFormatter WORKOUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     private final InMemoryDb db;
 
@@ -67,7 +64,7 @@ public class WorkoutFragment extends Fragment {
 
         textRoutine.setOnClickListener(v -> ((WorkoutActivity) getActivity()).gotToRoutine(workout.getRoutine(), ""));
 
-        textDate.setText(workout.getDate().format(WORKOUT_DATE_FORMATTER));
+        textDate.setText(workout.getDate().format(StringUtil.SIMPLE_DATE_FORMATTER));
         textRoutine.setText(workout.getRoutine().getLabel(getContext()));
         textComment.setText(workout.getComment());
         textComment.setVisibility(StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);

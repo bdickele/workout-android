@@ -1,6 +1,7 @@
 package org.dickele.workout.activity.routine;
 
 import org.dickele.workout.reference.Exercise;
+import org.dickele.workout.reference.Routine;
 
 import java.util.List;
 
@@ -10,10 +11,13 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class RoutineAdapter extends FragmentStatePagerAdapter {
 
+    private final Routine routine;
+
     private final List<Exercise> exercises;
 
-    RoutineAdapter(final FragmentManager mgr, final List<Exercise> exercises) {
+    RoutineAdapter(final FragmentManager mgr, final Routine routine, final List<Exercise> exercises) {
         super(mgr);
+        this.routine = routine;
         this.exercises = exercises;
     }
 
@@ -24,6 +28,6 @@ public class RoutineAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(final int exerciseIndex) {
-        return RoutineFragment.newInstance(exercises, exercises.get(exerciseIndex).name());
+        return RoutineFragment.newInstance(routine, exercises, exercises.get(exerciseIndex).name());
     }
 }

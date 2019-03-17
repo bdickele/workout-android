@@ -30,7 +30,7 @@ public class RoutineActivity extends AppCompatActivity {
 
         // ViewPager configuration
         final ViewPager pager = findViewById(R.id.routine_main_viewpager);
-        pager.setAdapter(new RoutineAdapter(getSupportFragmentManager(), exercises) {
+        pager.setAdapter(new RoutineAdapter(getSupportFragmentManager(), routine, exercises) {
             //
         });
 

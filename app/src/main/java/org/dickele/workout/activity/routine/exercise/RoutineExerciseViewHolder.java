@@ -1,4 +1,4 @@
-package org.dickele.workout.activity.workout.exercise;
+package org.dickele.workout.activity.routine.exercise;
 
 import android.view.View;
 import android.widget.TextView;
@@ -12,28 +12,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
+class RoutineExerciseViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.workout_exercise_name)
-    TextView textName;
+    @BindView(R.id.routine_exercise_date)
+    TextView textDate;
 
-    @BindView(R.id.workout_exercise_reps)
+    @BindView(R.id.routine_exercise_reps)
     TextView textReps;
 
-    @BindView(R.id.workout_exercise_total)
+    @BindView(R.id.routine_exercise_total)
     TextView textTotal;
 
-    @BindView(R.id.workout_exercise_comment)
+    @BindView(R.id.routine_exercise_comment)
     TextView textComment;
 
-    WorkoutExerciseViewHolder(final View itemView) {
+    RoutineExerciseViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
 
     }
 
     void updateExercise(final WorkoutExercise exercise) {
-        this.textName.setText(exercise.getExercise().name());
+        this.textDate.setText(exercise.getDate().format(StringUtil.SIMPLE_DATE_FORMATTER));
         this.textReps.setText(StringUtil.getStringForReps(exercise.getReps()));
 
         this.textTotal.setVisibility(exercise.getTotal() == 0 ? View.GONE : View.VISIBLE);
