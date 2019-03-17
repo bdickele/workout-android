@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.dickele.workout.R;
+import org.dickele.workout.activity.workout.WorkoutActivity;
 import org.dickele.workout.data.WorkoutExercise;
+import org.dickele.workout.util.ItemClickSupport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +49,12 @@ public class WorkoutExerciseFragment extends Fragment {
         adapter = new WorkoutExerciseAdapter(this.exercises);
         this.recyclerView.setAdapter(adapter);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        ItemClickSupport.addTo(recyclerView, R.layout.fragment_workout_exercise_item)
+                .setOnItemClickListener((RecyclerView recyclerView, int position, View v) -> {
+                    final WorkoutExercise workoutExercise = exercises.get(position);
+                    ((WorkoutActivity) v.getContext()).gotToRoutine(workoutExercise.getRoutine(), workoutExercise.getExercise().name());
+                });
 
         return view;
     }

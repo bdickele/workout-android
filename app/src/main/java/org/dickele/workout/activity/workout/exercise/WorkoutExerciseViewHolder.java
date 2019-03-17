@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
+class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.workout_exercise_name)
     TextView textName;
@@ -28,12 +28,13 @@ public class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.workout_exercise_comment)
     TextView textComment;
 
-    public WorkoutExerciseViewHolder(final View itemView) {
+    WorkoutExerciseViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
+
     }
 
-    public void updateExercise(final WorkoutExercise exercise) {
+    void updateExercise(final WorkoutExercise exercise) {
         this.textName.setText(exercise.getExercise().name());
         this.textReps.setText(getStringForReps(exercise.getReps()));
 

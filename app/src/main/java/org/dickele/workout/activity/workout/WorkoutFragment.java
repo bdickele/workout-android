@@ -65,7 +65,7 @@ public class WorkoutFragment extends Fragment {
 
         configureAndShowExercisesFragment();
 
-        textRoutine.setOnClickListener(v -> ((WorkoutActivity) getActivity()).gotToRoutine(workout.getRoutine()));
+        textRoutine.setOnClickListener(v -> ((WorkoutActivity) getActivity()).gotToRoutine(workout.getRoutine(), ""));
 
         textDate.setText(workout.getDate().format(WORKOUT_DATE_FORMATTER));
         textRoutine.setText(workout.getRoutine().getLabel(getContext()));

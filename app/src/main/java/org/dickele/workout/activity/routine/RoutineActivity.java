@@ -2,6 +2,7 @@ package org.dickele.workout.activity.routine;
 
 import android.os.Bundle;
 
+import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
 import org.dickele.workout.reference.Exercise;
 import org.dickele.workout.reference.Routine;
@@ -15,14 +16,12 @@ import androidx.viewpager.widget.ViewPager;
 
 public class RoutineActivity extends AppCompatActivity {
 
-    public static final String ROUTINE_INDEX = "WORKOUT_INDEX";
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routine);
 
-        final String routineName = getIntent().getStringExtra(ROUTINE_INDEX);
+        final String routineName = getIntent().getStringExtra(RoutineFragment.ROUTINE_NAME);
         final Routine routine = Routine.valueOf(routineName);
         setTitle(routine.getLabel(getApplicationContext()));
 
@@ -34,6 +33,17 @@ public class RoutineActivity extends AppCompatActivity {
         pager.setAdapter(new RoutineAdapter(getSupportFragmentManager(), exercises) {
             //
         });
-        pager.setCurrentItem(0);
+
+        final String exerciseName = getIntent().getStringExtra(RoutineFragment.EXERCISE_NAME);
+        int position = 0;
+        if (StringUtils.isNotEmpty(exerciseName)) {
+            for (int i = 0; i < exercises.size(); i++) {
+                if (exerciseName.equals(exercises.get(i).name())) {
+                    position = i;
+                    break;
+                }
+            }
+        }
+        pager.setCurrentItem(position);
     }
 }

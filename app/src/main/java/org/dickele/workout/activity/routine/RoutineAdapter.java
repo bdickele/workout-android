@@ -12,7 +12,7 @@ public class RoutineAdapter extends FragmentStatePagerAdapter {
 
     private final List<Exercise> exercises;
 
-    public RoutineAdapter(final FragmentManager mgr, final List<Exercise> exercises) {
+    RoutineAdapter(final FragmentManager mgr, final List<Exercise> exercises) {
         super(mgr);
         this.exercises = exercises;
     }
@@ -24,6 +24,6 @@ public class RoutineAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(final int exerciseIndex) {
-        return RoutineFragment.newInstance(exercises, exerciseIndex);
+        return RoutineFragment.newInstance(exercises, exercises.get(exerciseIndex).name());
     }
 }

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
 import org.dickele.workout.reference.Exercise;
 
@@ -18,7 +19,9 @@ import butterknife.ButterKnife;
 
 public class RoutineFragment extends Fragment {
 
-    private static final String EXERCISE_INDEX = "EXERCISE_INDEX";
+    public static final String ROUTINE_NAME = "ROUTINE_NAME";
+
+    public static final String EXERCISE_NAME = "EXERCISE_NAME";
 
     private List<Exercise> exercises;
 
@@ -29,9 +32,9 @@ public class RoutineFragment extends Fragment {
         //
     }
 
-    static RoutineFragment newInstance(final List<Exercise> exercises, final int exerciseIndex) {
+    static RoutineFragment newInstance(final List<Exercise> exercises, final String exerciseName) {
         final Bundle args = new Bundle();
-        args.putInt(EXERCISE_INDEX, exerciseIndex);
+        args.putString(EXERCISE_NAME, exerciseName);
 
         final RoutineFragment frag = new RoutineFragment();
         frag.setArguments(args);
@@ -45,8 +48,8 @@ public class RoutineFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_routine, container, false);
         ButterKnife.bind(this, view);
 
-        final int exerciseIndex = getArguments().getInt(EXERCISE_INDEX, 0);
-        final Exercise exercise = exercises.get(exerciseIndex);
+        final String exerciseName = getArguments().getString(EXERCISE_NAME);
+        final Exercise exercise = StringUtils.isEmpty(exerciseName) ? exercises.get(0) : Exercise.valueOf(exerciseName);
 
         textExerciseName.setText(exercise.name());
 

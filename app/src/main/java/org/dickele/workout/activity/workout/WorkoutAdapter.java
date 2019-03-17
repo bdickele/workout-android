@@ -12,7 +12,7 @@ public class WorkoutAdapter extends FragmentStatePagerAdapter {
 
     private final List<Workout> workouts;
 
-    public WorkoutAdapter(final FragmentManager mgr, final List<Workout> workouts) {
+    WorkoutAdapter(final FragmentManager mgr, final List<Workout> workouts) {
         super(mgr);
         this.workouts = workouts;
     }
