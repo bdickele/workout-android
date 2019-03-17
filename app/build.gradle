@@ -30,6 +30,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'com.jjoe64:graphview:4.2.2'
 
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'

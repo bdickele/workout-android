@@ -46,4 +46,5 @@ public class RoutineActivity extends AppCompatActivity {
         }
         pager.setCurrentItem(position);
     }
+
 }
