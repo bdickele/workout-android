@@ -5,4 +5,7 @@
     <string name="loading_workouts">Chargement des sessions&#8230;</string>
     <string name="reload">Recharger</string>
     <string name="workouts">Sessions</string>
+    <string name="routine_L1_P1">Niveau 1 - programme 1</string>
+    <string name="routine_L1_P2">Niveau 1 - programme 2</string>
+    <string name="routine_L2">Niveau 2</string>
 </resources>

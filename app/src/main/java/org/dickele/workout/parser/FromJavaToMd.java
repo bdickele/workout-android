@@ -1,5 +1,7 @@
 package org.dickele.workout.parser;
 
+import android.content.Context;
+
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
@@ -21,24 +23,24 @@ public final class FromJavaToMd {
 
     private static final String EMPTY_LINE = "";
 
-    public static List<String> createLines(final List<Workout> workouts) {
+    public static List<String> createLines(final List<Workout> workouts, final Context context) {
         final List<String> result = new ArrayList<>();
         Routine previousRoutine = null;
         for (final Workout workout : workouts) {
-            result.addAll(createWorkoutLines(previousRoutine, workout));
+            result.addAll(createWorkoutLines(previousRoutine, workout, context));
             previousRoutine = workout.getRoutine();
         }
         return result;
     }
 
-    private static List<String> createWorkoutLines(final Routine previousRoutine, final Workout workout) {
+    private static List<String> createWorkoutLines(final Routine previousRoutine, final Workout workout, final Context context) {
         final List<String> result = new ArrayList<>();
 
         final Routine routine = workout.getRoutine();
         final String comment = workout.getComment();
 
         if (previousRoutine == null || previousRoutine != workout.getRoutine()) {
-            result.add(INDICATOR_ROUTINE + routine.getLabel() + " (" + routine.name() + ")");
+            result.add(INDICATOR_ROUTINE + routine.getLabel(context) + " (" + routine.name() + ")");
             result.add(EMPTY_LINE);
         }
 

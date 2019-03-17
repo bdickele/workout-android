@@ -27,10 +27,6 @@ public class WorkoutFragment extends Fragment {
 
     private final InMemoryDb db;
 
-    private int workoutIndex;
-
-    private Workout workout;
-
     private WorkoutExerciseFragment exercisesFragment;
 
     @BindView(R.id.workout_date)
@@ -46,7 +42,7 @@ public class WorkoutFragment extends Fragment {
         this.db = InMemoryDb.getInstance();
     }
 
-    public static WorkoutFragment newInstance(final int workoutIndex) {
+    static WorkoutFragment newInstance(final int workoutIndex) {
         final Bundle args = new Bundle();
         args.putInt(WORKOUT_INDEX, workoutIndex);
 
@@ -59,9 +55,9 @@ public class WorkoutFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         final int defaultIndex = db.getNumberOfWorkouts() - 1;
-        workoutIndex = getArguments().getInt(WORKOUT_INDEX, defaultIndex);
+        final int workoutIndex = getArguments().getInt(WORKOUT_INDEX, defaultIndex);
 
-        workout = db.getWorkout(workoutIndex);
+        final Workout workout = db.getWorkout(workoutIndex);
 
         final View view = inflater.inflate(R.layout.fragment_workout, container, false);
         ButterKnife.bind(this, view);
@@ -69,7 +65,7 @@ public class WorkoutFragment extends Fragment {
         configureAndShowExercisesFragment();
 
         textDate.setText(workout.getDate().format(WORKOUT_DATE_FORMATTER));
-        textRoutine.setText(workout.getRoutine().getLabel());
+        textRoutine.setText(workout.getRoutine().getLabel(getContext()));
         textComment.setText(workout.getComment());
         textComment.setVisibility(StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);
 
