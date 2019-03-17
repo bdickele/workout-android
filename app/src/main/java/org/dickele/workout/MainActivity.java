@@ -37,14 +37,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             updateDataRelatedToWorkouts();
         }
-        findViewById(R.id.button_refresh).setOnClickListener(v -> refreshWorkouts());
+        findViewById(R.id.button_reload).setOnClickListener(v -> refreshWorkouts());
 
-        findViewById(R.id.button_load).setOnClickListener(v ->
+        findViewById(R.id.button_workouts).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, WorkoutActivity.class)));
     }
 
     private void updateDataRelatedToWorkouts() {
-        ((TextView) findViewById(R.id.text_workoutNumber)).setText(workouts.size() + " workouts loaded");
+        ((TextView) findViewById(R.id.text_workoutNumber)).setText(
+                getString(R.string.nb_workout_loaded, workouts.size()));
     }
 
     // ====================================================================================
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     // ====================================================================================
 
     private void refreshWorkouts() {
-        ((TextView) findViewById(R.id.text_workoutNumber)).setText("Refreshing...");
+        ((TextView) findViewById(R.id.text_workoutNumber)).setText(getString(R.string.loading_workouts));
         loadWorkoutFile(true);
     }
 

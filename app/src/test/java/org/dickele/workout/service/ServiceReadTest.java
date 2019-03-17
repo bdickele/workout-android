@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.tuple;
@@ -67,6 +68,23 @@ public class ServiceReadTest {
     }
 
     @Test
+    public void getRoutineExercises() {
+        assertThat(service.getRoutineExercises(Routine.L1_P2)).isEqualTo(
+                Arrays.asList(Exercise.A3, Exercise.A2, Exercise.D, Exercise.C6,
+                        Exercise.Eg, Exercise.Ed, Exercise.F, Exercise.G, Exercise.K2));
+    }
+
+    @Test
+    public void getRoutineExercises_2() {
+        assertThat(service.getRoutineExercises(Routine.L1_P2, Exercise.K2))
+                .extracting("exercise", "date", "reps", "total")
+                .containsExactly(
+                        tuple(Exercise.K2, LocalDate.of(2018, 2, 12), Arrays.asList(14, 11), 25),
+                        tuple(Exercise.K2, LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0)
+                );
+    }
+
+    @Test
     public void getExercises() {
         assertThat(service.getExercises(Exercise.K2))
                 .extracting("exercise", "date", "reps", "total")
@@ -75,7 +93,7 @@ public class ServiceReadTest {
                         tuple(Exercise.K2, LocalDate.of(2018, 2, 5), Arrays.asList(13, 13), 26),
                         tuple(Exercise.K2, LocalDate.of(2018, 2, 7), Arrays.asList(14, 14), 28),
                         tuple(Exercise.K2, LocalDate.of(2018, 2, 12), Arrays.asList(14, 11), 25),
-                        tuple(Exercise.K2, LocalDate.of(2018, 2, 15), Arrays.asList(0), 0)
+                        tuple(Exercise.K2, LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0)
                 );
 
         assertThat(service.getExercises(Exercise.K2).get(2))
@@ -84,7 +102,7 @@ public class ServiceReadTest {
 
         assertThat(service.getExercises(Exercise.K2).get(4))
                 .extracting("date", "reps", "total", "deltaPreviousRoutineWorkout", "deltaFirstRoutineWorkout")
-                .containsExactly(LocalDate.of(2018, 2, 15), Arrays.asList(0), 0, 0, 0);
+                .containsExactly(LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0, 0, 0);
     }
 
     @Test

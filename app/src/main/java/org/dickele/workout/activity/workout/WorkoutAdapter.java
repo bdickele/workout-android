@@ -6,9 +6,9 @@ import java.util.List;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
-public class WorkoutAdapter extends FragmentPagerAdapter {
+public class WorkoutAdapter extends FragmentStatePagerAdapter {
 
     private final List<Workout> workouts;
 
@@ -24,6 +24,6 @@ public class WorkoutAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(final int workoutIndex) {
-        return (WorkoutFragment.newInstance(workoutIndex));
+        return WorkoutFragment.newInstance(workoutIndex);
     }
 }

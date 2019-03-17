@@ -3,6 +3,7 @@ package org.dickele.workout.service;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.reference.Exercise;
+import org.dickele.workout.reference.Routine;
 import org.dickele.workout.repository.InMemoryDb;
 
 import java.time.LocalDate;
@@ -28,7 +29,7 @@ public class ServiceRead {
         return new WorkoutSearchResult(workout, numberOfWorkouts - 1, numberOfWorkouts);
     }
 
-    public int getPreviousWorkoutIndex(final int index) {
+    private int getPreviousWorkoutIndex(final int index) {
         return index - 1;
     }
 
@@ -38,7 +39,7 @@ public class ServiceRead {
         return new WorkoutSearchResult(workout, previousIndex, db.getNumberOfWorkouts());
     }
 
-    public int getNextWorkoutIndex(final int index) {
+    private int getNextWorkoutIndex(final int index) {
         return index >= (db.getNumberOfWorkouts() - 1) ? -1 : index + 1;
     }
 
@@ -46,6 +47,27 @@ public class ServiceRead {
         final int nextIndex = getNextWorkoutIndex(index);
         final Workout workout = nextIndex == -1 ? null : db.getWorkouts().get(nextIndex);
         return new WorkoutSearchResult(workout, nextIndex, db.getNumberOfWorkouts());
+    }
+
+    /**
+     * @param routine Routine (L1_P1, L2...)
+     * @return All exercises practiced during this routine
+     */
+    public List<Exercise> getRoutineExercises(final Routine routine) {
+        return db.getWorkouts().stream()
+                .filter(workout -> routine == workout.getRoutine())
+                .flatMap(workout -> workout.getExercises().stream())
+                .map(WorkoutExercise::getExercise)
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    public List<WorkoutExercise> getRoutineExercises(final Routine routine, final Exercise exercise) {
+        return db.getWorkouts().stream()
+                .filter(workout -> routine == workout.getRoutine())
+                .flatMap(workout -> workout.getExercises().stream())
+                .filter(workoutExercise -> exercise == workoutExercise.getExercise())
+                .collect(Collectors.toList());
     }
 
     public List<WorkoutExercise> getExercises(final Exercise exercise) {

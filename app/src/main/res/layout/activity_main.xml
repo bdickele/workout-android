@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_main"
     android:layout_width="match_parent"
@@ -8,37 +7,33 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/text_workoutNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start|end"
-            android:layout_weight="1"
-            android:text="No workout loaded"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp"
-            android:textStyle="italic" />
-
-        <ImageView
-            android:id="@+id/button_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="Refresh workouts"
-            app:srcCompat="@mipmap/baseline_refresh_black_18" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button_load"
+    <TextView
+        android:id="@+id/text_workoutNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:text="Load activity" />
+        android:layout_gravity="start"
+        android:layout_margin="8dp"
+        android:text="@string/no_workout_loaded"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/button_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/reload" />
+
+    <Button
+        android:id="@+id/button_workouts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/workouts" />
 
 </LinearLayout>

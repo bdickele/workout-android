@@ -14,7 +14,10 @@ import org.dickele.workout.repository.InMemoryDb;
 
 import java.time.format.DateTimeFormatter;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class WorkoutFragment extends Fragment {
 
@@ -29,6 +32,15 @@ public class WorkoutFragment extends Fragment {
     private Workout workout;
 
     private WorkoutExerciseFragment exercisesFragment;
+
+    @BindView(R.id.workout_date)
+    TextView textDate;
+
+    @BindView(R.id.workout_routine)
+    TextView textRoutine;
+
+    @BindView(R.id.workout_comment)
+    TextView textComment;
 
     public WorkoutFragment() {
         this.db = InMemoryDb.getInstance();
@@ -45,21 +57,21 @@ public class WorkoutFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        configureAndShowExercisesFragment();
-
+    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         final int defaultIndex = db.getNumberOfWorkouts() - 1;
         workoutIndex = getArguments().getInt(WORKOUT_INDEX, defaultIndex);
 
         workout = db.getWorkout(workoutIndex);
 
         final View view = inflater.inflate(R.layout.fragment_workout, container, false);
-        ((TextView) view.findViewById(R.id.workout_date)).setText(workout.getDate().format(WORKOUT_DATE_FORMATTER));
-        ((TextView) view.findViewById(R.id.workout_routine)).setText(workout.getRoutine().getLabel());
-        ((TextView) view.findViewById(R.id.workout_comment)).setText(workout.getComment());
+        ButterKnife.bind(this, view);
 
-        view.findViewById(R.id.workout_comment).setVisibility(
-                StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);
+        configureAndShowExercisesFragment();
+
+        textDate.setText(workout.getDate().format(WORKOUT_DATE_FORMATTER));
+        textRoutine.setText(workout.getRoutine().getLabel());
+        textComment.setText(workout.getComment());
+        textComment.setVisibility(StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);
 
         exercisesFragment.updateExercises(workout.getExercises());
 
