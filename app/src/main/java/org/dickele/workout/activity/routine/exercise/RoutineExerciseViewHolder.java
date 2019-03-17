@@ -34,13 +34,15 @@ class RoutineExerciseViewHolder extends RecyclerView.ViewHolder {
 
     void updateExercise(final WorkoutExercise exercise) {
         this.textDate.setText(exercise.getDate().format(StringUtil.SIMPLE_DATE_FORMATTER));
+
+        // If there is only one rep we'll display only line related to total
+        final boolean displayReps = exercise.getReps().size() > 1;
+        this.textReps.setVisibility(displayReps ? View.VISIBLE : View.GONE);
         this.textReps.setText(StringUtil.getStringForReps(exercise.getReps()));
 
-        this.textTotal.setVisibility(exercise.getTotal() == 0 ? View.GONE : View.VISIBLE);
         this.textTotal.setText(StringUtil.getStringForTotalReps(exercise));
 
-        this.textComment.setVisibility(
-                StringUtils.isEmpty(exercise.getComment()) ? View.GONE : View.VISIBLE);
+        this.textComment.setVisibility(StringUtils.isEmpty(exercise.getComment()) ? View.GONE : View.VISIBLE);
         this.textComment.setText(exercise.getComment());
     }
 

@@ -14,8 +14,6 @@ import org.dickele.workout.reference.Routine;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 
-import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
@@ -27,8 +25,6 @@ public class RoutineFragment extends Fragment {
 
     public static final String EXERCISE_NAME = "EXERCISE_NAME";
 
-    private List<Exercise> exercises;
-
     private RoutineExerciseFragment exercisesFragment;
 
     @BindView(R.id.routine_exercise_name)
@@ -38,14 +34,13 @@ public class RoutineFragment extends Fragment {
         //
     }
 
-    static RoutineFragment newInstance(final Routine routine, final List<Exercise> exercises, final String exerciseName) {
+    static RoutineFragment newInstance(final Routine routine, final Exercise exercise) {
         final Bundle args = new Bundle();
-        args.putString(EXERCISE_NAME, exerciseName);
+        args.putString(EXERCISE_NAME, exercise.name());
         args.putString(ROUTINE_NAME, routine.name());
 
         final RoutineFragment frag = new RoutineFragment();
         frag.setArguments(args);
-        frag.setExercises(exercises);
 
         return frag;
     }
@@ -55,21 +50,26 @@ public class RoutineFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_routine, container, false);
         ButterKnife.bind(this, view);
 
+        final ServiceRead serviceRead = new ServiceRead(InMemoryDb.getInstance());
+
+        final String routineName = getArguments().getString(ROUTINE_NAME);
+        final Routine routine = Routine.valueOf(routineName);
+
         final String exerciseName = getArguments().getString(EXERCISE_NAME);
-        final Exercise exercise = StringUtils.isEmpty(exerciseName) ? exercises.get(0) : Exercise.valueOf(exerciseName);
+        final Exercise exercise;
+        // If we clicked on routine's name we have no exercise name
+        if (StringUtils.isEmpty(exerciseName)) {
+            exercise = serviceRead.getRoutineExercises(routine).get(0);
+        } else {
+            exercise = Exercise.valueOf(exerciseName);
+        }
 
         textExerciseName.setText(getString(R.string.exercise_and_label, exercise.name()));
 
         configureAndShowExercisesFragment();
-
-        final String routineName = getArguments().getString(ROUTINE_NAME);
-        exercisesFragment.updateExercises(new ServiceRead(InMemoryDb.getInstance()).getRoutineExercises(Routine.valueOf(routineName), exercise));
+        exercisesFragment.updateExercises(serviceRead.getRoutineExercises(routine, exercise));
 
         return view;
-    }
-
-    private void setExercises(final List<Exercise> exercises) {
-        this.exercises = exercises;
     }
 
     private void configureAndShowExercisesFragment() {

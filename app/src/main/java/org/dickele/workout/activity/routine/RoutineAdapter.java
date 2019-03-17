@@ -28,6 +28,6 @@ public class RoutineAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(final int exerciseIndex) {
-        return RoutineFragment.newInstance(routine, exercises, exercises.get(exerciseIndex).name());
+        return RoutineFragment.newInstance(routine, exercises.get(exerciseIndex));
     }
 }
