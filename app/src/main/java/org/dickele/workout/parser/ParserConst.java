@@ -22,6 +22,8 @@ public final class ParserConst {
 
     static final String REPS_SEPARATOR = ",";
 
+    static final String REPS_SEPARATOR_MULT = "x";
+
     public static final DateTimeFormatter WORKOUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 }

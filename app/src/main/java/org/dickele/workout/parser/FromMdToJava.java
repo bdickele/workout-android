@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -21,6 +22,7 @@ import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE_END;
 import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE_START;
 import static org.dickele.workout.parser.ParserConst.INDICATOR_WORKOUT;
 import static org.dickele.workout.parser.ParserConst.REPS_SEPARATOR;
+import static org.dickele.workout.parser.ParserConst.REPS_SEPARATOR_MULT;
 import static org.dickele.workout.parser.ParserConst.TABLE_AFTER_HEADER;
 import static org.dickele.workout.parser.ParserConst.TABLE_HEADER;
 import static org.dickele.workout.parser.ParserConst.WORKOUT_DATE_FORMATTER;
@@ -114,12 +116,36 @@ public final class FromMdToJava {
         final String reps = exerciseColumns.get(2);
         final String comment = exerciseColumns.get(3);
 
-        return WorkoutExercise.build(routine, Exercise.valueOf(exoName),
-                Arrays.stream(reps.split(REPS_SEPARATOR))
-                        .map(String::trim)
-                        .map(Integer::valueOf)
-                        .collect(toList()),
-                comment);
+        return WorkoutExercise.build(routine, Exercise.valueOf(exoName), extractReps(reps), comment);
+    }
+
+    /**
+     * Extract string standing for reps. It looks either like "13, 12, 12" or "6 x 5"
+     *
+     * @param s String standing for reps
+     * @return List of integer
+     */
+    private static List<Integer> extractReps(final String s) {
+        final String reps = s.replaceAll(" ", "");
+        if (StringUtils.isEmpty(reps)) {
+            return Collections.singletonList(0);
+        }
+
+        if (!reps.contains(REPS_SEPARATOR_MULT)) {
+            return Arrays.stream(reps.split(REPS_SEPARATOR))
+                    .map(Integer::valueOf)
+                    .collect(toList());
+        }
+
+        final int multiplicatorIndex = reps.indexOf(REPS_SEPARATOR_MULT);
+        final int op1 = Integer.valueOf(reps.substring(0, multiplicatorIndex));
+        final int op2 = Integer.valueOf(reps.substring(multiplicatorIndex + 1));
+
+        final List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < op1; i++) {
+            result.add(op2);
+        }
+        return result;
     }
 
     private static Routine extractRoutine(final String line) {

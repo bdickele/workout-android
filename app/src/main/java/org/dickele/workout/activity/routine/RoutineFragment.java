@@ -107,19 +107,18 @@ public class RoutineFragment extends Fragment {
                 .map(exercise -> new DataPoint(convertToDate(exercise.getDate()), exercise.getTotal()))
                 .collect(Collectors.toList()).toArray(new DataPoint[]{});
 
-        // set date label formatter
         graphView.getGridLabelRenderer().setLabelFormatter(
-                new DateAsXAxisLabelFormatter(getActivity(), new SimpleDateFormat("dd/MM/yyyy")));
-        graphView.getGridLabelRenderer().setNumHorizontalLabels(0);
+                new DateAsXAxisLabelFormatter(getActivity(), new SimpleDateFormat("dd/MM")));
+        graphView.getGridLabelRenderer().setNumHorizontalLabels(2);
+        //graphView.getGridLabelRenderer().setHorizontalLabelsVisible(false);
+        graphView.getGridLabelRenderer().setHumanRounding(true);
 
-        // set manual x bounds to have nice steps
         graphView.getViewport().setMinX(dataPoints[0].getX());
         graphView.getViewport().setMaxX(dataPoints[dataPoints.length - 1].getX());
         graphView.getViewport().setXAxisBoundsManual(true);
 
-        graphView.getGridLabelRenderer().setHumanRounding(true);
-
         final LineGraphSeries series = new LineGraphSeries<>(dataPoints);
+        series.setDrawDataPoints(true);
         graphView.addSeries(series);
     }
 
