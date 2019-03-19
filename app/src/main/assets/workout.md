@@ -388,7 +388,7 @@ Séance interrompue: trop tard et douleur vers l'épaule.
 |Exercice|Répétitions|Commentaire|
 |---|---|---|
 |B1|6, 6, 6, 6, 6, 6|Trop difficile|
-|A3|6, 6, 6, 6, 6, 6|Trop difficile|
+|A3|6, 6, 6, 6, 6, 6|Trop difficile, grosse pause|
 |A2|6, 6, 6, 6, 6, 6|Trop difficile|
 |C1|6, 6, 6, 6, 6, 6| |
 |E1d|7, 7, 7, 7, 7, 7| |
@@ -397,3 +397,113 @@ Séance interrompue: trop tard et douleur vers l'épaule.
 |G|32, 32, 32, 32, 32, 32| |
 |H|2, 2, 2, 2, 2, 2| |
 |K2|10, 10, 10| |
+
+## 23/05/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|6x6|Très difficile|
+|A3|6x6|Grosse pause|
+|A2|6x6|Très difficile|
+|C1|6x7| |
+|E1d|6x8| |
+|E1g|6x8| |
+|F|4x11| |
+|G|6x34| |
+|H|6x3| |
+|K2|3x11|Très difficile|
+
+## 27/05/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|7, 7, 7, 7, 7, 5|Toujours très difficile|
+|A3|7, 7, 7, 7, 7, 6|Toujours très difficile|
+|A2|6x7|Toujours très difficile|
+|C1|8, 8, 8, 8, 8, 7| |
+|E1d|6x9| |
+|E1g|6x9| |
+|F|4x12| |
+|G|6x36| |
+|H|6x4| |
+|K2|3x12| |
+
+## 30/05/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|7, 7, 7, 7, 7, 6|Ultra difficile|
+|A3|6x7|Ultra difficile |
+|A2|6x7|Ultra difficile|
+|C1|6x9| |
+|E1d|6x10| |
+|E1g|6x10| |
+|F|4x13| |
+|G|6x38| |
+|H|6x5| |
+|K2|5, 4, 3|Jambes plus rapprochées|
+
+## 03/06/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|8, 8, 8, 8, 8, 5| |
+|A3|6x8| |
+|A2|8, 8, 8, 8, 8, 6| |
+|C1|10, 10, 10, 10, 10, 7| |
+|E1d|6x10| |
+|E1g|6x10| |
+|F|0|Oublié de noter ?|
+|G|6x40| |
+|H|6, 6, 6, 5, 5, 5| |
+|K2|3x6| |
+
+## 06/06/2018
+
+Séance interrompue : trop tard et épuisé.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|8 ,8, 8, 8, 7, 5|Extrêmement dur|
+|A3|6x8|Extrêmement dur|
+|A2|6x8| |
+|C1|6x10| |
+|E1d|11, 11, 11, 10, 10, 10| |
+|E1g|11, 11, 11, 10, 10, 10| |
+|F|15, 15, 14, 14| |
+
+## 07/06/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|G|6x41| |
+|H|6x6| |
+|K2|7, 7, 5| |
+
+## 10/06/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|9, 9, 9, 8, 7, 6| |
+|A3|9, 9, 9, 8, 7, 7| |
+|A2|9, 9, 9, 9, 8, 8| |
+|C1|11, 11, 11, 10, 10, 10| |
+|E1d|6x11| |
+|E1g|6x11| |
+|F|4x15| |
+|G|6x43| |
+|H|7, 7, 7, 6, 6, 6| |
+|K2|8, 8, 6|Ecartement jambes légèrement supérieur à l'escabeau. Jambes fléchies.|
+
+## 13/06/2018
+
+Séance interrompue par manque de temps.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|9, 9, 9, 9, 9, 6| |
+|A3|9, 9, 9, 9, 9, 6| |
+|A2|6x9| |
+|C1|6x11| |
+|G|6x43| |
+|K2|9, 9, 8| |

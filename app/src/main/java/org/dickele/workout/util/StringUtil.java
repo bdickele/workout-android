@@ -11,10 +11,11 @@ public final class StringUtil {
     public static final DateTimeFormatter SIMPLE_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public static String getStringForTotalReps(final WorkoutExercise e) {
-        return e.getTotal() + " "
-                + getStringForDelta(e.getDeltaPreviousRoutineWorkout())
-                + " "
-                + getStringForDelta(e.getDeltaFirstRoutineWorkout());
+        return e.getTotal() == 0 ? "0" :
+                e.getTotal() + " "
+                        + getStringForDelta(e.getDeltaPreviousRoutineWorkout())
+                        + " "
+                        + getStringForDelta(e.getDeltaFirstRoutineWorkout());
     }
 
     private static String getStringForDelta(final int delta) {
