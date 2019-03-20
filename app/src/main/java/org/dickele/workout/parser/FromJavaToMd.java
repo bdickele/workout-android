@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.dickele.workout.parser.ParserConst.COLUMN_SEPARATOR;
+import static org.dickele.workout.parser.ParserConst.COMMA;
 import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE;
 import static org.dickele.workout.parser.ParserConst.INDICATOR_WORKOUT;
-import static org.dickele.workout.parser.ParserConst.REPS_SEPARATOR;
 import static org.dickele.workout.parser.ParserConst.TABLE_AFTER_HEADER;
 import static org.dickele.workout.parser.ParserConst.TABLE_HEADER;
 import static org.dickele.workout.parser.ParserConst.WORKOUT_DATE_FORMATTER;
@@ -72,7 +72,7 @@ public final class FromJavaToMd {
                 + COLUMN_SEPARATOR
                 + exercise.getReps().stream()
                 .map(Object::toString)
-                .collect(Collectors.joining(REPS_SEPARATOR + " "))
+                .collect(Collectors.joining(COMMA + " "))
                 + COLUMN_SEPARATOR
                 + (StringUtils.isEmpty(exercise.getComment()) ? " " : exercise.getComment())
                 + COLUMN_SEPARATOR;

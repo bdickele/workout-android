@@ -20,9 +20,11 @@ public final class ParserConst {
 
     static final String COLUMN_SEPARATOR_FOR_SPLITTING = "\\" + COLUMN_SEPARATOR;
 
-    static final String REPS_SEPARATOR = ",";
+    static final String SPACE = " ";
 
-    static final String REPS_SEPARATOR_MULT = "x";
+    static final String COMMA = ",";
+
+    static final String MULTIPLICATOR = "x";
 
     public static final DateTimeFormatter WORKOUT_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 

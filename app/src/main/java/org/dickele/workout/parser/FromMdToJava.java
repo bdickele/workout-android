@@ -14,15 +14,17 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 import static org.dickele.workout.parser.ParserConst.COLUMN_SEPARATOR_FOR_SPLITTING;
+import static org.dickele.workout.parser.ParserConst.COMMA;
 import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE;
 import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE_END;
 import static org.dickele.workout.parser.ParserConst.INDICATOR_ROUTINE_START;
 import static org.dickele.workout.parser.ParserConst.INDICATOR_WORKOUT;
-import static org.dickele.workout.parser.ParserConst.REPS_SEPARATOR;
-import static org.dickele.workout.parser.ParserConst.REPS_SEPARATOR_MULT;
+import static org.dickele.workout.parser.ParserConst.MULTIPLICATOR;
+import static org.dickele.workout.parser.ParserConst.SPACE;
 import static org.dickele.workout.parser.ParserConst.TABLE_AFTER_HEADER;
 import static org.dickele.workout.parser.ParserConst.TABLE_HEADER;
 import static org.dickele.workout.parser.ParserConst.WORKOUT_DATE_FORMATTER;
@@ -125,21 +127,28 @@ public final class FromMdToJava {
      * @param s String standing for reps
      * @return List of integer
      */
-    private static List<Integer> extractReps(final String s) {
-        final String reps = s.replaceAll(" ", "");
+    public static List<Integer> extractReps(final String s) {
+        final String reps = StringUtils.isEmpty(s) ? null : s.trim();
         if (StringUtils.isEmpty(reps)) {
             return Collections.singletonList(0);
         }
 
-        if (!reps.contains(REPS_SEPARATOR_MULT)) {
-            return Arrays.stream(reps.split(REPS_SEPARATOR))
-                    .map(Integer::valueOf)
-                    .collect(toList());
+        return Stream.of(reps.split(COMMA))
+                .flatMap(el -> Stream.of(el.split(SPACE))
+                        .filter(StringUtils::isNotEmpty))
+                .flatMap(el -> interpretRep(el).stream())
+                .collect(toList());
+    }
+
+    private static List<Integer> interpretRep(final String s) {
+        if (!s.contains(MULTIPLICATOR)) {
+            return Collections.singletonList(Integer.valueOf(s));
         }
 
-        final int multiplicatorIndex = reps.indexOf(REPS_SEPARATOR_MULT);
-        final int op1 = Integer.valueOf(reps.substring(0, multiplicatorIndex));
-        final int op2 = Integer.valueOf(reps.substring(multiplicatorIndex + 1));
+        final String trimmed = s.replaceAll(" ", "");
+        final int multiplicatorIndex = trimmed.indexOf(MULTIPLICATOR);
+        final int op1 = Integer.valueOf(trimmed.substring(0, multiplicatorIndex));
+        final int op2 = Integer.valueOf(trimmed.substring(multiplicatorIndex + 1));
 
         final List<Integer> result = new ArrayList<>();
         for (int i = 0; i < op1; i++) {
