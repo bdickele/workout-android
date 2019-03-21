@@ -28,6 +28,8 @@ public class FromMdToJavaTest {
         assertThat(FromMdToJava.extractReps("6, 3x2 4")).isEqualTo(Arrays.asList(6, 2, 2, 2, 4));
         assertThat(FromMdToJava.extractReps("6, 3x2 4 5")).isEqualTo(Arrays.asList(6, 2, 2, 2, 4, 5));
         assertThat(FromMdToJava.extractReps("6, 4 5")).isEqualTo(Arrays.asList(6, 4, 5));
+        assertThat(FromMdToJava.extractReps("6 3 x 2 4 5")).isEqualTo(Arrays.asList(6, 2, 2, 2, 4, 5));
+        assertThat(FromMdToJava.extractReps("6, 3 x 2 4 5")).isEqualTo(Arrays.asList(6, 2, 2, 2, 4, 5));
     }
 
     @Test

@@ -1,7 +1,7 @@
 package org.dickele.workout.data;
 
-import org.dickele.workout.reference.Exercise;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.ExerciseRef;
+import org.dickele.workout.reference.RoutineRef;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,9 +12,9 @@ import lombok.Data;
 @Data
 public class WorkoutExercise {
 
-    private Exercise exercise;
+    private ExerciseRef exercise;
 
-    private Routine routine;
+    private RoutineRef routine;
 
     private LocalDate date;
 
@@ -33,7 +33,7 @@ public class WorkoutExercise {
     // Delta compared to first workout of the same routine
     private int deltaFirstRoutineWorkout = 0;
 
-    public static WorkoutExercise build(final Routine routine, final Exercise exercise, final List<Integer> reps, final String comment) {
+    public static WorkoutExercise build(final RoutineRef routine, final ExerciseRef exercise, final List<Integer> reps, final String comment) {
         final WorkoutExercise workoutExercise = new WorkoutExercise();
         workoutExercise.routine = routine;
         workoutExercise.exercise = exercise;

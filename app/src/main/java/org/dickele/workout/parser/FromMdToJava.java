@@ -3,8 +3,8 @@ package org.dickele.workout.parser;
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
-import org.dickele.workout.reference.Exercise;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.ExerciseRef;
+import org.dickele.workout.reference.RoutineRef;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -49,7 +49,7 @@ public final class FromMdToJava {
     private static List<Workout> extractWorkoutsFromLines(final List<String> allLines) {
         final List<Workout> result = new ArrayList<>();
 
-        Routine currentRoutine = null;
+        RoutineRef currentRoutine = null;
         Workout currentWorkout = null;
         boolean dealingWithExercises = false;
 
@@ -61,7 +61,7 @@ public final class FromMdToJava {
 
             try {
                 // We found a routine
-                final Routine routine = extractRoutine(line);
+                final RoutineRef routine = extractRoutine(line);
                 if (routine != null) {
                     currentRoutine = routine;
                     currentWorkout = null;
@@ -110,7 +110,7 @@ public final class FromMdToJava {
         return Workout.enhanceAndSortWorkouts(result);
     }
 
-    private static WorkoutExercise extractExercise(final Routine routine, final String line) {
+    private static WorkoutExercise extractExercise(final RoutineRef routine, final String line) {
         final List<String> exerciseColumns = Arrays.stream(line.split(COLUMN_SEPARATOR_FOR_SPLITTING))
                 .map(String::trim)
                 .collect(toList());
@@ -118,12 +118,12 @@ public final class FromMdToJava {
         final String reps = exerciseColumns.get(2);
         final String comment = exerciseColumns.get(3);
 
-        return WorkoutExercise.build(routine, Exercise.valueOf(exoName), extractReps(reps), comment);
+        return WorkoutExercise.build(routine, ExerciseRef.valueOf(exoName), extractReps(reps), comment);
     }
 
     /**
      * Extract string standing for reps. It looks either like "13, 12, 12" or "6 x 5"
-     *
+     * or "6x4 3"
      * @param s String standing for reps
      * @return List of integer
      */
@@ -133,35 +133,67 @@ public final class FromMdToJava {
             return Collections.singletonList(0);
         }
 
-        return Stream.of(reps.split(COMMA))
+        final List<String> values = Stream.of(reps.split(COMMA))
                 .flatMap(el -> Stream.of(el.split(SPACE))
                         .filter(StringUtils::isNotEmpty))
-                .flatMap(el -> interpretRep(el).stream())
+                .flatMap(el -> {
+                    // If we have an element like "3x5" or "14x" or "x5" we have to split it
+                    final List<String> subList = new ArrayList<>();
+                    if (el.contains(MULTIPLICATOR)) {
+                        int index = el.indexOf(MULTIPLICATOR);
+                        if (index > 0) {
+                            subList.add(el.substring(0, index));
+                        }
+                        subList.add(MULTIPLICATOR);
+                        if (index < (el.length() - 1)) {
+                            subList.add(el.substring(index + 1));
+                        }
+                    } else {
+                        subList.add(el);
+                    }
+                    return subList.stream();
+                })
                 .collect(toList());
-    }
-
-    private static List<Integer> interpretRep(final String s) {
-        if (!s.contains(MULTIPLICATOR)) {
-            return Collections.singletonList(Integer.valueOf(s));
-        }
-
-        final String trimmed = s.replaceAll(" ", "");
-        final int multiplicatorIndex = trimmed.indexOf(MULTIPLICATOR);
-        final int op1 = Integer.valueOf(trimmed.substring(0, multiplicatorIndex));
-        final int op2 = Integer.valueOf(trimmed.substring(multiplicatorIndex + 1));
 
         final List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < op1; i++) {
-            result.add(op2);
+
+        int previousValue = 0;
+        boolean multiplicationInProgress = false;
+        for (final String value : values) {
+
+            final boolean multiplicator = value.equals(MULTIPLICATOR);
+            if (multiplicator) {
+                result.remove(result.size() - 1);
+                multiplicationInProgress = true;
+                continue;
+            }
+
+            final Integer currentValue = getInt(value);
+
+            if (multiplicationInProgress) {
+                for (int i = 0; i < previousValue; i++) {
+                    result.add(currentValue);
+                }
+                multiplicationInProgress = false;
+            } else {
+                result.add(currentValue);
+            }
+
+            previousValue = currentValue.intValue();
         }
+
         return result;
     }
 
-    private static Routine extractRoutine(final String line) {
+    private static Integer getInt(final String s) {
+        return Integer.valueOf(s);
+    }
+
+    private static RoutineRef extractRoutine(final String line) {
         if (line.startsWith(INDICATOR_ROUTINE)
                 && line.indexOf(INDICATOR_ROUTINE_START) > 0
                 && line.indexOf(INDICATOR_ROUTINE_END) > 0) {
-            return Routine.valueOf(line.substring(line.indexOf(INDICATOR_ROUTINE_START) + 1, line.indexOf(INDICATOR_ROUTINE_END)));
+            return RoutineRef.valueOf(line.substring(line.indexOf(INDICATOR_ROUTINE_START) + 1, line.indexOf(INDICATOR_ROUTINE_END)));
         }
         return null;
     }

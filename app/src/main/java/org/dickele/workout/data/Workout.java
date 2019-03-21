@@ -1,7 +1,7 @@
 package org.dickele.workout.data;
 
-import org.dickele.workout.reference.Exercise;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.ExerciseRef;
+import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.util.WorkoutChronologicalComparator;
 
 import java.time.LocalDate;
@@ -18,8 +18,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Workout {
 
-    // Routine/program, for instance "Level 3"
-    private Routine routine;
+    // RoutineRef/program, for instance "Level 3"
+    private RoutineRef routine;
 
     private LocalDate date;
 
@@ -27,7 +27,7 @@ public class Workout {
 
     private List<WorkoutExercise> exercises = new ArrayList<>();
 
-    public Workout(final Routine routine, final LocalDate date) {
+    public Workout(final RoutineRef routine, final LocalDate date) {
         this(routine, date, null, new ArrayList<>());
     }
 
@@ -36,7 +36,7 @@ public class Workout {
         exercises.add(exercise);
     }
 
-    public WorkoutExercise getExercise(final Exercise exercise) {
+    public WorkoutExercise getExercise(final ExerciseRef exercise) {
         return exercises.stream()
                 .filter(workoutExercise -> workoutExercise.getExercise() == exercise)
                 .findAny()
@@ -45,7 +45,6 @@ public class Workout {
 
     /**
      * Will add informations to data by doing some computations, these computations being not stored
-     *
      * @param workouts List of workouts to complete
      * @return Same list of workouts, sorted by chronological order
      */
@@ -59,16 +58,16 @@ public class Workout {
 
     private static void treatRoutineWorkouts(final List<Workout> workouts) {
         // Key = for instance exercise A2, Value = total number of reps the first time we did that exercise (for our current routine)
-        final Map<Exercise, Integer> mapExerciseToFirstTotalReps = new HashMap<>();
+        final Map<ExerciseRef, Integer> mapExerciseToFirstTotalReps = new HashMap<>();
         // Key = for instance exercise A2, Value = total number of reps the previous time we did that exercise (for our current routine)
-        final Map<Exercise, Integer> mapExerciseToPreviousReps = new HashMap<>();
+        final Map<ExerciseRef, Integer> mapExerciseToPreviousReps = new HashMap<>();
 
         workouts.sort(new WorkoutChronologicalComparator());
         workouts.forEach(workout ->
                 workout.getExercises().stream()
                         .filter(workoutExercise -> workoutExercise.getTotal() > 0)
                         .forEach(workoutExercise -> {
-                            final Exercise exercise = workoutExercise.getExercise();
+                            final ExerciseRef exercise = workoutExercise.getExercise();
                             final int totalReps = workoutExercise.getTotal();
 
                             mapExerciseToFirstTotalReps.putIfAbsent(exercise, totalReps);

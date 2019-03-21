@@ -6,7 +6,7 @@ import android.os.Bundle;
 import org.dickele.workout.R;
 import org.dickele.workout.activity.routine.RoutineActivity;
 import org.dickele.workout.activity.routine.RoutineFragment;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +29,7 @@ public class WorkoutActivity extends AppCompatActivity {
         pager.setCurrentItem(db.getNumberOfWorkouts() - 1);
     }
 
-    public void gotToRoutine(final Routine routine, final String exerciseName) {
+    public void gotToRoutine(final RoutineRef routine, final String exerciseName) {
         final Intent intent = new Intent(WorkoutActivity.this, RoutineActivity.class);
         intent.putExtra(RoutineFragment.ROUTINE_NAME, routine.name());
         intent.putExtra(RoutineFragment.EXERCISE_NAME, exerciseName);

@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
-import org.dickele.workout.reference.Exercise;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.ExerciseRef;
+import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 
@@ -22,11 +22,11 @@ public class RoutineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_routine);
 
         final String routineName = getIntent().getStringExtra(RoutineFragment.ROUTINE_NAME);
-        final Routine routine = Routine.valueOf(routineName);
+        final RoutineRef routine = RoutineRef.valueOf(routineName);
         setTitle(routine.getLabel(getApplicationContext()));
 
         final ServiceRead serviceRead = new ServiceRead(InMemoryDb.getInstance());
-        final List<Exercise> exercises = serviceRead.getRoutineExercises(routine);
+        final List<ExerciseRef> exercises = serviceRead.getRoutineExercises(routine);
 
         // ViewPager configuration
         final ViewPager pager = findViewById(R.id.routine_main_viewpager);

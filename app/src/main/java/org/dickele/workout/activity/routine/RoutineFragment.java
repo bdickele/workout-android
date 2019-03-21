@@ -15,8 +15,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
 import org.dickele.workout.activity.routine.exercise.RoutineExerciseFragment;
 import org.dickele.workout.data.WorkoutExercise;
-import org.dickele.workout.reference.Exercise;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.ExerciseRef;
+import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 
@@ -50,7 +50,7 @@ public class RoutineFragment extends Fragment {
         //
     }
 
-    static RoutineFragment newInstance(final Routine routine, final Exercise exercise) {
+    static RoutineFragment newInstance(final RoutineRef routine, final ExerciseRef exercise) {
         final Bundle args = new Bundle();
         args.putString(EXERCISE_NAME, exercise.name());
         args.putString(ROUTINE_NAME, routine.name());
@@ -69,15 +69,15 @@ public class RoutineFragment extends Fragment {
         final ServiceRead serviceRead = new ServiceRead(InMemoryDb.getInstance());
 
         final String routineName = getArguments().getString(ROUTINE_NAME);
-        final Routine routine = Routine.valueOf(routineName);
+        final RoutineRef routine = RoutineRef.valueOf(routineName);
 
         final String exerciseName = getArguments().getString(EXERCISE_NAME);
-        final Exercise exercise;
+        final ExerciseRef exercise;
         // If we clicked on routine's name we have no exercise name
         if (StringUtils.isEmpty(exerciseName)) {
             exercise = serviceRead.getRoutineExercises(routine).get(0);
         } else {
-            exercise = Exercise.valueOf(exerciseName);
+            exercise = ExerciseRef.valueOf(exerciseName);
         }
 
         textExerciseName.setText(getString(R.string.exercise_and_label, exercise.name()));

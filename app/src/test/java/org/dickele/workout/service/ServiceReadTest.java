@@ -1,8 +1,8 @@
 package org.dickele.workout.service;
 
 import org.apache.commons.io.FileUtils;
-import org.dickele.workout.reference.Exercise;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.ExerciseRef;
+import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +33,7 @@ public class ServiceReadTest {
         assertThat(searchResult.getIndex()).isEqualTo(5);
         assertThat(searchResult.getWorkout())
                 .extracting("routine", "date")
-                .containsExactly(Routine.L1_P2, LocalDate.of(2018, 2, 15));
+                .containsExactly(RoutineRef.L1_P2, LocalDate.of(2018, 2, 15));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class ServiceReadTest {
         assertThat(searchResult.getIndex()).isEqualTo(2);
         assertThat(searchResult.getWorkout())
                 .extracting("routine", "date")
-                .containsExactly(Routine.L1_P1, LocalDate.of(2018, 2, 5));
+                .containsExactly(RoutineRef.L1_P1, LocalDate.of(2018, 2, 5));
     }
 
     @Test
@@ -64,43 +64,43 @@ public class ServiceReadTest {
         assertThat(searchResult.getNumberOfWorkouts()).isEqualTo(6);
         assertThat(searchResult.getWorkout())
                 .extracting("routine", "date")
-                .containsExactly(Routine.L1_P1, LocalDate.of(2018, 2, 5));
+                .containsExactly(RoutineRef.L1_P1, LocalDate.of(2018, 2, 5));
     }
 
     @Test
     public void getRoutineExercises() {
-        assertThat(service.getRoutineExercises(Routine.L1_P2)).isEqualTo(
-                Arrays.asList(Exercise.A3, Exercise.A2, Exercise.D, Exercise.C6,
-                        Exercise.Eg, Exercise.Ed, Exercise.F, Exercise.G, Exercise.K2));
+        assertThat(service.getRoutineExercises(RoutineRef.L1_P2)).isEqualTo(
+                Arrays.asList(ExerciseRef.A3, ExerciseRef.A2, ExerciseRef.D, ExerciseRef.C6,
+                        ExerciseRef.Eg, ExerciseRef.Ed, ExerciseRef.F, ExerciseRef.G, ExerciseRef.K2));
     }
 
     @Test
     public void getRoutineExercises_2() {
-        assertThat(service.getRoutineExercises(Routine.L1_P2, Exercise.K2))
+        assertThat(service.getRoutineExercises(RoutineRef.L1_P2, ExerciseRef.K2))
                 .extracting("exercise", "date", "reps", "total")
                 .containsExactly(
-                        tuple(Exercise.K2, LocalDate.of(2018, 2, 12), Arrays.asList(14, 11), 25),
-                        tuple(Exercise.K2, LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0)
+                        tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 12), Arrays.asList(14, 11), 25),
+                        tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0)
                 );
     }
 
     @Test
     public void getExercises() {
-        assertThat(service.getExercises(Exercise.K2))
+        assertThat(service.getExercises(ExerciseRef.K2))
                 .extracting("exercise", "date", "reps", "total")
                 .containsExactly(
-                        tuple(Exercise.K2, LocalDate.of(2018, 2, 3), Arrays.asList(12, 12), 24),
-                        tuple(Exercise.K2, LocalDate.of(2018, 2, 5), Arrays.asList(13, 13), 26),
-                        tuple(Exercise.K2, LocalDate.of(2018, 2, 7), Arrays.asList(14, 14), 28),
-                        tuple(Exercise.K2, LocalDate.of(2018, 2, 12), Arrays.asList(14, 11), 25),
-                        tuple(Exercise.K2, LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0)
+                        tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 3), Arrays.asList(12, 12), 24),
+                        tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 5), Arrays.asList(13, 13), 26),
+                        tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 7), Arrays.asList(14, 14), 28),
+                        tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 12), Arrays.asList(14, 11), 25),
+                        tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0)
                 );
 
-        assertThat(service.getExercises(Exercise.K2).get(2))
+        assertThat(service.getExercises(ExerciseRef.K2).get(2))
                 .extracting("date", "reps", "total", "deltaPreviousRoutineWorkout", "deltaFirstRoutineWorkout")
                 .containsExactly(LocalDate.of(2018, 2, 7), Arrays.asList(14, 14), 28, 2, 4);
 
-        assertThat(service.getExercises(Exercise.K2).get(4))
+        assertThat(service.getExercises(ExerciseRef.K2).get(4))
                 .extracting("date", "reps", "total", "deltaPreviousRoutineWorkout", "deltaFirstRoutineWorkout")
                 .containsExactly(LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0, 0, 0);
     }

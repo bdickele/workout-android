@@ -1,13 +1,18 @@
 package org.dickele.workout.service;
 
+import org.dickele.workout.data.Routine;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
-import org.dickele.workout.reference.Exercise;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.ExerciseRef;
+import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -50,10 +55,10 @@ public class ServiceRead {
     }
 
     /**
-     * @param routine Routine (L1_P1, L2...)
+     * @param routine RoutineRef (L1_P1, L2...)
      * @return All exercises practiced during this routine
      */
-    public List<Exercise> getRoutineExercises(final Routine routine) {
+    public List<ExerciseRef> getRoutineExercises(final RoutineRef routine) {
         return db.getWorkouts().stream()
                 .filter(workout -> routine == workout.getRoutine())
                 .flatMap(workout -> workout.getExercises().stream())
@@ -62,7 +67,7 @@ public class ServiceRead {
                 .collect(Collectors.toList());
     }
 
-    public List<WorkoutExercise> getRoutineExercises(final Routine routine, final Exercise exercise) {
+    public List<WorkoutExercise> getRoutineExercises(final RoutineRef routine, final ExerciseRef exercise) {
         return db.getWorkouts().stream()
                 .filter(workout -> routine == workout.getRoutine())
                 .flatMap(workout -> workout.getExercises().stream())
@@ -70,11 +75,36 @@ public class ServiceRead {
                 .collect(Collectors.toList());
     }
 
-    public List<WorkoutExercise> getExercises(final Exercise exercise) {
+    public List<WorkoutExercise> getExercises(final ExerciseRef exercise) {
         return db.getWorkouts().stream()
                 .map(workout -> workout.getExercise(exercise))
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    public List<Routine> getRoutines() {
+        final List<Routine> r = new ArrayList<>();
+        db.getWorkouts().stream()
+                .collect(Collectors.groupingBy(Workout::getRoutine, LinkedHashMap::new,
+                        Collectors.mapping(w -> w, Collectors.toList())))
+                .forEach(((routineRef, workouts) -> {
+                    //TODO Moyen plus elegant de maintenir l'ordre des exercices ?
+                    final List<ExerciseRef> exerciseRefs = new ArrayList<>();
+                    final LocalDate firstDate = workouts.get(0).getDate();
+                    final LocalDate lastDate = workouts.get(workouts.size() - 1).getDate();
+                    final Map<ExerciseRef, List<WorkoutExercise>> mapExercises = new HashMap<>();
+                    workouts.forEach(workout ->
+                            workout.getExercises().forEach(workoutExercise -> {
+                                final ExerciseRef exerciseRef = workoutExercise.getExercise();
+                                if (!exerciseRefs.contains(exerciseRef)) {
+                                    exerciseRefs.add(exerciseRef);
+                                }
+                                mapExercises.getOrDefault(exerciseRef, new ArrayList<>()).add(workoutExercise);
+                            })
+                    );
+                    r.add(new Routine(routineRef, firstDate, lastDate, exerciseRefs, mapExercises));
+                }));
+        return r;
     }
 
     public List<LocalDate> getWorkoutDates() {

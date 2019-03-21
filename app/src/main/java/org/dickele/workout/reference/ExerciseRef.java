@@ -1,6 +1,6 @@
 package org.dickele.workout.reference;
 
-public enum Exercise {
+public enum ExerciseRef {
 
     A1,
     A2,

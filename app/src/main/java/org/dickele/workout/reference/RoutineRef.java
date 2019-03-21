@@ -6,7 +6,7 @@ import org.dickele.workout.R;
 
 import java.lang.reflect.Field;
 
-public enum Routine {
+public enum RoutineRef {
 
     L1_P1,
     L1_P2,

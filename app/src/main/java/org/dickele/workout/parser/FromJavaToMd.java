@@ -5,7 +5,7 @@ import android.content.Context;
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
-import org.dickele.workout.reference.Routine;
+import org.dickele.workout.reference.RoutineRef;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public final class FromJavaToMd {
 
     public static List<String> createLines(final List<Workout> workouts, final Context context) {
         final List<String> result = new ArrayList<>();
-        Routine previousRoutine = null;
+        RoutineRef previousRoutine = null;
         for (final Workout workout : workouts) {
             result.addAll(createWorkoutLines(previousRoutine, workout, context));
             previousRoutine = workout.getRoutine();
@@ -33,10 +33,10 @@ public final class FromJavaToMd {
         return result;
     }
 
-    private static List<String> createWorkoutLines(final Routine previousRoutine, final Workout workout, final Context context) {
+    private static List<String> createWorkoutLines(final RoutineRef previousRoutine, final Workout workout, final Context context) {
         final List<String> result = new ArrayList<>();
 
-        final Routine routine = workout.getRoutine();
+        final RoutineRef routine = workout.getRoutine();
         final String comment = workout.getComment();
 
         if (previousRoutine == null || previousRoutine != workout.getRoutine()) {
