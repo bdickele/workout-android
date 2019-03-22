@@ -8,7 +8,11 @@ import java.util.stream.Collectors;
 
 public final class StringUtil {
 
-    public static final DateTimeFormatter SIMPLE_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static final DateTimeFormatter DATE_FORMATTER_DDMMYYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    public static final DateTimeFormatter DATE_FORMATTER_DDMM = DateTimeFormatter.ofPattern("dd/MM");
+
+    public static final DateTimeFormatter DATE_FORMATTER_YYYY = DateTimeFormatter.ofPattern("yyyy");
 
     public static String getStringForTotalReps(final WorkoutExercise e) {
         return e.getTotal() == 0 ? "0" :

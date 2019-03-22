@@ -64,7 +64,7 @@ public class WorkoutFragment extends Fragment {
 
         textRoutine.setOnClickListener(v -> ((WorkoutActivity) getActivity()).gotToRoutine(workout.getRoutine(), ""));
 
-        textDate.setText(workout.getDate().format(StringUtil.SIMPLE_DATE_FORMATTER));
+        textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
         textRoutine.setText(workout.getRoutine().getLabel(getContext()));
         textComment.setText(workout.getComment());
         textComment.setVisibility(StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);

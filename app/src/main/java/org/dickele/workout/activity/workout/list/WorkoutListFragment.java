@@ -12,8 +12,10 @@ import org.dickele.workout.activity.workout.WorkoutFragment;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.util.ItemClickSupport;
+import org.dickele.workout.util.WorkoutAnteChronologicalComparator;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -26,7 +28,9 @@ public class WorkoutListFragment extends Fragment {
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_workout_list, container, false);
 
-        final List<Workout> workouts = InMemoryDb.getInstance().getWorkouts();
+        final List<Workout> workouts = InMemoryDb.getInstance().getWorkouts().stream()
+                .sorted(new WorkoutAnteChronologicalComparator())
+                .collect(Collectors.toList());
         final WorkoutListItemAdapter adapter = new WorkoutListItemAdapter(workouts);
         final RecyclerView recyclerView = view.findViewById(R.id.workouts_recycler_view);
         recyclerView.setAdapter(adapter);
@@ -40,8 +44,11 @@ public class WorkoutListFragment extends Fragment {
     }
 
     private void gotToWorkout(final int workoutIndex) {
+        // workoutIndex = index in that list that is in reversed order
+        // but we have to pass an index for a list sorted in chronological order
         final Intent intent = new Intent(getActivity(), WorkoutActivity.class);
-        intent.putExtra(WorkoutFragment.WORKOUT_INDEX, workoutIndex);
+        intent.putExtra(WorkoutFragment.WORKOUT_INDEX,
+                Math.abs(workoutIndex - InMemoryDb.getInstance().getNumberOfWorkouts() + 1));
         startActivity(intent);
     }
 }

@@ -33,7 +33,7 @@ class RoutineExerciseViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateExercise(final WorkoutExercise exercise) {
-        this.textDate.setText(exercise.getDate().format(StringUtil.SIMPLE_DATE_FORMATTER));
+        this.textDate.setText(exercise.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
 
         // If there is only one rep we'll display only line related to total
         final boolean displayReps = exercise.getReps().size() > 1;

@@ -19,6 +19,9 @@ class WorkoutListItemViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.workout_date)
     TextView textDate;
 
+    @BindView(R.id.workout_year)
+    TextView textYear;
+
     @BindView(R.id.workout_routine)
     TextView textRoutine;
 
@@ -33,7 +36,8 @@ class WorkoutListItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateWorkout(final Workout workout) {
-        this.textDate.setText(workout.getDate().format(StringUtil.SIMPLE_DATE_FORMATTER));
+        this.textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMM));
+        this.textYear.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_YYYY));
         this.textRoutine.setText(workout.getRoutine().getLabel(context));
         //TODO Couper pour n'avoir qu'une ligne
         this.textComment.setText(workout.getComment());

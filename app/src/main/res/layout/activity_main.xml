@@ -12,10 +12,11 @@
         android:id="@+id/activity_main_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#990000"
-        app:tabIndicatorColor="@color/colorPrimary"
-        app:tabTextColor="#D4E0F8"
-        app:tabSelectedTextColor="#fff" />
+        android:background="@color/mainMenuBackground"
+        app:tabIndicatorColor="@color/mainMenuSelectedColor"
+        app:tabTextColor="@color/mainMenuTextColor"
+        app:tabSelectedTextColor="@color/mainMenuSelectedColor"
+        android:elevation="10dp" />
 
     <androidx.viewpager.widget.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/activity_main_viewpager"
