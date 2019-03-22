@@ -453,7 +453,7 @@ Séance interrompue: trop tard et douleur vers l'épaule.
 |C1|10, 10, 10, 10, 10, 7| |
 |E1d|6x10| |
 |E1g|6x10| |
-|F|0|Oublié de noter ?|
+|F|4x14| |
 |G|6x40| |
 |H|6, 6, 6, 5, 5, 5| |
 |K2|3x6| |
@@ -507,3 +507,128 @@ Séance interrompue par manque de temps.
 |C1|6x11| |
 |G|6x43| |
 |K2|9, 9, 8| |
+
+## 16/06/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|10, 10, 10, 9, 9, 7| |
+|A3|10 10 10 9 9 7| |
+|A2|10 10 10 9 9 9| |
+|C1|12 12 12 11 11 10| |
+|E1d|12 12 12 11 11 11| |
+|E1g|12 12 12 11 11 11| |
+|F|16 16 15 15| |
+|G|6x44| |
+|H|7 7 7 7 7 6| |
+|K2|3x10| |
+
+## 19/06/2018
+
+Demi-séance catastrophe
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|10 10 10 10 10  8| |
+|A3|10 10 10 10 10 8| |
+|A2|10 10 10 10 10 9|Très dur dès la 2e série. Temps de récup. augmentés.|
+|C1|3x12|Douleurs après la 3e série : stop.|
+|G|6x45| |
+
+## 20/06/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E1d|6x12| |
+|E1g|6x12| |
+|F|4x16| |
+|K2|3x11| |
+
+## 24/06/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|6x10| |
+|A3|10 10 10 10 10 8|Très difficile, temps de récup. augmentés.|
+|A2|6x10|Temps de récup. augmentés.|
+|C1|6x12| |
+|E1d|13 13 13 12 12 12| |
+|E1g|13 13 13 12 12 12| |
+|F|17 17 16 16| |
+|G|6x46| |
+|H|7 7 7 7 6 6| |
+|K2|3x12| |
+
+## 27/06/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E1d|6x13| |
+|E1g|6x13| |
+|F|4x17|Du mal à reprendre mon souffle.|
+|G|6x47| |
+|H|7 7|Douleurs : stop après la 2e reprise.|
+|K2|3x13| |
+
+## 28/06/2018
+
+Si pas de vrais progrès à la prochaine séance, passer au niveau 3.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|11 11 11 10 10 7| |
+|A3|11 11 10 10 10 9|Difficile|
+|A2|11 11 10 10 10 10|Difficile|
+|C1|13 13 13 12 12| |
+
+## 01/07/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|5x11 10| |
+|A3|6x11| |
+|A2|6x11| |
+|C1|6x13| |
+|E1d|14 14 14 13 13 13| |
+|E1g|14 14 14 13 13 13| |
+|F|18 18 17 17| |
+|G|6x48| |
+|H|6x7| |
+|K2|3x14| |
+
+## 04/07/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|12 12 12 11 11 11| |
+|A3|12 12 11 11 11 11| |
+|A2|12 12 12 11 11 11| |
+|C1|14 14 14 13 13 13| |
+|G|6x49| |
+
+## 05/07/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E1d|6x14| |
+|E1g|6x14| |
+|F|4x18| |
+|H|0|Douleurs aux abdos : impossible.|
+|K2|3x15| |
+
+## 08/07/2018
+
+Passage au niveau 3 après cette séance.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|6x12| |
+|A3|6x12| |
+|A2|6x12| |
+|C1|6x14| |
+|E1d|15 15 15 14 14 14| |
+|E1g|15 15 15 14 14 14| |
+|F|4x19| |
+|G|6x50| |
+|H|8 8 8 7 7 7| |
+|K2|3x16| |
