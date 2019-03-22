@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import org.apache.commons.io.FileUtils;
+import org.dickele.workout.activity.routine.RoutineListActivity;
 import org.dickele.workout.activity.workout.WorkoutActivity;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.button_workouts).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, WorkoutActivity.class)));
+
+        findViewById(R.id.button_routines).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, RoutineListActivity.class)));
     }
 
     private void updateDataRelatedToWorkouts() {
@@ -82,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
             throw new Error("Could not load workout data");
         }
         this.workouts = InMemoryDb.getInstance().getWorkouts();
+        // Now that workouts are loaded, we can load routines
+        InMemoryDb.getInstance().loadRoutines();
+        //TODO Load exercises
+
         updateDataRelatedToWorkouts();
     }
 

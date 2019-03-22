@@ -8,9 +8,19 @@ import java.lang.reflect.Field;
 
 public enum RoutineRef {
 
-    L1_P1,
-    L1_P2,
-    L2;
+    L1_P1("1.1"),
+    L1_P2("1.2"),
+    L2("2");
+
+    private final String shortCode;
+
+    RoutineRef(final String shortCode) {
+        this.shortCode = shortCode;
+    }
+
+    public String getShortCode() {
+        return shortCode;
+    }
 
     public String getLabel(final Context context) {
         try {

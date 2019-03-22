@@ -36,4 +36,13 @@
         android:layout_marginBottom="8dp"
         android:text="@string/workouts" />
 
+    <Button
+        android:id="@+id/button_routines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/routines" />
+
 </LinearLayout>
