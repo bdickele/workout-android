@@ -9,29 +9,59 @@
         android:id="@+id/routine_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/routine_shape"
         android:minWidth="40dp"
         android:textStyle="bold" />
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/routine_first_date"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/routine_last_date"
+            <TextView
+                android:id="@+id/routine_first_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/first_workout" />
+
+            <TextView
+                android:id="@+id/routine_first_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/routine_last_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/last_workout" />
+
+            <TextView
+                android:id="@+id/routine_last_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
 
         <View
             android:id="@+id/divider"
