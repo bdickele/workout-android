@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 
 public class WorkoutFragment extends Fragment {
 
-    private static final String WORKOUT_INDEX = "WORKOUT_INDEX";
+    public static final String WORKOUT_INDEX = "WORKOUT_INDEX";
 
     private final InMemoryDb db;
 

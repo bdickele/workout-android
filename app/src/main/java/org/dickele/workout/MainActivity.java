@@ -1,24 +1,24 @@
 package org.dickele.workout;
 
-import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
-import android.widget.TextView;
+
+import com.google.android.material.tabs.TabLayout;
 
 import org.apache.commons.io.FileUtils;
-import org.dickele.workout.activity.routine.RoutineListActivity;
-import org.dickele.workout.activity.workout.WorkoutActivity;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,11 +28,26 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Workout> workouts = new ArrayList<>();
 
+    //TODO Chercher le nom dans le string.xml
+    private final List<String> pageNames = Arrays.asList(
+            "Sessions",
+            "Routines"
+    );
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.app_name);
         setContentView(R.layout.activity_main);
+
+        final ViewPager pager = findViewById(R.id.activity_main_viewpager);
+
+        pager.setAdapter(new MainPageAdapter(getSupportFragmentManager(), pageNames) {
+        });
+
+        final TabLayout tabs = findViewById(R.id.activity_main_tabs);
+        tabs.setupWithViewPager(pager);
+        tabs.setTabMode(TabLayout.MODE_FIXED);
 
         workouts = InMemoryDb.getInstance().getWorkouts();
         if (workouts == null || workouts.isEmpty()) {
@@ -40,18 +55,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             updateDataRelatedToWorkouts();
         }
-        findViewById(R.id.button_reload).setOnClickListener(v -> refreshWorkouts());
-
-        findViewById(R.id.button_workouts).setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, WorkoutActivity.class)));
-
-        findViewById(R.id.button_routines).setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, RoutineListActivity.class)));
     }
 
     private void updateDataRelatedToWorkouts() {
-        ((TextView) findViewById(R.id.text_workoutNumber)).setText(
-                getString(R.string.nb_workout_loaded, workouts.size()));
+        setTitle(R.string.app_name);
     }
 
     // ====================================================================================
@@ -59,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     // ====================================================================================
 
     private void refreshWorkouts() {
-        ((TextView) findViewById(R.id.text_workoutNumber)).setText(getString(R.string.loading_workouts));
+        //TODO Mettre un spinner pendant le chargement
         loadWorkoutFile(true);
     }
 

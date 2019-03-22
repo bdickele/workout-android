@@ -26,7 +26,7 @@ public class WorkoutActivity extends AppCompatActivity {
         pager.setAdapter(new WorkoutAdapter(getSupportFragmentManager(), db.getWorkouts()) {
             //
         });
-        pager.setCurrentItem(db.getNumberOfWorkouts() - 1);
+        pager.setCurrentItem(getIntent().getIntExtra(WorkoutFragment.WORKOUT_INDEX, 0));
     }
 
     public void gotToRoutine(final RoutineRef routine, final String exerciseName) {
