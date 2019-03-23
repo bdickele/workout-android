@@ -22,14 +22,4 @@ public enum RoutineRef {
         return shortCode;
     }
 
-    public String getLabel(final Context context) {
-        try {
-            final Field resourceField = R.string.class.getDeclaredField("routine_" + this.name());
-            final int resourceId = resourceField.getInt(resourceField);
-            return context.getString(resourceId);
-        } catch (final Exception e) {
-            //
-        }
-        return this.name();
-    }
 }

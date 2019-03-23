@@ -3,6 +3,7 @@ package org.dickele.workout.parser;
 import android.content.Context;
 
 import org.apache.commons.lang3.StringUtils;
+import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.reference.RoutineRef;
@@ -40,7 +41,7 @@ public final class FromJavaToMd {
         final String comment = workout.getComment();
 
         if (previousRoutine == null || previousRoutine != workout.getRoutine()) {
-            result.add(INDICATOR_ROUTINE + routine.getLabel(context) + " (" + routine.name() + ")");
+            result.add(INDICATOR_ROUTINE + ViewUtil.getRoutineLongName(context, routine) + " (" + routine.name() + ")");
             result.add(EMPTY_LINE);
         }
 

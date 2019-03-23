@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.dickele.workout.R;
+import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.util.StringUtil;
 
@@ -38,8 +39,7 @@ class WorkoutListItemViewHolder extends RecyclerView.ViewHolder {
     void updateWorkout(final Workout workout) {
         this.textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMM));
         this.textYear.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_YYYY));
-        this.textRoutine.setText(workout.getRoutine().getLabel(context));
-        //TODO Couper pour n'avoir qu'une ligne
+        this.textRoutine.setText(ViewUtil.getRoutineLongName(context, workout.getRoutine()));
         this.textComment.setText(workout.getComment());
     }
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
+import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
@@ -23,7 +24,7 @@ public class RoutineActivity extends AppCompatActivity {
 
         final String routineName = getIntent().getStringExtra(RoutineFragment.ROUTINE_NAME);
         final RoutineRef routine = RoutineRef.valueOf(routineName);
-        setTitle(routine.getLabel(getApplicationContext()));
+        setTitle(ViewUtil.getRoutineLongName(getApplicationContext(), routine));
 
         final ServiceRead serviceRead = new ServiceRead(InMemoryDb.getInstance());
         final List<ExerciseRef> exercises = serviceRead.getRoutineExercises(routine);

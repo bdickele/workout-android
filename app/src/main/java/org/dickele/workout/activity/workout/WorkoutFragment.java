@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
+import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.activity.workout.exercise.WorkoutExerciseFragment;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
@@ -65,7 +66,7 @@ public class WorkoutFragment extends Fragment {
         textRoutine.setOnClickListener(v -> ((WorkoutActivity) getActivity()).gotToRoutine(workout.getRoutine(), ""));
 
         textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
-        textRoutine.setText(workout.getRoutine().getLabel(getContext()));
+        textRoutine.setText(ViewUtil.getRoutineLongName(getContext(), workout.getRoutine()));
         textComment.setText(workout.getComment());
         textComment.setVisibility(StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);
 
