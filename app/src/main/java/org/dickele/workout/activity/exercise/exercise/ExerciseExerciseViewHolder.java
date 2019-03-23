@@ -1,4 +1,4 @@
-package org.dickele.workout.activity.routine.exercise;
+package org.dickele.workout.activity.exercise.exercise;
 
 import android.view.View;
 import android.widget.TextView;
@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-class RoutineExerciseViewHolder extends RecyclerView.ViewHolder {
+//TODO Mettre une classe commune pour ce ViewHolder et le RoutineExerciseViewHolder
+//TODO Et voir si on peut faire pareil pour le fragment et l'adapter et des xml
+class ExerciseExerciseViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.exercise_date)
     TextView textDate;
@@ -26,7 +28,7 @@ class RoutineExerciseViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.exercise_comment)
     TextView textComment;
 
-    RoutineExerciseViewHolder(final View itemView) {
+    ExerciseExerciseViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
 

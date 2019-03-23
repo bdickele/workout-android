@@ -4,7 +4,6 @@ import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,13 +17,16 @@ public class Exercise {
 
     private WorkoutExercise bestPerformance;
 
+    private List<WorkoutExercise> exercises;
+
     // Routines in which that exerciseRef has been practiced (in order)
     private final List<RoutineRef> routineRefs = new ArrayList<>();
 
     private final Map<RoutineRef, List<WorkoutExercise>> mapRoutineToExercises = new HashMap<>();
 
-    public Exercise(final ExerciseRef ref, final Collection<WorkoutExercise> allExercises) {
+    public Exercise(final ExerciseRef ref, final List<WorkoutExercise> allExercises) {
         this.ref = ref;
+        this.exercises = allExercises;
 
         allExercises.forEach(workoutExercise -> {
             if (bestPerformance == null || workoutExercise.getTotal() > bestPerformance.getTotal()) {

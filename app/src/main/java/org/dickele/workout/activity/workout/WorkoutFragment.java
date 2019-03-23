@@ -8,11 +8,11 @@ import android.widget.TextView;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
-import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.activity.workout.exercise.WorkoutExerciseFragment;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.util.StringUtil;
+import org.dickele.workout.util.ViewUtil;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

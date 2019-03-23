@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.dickele.workout.R;
-import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.util.StringUtil;
+import org.dickele.workout.util.ViewUtil;
 
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;

@@ -3,10 +3,10 @@ package org.dickele.workout.parser;
 import android.content.Context;
 
 import org.apache.commons.lang3.StringUtils;
-import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.reference.RoutineRef;
+import org.dickele.workout.util.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.List;

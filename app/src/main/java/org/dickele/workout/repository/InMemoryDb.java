@@ -10,7 +10,6 @@ import org.dickele.workout.reference.ExerciseRef;
 import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -77,7 +76,7 @@ public class InMemoryDb {
                         mapExerciseToWorkoutExercises.computeIfAbsent(workoutExercise.getExerciseRef(), k -> new ArrayList<>())
                                 .add(workoutExercise)));
         exercises = Stream.of(ExerciseRef.values())
-                .map(exerciseRef -> new Exercise(exerciseRef, mapExerciseToWorkoutExercises.getOrDefault(exerciseRef, Collections.emptyList())))
+                .map(exerciseRef -> new Exercise(exerciseRef, mapExerciseToWorkoutExercises.getOrDefault(exerciseRef, new ArrayList<>())))
                 .collect(Collectors.toList());
     }
 

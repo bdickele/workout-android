@@ -1,4 +1,4 @@
-package org.dickele.workout.activity;
+package org.dickele.workout.util;
 
 import android.content.Context;
 

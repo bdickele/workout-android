@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 
 public class RoutineExerciseFragment extends Fragment {
 
-    @BindView(R.id.routine_exercises_recycler_view)
+    @BindView(R.id.exercises_recycler_view)
     RecyclerView recyclerView;
 
     private RoutineExerciseAdapter adapter;
@@ -41,7 +41,7 @@ public class RoutineExerciseFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_routine_exercise_main, container, false);
+        final View view = inflater.inflate(R.layout.fragment_routine_exercises, container, false);
         ButterKnife.bind(this, view);
 
         adapter = new RoutineExerciseAdapter(this.exercises);

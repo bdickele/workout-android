@@ -1,5 +1,6 @@
 package org.dickele.workout.service;
 
+import org.dickele.workout.data.Exercise;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.reference.ExerciseRef;
@@ -75,6 +76,13 @@ public class ServiceRead {
                 .map(workout -> workout.getExercise(exercise))
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    public Exercise getExercise(final ExerciseRef exerciseRef) {
+        return InMemoryDb.getInstance().getExercises().stream()
+                .filter(exercise -> exerciseRef == exercise.getRef())
+                .findAny()
+                .orElse(InMemoryDb.getInstance().getExercises().get(0));
     }
 
     public List<LocalDate> getWorkoutDates() {

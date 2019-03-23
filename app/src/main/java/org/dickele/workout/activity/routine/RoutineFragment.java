@@ -7,9 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
@@ -19,13 +16,9 @@ import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
+import org.dickele.workout.util.GraphUtil;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -40,10 +33,10 @@ public class RoutineFragment extends Fragment {
 
     private RoutineExerciseFragment exercisesFragment;
 
-    @BindView(R.id.routine_exercise_name)
+    @BindView(R.id.exercise_name)
     TextView textExerciseName;
 
-    @BindView(R.id.routine_exercise_graph)
+    @BindView(R.id.exercise_graph)
     GraphView graphView;
 
     public RoutineFragment() {
@@ -84,53 +77,22 @@ public class RoutineFragment extends Fragment {
 
         final List<WorkoutExercise> routineExercises = serviceRead.getRoutineExercises(routine, exercise);
 
-        updateGraph(routineExercises);
+        GraphUtil.configureExercisesGraph(graphView, getActivity(), routineExercises);
 
         configureAndShowExercisesFragment();
+
         exercisesFragment.updateExercises(routineExercises);
 
         return view;
     }
 
     private void configureAndShowExercisesFragment() {
-        exercisesFragment = (RoutineExerciseFragment) getChildFragmentManager().findFragmentById(R.id.routine_exercises_frame_layout);
+        exercisesFragment = (RoutineExerciseFragment) getChildFragmentManager().findFragmentById(R.id.exercises_frame_layout);
         if (exercisesFragment == null) {
             exercisesFragment = new RoutineExerciseFragment();
             getChildFragmentManager().beginTransaction()
-                    .add(R.id.routine_exercises_frame_layout, exercisesFragment)
+                    .add(R.id.exercises_frame_layout, exercisesFragment)
                     .commit();
         }
-    }
-
-    private void updateGraph(final List<WorkoutExercise> routineExercises) {
-        final DataPoint[] dataPoints = routineExercises.stream()
-                .map(exercise -> new DataPoint(convertToDate(exercise.getDate()), exercise.getTotal()))
-                .collect(Collectors.toList()).toArray(new DataPoint[]{});
-
-        graphView.getGridLabelRenderer().setLabelFormatter(
-                new DateAsXAxisLabelFormatter(getActivity(), new SimpleDateFormat("dd/MM")));
-        graphView.getGridLabelRenderer().setNumHorizontalLabels(2);
-        //graphView.getGridLabelRenderer().setHorizontalLabelsVisible(false);
-        graphView.getGridLabelRenderer().setHumanRounding(true);
-
-        graphView.getViewport().setMinX(dataPoints[0].getX());
-        graphView.getViewport().setMaxX(dataPoints[dataPoints.length - 1].getX());
-        graphView.getViewport().setXAxisBoundsManual(true);
-
-        final LineGraphSeries series = new LineGraphSeries<>(dataPoints);
-        series.setDrawDataPoints(true);
-        graphView.addSeries(series);
-    }
-
-    private Date convertToDate(final LocalDate localDate) {
-        final Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, localDate.getYear());
-        c.set(Calendar.MONTH, localDate.getMonthValue() - 1);
-        c.set(Calendar.DAY_OF_MONTH, localDate.getDayOfMonth());
-        c.set(Calendar.HOUR, 0);
-        c.set(Calendar.MINUTE, 0);
-        c.set(Calendar.SECOND, 0);
-        c.set(Calendar.MILLISECOND, 0);
-        return c.getTime();
     }
 }

@@ -6,9 +6,9 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 
 import org.apache.commons.io.FileUtils;
-import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
+import org.dickele.workout.util.ViewUtil;
 
 import java.io.File;
 import java.io.InputStream;

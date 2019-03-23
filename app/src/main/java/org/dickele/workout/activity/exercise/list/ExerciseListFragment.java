@@ -1,11 +1,14 @@
 package org.dickele.workout.activity.exercise.list;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.dickele.workout.R;
+import org.dickele.workout.activity.exercise.ExerciseActivity;
+import org.dickele.workout.activity.exercise.ExerciseFragment;
 import org.dickele.workout.data.Exercise;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.util.ItemClickSupport;
@@ -37,11 +40,8 @@ public class ExerciseListFragment extends Fragment {
     }
 
     private void gotToExercise(final Exercise exercise) {
-        //TODO Aller a la page de l'exercice
-        /*
         final Intent intent = new Intent(getActivity(), ExerciseActivity.class);
         intent.putExtra(ExerciseFragment.EXERCISE_NAME, exercise.getRef().name());
         startActivity(intent);
-        */
     }
 }
