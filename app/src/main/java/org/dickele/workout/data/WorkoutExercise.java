@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 public class WorkoutExercise {
 
-    private ExerciseRef exercise;
+    private ExerciseRef exerciseRef;
 
     private RoutineRef routine;
 
@@ -33,10 +33,11 @@ public class WorkoutExercise {
     // Delta compared to first workout of the same routine
     private int deltaFirstRoutineWorkout = 0;
 
-    public static WorkoutExercise build(final RoutineRef routine, final ExerciseRef exercise, final List<Integer> reps, final String comment) {
+    public static WorkoutExercise build(final RoutineRef routine, final ExerciseRef exerciseRef,
+                                        final List<Integer> reps, final String comment) {
         final WorkoutExercise workoutExercise = new WorkoutExercise();
         workoutExercise.routine = routine;
-        workoutExercise.exercise = exercise;
+        workoutExercise.exerciseRef = exerciseRef;
         workoutExercise.reps = reps;
         workoutExercise.total = reps.stream().mapToInt(Integer::intValue).sum();
         workoutExercise.comment = comment;

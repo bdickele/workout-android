@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 
 import org.apache.commons.io.FileUtils;
+import org.dickele.workout.activity.ViewUtil;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 
@@ -28,20 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Workout> workouts = new ArrayList<>();
 
-    //TODO Chercher le nom dans le string.xml
-    private final List<String> pageNames = Arrays.asList(
-            "Sessions",
-            "Routines"
-    );
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.app_name);
         setContentView(R.layout.activity_main);
 
-        final ViewPager pager = findViewById(R.id.activity_main_viewpager);
+        final List<String> pageNames = Arrays.asList(
+                ViewUtil.getLabel(getApplicationContext(), "menu_workouts"),
+                ViewUtil.getLabel(getApplicationContext(), "menu_routines"),
+                ViewUtil.getLabel(getApplicationContext(), "menu_exercises"));
 
+        final ViewPager pager = findViewById(R.id.activity_main_viewpager);
         pager.setAdapter(new MainPageAdapter(getSupportFragmentManager(), pageNames) {
         });
 
@@ -65,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     // Workout loading
     // ====================================================================================
 
+    //TODO Menu avec option Recharger
     private void refreshWorkouts() {
         //TODO Mettre un spinner pendant le chargement
         loadWorkoutFile(true);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             if (file.exists()) {
                 LOGGER.log(Level.INFO, "Workout file found in the device => let's try to extract data");
                 try {
-                    InMemoryDb.getInstance().loadWorkouts(file);
+                    InMemoryDb.getInstance().loadData(file);
                     dataLoaded = true;
                 } catch (final Exception e) {
                     LOGGER.log(Level.WARNING, "Data from workout file could not be extracted");
@@ -93,9 +93,6 @@ public class MainActivity extends AppCompatActivity {
             throw new Error("Could not load workout data");
         }
         this.workouts = InMemoryDb.getInstance().getWorkouts();
-        // Now that workouts are loaded, we can load routines
-        InMemoryDb.getInstance().loadRoutines();
-        //TODO Load exercises
 
         updateDataRelatedToWorkouts();
     }
@@ -104,14 +101,13 @@ public class MainActivity extends AppCompatActivity {
         LOGGER.log(Level.INFO, "Let's try to create a workout file based on embedded one");
         try (final InputStream myInput = getBaseContext().getAssets().open(FILE_NAME, AssetManager.ACCESS_BUFFER)) {
             FileUtils.copyInputStreamToFile(myInput, targetFile);
-            //getBaseContext().getAssets().list("")
         } catch (final Exception e) {
             LOGGER.severe("Could not copy asset file " + FILE_NAME + " : " + e.getCause());
             return false;
         }
 
         try {
-            InMemoryDb.getInstance().loadWorkouts(targetFile);
+            InMemoryDb.getInstance().loadData(targetFile);
             return true;
         } catch (final Exception e) {
             LOGGER.severe("Data from workout file could not be extracted : " + e.getCause());

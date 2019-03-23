@@ -73,7 +73,7 @@ public class RoutineFragment extends Fragment {
 
         final String exerciseName = getArguments().getString(EXERCISE_NAME);
         final ExerciseRef exercise;
-        // If we clicked on routine's name we have no exercise name
+        // If we clicked on routine's name we have no exerciseRef name
         if (StringUtils.isEmpty(exerciseName)) {
             exercise = serviceRead.getRoutineExercises(routine).get(0);
         } else {

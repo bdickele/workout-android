@@ -69,7 +69,7 @@ public final class FromJavaToMd {
 
     private static String createExerciseLine(final WorkoutExercise exercise) {
         return COLUMN_SEPARATOR
-                + exercise.getExercise().name()
+                + exercise.getExerciseRef().name()
                 + COLUMN_SEPARATOR
                 + exercise.getReps().stream()
                 .map(Object::toString)

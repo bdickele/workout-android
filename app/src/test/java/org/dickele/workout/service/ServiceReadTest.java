@@ -77,7 +77,7 @@ public class ServiceReadTest {
     @Test
     public void getRoutineExercises_2() {
         assertThat(service.getRoutineExercises(RoutineRef.L1_P2, ExerciseRef.K2))
-                .extracting("exercise", "date", "reps", "total")
+                .extracting("exerciseRef", "date", "reps", "total")
                 .containsExactly(
                         tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 12), Arrays.asList(14, 11), 25),
                         tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 15), Collections.singletonList(0), 0)
@@ -87,7 +87,7 @@ public class ServiceReadTest {
     @Test
     public void getExercises() {
         assertThat(service.getExercises(ExerciseRef.K2))
-                .extracting("exercise", "date", "reps", "total")
+                .extracting("exerciseRef", "date", "reps", "total")
                 .containsExactly(
                         tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 3), Arrays.asList(12, 12), 24),
                         tuple(ExerciseRef.K2, LocalDate.of(2018, 2, 5), Arrays.asList(13, 13), 26),

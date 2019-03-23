@@ -38,7 +38,7 @@ public class Workout {
 
     public WorkoutExercise getExercise(final ExerciseRef exercise) {
         return exercises.stream()
-                .filter(workoutExercise -> workoutExercise.getExercise() == exercise)
+                .filter(workoutExercise -> workoutExercise.getExerciseRef() == exercise)
                 .findAny()
                 .orElse(null);
     }
@@ -57,9 +57,9 @@ public class Workout {
     }
 
     private static void treatRoutineWorkouts(final List<Workout> workouts) {
-        // Key = for instance exercise A2, Value = total number of reps the first time we did that exercise (for our current routine)
+        // Key = for instance exerciseRef A2, Value = total number of reps the first time we did that exerciseRef (for our current routine)
         final Map<ExerciseRef, Integer> mapExerciseToFirstTotalReps = new HashMap<>();
-        // Key = for instance exercise A2, Value = total number of reps the previous time we did that exercise (for our current routine)
+        // Key = for instance exerciseRef A2, Value = total number of reps the previous time we did that exerciseRef (for our current routine)
         final Map<ExerciseRef, Integer> mapExerciseToPreviousReps = new HashMap<>();
 
         workouts.sort(new WorkoutChronologicalComparator());
@@ -67,7 +67,7 @@ public class Workout {
                 workout.getExercises().stream()
                         .filter(workoutExercise -> workoutExercise.getTotal() > 0)
                         .forEach(workoutExercise -> {
-                            final ExerciseRef exercise = workoutExercise.getExercise();
+                            final ExerciseRef exercise = workoutExercise.getExerciseRef();
                             final int totalReps = workoutExercise.getTotal();
 
                             mapExerciseToFirstTotalReps.putIfAbsent(exercise, totalReps);

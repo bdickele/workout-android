@@ -1,5 +1,6 @@
 package org.dickele.workout;
 
+import org.dickele.workout.activity.exercise.list.ExerciseListFragment;
 import org.dickele.workout.activity.routine.list.RoutineListFragment;
 import org.dickele.workout.activity.workout.list.WorkoutListFragment;
 
@@ -32,6 +33,8 @@ public class MainPageAdapter extends FragmentPagerAdapter {
                 return new WorkoutListFragment();
             case 1:
                 return new RoutineListFragment();
+            case 2:
+                return new ExerciseListFragment();
             default:
                 return new WorkoutListFragment();
         }

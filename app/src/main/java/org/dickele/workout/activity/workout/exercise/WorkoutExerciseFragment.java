@@ -53,7 +53,7 @@ public class WorkoutExerciseFragment extends Fragment {
         ItemClickSupport.addTo(recyclerView, R.layout.fragment_workout_exercise_item)
                 .setOnItemClickListener((RecyclerView recyclerView, int position, View v) -> {
                     final WorkoutExercise workoutExercise = exercises.get(position);
-                    ((WorkoutActivity) v.getContext()).gotToRoutine(workoutExercise.getRoutine(), workoutExercise.getExercise().name());
+                    ((WorkoutActivity) v.getContext()).gotToRoutine(workoutExercise.getRoutine(), workoutExercise.getExerciseRef().name());
                 });
 
         return view;

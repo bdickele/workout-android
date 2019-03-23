@@ -13,9 +13,6 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Binds a view (= workout view) and a list of data (= list of workouts)
- */
 public class RoutineExerciseAdapter extends RecyclerView.Adapter<RoutineExerciseViewHolder> {
 
     private final List<WorkoutExercise> exercises;

@@ -33,7 +33,7 @@ class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateExercise(final WorkoutExercise exercise) {
-        this.textName.setText(exercise.getExercise().name());
+        this.textName.setText(exercise.getExerciseRef().name());
         this.textReps.setText(StringUtil.getStringForReps(exercise.getReps()));
 
         this.textTotal.setVisibility(exercise.getTotal() == 0 ? View.GONE : View.VISIBLE);

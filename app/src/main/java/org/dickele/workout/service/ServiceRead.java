@@ -57,7 +57,7 @@ public class ServiceRead {
         return db.getWorkouts().stream()
                 .filter(workout -> routine == workout.getRoutine())
                 .flatMap(workout -> workout.getExercises().stream())
-                .map(WorkoutExercise::getExercise)
+                .map(WorkoutExercise::getExerciseRef)
                 .distinct()
                 .collect(Collectors.toList());
     }
@@ -66,7 +66,7 @@ public class ServiceRead {
         return db.getWorkouts().stream()
                 .filter(workout -> routine == workout.getRoutine())
                 .flatMap(workout -> workout.getExercises().stream())
-                .filter(workoutExercise -> exercise == workoutExercise.getExercise())
+                .filter(workoutExercise -> exercise == workoutExercise.getExerciseRef())
                 .collect(Collectors.toList());
     }
 

@@ -1,5 +1,6 @@
 package org.dickele.workout.repository;
 
+import org.dickele.workout.data.Exercise;
 import org.dickele.workout.data.Routine;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
@@ -9,11 +10,14 @@ import org.dickele.workout.reference.ExerciseRef;
 import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class InMemoryDb {
 
@@ -24,6 +28,8 @@ public class InMemoryDb {
 
     private List<Routine> routines;
 
+    private List<Exercise> exercises;
+
     private InMemoryDb() {
         //
     }
@@ -32,32 +38,47 @@ public class InMemoryDb {
         return INSTANCE;
     }
 
-    public void loadWorkouts(final File file) throws Exception {
+    public void loadData(final File file) throws Exception {
         workouts = FromMdToJava.extractWorkoutsFromFile(file);
+        loadRoutines();
+        loadExercises();
     }
 
-    public void loadRoutines() {
-        routines = new ArrayList<>();
-        workouts.stream()
+    private void loadRoutines() {
+        routines = workouts.stream()
                 .collect(Collectors.groupingBy(Workout::getRoutine, LinkedHashMap::new,
                         Collectors.mapping(w -> w, Collectors.toList())))
-                .forEach(((routineRef, workouts) -> {
-                    //TODO Moyen plus elegant de maintenir l'ordre des exercices ?
+                .values()
+                .stream()
+                .map(routineWorkouts -> {
+                    // Moyen plus elegant de maintenir l'ordre des exercices ?
                     final List<ExerciseRef> exerciseRefs = new ArrayList<>();
-                    final LocalDate firstDate = workouts.get(0).getDate();
-                    final LocalDate lastDate = workouts.get(workouts.size() - 1).getDate();
+                    final LocalDate firstDate = routineWorkouts.get(0).getDate();
+                    final LocalDate lastDate = routineWorkouts.get(routineWorkouts.size() - 1).getDate();
                     final Map<ExerciseRef, List<WorkoutExercise>> mapExercises = new HashMap<>();
                     workouts.forEach(workout ->
                             workout.getExercises().forEach(workoutExercise -> {
-                                final ExerciseRef exerciseRef = workoutExercise.getExercise();
+                                final ExerciseRef exerciseRef = workoutExercise.getExerciseRef();
                                 if (!exerciseRefs.contains(exerciseRef)) {
                                     exerciseRefs.add(exerciseRef);
                                 }
                                 mapExercises.getOrDefault(exerciseRef, new ArrayList<>()).add(workoutExercise);
                             })
                     );
-                    routines.add(new Routine(routineRef, firstDate, lastDate, exerciseRefs, mapExercises));
-                }));
+                    return new Routine(routineWorkouts.get(0).getRoutine(), firstDate, lastDate, exerciseRefs, mapExercises);
+                })
+                .collect(Collectors.toList());
+    }
+
+    private void loadExercises() {
+        final Map<ExerciseRef, List<WorkoutExercise>> mapExerciseToWorkoutExercises = new EnumMap<>(ExerciseRef.class);
+        workouts.forEach(workout ->
+                workout.getExercises().forEach(workoutExercise ->
+                        mapExerciseToWorkoutExercises.computeIfAbsent(workoutExercise.getExerciseRef(), k -> new ArrayList<>())
+                                .add(workoutExercise)));
+        exercises = Stream.of(ExerciseRef.values())
+                .map(exerciseRef -> new Exercise(exerciseRef, mapExerciseToWorkoutExercises.getOrDefault(exerciseRef, Collections.emptyList())))
+                .collect(Collectors.toList());
     }
 
     public List<Workout> getWorkouts() {
@@ -66,6 +87,10 @@ public class InMemoryDb {
 
     public List<Routine> getRoutines() {
         return routines;
+    }
+
+    public List<Exercise> getExercises() {
+        return exercises;
     }
 
     public Workout getWorkout(final int i) {

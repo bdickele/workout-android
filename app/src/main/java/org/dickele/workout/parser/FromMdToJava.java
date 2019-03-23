@@ -102,7 +102,7 @@ public final class FromMdToJava {
                 final WorkoutExercise workoutExercise = extractExercise(currentWorkout.getRoutine(), line);
                 currentWorkout.addExercise(workoutExercise);
             } catch (final Exception e) {
-                LOGGER.severe("Error while extracting workout exercise for line " + line + " : " + e.getCause());
+                LOGGER.severe("Error while extracting workout exerciseRef for line " + line + " : " + e.getCause());
                 throw e;
             }
         }
