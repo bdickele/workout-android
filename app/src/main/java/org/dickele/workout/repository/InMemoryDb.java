@@ -77,6 +77,7 @@ public class InMemoryDb {
                                 .add(workoutExercise)));
         exercises = Stream.of(ExerciseRef.values())
                 .map(exerciseRef -> new Exercise(exerciseRef, mapExerciseToWorkoutExercises.getOrDefault(exerciseRef, new ArrayList<>())))
+                .filter(exercise -> !exercise.getExercises().isEmpty())
                 .collect(Collectors.toList());
     }
 
