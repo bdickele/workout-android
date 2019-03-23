@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 
@@ -30,9 +29,6 @@ public class ExerciseFragment extends Fragment {
 
     private ExerciseExerciseFragment exercisesFragment;
 
-    @BindView(R.id.exercise_name)
-    TextView textExerciseName;
-
     @BindView(R.id.exercise_graph)
     GraphView graphView;
 
@@ -57,8 +53,6 @@ public class ExerciseFragment extends Fragment {
 
         final ExerciseRef exerciseRef = ExerciseRef.valueOf(getArguments().getString(ExerciseFragment.EXERCISE_NAME));
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
-
-        textExerciseName.setText(getString(R.string.exercise_and_label, exercise.getRef().name()));
 
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 

@@ -3,8 +3,14 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#000000</color>
+
+    <color name="screenBackground">#ddd</color>
+
     <color name="mainMenuBackground">#800000</color>
     <color name="mainMenuSelectedColor">#ffffff</color>
     <color name="mainMenuTextColor">#bbbbbb</color>
+
+    <color name="shapeBackground">#333300</color>
+    <color name="shapeForeground">#fff</color>
 
 </resources>

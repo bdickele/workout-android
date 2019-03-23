@@ -14,9 +14,8 @@
     <string name="first_workout">Première séance :</string>
     <string name="last_workout">Dernière séance :</string>
     <string name="exercise_and_label">Exercice %1$s</string>
-    <string name="exercise_difficulty_label">Difficulté :</string>
-    <string name="exercise_best_performance_label">Record :</string>
-    <string name="exercise_best_performance">%1$d le %2$s</string>
+    <string name="exercise_difficulty_label">Difficulté</string>
+    <string name="exercise_best_performance_label">Record</string>
 
     <string name="routine_L1_P1">Niveau 1 - programme 1</string>
     <string name="routine_L1_P2">Niveau 1 - programme 2</string>
