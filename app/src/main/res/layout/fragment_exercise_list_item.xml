@@ -38,7 +38,15 @@
             android:layout_marginTop="4dp"
             android:text="@string/exercise_difficulty_label" />
 
-
+        <ImageView
+            android:id="@+id/exercise_difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/exercise_difficulty_label"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/exercise_difficulty_label"
+            android:src="@mipmap/baseline_looks_1_black_18" />
+        <!--
         <TextView
             android:id="@+id/exercise_difficulty"
             android:layout_width="wrap_content"
@@ -46,7 +54,7 @@
             android:layout_alignBottom="@id/exercise_difficulty_label"
             android:layout_marginLeft="8dp"
             android:layout_toRightOf="@id/exercise_difficulty_label" />
-
+-->
         <TextView
             android:id="@+id/exercise_best_performance_label"
             android:layout_width="wrap_content"
