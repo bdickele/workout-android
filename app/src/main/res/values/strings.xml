@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">My Workout</string>
     <string name="loading_data">Chargement des données&#8230;</string>
-    <string name="reload">Recharger</string>
     <string name="workouts">Sessions</string>
     <string name="routine">Programme</string>
     <string name="routines">Programmes</string>
     <string name="exercises">Exercices</string>
+    <string name="more">Plus</string>
+    <string name="reload">Recharger</string>
+    <string name="parameters">Paramètres</string>
 
     <string name="menu_workouts">Sessions</string>
     <string name="menu_routines">Progr.</string>

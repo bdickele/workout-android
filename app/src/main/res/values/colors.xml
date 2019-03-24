@@ -4,9 +4,9 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#000000</color>
 
-    <color name="screenBackground">#ddd</color>
+    <color name="screenBackground">#eee</color>
 
-    <color name="mainMenuBackground">#800000</color>
+    <color name="mainMenuBackground">#2F4F4F</color>
     <color name="mainMenuSelectedColor">#ffffff</color>
     <color name="mainMenuTextColor">#bbbbbb</color>
 

@@ -1,28 +1,21 @@
+- Refactoring item exercice
 
-Ajouter description exercice dans 
-- liste des exercices
-- fiche exercice
+- Layout fiche exercice
+    - Ajouter difficulté 
+    - Ajouter description
+    - Toolbar avec nom de l'exercice
 
-Ajouter difficulté exercice dans fiche exercice
+- Layout liste routines
 
-Refactoring item exercice
+- Layout liste sessions
 
-Layout liste routines
+- Ecran paramètres :
+    - sauvegarde de l'adresse email
+    - envoi des sessions au format MD
 
-Layout liste sessions
+- Couleur de la barre de navigation tout en bas
 
-Toolbar personnalisé avec :
-- recharger
-    - implémenter recharge
-- paramètres
+- Finir RoutineRef
+- Compléter libellé routines dans string.xml
 
-Ecran paramètres :
-- sauvegarde de l'adresse email
-- envoi des sessions au format MD
-
-Couleur de la barre de navigation tout en bas
-
-Finir RoutineRef
-Compléter libellé routines dans string.xml
-
-Mise à jour workout.md
+- Mise à jour workout.md

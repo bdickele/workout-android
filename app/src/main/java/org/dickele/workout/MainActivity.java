@@ -2,6 +2,8 @@ package org.dickele.workout;
 
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -19,6 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,13 +49,34 @@ public class MainActivity extends AppCompatActivity {
 
         final TabLayout tabs = findViewById(R.id.activity_main_tabs);
         tabs.setupWithViewPager(pager);
-        tabs.setTabMode(TabLayout.MODE_FIXED);
 
+        // Let's load the data
         workouts = InMemoryDb.getInstance().getWorkouts();
         if (workouts == null || workouts.isEmpty()) {
             loadWorkoutFile(false);
         } else {
             updateDataRelatedToWorkouts();
+        }
+
+        // Configuration of toolbar_main
+        final Toolbar toolbar = findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_main_reload:
+                reloadWorkouts();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -64,13 +88,12 @@ public class MainActivity extends AppCompatActivity {
     // Workout loading
     // ====================================================================================
 
-    //TODO Menu avec option Recharger
-    private void refreshWorkouts() {
-        //TODO Mettre un spinner pendant le chargement
+    private void reloadWorkouts() {
         loadWorkoutFile(true);
     }
 
     private void loadWorkoutFile(final boolean refresh) {
+        //TODO Mettre un spinner pendant le chargement
         final File file = new File(getBaseContext().getFilesDir(), FILE_NAME);
         boolean dataLoaded = false;
         if (!refresh) {
