@@ -632,3 +632,531 @@ Passage au niveau 3 après cette séance.
 |G|6x50| |
 |H|8 8 8 7 7 7| |
 |K2|3x16| |
+
+# Niveau 3 (L3)
+
+## 11/07/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x4| |
+|A4|6x4|Pieds sur la 1ère marche de l'escabeau|
+|A2|6x4| |
+|C2|6x4| |
+|E3d|6x4| |
+|E3g|6x4| |
+|F|4x4| |
+|G|6x51| |
+|H|6x8| |
+|K2|3x10|Pieds rapprochés, presque joints, jambes pliées|
+
+## 15/07/2018
+
+A Montpellier.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x5| |
+|A4|6x5| |
+|A2|6x5| |
+|C2|6x5| |
+|E3d|6x5| |
+|E3g|6x5| |
+|F|4x5| |
+|G|6x52| |
+|H|9 9 9 8 8 5| |
+|K2|3x11| |
+
+## 17/07/2018
+
+A Montpellier.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x6| |
+|A4|6x6| |
+|A2|6x6| |
+|C2|6x6| |
+|E3d|6x6| |
+|E3g|6x6| |
+|F|4x6| |
+|G|6x53| |
+|H|5x9 6| |
+|K2|3x12| |
+
+## 19/07/2018
+
+A Montpellier.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x7| |
+|A4|6x7| |
+|A2|6x7| |
+|C2|6x7| |
+|E3d|6x7|Douloureux|
+|E3g|6x7|Douloureux|
+|F|4x7| |
+|G|6x54|Temps de récup. allongés|
+|H|6x9|Temps de récup. allongés|
+|K2|3x13| |
+
+## 22/07/2018
+
+A Montpellier.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x8| |
+|A4|6x8| |
+|A2|6x8| |
+|C2|6x8| |
+|E3d|6x8| |
+|E3g|6x8| |
+|F|4x8| |
+|G|6x55| |
+|H|10 10 10 9|Stop, à bout de force|
+|K2|3x14| |
+
+## 31/07/2018
+
+A Montpellier. Break d'une semaine après le séjour en Irlande.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x7| |
+|A4|6x7| |
+|A2|6x7| |
+|C2|6x7| |
+|E3d|6x7| |
+|E3g|6x7| |
+|F|4x7| |
+|G|6x54| |
+|H|6x9|Temps de récup. allongés|
+|K2|3x13| |
+
+## 04/08/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x8| |
+|A4|6x8| |
+|A2|6x8| |
+|C2|6x8| |
+|E3d|6x8| |
+|E3g|6x8| |
+|F|4x8| |
+|G|6x55| |
+|H|10 10 10 10 6 5| |
+|K2|3x14| |
+
+## 06/08/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x9| |
+|A4|6x9| |
+|A2|6x9| |
+|C2|6x9| |
+|E3d|6x9| |
+|E3g|6x9| |
+|F|4x9| |
+|G|6x56| |
+|H|0|Zappé, trop mal aux abdos|
+|K2|3x15| |
+
+## 09/08/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x10| |
+|A4|6x10| |
+|A2|6x10| |
+|C2|6x10| |
+|E3d|6x10| |
+|E3g|6x10| |
+|F|4x10| |
+|G|6x57| |
+|H|10 10 10 10 8 6|Temps de récup. allongés|
+|K2|3x8|Jambes moins pliées|
+
+## 13/08/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|5x11 8| |
+|A4|11 11 11 8 8 7| |
+|A2|11 11 11 10 10 10| |
+|C2|11 11 11 10 9 8| |
+|G|6x58| |
+|K2|3x9| |
+
+## 14/08/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E3d|11 11 11 10 10 10| |
+|E3g|11 11 11 10 10 10| |
+|F|4x11| |
+|H|10 10 10 8 3 4|Très mal aux abdos|
+
+## 17/08/2018
+
+Vérification hauteur pour A4 : chaise à 43cm et marche à 23cm : différence de 20cm. Ce qui correspondrait à un exercice entre A5 et A6.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x11| |
+|A4|6x11| |
+|A2|6x11| |
+|C2|6x11|Très dur|
+|G|6x59| |
+|K2|3x9| |
+
+## 18/08/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E3d|6x11|Très dur|
+|E3g|6x11|Très dur|
+|F|4x12| |
+|H|10 10 10 10 9 7|Temps de récup. allongés|
+
+## 22/08/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|12 12 12 11 11 9| |
+|A4|12 12 12 11 9 7| |
+|A2|12 12 12 11 11 11| |
+|C2|12 12 12 11 11 9| |
+|G|6x60| |
+|K2|3x11| |
+
+## 23/08/2018
+
+Demi-séance catastrophe : trop fatigué.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E3d|12 12 12 11 8| |
+|E3g|12 12 6| |
+|F|13 13 12 12| |
+|H|0|Trop mal aux abdos : zappé.|
+
+## 26/08/2018
+
+Je passe au niveau 4 car :
+- j'ai atteinds l'objectif à B2
+- les séances sont trop longues et pénibles
+- malgré l'allongement des temps de récup. je n'atteinds plus certains objectifs
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B2|6x12| |
+|A5|12 12 12 12 10 10| |
+|A2|6x12| |
+|C2|5x12 10| |
+|E3d|5x12 9| |
+|E3g|5x12 9| |
+|F|4x13| |
+|G|0|Zappé, car ça tire trop aux abdos.|
+|H|4x10| |
+|K2|3x12| |
+
+# Niveau 4 (L4)
+
+## 30/08/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x3| |
+|A5|6x3| |
+|A2|6x3| |
+|C3|6x3| |
+|E2d|6x3| |
+|E2g|6x3| |
+|F|4x5| |
+|G|4x60| |
+|H|11 11 10 10| |
+|K2|3x13| |
+
+## 01/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x4| |
+|A5|6x4| |
+|A2|6x4| |
+|C3|6x4| |
+|E2d|6x4| |
+|E2g|6x4| |
+|F|4x6| |
+|G|0|Zappé|
+|H|4x11| |
+|K2|14 13| |
+
+## 03/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x5| |
+|A5|6x5|Dur|
+|A2|6x5| |
+|C3|6x5| |
+|E2d|6x5|Très dur|
+|E2g|6x5|Très dur|
+|F|4x7| |
+|G|6x50| |
+|H|0|Zappé|
+|K2|3x14|Douleurs|
+
+## 06/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x6| |
+|A5|6x6|Trop dur|
+|A2|6x6| |
+|C3|6x6| |
+|E2d|6x6|Très dur|
+|E2g|6x6|Très dur|
+|F|4x8| |
+|G|0| |
+|H|4x11 4|Très dur|
+|K2|3x15|Très dur|
+
+## 09/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|7 7 7 7 5 5| |
+|A5|7 7 6 6 6 5| |
+|A2|7 7 7 6 6 6| |
+|C3|7 7 7 6 6 6| |
+|E2d|7 7 7 6 6 6| |
+|E2g|7 7 7 6 6 6| |
+|F|4x9| |
+|G|6x50| |
+|H|0|Zappé|
+|K2|3x16| |
+
+## 12/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x7| |
+|A5|7 6 6 6 6 6|Vraiment très dur|
+|A2|6x7| |
+|C3|6x7| |
+|E2d|6x7| |
+|E2g|6x7| |
+
+## 13/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|F|4x10| |
+|H|5x11|Maintenant je prends 1 minute entre chaque série|
+|G|2x50| |
+|K2|3x17| |
+
+## 16/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|4x8 7 6| |
+|A5|7 7 7 7 6 6| |
+|A2|8 8 8 8 7 7| |
+|C3|8 8 8 7 7 7| |
+|E2d|8 8 7 7 7 7| |
+|E2g|8 8 7 7 7 7| |
+|F|11 11 10 10| |
+|G|6x52| |
+|H|2x12| |
+|K2|3x7|Jambes tendues|
+
+## 19/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x8|Très très dur|
+|A5|6x7|Trop dur|
+|A2|6x8| |
+|C3|6x8| |
+|G|6x52| |
+
+## 20/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|8 8 8 8 7 7| |
+|E2g|8 8 8 8 7 7| |
+|F|4x11| |
+|H|12 12 12 8| |
+|K2|8 4|Douloureux : arrêt prématuré.|
+
+## 23/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|9 9 9 8 8 8|Dur, dur|
+|A5|8 8 8 7 7 7|Temps de récup. allongés|
+|A2|9 9 9 8 8 8| |
+|C3|9 9 9 8 8 8| |
+|E2d|6x8| |
+|E2g|6x8| |
+|F|12 12 11 11| |
+|H|5x12 6| |
+|K2|3x8| |
+|G|6x54| |
+
+## 26/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|5x9 8| |
+|A5|5x8 7| |
+|A2|6x9| |
+|C3|6x9| |
+|G|6x55| |
+
+## 30/09/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|10 10 10 9 9 9| |
+|A5|9 9 8 8 8 8| |
+|A2|10 10 10 9 9 9| |
+|C3|10 10 10 9 9 9| |
+|E2d|9 9 8 8 8 8| |
+|E2g|9 9 8 8 8 8| |
+|F|4x12| |
+|H|5x10| |
+|K2|3x9| |
+|G|6x56| |
+
+# Niveau 5 (L5)
+
+## 03/10/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 12| |
+|A2|16 17| |
+|C|6 6| |
+|E2d|9 9 9 8 8 8| |
+|E2g|9 9 9 8 8 8| |
+
+## 04/10/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|F|13 13 12 12| |
+|H|5x10| |
+|G|3x57|Ca tire|
+|K2|3x10| |
+
+## 07/10/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|15 15| |
+|A2|20 18| |
+|C|8 8| |
+|E2d|9 9 9 9 8 8| |
+|E2g|9 9 9 9 8 8| |
+|F|4x13| |
+|H|3x10|Ca tire|
+|G|6x57| |
+|K2|3x11| |
+
+## 10/10/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|17 15| |
+|A2|21 19| |
+|C|9 8| |
+|E2d|5x9 8| |
+|E2g|5x9 8| |
+|F|14 14 13 13| |
+|G|6x58| |
+|H|0|Zappé : trop tard|
+|K2|12 12 12| |
+
+## 14/10/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|18 17| |
+|A2|22 20| |
+|C|10 8| |
+|E2d|6x9| |
+|E2g|6x9| |
+|F|4x14| |
+|H|11 11 10 10 10| |
+|K2|3x13| |
+|G|6x59| |
+
+## 17/10/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|19 19| |
+|A2|23 22| |
+|C|10 8| |
+|E2d|10 9 9 9|Trop fatigué|
+|E2g|10 9 9 9| |
+|F|15 15 14 14| |
+|H|11 11 11 10 10| |
+|K2|3x14| |
+|G|6x60| |
+
+## 21/10/2018
+
+L'enchaînement des 3 premiers exercices est vraiment trop dur.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|20 20| |
+|A2|24 22| |
+|C|10 9| |
+|E2d|10 9 9 9 9 9| |
+|E2g|10 9 9 9 9 9| |
+|F|4x15| |
+|H|11 11 11 11 7| |
+|K2|15 14 14| |
+|G|6x61| |
+
+## 24/10/2018
+
+Séance raccourcie pour cause de contrainte de temps.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|21 20| |
+|A2|25| |
+|C|10 10|Ultra-dur|
+|E2d|10 10 9 9 9 9| |
+|E2g|10 10 9 9 9 9| |
+|F|16 16 15 15| |
+|G|6x52| |
+
+## 28/10/2018
+
+Fin des 4 semaines au niveau 5.
+Dernière perf de B = 22, 20 : on commence à 6x7 pour le niveau 6.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|22 20| |
+|A2|25 24| |
+|C|11 10| |
+|E2d|10 10 10 9 9 9| |
+|E2g|10 10 10 9 9 9| |
+|F|4x16| |
+|H|5x11| |
+|K2|15 15 9| |
+|G|6x63| |
+

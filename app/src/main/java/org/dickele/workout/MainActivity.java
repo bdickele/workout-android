@@ -32,23 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Workout> workouts = new ArrayList<>();
 
+    private ViewPager pager;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.app_name);
         setContentView(R.layout.activity_main);
-
-        final List<String> pageNames = Arrays.asList(
-                ViewUtil.getLabel(getApplicationContext(), "menu_workouts"),
-                ViewUtil.getLabel(getApplicationContext(), "menu_routines"),
-                ViewUtil.getLabel(getApplicationContext(), "menu_exercises"));
-
-        final ViewPager pager = findViewById(R.id.activity_main_viewpager);
-        pager.setAdapter(new MainPageAdapter(getSupportFragmentManager(), pageNames) {
-        });
-
-        final TabLayout tabs = findViewById(R.id.activity_main_tabs);
-        tabs.setupWithViewPager(pager);
 
         // Let's load the data
         workouts = InMemoryDb.getInstance().getWorkouts();
@@ -81,7 +71,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateDataRelatedToWorkouts() {
-        setTitle(R.string.app_name);
+        //TODO Il faut rafraîchir les 3 pages workout, routines et exercices
+        final List<String> pageNames = Arrays.asList(
+                ViewUtil.getLabel(getApplicationContext(), "menu_workouts"),
+                ViewUtil.getLabel(getApplicationContext(), "menu_routines"),
+                ViewUtil.getLabel(getApplicationContext(), "menu_exercises"));
+
+        pager = findViewById(R.id.activity_main_viewpager);
+        pager.setAdapter(new MainPageAdapter(getSupportFragmentManager(), pageNames) {
+        });
+
+        final TabLayout tabs = findViewById(R.id.activity_main_tabs);
+        tabs.setupWithViewPager(pager);
     }
 
     // ====================================================================================

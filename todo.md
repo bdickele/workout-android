@@ -1,4 +1,8 @@
-- Refactoring item exercice
+- Mise à jour workout.md
+
+- Bug si le commentaire est sur plusieurs lignes : seul la dernière ligne s'affiche
+
+- Ne pas mettre le point sur le graph quand on a l'excice sur toutes les sessions : illisible
 
 - Layout fiche exercice
     - Ajouter difficulté 
@@ -15,7 +19,4 @@
 
 - Couleur de la barre de navigation tout en bas
 
-- Finir RoutineRef
-- Compléter libellé routines dans string.xml
-
-- Mise à jour workout.md
+- Refactoring item exercice

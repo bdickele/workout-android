@@ -22,6 +22,16 @@
     <string name="routine_L1_P1">Niveau 1 - programme 1</string>
     <string name="routine_L1_P2">Niveau 1 - programme 2</string>
     <string name="routine_L2">Niveau 2</string>
+    <string name="routine_L3">Niveau 3</string>
+    <string name="routine_L4">Niveau 4</string>
+    <string name="routine_L5">Niveau 5</string>
+    <string name="routine_L6">Niveau 6</string>
+    <string name="routine_L7">Niveau 7</string>
+    <string name="routine_L8">Niveau 8</string>
+    <string name="routine_L9">Niveau 9</string>
+    <string name="routine_L10">Niveau 10</string>
+    <string name="routine_L11">Niveau 11</string>
+    <string name="routine_L12">Niveau 12</string>
 
     <string name="ex_A">Pectoraux, triceps, épaules</string>
     <string name="ex_A1">Pectoraux, triceps, épaules</string>
