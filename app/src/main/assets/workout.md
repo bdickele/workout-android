@@ -1160,3 +1160,502 @@ Dernière perf de B = 22, 20 : on commence à 6x7 pour le niveau 6.
 |K2|15 15 9| |
 |G|6x63| |
 
+# Niveau 6 (L6)
+
+## 31/10/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|6x7| |
+|A6|6x4| |
+|A2|6x7| |
+|I|6x3| |
+|C1|6x3| |
+|E2d|10 10 10 10 9 9| |
+|E2g|10 10 10 10 9 9| |
+
+## 01/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|F|17 17 16 16| |
+|H|0|Zappé car douleurs aux épaules et abdos|
+|K2|15 15 13| |
+|G|6x54| |
+
+## 04/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|6x8| |
+|A6|6x5| |
+|A2|6x8| |
+|I|6x4| |
+|C1|6x4| |
+|E2d|5x10 9| |
+|E2g|5x10 9| |
+|F|4x17| |
+|H|3x11| |
+
+## 06/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|G|6x65|Ca tire beaucoup|
+
+## 07/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|6x9| |
+|A6|6x6| |
+|A2|6x9| |
+|I|6x5| |
+|C1|6x5| |
+|K2|15 15 10|Impression de ne plus arriver à en faire autant qu'avant, et que c'est plus difficile|
+
+## 10/11/2018
+
+Trop tard et trop fatigué pour finir la séance.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|6x10| |
+|A6|6x7|Ca devient très dur|
+|A2|6x10| |
+|I|6x6| |
+|C1|6x6| |
+|E2d|6x10| |
+|E2g|6x10| |
+|F|18 14 16 16|Peut-être trop refroidi|
+|H|11 11 11 11 6| |
+
+## 13/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|6x11| |
+|A6|8 7 7 7 7 7|Toujours très dur|
+|A2|6x11| |
+|I|6x7| |
+|C1|6x7| |
+|G|6x65| |
+
+## 15/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|5x10| |
+|E2g|5x10| |
+|F|4x18| |
+|H|0|Zappé car mal aux épaules et abdos|
+|K2|15 15 12| |
+
+## 17/11/2018
+
+Très fatigué, comme toute la semaine. J'ai pris des libertés avec les temps de récup.
+Je n'arrive pas à progresser à A6.
+K2 : devient très difficile de progresser. Pourquoi ?
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|12 12 12 11 11 11| |
+|A6|7 7 7 7 7 7|Grosse pause après la 3e|
+|A2|12 12 12 12 11 11| |
+|I|6x8| |
+|C1|6x8| |
+|G|6x65| |
+|E2d|6x10|1 min. entre chaque sérié|
+|E2g|6x10|1 min. entre chaque sérié|
+|F|4x18| |
+|K2|15 15 13| |
+
+## 19/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|5x11| |
+
+## 20/11/2018
+
+Fatigué : temps de récup. allongés.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|5x12 11| |
+|A6|7 7 7 7 7 7|Grosse pause après la 3e série|
+|A2|6x12| |
+|I|6x9| |
+|C1|6x9| |
+|G|6x66| |
+
+## 21/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|11 10 10 10 10 10| |
+|E2g|11 10 10 10 10 10| |
+|F|19 18 18 18| |
+|K2|15 15 14| |
+
+## 24/11/2018
+
+Séance chaotique
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|13 13 12 12 12 11|Grosse pause après la 3e|
+|A6|7|Je zappe, plus de force|
+|A2|13 13 13 12 12 12| |
+|I|6x10| |
+|C1|6x10|Ca devient dur|
+|E2d|11 11 10 10 10 10| |
+|E2g|11 11 10 10 10 10| |
+|F|19 16 18 18|Grosse pause après la 2e série|
+|H|10 10 10 10 7|Mes mains ne tiennent pas|
+|K2|0|Zappé car douleur au coudre|
+|G|6x67| |
+
+## 27/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|13 13 13 12 12 12|Grosse pause après la 3e série|
+|A6|7 7 7 7 7 7|Grosse pause après la 3e série|
+|A2|6x13| |
+|I|6x11| |
+|C1|6x11| |
+|G|6x68| |
+|K2|15 12 10| |
+
+## 28/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|11 11 10 10 10 10| |
+|E2g|11 11 10 10 10 10| |
+|F|19 18 18 18| |
+|H|0|Impossible, ça tire trop aux épaules|
+
+## 01/12/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|13 13 13 13 13 13|Grosse pause après la 3e série|
+|A6|7 7 7 7 7 7|Grosse pause après la 3e série|
+|A2|14 14 14 13 13 13| |
+|I|6x12| |
+|C1|12 12 12 12 11 11| |
+|E2d|11 11 11 10 10 10| |
+|E2g|11 11 11 10 10 10| |
+|F|19 19 18 18| |
+|H|5x10| |
+|K2|3x15| |
+|G|6x59| |
+
+## 04/12/2018
+
+Fatigué : libertés avec les temps de récup.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|14 14 13 13 13 13| |
+|A6|6x7| |
+|A2|6x14| |
+|I|6x13| |
+|C1|6x12| |
+|G|6x70| |
+
+## 06/12/2018
+
+Prochaine séance samedi donc j'y vais cool.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|11 11 11 10 10 10|1 min. de repos entre chaque série|
+|E2g|11 11 11 10 10 10|1 min. de repos entre chaque série|
+|F|4x16| |
+|K2|3x15| |
+
+# Niveau 7 (L7)
+
+## 08/12/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x5|Très dur|
+|A6|6x5|Dur|
+|A2|6x5| |
+|I1|6x4| |
+|C3|6x4| |
+|J|10| |
+|K|7| |
+|L|10| |
+|I4|4| |
+|I5|4| |
+|E2d|11 11 11 10 10 10| |
+|E2g|11 11 11 10 10 10| |
+|F|19 17 17 17| |
+|H|0|Zappé à cause de douleurs|
+|K2||Zappé à cause de douleurs|
+|G|3x70| |
+
+## 11/12/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x6| |
+|A6|6x6| |
+|A2|6x6| |
+|I1|6x6|Erreur : j'aurais dû faire 6x5|
+|C3|6x5| |
+|J|13| |
+|K|11| |
+|L|12|Dur|
+|I4|5| |
+|I5|5| |
+|G|6x70|Ca tire|
+
+## 12/11/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|5x10| |
+|E2d|11 11 11 11 10 10| |
+|E2g|11 11 11 11 10 10| |
+|F|19 18 18 18|Impossible de progresser à cet exercice|
+|K2|3x15| |
+
+## 15/12/2018
+
+Problème avec I4 et I5 : ma barre n'est pas assez large. On fait avec.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|7 7 7 6 6 6| |
+|A6|7 7 7 6 6 6| |
+|A2|7 7 7 6 6 6| |
+|I1|6x6| |
+|C3|6x6| |
+|J|16| |
+|K|15| |
+|L|14| |
+|I4|6| |
+|I5|6| |
+|E2d|11 11 11 11 10 10| |
+|E2g|11 11 11 11 10 10| |
+|F|19 19 18 18| |
+|G|6x70| |
+|H|11 10 10 10 10| |
+|K2|0|Douleurs au coude droit : zappé|
+
+
+## 19/12/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x7|Grosse pause après la 3e série|
+|A6|6x7| |
+|A2|6x7| |
+|I1|6x7| |
+|C3|6x7| |
+|J|18| |
+|K|17| |
+|I4|7| |
+|I5|6| |
+|G|6x71| |
+
+## 20/12/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|5x11 10| |
+|E2g|5x11 10| |
+|F|19 19 19 18| |
+|H|11 11 10 10 10| |
+|K2|0|Zappé : encore cette grosse douleur au coude|
+
+## 23/12/2018
+
+A Montpellier
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|8 8 8 7 7 7| |
+|A6|8 7 7 7 7 7| |
+|A2|8 8 8 7 7 7| |
+|I1||Zappé : trop difficile à faire à Montpellier|
+|C3|8 8 8 7 7 7| |
+|J|20|On peut passer à J1|
+|K|21| |
+|L|18| |
+|I4|7| |
+|I5|7| |
+|G|6x72| |
+|H|11 11 11 10 10| |
+|K2|0|Zappé|
+
+## 26/12/2018
+
+A Montpellier
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|5x8 7| |
+|A6|8 8 7 7 7 7| |
+|A2|6x8| |
+|I1|0|Zappé|
+|C3|8 8 8 8 8 7|Dur|
+|J1|10| |
+|K|24| |
+|L|20| |
+|I4|7| |
+|I5|8|Après grosse pause après I4|
+|E2d|11 11 11 11 10 10|Temps de récup. bien allongés|
+|E2g|11 11 11 11 10 10|Temps de récup. bien allongés|
+|F|19 19 18 18| |
+|G|6x73| |
+|K2|3x13|Petite douleur au coude droit|
+|H|11 7|Stop, trop fatigué|
+
+## 31/12/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|9 9 8 8 8 8| |
+|A6|8 8 8 7 7 7| |
+|A2|9 9 8 8 8 8| |
+|I1|6x7| |
+|C3|9 9 8 8 8 8| |
+|J1|14| |
+|K|26| |
+|L|22| |
+|I4|8| |
+|I5|8| |
+|G|6x74| |
+|E2d|6x11| |
+|E2g|6x11| |
+|F|19 19 19 18| |
+|H|11 11 8 8 8| |
+|K2|3x16|Il faut adopter une position moins horizontale pour éviter cette douleur|
+
+## 04/01/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|5x9 8| |
+|A6|8 8 8 8 7 7| |
+|A2|9 9 9 9 8 8| |
+|I1|6x8| |
+|C3|9 9 9 9 8 8| |
+|J1|18| |
+|K|28| |
+|L|24| |
+|I4|7| |
+|I5|8| |
+|G|6x75| |
+
+## 05/01/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|12 11 11 11 11 11| |
+|E2g|12 11 11 11 11 11| |
+|F|4x19| |
+|H|11 11 9 9 9| |
+|K2|0|Zappé : douleur au coude droit|
+
+## 08/01/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|10 10 9 9 9 8| |
+|A6|5x8 7| |
+|A2|6x9| |
+|I1|9 9 9 8 8 8| |
+|C3|6x9|Temps de récup. allogés : trop dur|
+|G|6x76| |
+
+## 09/01/2018
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|J1|20| |
+|K|0|Zappé pour soulager le coude|
+|L|26| |
+|I4|7| |
+|I5|7| |
+|H|11 11 11 9 9| |
+
+## 10/11/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|12 12 11 11 11 11| |
+|E2g|12 12 11 11 11 11| |
+|F|4x19| |
+
+## 13/01/2019
+
+C'est trop long comme séance, malgré que K et K2 soient zappés.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|10 10 10 9 9 9| |
+|A6|6x8| |
+|A2|10 10 9 9 9 9|Epaules douloureuses : grosse pause|
+|I1|6x9| |
+|C3|10 10 9 9 9 9|Ca tire énormément aux épaules|
+|J1|22| |
+|K|0|Zappé|
+|L|22, 6| |
+|I4|8| |
+|I5|7| |
+|E2d|12 12 12 11 11 11| |
+|E2g|12 12 12 11 11 11| |
+|F|4x19| |
+|H|11 11 11 9 9| |
+|K2|0|Zappé|
+|G|6x77| |
+
+## 17/01/2019
+
+Trop fatigué pour faire une séance mercredi. Fatigué aujourd'hui aussi.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|10 10 10 10 9 9| |
+|A6|0|Zappé|
+|A2|10 10 10 10 9 9| |
+|I1|10 10 9 9 9 9| |
+|C3|10 9 10 10 10 9| |
+|J1|24| |
+|K|0|Zappé|
+|L|24, 4| |
+|I4|7| |
+|I5|7| |
+|G|6x78| |
+
+## 20/01/2019
+
+Séance trop longue, épuisante.
+Même pour la séance du week-end il faudrait la couper en 2, avec une grosse pause.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|10 10 10 10 9 9|Encore plus dur que la séance précédente|
+|A6|8 8 8 8 7 7| |
+|A2|10 10 10 10 9 9| |
+|I1|10 10 10 10 9 9| |
+|C3|10 10 10 10 9 9|Temps de récup. allongés|
+|J1|25| |
+|K|0|Zappé|
+|L|24, 4| |
+|I4|7| |
+|I5|7| |
+|E2d|12 12 12 11 11 11| |
+|E2g|12 12 12 11 11 11| |
+|F|4x19|Temps de récup. allongés|
+|H|10 10 7 7 7| |
+|K2|0|Zappé|
+|G|6x79| |

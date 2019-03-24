@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Workout> workouts = new ArrayList<>();
 
-    private ViewPager pager;
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateDataRelatedToWorkouts() {
-        //TODO Il faut rafraîchir les 3 pages workout, routines et exercices
+        // Pager is built here so that everything is rebuilt when data are re-loaded
         final List<String> pageNames = Arrays.asList(
                 ViewUtil.getLabel(getApplicationContext(), "menu_workouts"),
                 ViewUtil.getLabel(getApplicationContext(), "menu_routines"),
                 ViewUtil.getLabel(getApplicationContext(), "menu_exercises"));
 
-        pager = findViewById(R.id.activity_main_viewpager);
+        final ViewPager pager = findViewById(R.id.activity_main_viewpager);
         pager.setAdapter(new MainPageAdapter(getSupportFragmentManager(), pageNames) {
         });
 
