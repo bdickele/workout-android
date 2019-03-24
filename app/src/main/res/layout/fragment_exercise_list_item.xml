@@ -46,46 +46,37 @@
             android:layout_marginLeft="8dp"
             android:layout_toRightOf="@id/exercise_difficulty_label"
             android:src="@mipmap/baseline_looks_1_black_18" />
-        <!--
-        <TextView
-            android:id="@+id/exercise_difficulty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/exercise_difficulty_label"
-            android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@id/exercise_difficulty_label" />
--->
+
         <TextView
             android:id="@+id/exercise_best_performance_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/exercise_difficulty_label"
-            android:layout_alignLeft="@id/exercise_difficulty_label"
-            android:layout_marginTop="4dp"
+            android:layout_alignBaseline="@id/exercise_difficulty_label"
+            android:layout_toLeftOf="@id/exercise_best_performance_total"
             android:text="@string/exercise_best_performance_label" />
 
         <TextView
             android:id="@+id/exercise_best_performance_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/exercise_difficulty"
-            android:layout_alignBottom="@id/exercise_best_performance_label"
-            android:layout_marginTop="4dp"
-            android:layout_toRightOf="@id/exercise_best_performance_label" />
+            android:layout_alignBaseline="@id/exercise_difficulty_label"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="16dp" />
 
         <TextView
-            android:id="@+id/exercise_best_performance_date"
+            android:id="@+id/exercise_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/exercise_best_performance_total"
-            android:layout_alignParentRight="true"
+            android:layout_below="@id/exercise_difficulty_label"
+            android:layout_alignLeft="@id/exercise_difficulty_label"
+            android:layout_marginTop="4dp"
             android:textStyle="italic" />
 
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/exercise_best_performance_label"
+            android:layout_below="@id/exercise_description"
             android:layout_marginTop="20dp"
             android:background="?android:attr/listDivider" />
 

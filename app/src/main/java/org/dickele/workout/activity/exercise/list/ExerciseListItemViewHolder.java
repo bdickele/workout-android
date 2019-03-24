@@ -1,13 +1,13 @@
 package org.dickele.workout.activity.exercise.list;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.dickele.workout.R;
 import org.dickele.workout.data.Exercise;
-import org.dickele.workout.data.WorkoutExercise;
-import org.dickele.workout.util.StringUtil;
+import org.dickele.workout.util.ViewUtil;
 
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
@@ -24,21 +24,22 @@ class ExerciseListItemViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.exercise_best_performance_total)
     TextView textBestPerformanceTotal;
 
-    @BindView(R.id.exercise_best_performance_date)
-    TextView textBestPerformanceDate;
+    @BindView(R.id.exercise_description)
+    TextView textDescription;
+
+    private final Context context;
 
     ExerciseListItemViewHolder(final View itemView) {
         super(itemView);
+        this.context = itemView.getContext();
         ButterKnife.bind(this, itemView);
     }
 
     void updateExercise(final Exercise exercise) {
         this.textCode.setText(exercise.getRef().name());
         this.picDifficulty.setImageResource(getDifficultyPic(exercise.getRef().getDifficulty()));
-        final WorkoutExercise bestPerformance = exercise.getBestPerformance();
-        this.textBestPerformanceTotal.setText("" + bestPerformance.getTotal());
-        this.textBestPerformanceDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
-
+        this.textBestPerformanceTotal.setText("" + exercise.getBestPerformance().getTotal());
+        this.textDescription.setText(ViewUtil.getExerciseDescription(context, exercise.getRef()));
     }
 
     private int getDifficultyPic(final int difficulty) {

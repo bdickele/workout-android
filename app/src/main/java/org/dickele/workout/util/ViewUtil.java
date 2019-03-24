@@ -3,6 +3,7 @@ package org.dickele.workout.util;
 import android.content.Context;
 
 import org.dickele.workout.R;
+import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
 
 import java.lang.reflect.Field;
@@ -11,6 +12,10 @@ public final class ViewUtil {
 
     public static String getRoutineLongName(final Context context, final RoutineRef routineRef) {
         return getLabel(context, "routine_" + routineRef.name());
+    }
+
+    public static String getExerciseDescription(final Context context, final ExerciseRef exerciseRef) {
+        return getLabel(context, "ex_" + exerciseRef.name());
     }
 
     /**
