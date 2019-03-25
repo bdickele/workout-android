@@ -23,7 +23,14 @@ public class ServiceReadTest {
     @Before
     public void setUp() throws Exception {
         service = new ServiceRead(db);
-        db.loadWorkouts(FileUtils.toFile(this.getClass().getClassLoader().getResource("workout_service_read.md")));
+        db.loadData(FileUtils.toFile(this.getClass().getClassLoader().getResource("workout_service_read.md")));
+    }
+
+    @Test
+    public void test_multiline_comment() {
+        assertThat(db.getWorkout(0).getComment()).isEqualTo("Première séance\n"
+                + "Deuxième ligne du commentaire\n"
+                + "Troisième ligne du commentaire");
     }
 
     @Test

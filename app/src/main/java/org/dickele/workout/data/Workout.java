@@ -1,5 +1,6 @@
 package org.dickele.workout.data;
 
+import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.util.WorkoutChronologicalComparator;
@@ -34,6 +35,14 @@ public class Workout {
     public void addExercise(final WorkoutExercise exercise) {
         exercise.setDate(date);
         exercises.add(exercise);
+    }
+
+    public void addCommentLine(final String s) {
+        if (StringUtils.isEmpty(comment)) {
+            this.comment = s;
+        } else {
+            this.comment += "\n" + s;
+        }
     }
 
     public WorkoutExercise getExercise(final ExerciseRef exercise) {

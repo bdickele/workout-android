@@ -3,6 +3,8 @@
 ## 03/02/2018
 
 Première séance
+Deuxième ligne du commentaire
+Troisième ligne du commentaire
 
 |Exercice|Répétitions|Commentaire|
 |---|---|---|

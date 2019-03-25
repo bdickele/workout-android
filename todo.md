@@ -1,9 +1,5 @@
 - Mise à jour workout.md
 
-- Bug si le commentaire est sur plusieurs lignes : seul la dernière ligne s'affiche
-
-- Ne pas mettre le point sur le graph quand on a l'excice sur toutes les sessions : illisible
-
 - Layout fiche exercice
     - Ajouter difficulté 
     - Ajouter description

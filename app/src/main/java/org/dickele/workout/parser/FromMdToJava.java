@@ -93,8 +93,9 @@ public final class FromMdToJava {
                 continue;
             }
 
+            //TODO Gestion commentaires multi-lignes
             if (!dealingWithExercises) {
-                currentWorkout.setComment(line);
+                currentWorkout.addCommentLine(line);
                 continue;
             }
 

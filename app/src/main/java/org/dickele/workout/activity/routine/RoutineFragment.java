@@ -77,7 +77,7 @@ public class RoutineFragment extends Fragment {
 
         final List<WorkoutExercise> routineExercises = serviceRead.getRoutineExercises(routine, exercise);
 
-        GraphUtil.configureExercisesGraph(graphView, getActivity(), routineExercises);
+        GraphUtil.configureExercisesGraph(graphView, getActivity(), routineExercises, true);
 
         configureAndShowExercisesFragment();
 

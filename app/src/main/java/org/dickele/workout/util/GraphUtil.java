@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public final class GraphUtil {
 
     public static void configureExercisesGraph(final GraphView graphView, final Context context,
-                                               final List<WorkoutExercise> routineExercises) {
+            final List<WorkoutExercise> routineExercises, final boolean drawDataPoints) {
         final DataPoint[] dataPoints = routineExercises.stream()
                 .map(exercise -> new DataPoint(convertToDate(exercise.getDate()), exercise.getTotal()))
                 .collect(Collectors.toList()).toArray(new DataPoint[]{});
@@ -34,7 +34,7 @@ public final class GraphUtil {
         graphView.getViewport().setXAxisBoundsManual(true);
 
         final LineGraphSeries series = new LineGraphSeries<>(dataPoints);
-        series.setDrawDataPoints(true);
+        series.setDrawDataPoints(drawDataPoints);
         graphView.addSeries(series);
     }
 

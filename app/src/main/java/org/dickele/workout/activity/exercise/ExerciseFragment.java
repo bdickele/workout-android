@@ -56,7 +56,7 @@ public class ExerciseFragment extends Fragment {
 
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 
-        GraphUtil.configureExercisesGraph(graphView, getActivity(), exerciseExercises);
+        GraphUtil.configureExercisesGraph(graphView, getActivity(), exerciseExercises, false);
 
         configureAndShowExercisesFragment();
 

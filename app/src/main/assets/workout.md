@@ -1587,7 +1587,7 @@ A Montpellier
 |I5|7| |
 |H|11 11 11 9 9| |
 
-## 10/11/2019
+## 10/01/2019
 
 |Exercice|Répétitions|Commentaire|
 |---|---|---|
