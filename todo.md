@@ -19,6 +19,8 @@
 
 - Layout liste sessions
 
+- Mise en commun de l'affichage des données exercices
+
 - Sauvegarder l'emplacement dans le viewpager pour le remettre à la ré-ouverture de l'application
 - Sauvegarder l'écran dans lequel on était
 

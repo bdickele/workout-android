@@ -3,6 +3,7 @@ package org.dickele.workout.data;
 import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +25,8 @@ public class Exercise {
 
     private final Map<RoutineRef, List<WorkoutExercise>> mapRoutineToExercises = new HashMap<>();
 
+    private LocalDate lastTimePerformed;
+
     public Exercise(final ExerciseRef ref, final List<WorkoutExercise> allExercises) {
         this.ref = ref;
         this.exercises = allExercises;
@@ -39,6 +42,19 @@ public class Exercise {
             }
 
             mapRoutineToExercises.getOrDefault(routineRef, new ArrayList<>()).add(workoutExercise);
+
+            if (lastTimePerformed == null || workoutExercise.getDate().isAfter(lastTimePerformed)) {
+                lastTimePerformed = workoutExercise.getDate();
+            }
         });
+    }
+
+    /**
+     * @return True if best performance has been performed during last workout session,
+     * and if that last workout was performed during the past 30 days
+     */
+    public boolean bestPerformanceIsAHotTopic() {
+        return lastTimePerformed.isAfter(LocalDate.now().minusDays(31))
+                && lastTimePerformed.equals(bestPerformance.getDate());
     }
 }

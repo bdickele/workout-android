@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 
@@ -15,6 +17,8 @@ import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 import org.dickele.workout.util.GraphUtil;
+import org.dickele.workout.util.StringUtil;
+import org.dickele.workout.util.ViewUtil;
 
 import java.util.List;
 
@@ -29,6 +33,24 @@ public class ExerciseFragment extends Fragment {
 
     private ExerciseExerciseFragment exercisesFragment;
 
+    @BindView(R.id.exercise_difficulty)
+    ImageView picDifficulty;
+
+    @BindView(R.id.exercise_best_pic)
+    ImageView picBestPerformance;
+
+    @BindView(R.id.exercise_best_total)
+    TextView textBestTotal;
+
+    @BindView(R.id.exercise_best_reps)
+    TextView textBestReps;
+
+    @BindView(R.id.exercise_best_date)
+    TextView textBestDate;
+
+    @BindView(R.id.exercise_description)
+    TextView textDescription;
+
     @BindView(R.id.exercise_graph)
     GraphView graphView;
 
@@ -42,20 +64,26 @@ public class ExerciseFragment extends Fragment {
 
         final ExerciseFragment frag = new ExerciseFragment();
         frag.setArguments(args);
-
         return frag;
-
     }
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_routine, container, false);
+        final View view = inflater.inflate(R.layout.fragment_exercise, container, false);
         ButterKnife.bind(this, view);
 
         final ExerciseRef exerciseRef = ExerciseRef.valueOf(getArguments().getString(ExerciseFragment.EXERCISE_NAME));
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 
+        this.picDifficulty.setImageResource(getDifficultyPic(exercise.getRef().getDifficulty()));
+        final WorkoutExercise bestPerformance = exercise.getBestPerformance();
+        this.textBestTotal.setText("" + bestPerformance.getTotal());
+        this.textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
+        this.textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
+        this.picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
+                R.mipmap.baseline_whatshot_black_18 : R.mipmap.baseline_fitness_center_black_18);
+        this.textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
         GraphUtil.configureExercisesGraph(graphView, getActivity(), exerciseExercises, false);
 
         configureAndShowExercisesFragment();
@@ -72,6 +100,22 @@ public class ExerciseFragment extends Fragment {
             getChildFragmentManager().beginTransaction()
                     .add(R.id.exercises_frame_layout, exercisesFragment)
                     .commit();
+        }
+    }
+
+    //TODO Mettre en commun
+    private int getDifficultyPic(final int difficulty) {
+        switch (difficulty) {
+            case 1:
+                return R.mipmap.baseline_looks_1_black_18;
+            case 2:
+                return R.mipmap.baseline_looks_2_black_18;
+            case 3:
+                return R.mipmap.baseline_looks_3_black_18;
+            case 4:
+                return R.mipmap.baseline_looks_4_black_18;
+            default:
+                return R.mipmap.baseline_looks_1_black_18;
         }
     }
 }

@@ -1,45 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_margin="8dp">
 
     <TextView
         android:id="@+id/exercise_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:minWidth="100dp" />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/exercise_reps"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/exercise_date"
+        android:layout_alignBaseline="@id/exercise_date" />
 
-        <TextView
-            android:id="@+id/exercise_reps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp" />
+    <TextView
+        android:id="@+id/exercise_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/exercise_reps"
+        android:layout_alignParentEnd="true" />
 
-        <TextView
-            android:id="@+id/exercise_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp" />
+    <TextView
+        android:id="@+id/exercise_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/exercise_reps"
+        android:layout_alignStart="@id/exercise_reps"
+        android:layout_marginTop="4dp"
+        android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/exercise_comment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:textStyle="italic" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

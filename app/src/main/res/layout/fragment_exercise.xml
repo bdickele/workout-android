@@ -5,49 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!--
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:id="@+id/exercise_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/exercise_difficulty_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/exercise_difficulty_label" />
+            android:layout_marginTop="4dp"
+            android:text="@string/exercise_difficulty_label"
+            android:layout_below="@id/exercise_description"
+            android:layout_alignStart="@id/exercise_description" />
 
         <ImageView
             android:id="@+id/exercise_difficulty"
+            android:contentDescription="@string/exercise_difficulty_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/exercise_difficulty_label"
-            android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@id/exercise_difficulty_label"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/exercise_difficulty_label"
             android:src="@mipmap/baseline_looks_1_black_18" />
 
-        <TextView
-            android:id="@+id/exercise_best_performance_label"
+        <ImageView
+            android:id="@+id/exercise_best_pic"
+            android:contentDescription="@string/exercise_best_performance_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/exercise_difficulty_label"
-            android:layout_toLeftOf="@id/exercise_best_performance_total"
-            android:text="@string/exercise_best_performance_label" />
+            android:layout_alignBottom="@id/exercise_difficulty"
+            android:layout_toStartOf="@id/exercise_best_total"
+            android:layout_marginEnd="8dp"
+            android:src="@mipmap/baseline_fitness_center_black_18" />
 
         <TextView
-            android:id="@+id/exercise_best_performance_total"
+            android:id="@+id/exercise_best_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/exercise_difficulty_label"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="8dp" />
+            android:layout_toStartOf="@id/exercise_best_reps"
+            android:layout_alignBottom="@+id/exercise_best_pic"
+            android:layout_marginEnd="16dp"
+            android:textSize="@dimen/exerciseListBestTotal" />
+
+        <TextView
+            android:id="@+id/exercise_best_reps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/exercise_best_date"
+            android:layout_alignBaseline="@+id/exercise_best_total"
+            android:layout_marginEnd="16dp"
+            android:textSize="@dimen/exerciseListBestReps" />
+
+        <TextView
+            android:id="@+id/exercise_best_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@+id/exercise_difficulty_label"
+            android:textSize="@dimen/exerciseListBestDate" />
+
     </RelativeLayout>
-    -->
 
     <com.jjoe64.graphview.GraphView
+        android:id="@+id/exercise_graph"
         android:layout_width="match_parent"
         android:layout_height="200dip"
-        android:id="@+id/exercise_graph"
         android:layout_margin="8dp"
         app:seriesType="line" />
 

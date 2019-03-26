@@ -21,6 +21,9 @@ class ExerciseListItemViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.exercise_difficulty)
     ImageView picDifficulty;
 
+    @BindView(R.id.exercise_best_pic)
+    ImageView picBestPerformance;
+
     @BindView(R.id.exercise_best_total)
     TextView textBestTotal;
 
@@ -42,9 +45,11 @@ class ExerciseListItemViewHolder extends RecyclerView.ViewHolder {
         this.textBestTotal.setText("" + bestPerformance.getTotal());
         this.textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
         this.textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
-
+        this.picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
+                R.mipmap.baseline_whatshot_black_18 : R.mipmap.baseline_fitness_center_black_18);
     }
 
+    //TODO Mettre en commun
     private int getDifficultyPic(final int difficulty) {
         switch (difficulty) {
             case 1:

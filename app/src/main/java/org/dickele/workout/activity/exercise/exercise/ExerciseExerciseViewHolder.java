@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-//TODO Mettre une classe commune pour ce ViewHolder et le RoutineExerciseViewHolder
-//TODO Et voir si on peut faire pareil pour le fragment et l'adapter : attention aux differences comme sur le nom de l'exercice
 class ExerciseExerciseViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.exercise_date)
