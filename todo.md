@@ -1,5 +1,3 @@
-- Bug fiche exercice si 0
-
 - Liste exercices
     - Layout record
         - Icon hot_topic quand record derniere seance
