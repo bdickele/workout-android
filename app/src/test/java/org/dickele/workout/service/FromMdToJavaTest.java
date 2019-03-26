@@ -12,6 +12,7 @@ public class FromMdToJavaTest {
 
     @Test
     public void extractReps_1() {
+        assertThat(FromMdToJava.extractReps("0")).isEqualTo(Collections.singletonList(0));
         assertThat(FromMdToJava.extractReps("6, 5, 4")).isEqualTo(Arrays.asList(6, 5, 4));
         assertThat(FromMdToJava.extractReps(" 6,5,4 ")).isEqualTo(Arrays.asList(6, 5, 4));
     }

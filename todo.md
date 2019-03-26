@@ -1,16 +1,11 @@
-- Mise à jour workout.md
-- Erreurs dans la saisie des dates
+- Bug fiche exercice si 0
 
 - Liste exercices
     - Layout record
         - Icon hot_topic quand record derniere seance
 
 - Layout fiche exercice
-    - Toolbar avec nom de l'exercice
-    - Ajouter difficulté 
-    - Ajouter description
-    - Ajouter record   
-        - Icon hot_topic quand record derniere seance
+    - Ajouter peut-etre l'indication du programme dans la liste
 
 - Fiche routine
     - Toolbar avec nom de la routine

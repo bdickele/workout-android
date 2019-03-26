@@ -1416,7 +1416,7 @@ Prochaine séance samedi donc j'y vais cool.
 |I5|5| |
 |G|6x70|Ca tire|
 
-## 12/11/2018
+## 12/12/2018
 
 |Exercice|Répétitions|Commentaire|
 |---|---|---|
@@ -1576,7 +1576,7 @@ A Montpellier
 |C3|6x9|Temps de récup. allogés : trop dur|
 |G|6x76| |
 
-## 09/01/2018
+## 09/01/2019
 
 |Exercice|Répétitions|Commentaire|
 |---|---|---|
@@ -1659,3 +1659,388 @@ Même pour la séance du week-end il faudrait la couper en 2, avec une grosse pa
 |H|10 10 7 7 7| |
 |K2|0|Zappé|
 |G|6x79| |
+
+## 23/01/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|5x10 9| |
+|A6|5x8 7| |
+|A2|5x10 9|Très dur|
+|I1|5x10 9| |
+|C3|5x10 9| |
+|J1|25| |
+|K|0|Zappé|
+|L|22 6| |
+|I4|7| |
+|I5|7| |
+|G|6x80| |
+
+## 24/01/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|12 12 12 12 11 11| |
+|E2g|12 12 12 12 11 11| |
+|F|20 19 19 19|Temps récup.allongés|
+|H|10 7 7 7 7|Ca tire à nouveau beaucoup aux abdos|
+|K2|0|Zappé|
+
+## 27/01/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x10| |
+|A6|6x8| |
+|A2|6x10| |
+|I1|6x10| |
+|C3|6x10| |
+|J1|26| |
+|K|15|Reprise de K|
+|L|28| |
+|I4|8| |
+|I5|7| |
+|E2d|5x12 11| |
+|E2g|5x12 11| |
+|F|20 19 19 19| |
+|H|10 10 10 8 8| |
+|K2|0|Zappé (soulage le coude droit)|
+|G|6x81| |
+
+## 03/02/2019
+
+Break à cause de douleurs au dos (lundi 28) et suite au conseil du médecin.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x10| |
+|A6|0|Zappé|
+|A2|0|Zappé|
+|I1|6x10| |
+|C3|6x10|Très dur|
+|J1|25| |
+|K|0|Zappé|
+|L|0|Zappé|
+|I4|7| |
+|I5|7| |
+|E2d|6x12|Temps de récup. allongés|
+|E2g|6x12|Temps de récup. allongés|
+|F|0|Zappé|
+|H|0|Zappé|
+|K2|0|Zappé|
+|G|0|Zappé|
+
+## 09/02/2019
+
+Cette fois douleur à l'épaule gauche. Pas de séance le mercredi par précaution.
+Sur conseil du physio : reprise progressive.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x4| |
+|A6|6x4| |
+|A2|6x4| |
+|I1|6x4| |
+|C3|6x4| |
+|J1|16| |
+|K|20| |
+|L|14| |
+|I4|4| |
+|I5|4| |
+|E2d|6x12| |
+|E2g|6x12| |
+|F|4x14| |
+|K2|3x12|Jambes écartées|
+
+## 10/02/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|10 10 10 10 8|Ca tire|
+|G|6x60| |
+
+## 12/02/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x6| |
+|A6|6x6| |
+|A2|6x6| |
+|I1|6x6| |
+|C3|6x6| |
+|J1|18| |
+|K|22| |
+|L|18| |
+|I4|5| |
+|I5|5| |
+
+## 13/02/2019
+
+Douleur à l'épaule + les abdos qui tirent + dos encore sensible = G, H et K2 zappés.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|13 12 12 12 12 12| |
+|E2g|13 12 12 12 12 12| |
+|F|4x16| |
+|H|0| |
+|K2|0| |
+|G|0| |
+
+## 16/02/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x8| |
+|A6|7 7 7 6 6 6| |
+|A2|6x8| |
+|I1|6x8| |
+|C3|6x8| |
+|J1|20| |
+|K|0|Zappé|
+|L|20| |
+|I4|6| |
+|I5|6| |
+|K2|3x14|Jambes très écartées|
+|H|5x10| |
+|E2d|13 13 12 12 12 12| |
+|E2g|13 13 12 12 12 12| |
+|F|4x18| |
+|G|6x70| |
+
+## 19/02/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x9| |
+|A6|6x7| |
+|A2|10 10 10 9 9 9| |
+|I1|6x9| |
+|C3|6x9| |
+|J1|22| |
+|K|0|Zappé|
+|L|22| |
+|I4|7| |
+|I5|7| |
+|E2d|13 13 13 12 12 12| |
+|E2g|13 13 13 12 12 12| |
+|F|0|Zappé par précaution: j'ai senti une douleur au genou gauche.|
+|H|0|Je zappe à cause de l'épaule gauche|
+|K2|3x16| |
+|G|6x80|Douleurs|
+
+## 23/02/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|0|Zappé pour épargner le pectoral gauche|
+|A6|8 8 7 7 7 7| |
+|A2|6x10|Dur|
+|I1|6x10|Temps de récup. allongés|
+|C3|6x10|Temps de récup. allongés|
+|J1|24| |
+|K|0|Zappé (coude)|
+|L|24| |
+|I4|8|Après une grosse pause|
+|I5|8| |
+|H|10 10 10 10 7| |
+|E2d|13 13 13 12 12 12| |
+|E2g|13 13 13 12 12 12| |
+|F|4x18| |
+|K2|3x18| |
+|G|6x80| |
+
+## 25/02/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|6x10| |
+|G|6x80| |
+
+## 26/02/2019
+
+Pas de jambes cette semaine pour cause de manque de temps (séminaire).
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x9|Temps de récup. allongés|
+|A6|8 8 8 7 7 7| |
+|A2|11 11 10 10 10 10| |
+|I1|6x10| |
+|C3|6x10|Fatigués dès la 1ère série|
+|J1|23| |
+|K|0|Zappé|
+|L|24| |
+|I4|8| |
+|I5|6| |
+|K2|3x18| |
+
+## 02/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|13 13 13 12 12 12| |
+|E2g|13 13 13 12 12 12| |
+|F|19 19 18 18| |
+|H|5x10| |
+|K2|3x20| |
+|B|0|Zappé (épaule)|
+|A6|8 8 8 8 7 7| |
+|A2|11 11 11 11 10 10| |
+|I1|11 11 10 10 10 10| |
+|C3|11 10 10 10 10 10|Temps de récup. allongés|
+|J1|24| |
+|K|18| |
+|L|26| |
+|I4|7| |
+|I5|7| |
+|G|6x81| |
+
+## 05/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x6| |
+|A6|5x8 7|Très dur, besoin de récupérer|
+|A2|5x11 10|Epaules douloureuses|
+|I1|11 11 11 10 10 10| |
+|C3|11 11 10 10 10 10| |
+|J1|9| |
+|G|6x82| |
+
+## 06/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|K|20| |
+|L|28| |
+|I4|7| |
+|I5|8| |
+|E2d|13 13 13 13 12 12| |
+|E2g|13 13 13 13 12 12| |
+|F|19 19 19 18| |
+|H|0| |
+|K2|3x19| |
+
+## 10/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x6|Que 6 répétitions et 1 min. de récup pour soulager le pectoral gauche|
+|A6|6x8| |
+|A2|6x11|Très très difficile|
+|I1|6x11| |
+|C3|6x11|Sensation de ne plus progresser|
+|J1|24| |
+|K|22| |
+|L|30| |
+|I4|8| |
+|I5|8| |
+|H|5x10| |
+|E2d|5x13 12| |
+|E2g|5x13 12| |
+|F|4x19| |
+|K2|3x20| |
+|G|6x83| |
+
+## 12/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|10 10 10 10 11| |
+|K2|3x21| |
+|G|6x84| |
+
+## 13/03/2019
+
+Séance pénible.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x6| |
+|A6|6x8| |
+|A2|6x11|Très dur : grosse pause après la 3e série|
+|I1|6x11|Très très dur aussi|
+|C3|6x11|Très très dur aussi|
+|J1|23| |
+|K|24| |
+|L|16|Stop à cause d'une douleur à l'épaule gauche|
+|I4|8| |
+|I5|7| |
+
+## 16/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|K|28| |
+|L|32| |
+|E2d|5x13 12| |
+|E2g|5x13 12| |
+|F|4x19| |
+|H|10 10 7|Stop : mal aux abdos|
+|K2|3x22| |
+
+## 17/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|0|Zappé pour soulager l'épaule|
+|A6|9 8 8 8 8 8| |
+|A2|12 11 11 11 11 11|Dur|
+|I1|12 11 11 11 11 11| |
+|C3|12 11 11 11 11 11|Très dur : temps de récup. allongés|
+|J1|24| |
+|I4|7| |
+|I5|8| |
+|G|6x85| |
+
+## 19/03/2019
+
+Fatigué : on va voir.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|6x13| |
+|E2g|6x13| |
+|F|4x19| |
+|H|10 10 10|Stop : mal aux abdos|
+|L|30| |
+|K2|22 23 22| |
+
+## 20/03/2019
+
+Idem : fatigué, on va voir.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x5|Doucement, reprise à cause de l'épaule |
+|A6|9 8 8 8 8 8|Très difficile dès la 3e série|
+|A2|12 11 11 11 11 11|Très difficile dès la 1ère série|
+|I1|0|Zappé par fatigue|
+|C3|12 11 11 11 11 8| |
+|J1|20| |
+|K|0|Zappé|
+|I4|8| |
+|I5|8| |
+|G|6x85| |
+
+## 24/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x6| |
+|A6|9 9 8 8 8 8| |
+|A2|12 12 11 11 11 11| |
+|I1|12 11 11 11 11 11| |
+|C3|12 12 11 11 11 11| |
+|J1|24| |
+|K|24| |
+|L|26| |
+|I4|8| |
+|I5|8| |
+|H|11 10 10 10 10|Temps de récup. allongés|
+|E2d|6x13|Temps de récup. allongés|
+|E2g|6x13|Temps de récup. allongés|
+|F|20 19 19 19|Temps de récup. allongés|
+|K2|23 23 22|Temps de récup. allongés|
+|G|6x86| |
