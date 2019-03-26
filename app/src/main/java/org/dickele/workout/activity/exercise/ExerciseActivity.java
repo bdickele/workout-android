@@ -11,6 +11,7 @@ import org.dickele.workout.service.ServiceRead;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 public class ExerciseActivity extends AppCompatActivity {
@@ -20,10 +21,8 @@ public class ExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
 
-        final ExerciseRef exerciseRef = ExerciseRef.valueOf(getIntent().getStringExtra(ExerciseFragment.EXERCISE_NAME));
-        setTitle(exerciseRef.name());
-
         final List<Exercise> exercises = InMemoryDb.getInstance().getExercises();
+        final ExerciseRef exerciseRef = ExerciseRef.valueOf(getIntent().getStringExtra(ExerciseFragment.EXERCISE_NAME));
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
 
         // ViewPager configuration
@@ -31,8 +30,14 @@ public class ExerciseActivity extends AppCompatActivity {
         pager.setAdapter(new ExerciseAdapter(getSupportFragmentManager(), exercises) {
             //
         });
-
         pager.setCurrentItem(exercises.indexOf(exercise));
+
+        pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
+                ((Toolbar) findViewById(R.id.toolbar_main)).setTitle(exercises.get(position).getRef().name());
+            }
+        });
     }
 
 }

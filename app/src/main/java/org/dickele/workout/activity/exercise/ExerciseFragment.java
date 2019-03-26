@@ -44,6 +44,7 @@ public class ExerciseFragment extends Fragment {
         frag.setArguments(args);
 
         return frag;
+
     }
 
     @Override
@@ -53,7 +54,6 @@ public class ExerciseFragment extends Fragment {
 
         final ExerciseRef exerciseRef = ExerciseRef.valueOf(getArguments().getString(ExerciseFragment.EXERCISE_NAME));
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
-
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 
         GraphUtil.configureExercisesGraph(graphView, getActivity(), exerciseExercises, false);

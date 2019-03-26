@@ -21,7 +21,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
             updateDataRelatedToWorkouts();
         }
 
-        // Configuration of toolbar_main
-        final Toolbar toolbar = findViewById(R.id.toolbar_main);
-        setSupportActionBar(toolbar);
+        // Configuration of main toolbar
+        setSupportActionBar(findViewById(R.id.toolbar_main));
     }
 
     @Override

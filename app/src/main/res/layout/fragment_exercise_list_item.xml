@@ -3,9 +3,9 @@
     android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="8dp"
+    android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
-    android:layout_marginRight="12dp"
+    android:layout_marginEnd="12dp"
     android:orientation="horizontal">
 
     <TextView
@@ -13,12 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/exercise_shape"
         android:gravity="center"
         android:minWidth="40dp"
-        android:text="A5"
         android:textColor="@color/shapeForeground"
         android:textSize="@dimen/shapeTextSize"
         android:textStyle="bold" />
@@ -26,10 +25,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:layout_toRightOf="@id/exercise_code">
+        android:layout_toEndOf="@id/exercise_code">
 
         <TextView
             android:id="@+id/exercise_difficulty_label"
@@ -40,43 +39,56 @@
 
         <ImageView
             android:id="@+id/exercise_difficulty"
+            android:contentDescription="@string/exercise_difficulty_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/exercise_difficulty_label"
-            android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@id/exercise_difficulty_label"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/exercise_difficulty_label"
             android:src="@mipmap/baseline_looks_1_black_18" />
 
-        <TextView
-            android:id="@+id/exercise_best_performance_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/exercise_difficulty_label"
-            android:layout_toLeftOf="@id/exercise_best_performance_total"
-            android:text="@string/exercise_best_performance_label" />
-
-        <TextView
-            android:id="@+id/exercise_best_performance_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/exercise_difficulty_label"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="8dp" />
-
-        <TextView
-            android:id="@+id/exercise_description"
+        <ImageView
+            android:id="@+id/exercise_best_pic"
+            android:contentDescription="@string/exercise_best_performance_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/exercise_difficulty_label"
-            android:layout_alignLeft="@id/exercise_difficulty_label"
+            android:layout_alignStart="@id/exercise_difficulty_label"
             android:layout_marginTop="4dp"
-            android:textStyle="italic" />
+            android:src="@mipmap/baseline_fitness_center_black_18" />
+
+        <TextView
+            android:id="@+id/exercise_best_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/exercise_best_pic"
+            android:layout_alignBottom="@+id/exercise_best_pic"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/exerciseListBestTotal" />
+
+        <TextView
+            android:id="@+id/exercise_best_reps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/exercise_best_total"
+            android:layout_alignBaseline="@+id/exercise_best_total"
+            android:layout_marginStart="16dp"
+            android:textSize="@dimen/exerciseListBestReps" />
+
+        <TextView
+            android:id="@+id/exercise_best_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/exercise_best_reps"
+            android:layout_alignBaseline="@+id/exercise_best_reps"
+            android:layout_marginStart="16dp"
+            android:textSize="@dimen/exerciseListBestDate" />
 
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/exercise_description"
+            android:layout_below="@id/exercise_best_pic"
             android:layout_marginTop="20dp"
             android:background="?android:attr/listDivider" />
 

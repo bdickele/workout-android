@@ -10,8 +10,10 @@ public final class StringUtil {
 
     public static final DateTimeFormatter DATE_FORMATTER_DDMMYYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+    //TODO Supprimer si plus utilise
     public static final DateTimeFormatter DATE_FORMATTER_DDMM = DateTimeFormatter.ofPattern("dd/MM");
 
+    //TODO Supprimer si plus utilise
     public static final DateTimeFormatter DATE_FORMATTER_YYYY = DateTimeFormatter.ofPattern("yyyy");
 
     public static String getStringForTotalReps(final WorkoutExercise e) {

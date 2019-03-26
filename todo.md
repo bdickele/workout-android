@@ -1,13 +1,26 @@
 - Mise à jour workout.md
+- Erreurs dans la saisie des dates
+
+- Liste exercices
+    - Layout record
+        - Icon hot_topic quand record derniere seance
 
 - Layout fiche exercice
+    - Toolbar avec nom de l'exercice
     - Ajouter difficulté 
     - Ajouter description
-    - Toolbar avec nom de l'exercice
+    - Ajouter record   
+        - Icon hot_topic quand record derniere seance
+
+- Fiche routine
+    - Toolbar avec nom de la routine
 
 - Layout liste routines
 
 - Layout liste sessions
+
+- Sauvegarder l'emplacement dans le viewpager pour le remettre à la ré-ouverture de l'application
+- Sauvegarder l'écran dans lequel on était
 
 - Ecran paramètres :
     - sauvegarde de l'adresse email
