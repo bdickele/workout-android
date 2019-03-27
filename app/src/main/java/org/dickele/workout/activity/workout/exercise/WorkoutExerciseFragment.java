@@ -47,8 +47,8 @@ public class WorkoutExerciseFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         adapter = new WorkoutExerciseAdapter(this.exercises);
-        this.recyclerView.setAdapter(adapter);
-        this.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         ItemClickSupport.addTo(recyclerView, R.layout.fragment_workout_exercise_item)
                 .setOnItemClickListener((RecyclerView recyclerView, int position, View v) -> {

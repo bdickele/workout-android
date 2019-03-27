@@ -45,8 +45,8 @@ public class ExerciseExerciseFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         adapter = new ExerciseExerciseAdapter(this.exercises);
-        this.recyclerView.setAdapter(adapter);
-        this.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         return view;
     }

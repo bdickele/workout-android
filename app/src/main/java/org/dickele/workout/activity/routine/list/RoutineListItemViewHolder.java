@@ -29,9 +29,9 @@ class RoutineListItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateRoutine(final Routine routine) {
-        this.textCode.setText(routine.getRef().getShortCode());
-        this.textFirstDate.setText(routine.getFirstDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
-        this.textLastDate.setText(routine.getLastDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
+        textCode.setText(routine.getRef().getShortCode());
+        textFirstDate.setText(routine.getFirstDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
+        textLastDate.setText(routine.getLastDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
     }
 
 }

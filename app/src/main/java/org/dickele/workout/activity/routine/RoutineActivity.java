@@ -13,6 +13,7 @@ import org.dickele.workout.util.ViewUtil;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 public class RoutineActivity extends AppCompatActivity {
@@ -46,6 +47,14 @@ public class RoutineActivity extends AppCompatActivity {
             }
         }
         pager.setCurrentItem(position);
+
+        pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
+                ((Toolbar) findViewById(R.id.toolbar_main)).setTitle(
+                        ViewUtil.getRoutineLongName(getApplicationContext(), routine));
+            }
+        });
     }
 
 }

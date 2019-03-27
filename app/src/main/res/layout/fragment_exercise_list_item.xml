@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
-    android:layout_marginEnd="12dp"
-    android:orientation="horizontal">
+    android:layout_marginEnd="8dp">
 
     <TextView
         android:id="@+id/exercise_code"
@@ -14,19 +13,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/exercise_shape"
         android:gravity="center"
         android:minWidth="40dp"
-        android:textColor="@color/shapeForeground"
+        android:textColor="@color/shapeExerciseForeground"
         android:textSize="@dimen/shapeTextSize"
         android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
         android:layout_toEndOf="@id/exercise_code">
 
@@ -34,7 +33,6 @@
             android:id="@+id/exercise_difficulty_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:text="@string/exercise_difficulty_label" />
 
         <ImageView
@@ -89,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@id/exercise_best_pic"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:background="?android:attr/listDivider" />
 
     </RelativeLayout>

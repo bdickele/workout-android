@@ -33,14 +33,13 @@ class WorkoutListItemViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         this.context = context;
         ButterKnife.bind(this, itemView);
-
     }
 
     void updateWorkout(final Workout workout) {
-        this.textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMM));
-        this.textYear.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_YYYY));
-        this.textRoutine.setText(ViewUtil.getRoutineLongName(context, workout.getRoutine()));
-        this.textComment.setText(workout.getComment());
+        textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMM));
+        textYear.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_YYYY));
+        textRoutine.setText(ViewUtil.getRoutineLongName(context, workout.getRoutine()));
+        textComment.setText(workout.getComment());
     }
 
 }

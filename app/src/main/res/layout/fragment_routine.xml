@@ -5,14 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/exercise_name"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/exercise_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exercise"
+            android:textSize="@dimen/subtitle" />
+
+        <TextView
+            android:id="@+id/exercise_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/shapeExerciseBackground"
+            android:layout_toEndOf="@id/exercise_label"
+            android:layout_alignBaseline="@id/exercise_label"
+            android:textSize="@dimen/subtitle" />
+
+        <TextView
+            android:id="@+id/exercise_difficulty_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exercise_difficulty_label"
+            android:layout_toStartOf="@id/exercise_difficulty"
+            android:layout_alignBaseline="@id/exercise_label"
+            android:textSize="@dimen/subtitle" />
+
+        <ImageView
+            android:id="@+id/exercise_difficulty"
+            android:contentDescription="@string/exercise_difficulty_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/exercise_difficulty_label"
+            android:src="@mipmap/baseline_looks_1_black_24" />
+
+        <TextView
+            android:id="@+id/exercise_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/exercise_label"
+            android:layout_alignLeft="@id/exercise_label"
+            android:layout_marginTop="4dp" />
+
+    </RelativeLayout>
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/exercise_graph"

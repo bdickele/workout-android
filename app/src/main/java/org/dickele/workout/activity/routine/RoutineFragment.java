@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -17,6 +18,7 @@ import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 import org.dickele.workout.util.GraphUtil;
+import org.dickele.workout.util.ViewUtil;
 
 import java.util.List;
 
@@ -33,8 +35,14 @@ public class RoutineFragment extends Fragment {
 
     private RoutineExerciseFragment exercisesFragment;
 
-    @BindView(R.id.exercise_name)
-    TextView textExerciseName;
+    @BindView(R.id.exercise_code)
+    TextView textExerciseCode;
+
+    @BindView(R.id.exercise_difficulty)
+    ImageView picDifficulty;
+
+    @BindView(R.id.exercise_description)
+    TextView textDescription;
 
     @BindView(R.id.exercise_graph)
     GraphView graphView;
@@ -65,17 +73,19 @@ public class RoutineFragment extends Fragment {
         final RoutineRef routine = RoutineRef.valueOf(routineName);
 
         final String exerciseName = getArguments().getString(EXERCISE_NAME);
-        final ExerciseRef exercise;
+        final ExerciseRef exerciseRef;
         // If we clicked on routine's name we have no exerciseRef name
         if (StringUtils.isEmpty(exerciseName)) {
-            exercise = serviceRead.getRoutineExercises(routine).get(0);
+            exerciseRef = serviceRead.getRoutineExercises(routine).get(0);
         } else {
-            exercise = ExerciseRef.valueOf(exerciseName);
+            exerciseRef = ExerciseRef.valueOf(exerciseName);
         }
 
-        textExerciseName.setText(getString(R.string.exercise_and_label, exercise.name()));
+        textExerciseCode.setText(exerciseRef.name());
+        picDifficulty.setImageResource(getDifficultyPic(exerciseRef.getDifficulty()));
+        textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
 
-        final List<WorkoutExercise> routineExercises = serviceRead.getRoutineExercises(routine, exercise);
+        final List<WorkoutExercise> routineExercises = serviceRead.getRoutineExercises(routine, exerciseRef);
 
         GraphUtil.configureExercisesGraph(graphView, getActivity(), routineExercises, true);
 
@@ -93,6 +103,22 @@ public class RoutineFragment extends Fragment {
             getChildFragmentManager().beginTransaction()
                     .add(R.id.exercises_frame_layout, exercisesFragment)
                     .commit();
+        }
+    }
+
+    //TODO Mettre en commun : attention taille 24
+    private int getDifficultyPic(final int difficulty) {
+        switch (difficulty) {
+            case 1:
+                return R.mipmap.baseline_looks_1_black_24;
+            case 2:
+                return R.mipmap.baseline_looks_2_black_24;
+            case 3:
+                return R.mipmap.baseline_looks_3_black_24;
+            case 4:
+                return R.mipmap.baseline_looks_4_black_24;
+            default:
+                return R.mipmap.baseline_looks_1_black_24;
         }
     }
 }

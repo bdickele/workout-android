@@ -39,13 +39,13 @@ class ExerciseListItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateExercise(final Exercise exercise) {
-        this.textCode.setText(exercise.getRef().name());
-        this.picDifficulty.setImageResource(getDifficultyPic(exercise.getRef().getDifficulty()));
+        textCode.setText(exercise.getRef().name());
+        picDifficulty.setImageResource(getDifficultyPic(exercise.getRef().getDifficulty()));
         final WorkoutExercise bestPerformance = exercise.getBestPerformance();
-        this.textBestTotal.setText("" + bestPerformance.getTotal());
-        this.textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
-        this.textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
-        this.picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
+        textBestTotal.setText("" + bestPerformance.getTotal());
+        textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
+        textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
+        picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
                 R.mipmap.baseline_whatshot_black_18 : R.mipmap.baseline_fitness_center_black_18);
     }
 

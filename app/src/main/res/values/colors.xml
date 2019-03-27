@@ -10,7 +10,9 @@
     <color name="mainMenuSelectedColor">#ffffff</color>
     <color name="mainMenuTextColor">#bbbbbb</color>
 
-    <color name="shapeBackground">#333300</color>
-    <color name="shapeForeground">#fff</color>
+    <color name="shapeExerciseBackground">#333300</color>
+    <color name="shapeExerciseForeground">#fff</color>
+    <color name="shapeRoutineBackground">#011658</color>
+    <color name="shapeRoutineForeground">#fff</color>
 
 </resources>

@@ -33,15 +33,11 @@ class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateExercise(final WorkoutExercise exercise) {
-        this.textName.setText(exercise.getExerciseRef().name());
-        this.textReps.setText(StringUtil.getStringForReps(exercise.getReps()));
-
-        this.textTotal.setVisibility(exercise.getTotal() == 0 ? View.GONE : View.VISIBLE);
-        this.textTotal.setText(StringUtil.getStringForTotalReps(exercise));
-
-        this.textComment.setVisibility(
-                StringUtils.isEmpty(exercise.getComment()) ? View.GONE : View.VISIBLE);
-        this.textComment.setText(exercise.getComment());
+        textName.setText(exercise.getExerciseRef().name());
+        textReps.setText(StringUtil.getStringForReps(exercise.getReps()));
+        textTotal.setText(StringUtil.getStringForTotalReps(exercise));
+        textComment.setVisibility(StringUtils.isEmpty(exercise.getComment()) ? View.GONE : View.VISIBLE);
+        textComment.setText(exercise.getComment());
     }
 
 }

@@ -76,14 +76,14 @@ public class ExerciseFragment extends Fragment {
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 
-        this.picDifficulty.setImageResource(getDifficultyPic(exercise.getRef().getDifficulty()));
+        picDifficulty.setImageResource(getDifficultyPic(exercise.getRef().getDifficulty()));
         final WorkoutExercise bestPerformance = exercise.getBestPerformance();
-        this.textBestTotal.setText("" + bestPerformance.getTotal());
-        this.textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
-        this.textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
-        this.picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
+        textBestTotal.setText("" + bestPerformance.getTotal());
+        textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
+        textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
+        picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
                 R.mipmap.baseline_whatshot_black_18 : R.mipmap.baseline_fitness_center_black_18);
-        this.textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
+        textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
         GraphUtil.configureExercisesGraph(graphView, getActivity(), exerciseExercises, false);
 
         configureAndShowExercisesFragment();
