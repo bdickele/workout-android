@@ -12,7 +12,6 @@ import org.dickele.workout.activity.workout.exercise.WorkoutExerciseFragment;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.util.StringUtil;
-import org.dickele.workout.util.ViewUtil;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -31,9 +30,6 @@ public class WorkoutFragment extends Fragment {
 
     @BindView(R.id.workout_date)
     TextView textDate;
-
-    @BindView(R.id.workout_routine)
-    TextView textRoutine;
 
     @BindView(R.id.workout_comment)
     TextView textComment;
@@ -63,10 +59,7 @@ public class WorkoutFragment extends Fragment {
 
         configureAndShowExercisesFragment();
 
-        textRoutine.setOnClickListener(v -> ((WorkoutActivity) getActivity()).gotToRoutine(workout.getRoutine(), ""));
-
         textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
-        textRoutine.setText(ViewUtil.getRoutineLongName(getContext(), workout.getRoutine()));
         textComment.setText(workout.getComment());
         textComment.setVisibility(StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);
 
