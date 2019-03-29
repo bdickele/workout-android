@@ -49,6 +49,7 @@ public final class FromMdToJava {
     private static List<Workout> extractWorkoutsFromLines(final List<String> allLines) {
         final List<Workout> result = new ArrayList<>();
 
+        Integer ID = 1;
         RoutineRef currentRoutine = null;
         Workout currentWorkout = null;
         boolean dealingWithExercises = false;
@@ -77,7 +78,7 @@ public final class FromMdToJava {
             try {
                 final LocalDate workoutDate = extractWorkoutDate(line);
                 if (workoutDate != null) {
-                    currentWorkout = new Workout(currentRoutine, workoutDate);
+                    currentWorkout = new Workout(ID++, currentRoutine, workoutDate);
                     result.add(currentWorkout);
                     dealingWithExercises = false;
                     continue;

@@ -14,22 +14,27 @@ import java.util.stream.Collectors;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
 @AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Workout {
 
-    // RoutineRef/program, for instance "Level 3"
-    private RoutineRef routine;
+    @EqualsAndHashCode.Include
+    private final Integer id;
 
-    private LocalDate date;
+    // RoutineRef/program, for instance "Level 3"
+    private final RoutineRef routine;
+
+    private final LocalDate date;
 
     private String comment;
 
     private List<WorkoutExercise> exercises = new ArrayList<>();
 
-    public Workout(final RoutineRef routine, final LocalDate date) {
-        this(routine, date, null, new ArrayList<>());
+    public Workout(final Integer id, final RoutineRef routine, final LocalDate date) {
+        this(id, routine, date, null, new ArrayList<>());
     }
 
     public void addExercise(final WorkoutExercise exercise) {

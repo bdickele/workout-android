@@ -21,56 +21,10 @@
         android:textSize="@dimen/shapeTextSize"
         android:textStyle="bold" />
 
-    <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/routine_workouts_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp"
-        android:layout_toEndOf="@id/routine_code">
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/routine_code" />
 
-        <TextView
-            android:id="@+id/routine_first_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/routine_last_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/routine_first_date"
-            android:layout_alignParentRight="true" />
-
-    </RelativeLayout>
-
-    <!--
-
-            <TextView
-                android:id="@+id/routine_first_date_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
-                android:text="@string/first_workout" />
-
-
-            <TextView
-                android:id="@+id/routine_last_date_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
-                android:text="@string/last_workout" />
-
-        </LinearLayout>
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
-            android:layout_margin="4dp" />
-
-    </LinearLayout>
-    -->
 </RelativeLayout>

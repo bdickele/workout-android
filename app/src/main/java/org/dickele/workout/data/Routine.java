@@ -20,6 +20,8 @@ public class Routine {
 
     private final LocalDate lastDate;
 
+    private final List<Workout> workouts;
+
     private final List<ExerciseRef> exerciseRefs;
 
     private final Map<ExerciseRef, List<WorkoutExercise>> mapExercices;

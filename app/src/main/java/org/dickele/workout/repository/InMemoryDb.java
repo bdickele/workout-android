@@ -25,6 +25,8 @@ public class InMemoryDb {
     // Complete list of workouts, sorted by chronological order
     private List<Workout> workouts;
 
+    private Map<Integer, Workout> mapIdToWorkout;
+
     private List<Routine> routines;
 
     private List<Exercise> exercises;
@@ -39,6 +41,8 @@ public class InMemoryDb {
 
     public void loadData(final File file) throws Exception {
         workouts = FromMdToJava.extractWorkoutsFromFile(file);
+        mapIdToWorkout = workouts.stream()
+                .collect(Collectors.toMap(Workout::getId, w -> w));
         loadRoutines();
         loadExercises();
     }
@@ -50,12 +54,13 @@ public class InMemoryDb {
                 .values()
                 .stream()
                 .map(routineWorkouts -> {
+                    //TODO Passer workouts a un constructeur de Routine pour faire tout ces calculs dans l'objet Routine
                     // Moyen plus elegant de maintenir l'ordre des exercices ?
                     final List<ExerciseRef> exerciseRefs = new ArrayList<>();
                     final LocalDate firstDate = routineWorkouts.get(0).getDate();
                     final LocalDate lastDate = routineWorkouts.get(routineWorkouts.size() - 1).getDate();
                     final Map<ExerciseRef, List<WorkoutExercise>> mapExercises = new HashMap<>();
-                    workouts.forEach(workout ->
+                    routineWorkouts.forEach(workout ->
                             workout.getExercises().forEach(workoutExercise -> {
                                 final ExerciseRef exerciseRef = workoutExercise.getExerciseRef();
                                 if (!exerciseRefs.contains(exerciseRef)) {
@@ -64,7 +69,8 @@ public class InMemoryDb {
                                 mapExercises.getOrDefault(exerciseRef, new ArrayList<>()).add(workoutExercise);
                             })
                     );
-                    return new Routine(routineWorkouts.get(0).getRoutine(), firstDate, lastDate, exerciseRefs, mapExercises);
+                    return new Routine(routineWorkouts.get(0).getRoutine(), firstDate, lastDate,
+                            routineWorkouts, exerciseRefs, mapExercises);
                 })
                 .collect(Collectors.toList());
     }
@@ -93,8 +99,8 @@ public class InMemoryDb {
         return exercises;
     }
 
-    public Workout getWorkout(final int i) {
-        return getWorkouts().get(i);
+    public Workout getWorkout(final Integer id) {
+        return mapIdToWorkout.get(id);
     }
 
     public int getNumberOfWorkouts() {

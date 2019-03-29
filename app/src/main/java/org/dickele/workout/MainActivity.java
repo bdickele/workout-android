@@ -1,5 +1,6 @@
 package org.dickele.workout;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,7 +9,12 @@ import android.view.MenuItem;
 import com.google.android.material.tabs.TabLayout;
 
 import org.apache.commons.io.FileUtils;
+import org.dickele.workout.activity.routine.RoutineActivity;
+import org.dickele.workout.activity.routine.RoutineFragment;
+import org.dickele.workout.activity.workout.WorkoutActivity;
+import org.dickele.workout.activity.workout.WorkoutFragment;
 import org.dickele.workout.data.Workout;
+import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.util.ViewUtil;
 
@@ -70,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         // Pager is built here so that everything is rebuilt when data are re-loaded
         final List<String> pageNames = Arrays.asList(
                 ViewUtil.getLabel(getApplicationContext(), "menu_workouts"),
-                ViewUtil.getLabel(getApplicationContext(), "menu_routines"),
                 ViewUtil.getLabel(getApplicationContext(), "menu_exercises"));
 
         final ViewPager pager = findViewById(R.id.activity_main_viewpager);
@@ -79,6 +84,19 @@ public class MainActivity extends AppCompatActivity {
 
         final TabLayout tabs = findViewById(R.id.activity_main_tabs);
         tabs.setupWithViewPager(pager);
+    }
+
+    public void gotToRoutine(final RoutineRef routine) {
+        final Intent intent = new Intent(this, RoutineActivity.class);
+        intent.putExtra(RoutineFragment.ROUTINE_NAME, routine.name());
+        intent.putExtra(RoutineFragment.EXERCISE_NAME, "");
+        startActivity(intent);
+    }
+
+    public void goToWorkout(final Integer workoutID) {
+        final Intent intent = new Intent(this, WorkoutActivity.class);
+        intent.putExtra(WorkoutFragment.WORKOUT_ID, workoutID);
+        startActivity(intent);
     }
 
     // ====================================================================================

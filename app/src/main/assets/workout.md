@@ -1905,7 +1905,7 @@ Pas de jambes cette semaine pour cause de manque de temps (séminaire).
 |A2|5x11 10|Epaules douloureuses|
 |I1|11 11 11 10 10 10| |
 |C3|11 11 10 10 10 10| |
-|J1|9| |
+|J1|19| |
 |G|6x82| |
 
 ## 06/03/2019

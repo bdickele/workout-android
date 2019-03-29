@@ -11,8 +11,7 @@
     <string name="parameters">Paramètres</string>
 
     <string name="menu_workouts">Sessions</string>
-    <string name="menu_routines">Progr.</string>
-    <string name="menu_exercises">Exerc.</string>
+    <string name="menu_exercises">Exercices</string>
 
     <string name="first_workout">Première séance :</string>
     <string name="last_workout">Dernière séance :</string>

@@ -50,6 +50,12 @@ public class ServiceRead {
         return new WorkoutSearchResult(workout, nextIndex, db.getNumberOfWorkouts());
     }
 
+    public List<Workout> getRoutineWorkouts(final RoutineRef routineRef) {
+        return db.getWorkouts().stream()
+                .filter(w -> routineRef == w.getRoutine())
+                .collect(Collectors.toList());
+    }
+
     /**
      * @param routine RoutineRef (L1_P1, L2...)
      * @return All exercises practiced during this routine

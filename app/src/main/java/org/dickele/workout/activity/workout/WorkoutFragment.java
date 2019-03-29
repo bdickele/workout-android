@@ -20,13 +20,9 @@ import butterknife.ButterKnife;
 
 public class WorkoutFragment extends Fragment {
 
-    public static final String WORKOUT_INDEX = "WORKOUT_INDEX";
-
-    private final InMemoryDb db;
+    public static final String WORKOUT_ID = "WORKOUT_ID";
 
     private WorkoutExerciseFragment exercisesFragment;
-
-    private Workout workout;
 
     @BindView(R.id.workout_date)
     TextView textDate;
@@ -35,12 +31,12 @@ public class WorkoutFragment extends Fragment {
     TextView textComment;
 
     public WorkoutFragment() {
-        this.db = InMemoryDb.getInstance();
+        //
     }
 
     static WorkoutFragment newInstance(final int workoutIndex) {
         final Bundle args = new Bundle();
-        args.putInt(WORKOUT_INDEX, workoutIndex);
+        args.putInt(WORKOUT_ID, workoutIndex);
 
         final WorkoutFragment frag = new WorkoutFragment();
         frag.setArguments(args);
@@ -53,9 +49,7 @@ public class WorkoutFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_workout, container, false);
         ButterKnife.bind(this, view);
 
-        final int defaultIndex = db.getNumberOfWorkouts() - 1;
-        final int workoutIndex = getArguments().getInt(WORKOUT_INDEX, defaultIndex);
-        workout = db.getWorkout(workoutIndex);
+        final Workout workout = InMemoryDb.getInstance().getWorkout(getArguments().getInt(WORKOUT_ID, 1));
 
         configureAndShowExercisesFragment();
 

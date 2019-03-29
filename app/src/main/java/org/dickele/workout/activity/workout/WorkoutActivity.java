@@ -9,7 +9,10 @@ import org.dickele.workout.activity.routine.RoutineFragment;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
+import org.dickele.workout.service.ServiceRead;
 import org.dickele.workout.util.ViewUtil;
+
+import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,15 +27,17 @@ public class WorkoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_workout);
         final InMemoryDb db = InMemoryDb.getInstance();
 
-        final int workoutIndex = getIntent().getIntExtra(WorkoutFragment.WORKOUT_INDEX, 0);
-        final Workout workout = db.getWorkout(workoutIndex);
+        final int workoutID = getIntent().getIntExtra(WorkoutFragment.WORKOUT_ID, 0);
+        final Workout workout = db.getWorkout(workoutID);
 
+        // The list of workouts to consider here is the list of workouts for a given routine
+        final List<Workout> workouts = new ServiceRead(db).getRoutineWorkouts(workout.getRoutine());
         // ViewPager configuration
         final ViewPager pager = findViewById(R.id.workout_main_viewpager);
-        pager.setAdapter(new WorkoutAdapter(getSupportFragmentManager(), db.getWorkouts()) {
+        pager.setAdapter(new WorkoutAdapter(getSupportFragmentManager(), workouts) {
             //
         });
-        pager.setCurrentItem(workoutIndex);
+        pager.setCurrentItem(workouts.indexOf(workout));
 
         pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override

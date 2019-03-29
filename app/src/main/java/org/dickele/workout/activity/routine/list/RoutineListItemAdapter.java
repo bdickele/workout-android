@@ -39,4 +39,5 @@ public class RoutineListItemAdapter extends RecyclerView.Adapter<RoutineListItem
     public int getItemCount() {
         return routines == null ? 0 : routines.size();
     }
+
 }
