@@ -1,4 +1,4 @@
-package org.dickele.workout.activity.routine.list;
+package org.dickele.workout.activity.workoutlist;
 
 import android.content.Context;
 import android.view.LayoutInflater;

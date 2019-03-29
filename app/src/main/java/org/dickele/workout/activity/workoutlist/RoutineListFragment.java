@@ -1,4 +1,4 @@
-package org.dickele.workout.activity.routine.list;
+package org.dickele.workout.activity.workoutlist;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,7 +22,7 @@ public class RoutineListFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_routine_list, container, false);
+        final View view = inflater.inflate(R.layout.fragment_routine_workouts, container, false);
 
         final List<Routine> routines = InMemoryDb.getInstance().getRoutines().stream()
                 .sorted(new RoutineAnteChronologicalComparator())

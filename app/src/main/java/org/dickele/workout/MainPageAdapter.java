@@ -1,7 +1,7 @@
 package org.dickele.workout;
 
 import org.dickele.workout.activity.exercicelist.ExerciseListFragment;
-import org.dickele.workout.activity.routine.list.RoutineListFragment;
+import org.dickele.workout.activity.workoutlist.RoutineListFragment;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.dickele.workout.activity.routine.list;
+package org.dickele.workout.activity.workoutlist;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -26,7 +26,7 @@ public class RoutineListItemAdapter extends RecyclerView.Adapter<RoutineListItem
     public RoutineListItemViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
         final Context context = viewGroup.getContext();
         final LayoutInflater inflater = LayoutInflater.from(context);
-        final View view = inflater.inflate(R.layout.fragment_routine_list_item, viewGroup, false);
+        final View view = inflater.inflate(R.layout.fragment_routine_workouts_item, viewGroup, false);
         return new RoutineListItemViewHolder(view);
     }
 
