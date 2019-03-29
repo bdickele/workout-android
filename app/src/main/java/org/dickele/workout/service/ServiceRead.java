@@ -7,9 +7,7 @@ import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class ServiceRead {
@@ -20,36 +18,6 @@ public class ServiceRead {
         this.db = db;
     }
 
-    /**
-     * @return Most recent workout
-     */
-
-    public WorkoutSearchResult getLastWorkout() {
-        final int numberOfWorkouts = db.getNumberOfWorkouts();
-        final Workout workout = numberOfWorkouts == 0 ? null : db.getWorkouts().get(numberOfWorkouts - 1);
-        return new WorkoutSearchResult(workout, numberOfWorkouts - 1, numberOfWorkouts);
-    }
-
-    private int getPreviousWorkoutIndex(final int index) {
-        return index - 1;
-    }
-
-    public WorkoutSearchResult getPreviousWorkout(final int index) {
-        final int previousIndex = getPreviousWorkoutIndex(index);
-        final Workout workout = previousIndex < 0 ? null : db.getWorkouts().get(previousIndex);
-        return new WorkoutSearchResult(workout, previousIndex, db.getNumberOfWorkouts());
-    }
-
-    private int getNextWorkoutIndex(final int index) {
-        return index >= (db.getNumberOfWorkouts() - 1) ? -1 : index + 1;
-    }
-
-    public WorkoutSearchResult getNextWorkout(final int index) {
-        final int nextIndex = getNextWorkoutIndex(index);
-        final Workout workout = nextIndex == -1 ? null : db.getWorkouts().get(nextIndex);
-        return new WorkoutSearchResult(workout, nextIndex, db.getNumberOfWorkouts());
-    }
-
     public List<Workout> getRoutineWorkouts(final RoutineRef routineRef) {
         return db.getWorkouts().stream()
                 .filter(w -> routineRef == w.getRoutine())
@@ -57,30 +25,23 @@ public class ServiceRead {
     }
 
     /**
-     * @param routine RoutineRef (L1_P1, L2...)
+     * @param routineRef RoutineRef (L1_P1, L2...)
      * @return All exercises practiced during this routine
      */
-    public List<ExerciseRef> getRoutineExercises(final RoutineRef routine) {
+    public List<ExerciseRef> getRoutineExercises(final RoutineRef routineRef) {
         return db.getWorkouts().stream()
-                .filter(workout -> routine == workout.getRoutine())
+                .filter(workout -> routineRef == workout.getRoutine())
                 .flatMap(workout -> workout.getExercises().stream())
                 .map(WorkoutExercise::getExerciseRef)
                 .distinct()
                 .collect(Collectors.toList());
     }
 
-    public List<WorkoutExercise> getRoutineExercises(final RoutineRef routine, final ExerciseRef exercise) {
+    public List<WorkoutExercise> getRoutineExercises(final RoutineRef routineRef, final ExerciseRef exercise) {
         return db.getWorkouts().stream()
-                .filter(workout -> routine == workout.getRoutine())
+                .filter(workout -> routineRef == workout.getRoutine())
                 .flatMap(workout -> workout.getExercises().stream())
                 .filter(workoutExercise -> exercise == workoutExercise.getExerciseRef())
-                .collect(Collectors.toList());
-    }
-
-    public List<WorkoutExercise> getExercises(final ExerciseRef exercise) {
-        return db.getWorkouts().stream()
-                .map(workout -> workout.getExercise(exercise))
-                .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
@@ -91,11 +52,4 @@ public class ServiceRead {
                 .orElse(InMemoryDb.getInstance().getExercises().get(0));
     }
 
-    public List<LocalDate> getWorkoutDates() {
-        return db.getWorkouts().stream()
-                .map(Workout::getDate)
-                .distinct()
-                .sorted()
-                .collect(Collectors.toList());
-    }
 }
