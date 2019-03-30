@@ -38,7 +38,7 @@ public class Exercise {
                 routineRefs.add(routineRef);
             }
 
-            mapRoutineToExercises.getOrDefault(routineRef, new ArrayList<>()).add(workoutExercise);
+            mapRoutineToExercises.computeIfAbsent(routineRef, k -> new ArrayList<>()).add(workoutExercise);
 
             if (lastTimePerformed == null || workoutExercise.getDate().isAfter(lastTimePerformed)) {
                 lastTimePerformed = workoutExercise.getDate();

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.jjoe64.graphview.GraphView;
 
 import org.dickele.workout.R;
-import org.dickele.workout.activity.exercise.reps.ExerciseRepsFragment;
+import org.dickele.workout.activity.exercise.reps.ExerciseRoutinesFragment;
 import org.dickele.workout.data.Exercise;
 import org.dickele.workout.data.ExerciseRef;
 import org.dickele.workout.data.WorkoutExercise;
@@ -31,7 +31,7 @@ public class ExerciseFragment extends Fragment {
 
     public static final String EXERCISE_NAME = "EXERCISE_NAME";
 
-    private ExerciseRepsFragment exercisesFragment;
+    private ExerciseRoutinesFragment repsPerRoutineFragment;
 
     @BindView(R.id.exercise_difficulty)
     ImageView picDifficulty;
@@ -86,19 +86,19 @@ public class ExerciseFragment extends Fragment {
         textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
         GraphUtil.configureExercisesGraph(graphView, getActivity(), exerciseExercises, false);
 
-        configureAndShowExercisesFragment();
+        configureAndShowRoutineExercisesFragment();
 
-        exercisesFragment.updateExercises(exerciseExercises);
+        repsPerRoutineFragment.updateExercise(exercise);
 
         return view;
     }
 
-    private void configureAndShowExercisesFragment() {
-        exercisesFragment = (ExerciseRepsFragment) getChildFragmentManager().findFragmentById(R.id.exercise_reps_layout);
-        if (exercisesFragment == null) {
-            exercisesFragment = new ExerciseRepsFragment();
+    private void configureAndShowRoutineExercisesFragment() {
+        repsPerRoutineFragment = (ExerciseRoutinesFragment) getChildFragmentManager().findFragmentById(R.id.exercise_routines_layout);
+        if (repsPerRoutineFragment == null) {
+            repsPerRoutineFragment = new ExerciseRoutinesFragment();
             getChildFragmentManager().beginTransaction()
-                    .add(R.id.exercise_reps_layout, exercisesFragment)
+                    .add(R.id.exercise_routines_layout, repsPerRoutineFragment)
                     .commit();
         }
     }

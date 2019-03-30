@@ -29,7 +29,6 @@ class ExerciseRepViewHolder extends RecyclerView.ViewHolder {
     ExerciseRepViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
-
     }
 
     void updateExercise(final WorkoutExercise exercise) {

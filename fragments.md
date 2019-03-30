@@ -43,7 +43,13 @@ Toutes les sessions d'un exercice
 - activity_exercise
     - exercise_viewpager = viewpager pour passer d'un exercice à l'autre
         - fragment_exercise / ExerciseFragment = vue complète d'un exercice
-            - exercise_reps_layout = FrameLayout pour chaque série de l'exercice
+            - exercise_routines_layout = FrameLayout pour les séries de l'exercice groupées par routine
+            - fragment_exercise_routines / ExerciseRoutinesFragment = fragment qui contient les séries de l'exercice par routine
+                - routines_recycler_view = liste des routines (avec leurs séries)
+                    - fragment_exercise_routines_item = code routine + ses séries
+                        - fragment_exercise_reps_item = une série de l'exercice (pas de fragment pour l'ensemble des séries)
+                    
             - fragment_exercise_reps.xml / ExerciseRepsFragment = fragment qui contient les  séries de l'exercice
                 - exercise_reps_recycler_view = liste des séries
                     - fragment_exercise_reps_item = une série de l'exercice
+

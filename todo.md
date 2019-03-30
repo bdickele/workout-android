@@ -1,4 +1,3 @@
-
 - Layout fiche exercice
     - Ajouter l'indication de la routine dans la liste
 

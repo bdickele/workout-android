@@ -83,7 +83,7 @@
         app:seriesType="line" />
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/exercise_reps_layout"
+        android:id="@+id/exercise_routines_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
