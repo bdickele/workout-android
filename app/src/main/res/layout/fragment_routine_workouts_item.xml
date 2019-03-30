@@ -25,6 +25,17 @@
         android:id="@+id/routine_workouts_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_toEndOf="@id/routine_code" />
+        android:layout_toEndOf="@id/routine_code"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/routine_workouts_recycler_view"
+        android:layout_alignStart="@id/routine_code"
+        android:layout_marginBottom="8dp"
+        android:background="?android:attr/listDivider" />
 
 </RelativeLayout>

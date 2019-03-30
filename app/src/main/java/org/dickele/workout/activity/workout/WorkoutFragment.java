@@ -53,7 +53,7 @@ public class WorkoutFragment extends Fragment {
 
         configureAndShowExercisesFragment();
 
-        textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
+        textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_LONG));
         textComment.setText(workout.getComment());
         textComment.setVisibility(StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);
 

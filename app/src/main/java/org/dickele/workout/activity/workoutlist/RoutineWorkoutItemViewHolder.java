@@ -22,8 +22,7 @@ class RoutineWorkoutItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateWorkout(final Workout workout) {
-        //TODO Mettre un format de date + litéral : Lundi 12 mars 2019
-        textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
+        textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_LONG));
     }
 
 }

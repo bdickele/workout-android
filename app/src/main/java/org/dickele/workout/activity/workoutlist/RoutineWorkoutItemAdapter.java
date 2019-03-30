@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import org.dickele.workout.MainActivity;
 import org.dickele.workout.R;
 import org.dickele.workout.data.Workout;
+import org.dickele.workout.util.WorkoutAnteChronologicalComparator;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class RoutineWorkoutItemAdapter extends RecyclerView.Adapter<RoutineWorko
 
     RoutineWorkoutItemAdapter(final List<Workout> workouts) {
         this.workouts = workouts;
+        this.workouts.sort(new WorkoutAnteChronologicalComparator());
     }
 
     @NonNull

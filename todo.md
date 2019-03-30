@@ -1,13 +1,12 @@
- 
-- Supprimer fragment_routine_workout_list.xml ?
-- Supprimer les methodes de ServiceRead qui ne sont plus utilisees
-    
+   
 - Mise en commun de l'affichage des données exercices
 
 - Layout fiche exercice
     - Ajouter peut-etre l'indication du programme dans la liste
 
-- Layout liste routines
+- Layout liste sessions
+
+- Depuis l'écran exercice d'une routine, mettre un menu pour accéder à l'historique complet
 
 - Ecran paramètres :
     - saisie et sauvegarde de l'adresse email
