@@ -26,7 +26,7 @@ public class ExerciseActivity extends AppCompatActivity {
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
 
         // ViewPager configuration
-        final ViewPager pager = findViewById(R.id.exercise_main_viewpager);
+        final ViewPager pager = findViewById(R.id.exercise_viewpager);
         pager.setAdapter(new ExerciseAdapter(getSupportFragmentManager(), exercises) {
             //
         });

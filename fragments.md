@@ -33,7 +33,7 @@ Affiche les différentes sessions pour chaque exercice durant la routine
 Liste de tous les exercices pratiqués au moins une fois
 
 - fragment_exercise_list / ExerciseListFragment
-    - wktexercises_recycler_view = liste des exercices
+    - exercises_recycler_view = liste des exercices
         - fragment_exercise_list_item = un exercice (nom, difficulté, record)
         
 ## Fiche exercice
@@ -41,9 +41,10 @@ Liste de tous les exercices pratiqués au moins une fois
 Toutes les sessions d'un exercice
 
 - activity_exercise
-    - exercise_main_viewpager = viewpager pour passer d'un exercice à l'autre
+    - exercise_viewpager = viewpager pour passer d'un exercice à l'autre
         - fragment_exercise / ExerciseFragment = vue complète d'un exercice
-            - exercises_frame_layout = FrameLayout pour chaque série de l'exercice
-            - fragment_routine_exercises / ExerciseExerciseFragment = ensemble des séries de l'exercice
-                - wktexercises_recycler_view = liste des séries
-                    - fragment_exercise_list_exercise_item = une série de l'exercice
+            - exercise_reps_layout = FrameLayout pour chaque série de l'exercice
+            - fragment_exercise_reps.xml / ExerciseRepsFragment = ensemble des séries de l'exercice
+            - TODO Meme chose que fragment_routine_exercises : a mettre en commun
+                - exercise_reps_recycler_view = liste des séries
+                    - fragment_exercise_reps_item = une série de l'exercice
