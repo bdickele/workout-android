@@ -31,7 +31,7 @@ public class RoutineActivity extends AppCompatActivity {
         final List<ExerciseRef> exercises = serviceRead.getRoutineExercises(routine);
 
         // ViewPager configuration
-        final ViewPager pager = findViewById(R.id.routine_main_viewpager);
+        final ViewPager pager = findViewById(R.id.routine_viewpager);
         pager.setAdapter(new RoutineAdapter(getSupportFragmentManager(), routine, exercises) {
             //
         });

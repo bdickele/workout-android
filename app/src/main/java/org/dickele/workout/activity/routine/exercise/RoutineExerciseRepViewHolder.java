@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-class RoutineExerciseViewHolder extends RecyclerView.ViewHolder {
+class RoutineExerciseRepViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.exercise_date)
     TextView textDate;
@@ -26,7 +26,7 @@ class RoutineExerciseViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.exercise_comment)
     TextView textComment;
 
-    RoutineExerciseViewHolder(final View itemView) {
+    RoutineExerciseRepViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }

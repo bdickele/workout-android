@@ -21,12 +21,12 @@
 Affiche les différentes sessions pour chaque exercice durant la routine
 
 - activity_routine
-    - routine_main_viewpager = viewpager pour passer d'un exercice (de la routine) à l'autre
-        - fragment_routine / RoutineFragment = vue d'une routine-exercice
-            - exercises_frame_layout : FrameLayout dans lequel on mettra l'exercice et ses série
-            - fragment_routine_exercises / RoutineExercisesFragment = fragment qui contient les  séries de l'exercice
-                - wktexercises_recycler_view = liste des exercices
-                    - fragment_routine_exercise_item = une répétition de l'exercice (pour la routine courante)
+    - routine_viewpager = viewpager pour passer d'un exercice (de la routine) à l'autre
+        - fragment_routine / RoutineFragment = vue d'une routine avec un exercice
+            - exercise_reps_layout : FrameLayout dans lequel on mettra l'exercice et ses séries
+            - fragment_exercise_reps / RoutineExerciseRepsFragment = fragment qui contient les  séries de l'exercice
+                - exercise_reps_recycler_view = liste des séries de l'exercice
+                    - fragment_routine_exercise_reps_item = une répétition de l'exercice (pour la routine courante)
    
 # Liste des exercices (sur ViewPager principal)
 
@@ -44,7 +44,6 @@ Toutes les sessions d'un exercice
     - exercise_viewpager = viewpager pour passer d'un exercice à l'autre
         - fragment_exercise / ExerciseFragment = vue complète d'un exercice
             - exercise_reps_layout = FrameLayout pour chaque série de l'exercice
-            - fragment_exercise_reps.xml / ExerciseRepsFragment = ensemble des séries de l'exercice
-            - TODO Meme chose que fragment_routine_exercises : a mettre en commun
+            - fragment_exercise_reps.xml / ExerciseRepsFragment = fragment qui contient les  séries de l'exercice
                 - exercise_reps_recycler_view = liste des séries
                     - fragment_exercise_reps_item = une série de l'exercice

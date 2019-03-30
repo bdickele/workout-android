@@ -13,25 +13,25 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RoutineExerciseAdapter extends RecyclerView.Adapter<RoutineExerciseViewHolder> {
+public class RoutineExerciseRepAdapter extends RecyclerView.Adapter<RoutineExerciseRepViewHolder> {
 
     private final List<WorkoutExercise> exercises;
 
-    RoutineExerciseAdapter(final List<WorkoutExercise> exercises) {
+    RoutineExerciseRepAdapter(final List<WorkoutExercise> exercises) {
         this.exercises = exercises;
     }
 
     @NonNull
     @Override
-    public RoutineExerciseViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
+    public RoutineExerciseRepViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
         final Context context = viewGroup.getContext();
         final LayoutInflater inflater = LayoutInflater.from(context);
-        final View view = inflater.inflate(R.layout.fragment_routine_exercise_item, viewGroup, false);
-        return new RoutineExerciseViewHolder(view);
+        final View view = inflater.inflate(R.layout.fragment_routine_exercise_reps_item, viewGroup, false);
+        return new RoutineExerciseRepViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final RoutineExerciseViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final RoutineExerciseRepViewHolder viewHolder, final int i) {
         viewHolder.updateExercise(this.exercises.get(i));
     }
 
