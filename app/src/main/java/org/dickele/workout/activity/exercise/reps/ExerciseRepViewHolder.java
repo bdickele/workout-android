@@ -34,7 +34,7 @@ class ExerciseRepViewHolder extends RecyclerView.ViewHolder {
     void updateExercise(final WorkoutExercise exercise) {
         textDate.setText(exercise.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
         textReps.setText(StringUtil.getStringForReps(exercise.getReps()));
-        textTotal.setText(StringUtil.getStringForTotalReps(exercise));
+        textTotal.setText("" + exercise.getTotal());
         textComment.setVisibility(StringUtils.isEmpty(exercise.getComment()) ? View.GONE : View.VISIBLE);
         textComment.setText(exercise.getComment());
     }
