@@ -28,7 +28,7 @@ public class ExerciseListFragment extends Fragment {
 
         final List<Exercise> exercises = InMemoryDb.getInstance().getExercises();
         final ExerciseListItemAdapter adapter = new ExerciseListItemAdapter(exercises);
-        final RecyclerView recyclerView = view.findViewById(R.id.exercises_recycler_view);
+        final RecyclerView recyclerView = view.findViewById(R.id.wktexercises_recycler_view);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 

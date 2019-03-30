@@ -11,7 +11,7 @@ import com.jjoe64.graphview.GraphView;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
-import org.dickele.workout.activity.routine.exercise.RoutineExerciseFragment;
+import org.dickele.workout.activity.routine.exercise.RoutineExercisesFragment;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
@@ -33,7 +33,7 @@ public class RoutineFragment extends Fragment {
 
     public static final String EXERCISE_NAME = "EXERCISE_NAME";
 
-    private RoutineExerciseFragment exercisesFragment;
+    private RoutineExercisesFragment exercisesFragment;
 
     @BindView(R.id.exercise_code)
     TextView textExerciseCode;
@@ -97,9 +97,9 @@ public class RoutineFragment extends Fragment {
     }
 
     private void configureAndShowExercisesFragment() {
-        exercisesFragment = (RoutineExerciseFragment) getChildFragmentManager().findFragmentById(R.id.exercises_frame_layout);
+        exercisesFragment = (RoutineExercisesFragment) getChildFragmentManager().findFragmentById(R.id.exercises_frame_layout);
         if (exercisesFragment == null) {
-            exercisesFragment = new RoutineExerciseFragment();
+            exercisesFragment = new RoutineExercisesFragment();
             getChildFragmentManager().beginTransaction()
                     .add(R.id.exercises_frame_layout, exercisesFragment)
                     .commit();

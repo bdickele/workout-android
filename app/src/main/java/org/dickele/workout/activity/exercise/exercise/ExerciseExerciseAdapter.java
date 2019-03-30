@@ -26,7 +26,7 @@ public class ExerciseExerciseAdapter extends RecyclerView.Adapter<ExerciseExerci
     public ExerciseExerciseViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
         final Context context = viewGroup.getContext();
         final LayoutInflater inflater = LayoutInflater.from(context);
-        final View view = inflater.inflate(R.layout.fragment_exercises_exercise_item, viewGroup, false);
+        final View view = inflater.inflate(R.layout.fragment_exercise_list_exercise_item, viewGroup, false);
         return new ExerciseExerciseViewHolder(view);
     }
 

@@ -18,16 +18,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RoutineExerciseFragment extends Fragment {
+public class RoutineExercisesFragment extends Fragment {
 
-    @BindView(R.id.exercises_recycler_view)
+    @BindView(R.id.wktexercises_recycler_view)
     RecyclerView recyclerView;
 
     private RoutineExerciseAdapter adapter;
 
     private final List<WorkoutExercise> exercises = new ArrayList<>();
 
-    public RoutineExerciseFragment() {
+    public RoutineExercisesFragment() {
         //
     }
 

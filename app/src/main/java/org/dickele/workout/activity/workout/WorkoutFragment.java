@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
-import org.dickele.workout.activity.workout.exercise.WorkoutExerciseFragment;
+import org.dickele.workout.activity.workout.exercise.WorkoutExercisesFragment;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.util.StringUtil;
@@ -22,7 +22,7 @@ public class WorkoutFragment extends Fragment {
 
     public static final String WORKOUT_ID = "WORKOUT_ID";
 
-    private WorkoutExerciseFragment exercisesFragment;
+    private WorkoutExercisesFragment exercisesFragment;
 
     @BindView(R.id.workout_date)
     TextView textDate;
@@ -63,9 +63,9 @@ public class WorkoutFragment extends Fragment {
     }
 
     private void configureAndShowExercisesFragment() {
-        exercisesFragment = (WorkoutExerciseFragment) getChildFragmentManager().findFragmentById(R.id.workout_exercises_frame_layout);
+        exercisesFragment = (WorkoutExercisesFragment) getChildFragmentManager().findFragmentById(R.id.workout_exercises_frame_layout);
         if (exercisesFragment == null) {
-            exercisesFragment = new WorkoutExerciseFragment();
+            exercisesFragment = new WorkoutExercisesFragment();
             getChildFragmentManager().beginTransaction()
                     .add(R.id.workout_exercises_frame_layout, exercisesFragment)
                     .commit();

@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 
 public class ExerciseExerciseFragment extends Fragment {
 
-    @BindView(R.id.exercises_recycler_view)
+    @BindView(R.id.wktexercises_recycler_view)
     RecyclerView recyclerView;
 
     private ExerciseExerciseAdapter adapter;
