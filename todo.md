@@ -1,8 +1,6 @@
-   
-- Mise en commun de l'affichage des données exercices
 
 - Layout fiche exercice
-    - Ajouter peut-etre l'indication du programme dans la liste
+    - Ajouter l'indication de la routine dans la liste
 
 - Amélioration du graph
 

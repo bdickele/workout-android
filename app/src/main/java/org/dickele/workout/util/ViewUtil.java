@@ -20,7 +20,7 @@ public final class ViewUtil {
 
     /**
      * @param context Activity context
-     * @param key     Label key
+     * @param key Label key
      * @return Label stored in string resources. To be used when key is not static
      */
     public static String getLabel(final Context context, final String key) {
@@ -32,5 +32,35 @@ public final class ViewUtil {
             //
         }
         return key;
+    }
+
+    public static int getDifficultyPic_S(final int difficulty) {
+        switch (difficulty) {
+            case 1:
+                return R.mipmap.baseline_looks_1_black_18;
+            case 2:
+                return R.mipmap.baseline_looks_2_black_18;
+            case 3:
+                return R.mipmap.baseline_looks_3_black_18;
+            case 4:
+                return R.mipmap.baseline_looks_4_black_18;
+            default:
+                return R.mipmap.baseline_looks_1_black_18;
+        }
+    }
+
+    public static int getDifficultyPic_M(final int difficulty) {
+        switch (difficulty) {
+            case 1:
+                return R.mipmap.baseline_looks_1_black_24;
+            case 2:
+                return R.mipmap.baseline_looks_2_black_24;
+            case 3:
+                return R.mipmap.baseline_looks_3_black_24;
+            case 4:
+                return R.mipmap.baseline_looks_4_black_24;
+            default:
+                return R.mipmap.baseline_looks_1_black_24;
+        }
     }
 }

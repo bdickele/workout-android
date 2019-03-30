@@ -11,7 +11,7 @@
 - activity_workout
     - workout_main_viewpager = viewpager pour passer d'une session à l'autre
         - fragment_workout / WorkoutFragment
-            - workout_exercises_frame_layout : FrameLayout dans lequel on mettra les exercices
+            - workout_exercises_layout : FrameLayout dans lequel on mettra les exercices
             - fragment_workout_exercises / WorkoutExercisesFragment = fragment des exercices de la session
                 - workout_exercises_recycler_view = liste des exercices 
                     - fragment_workout_exercise_item = une répétition d'un exercice de la session

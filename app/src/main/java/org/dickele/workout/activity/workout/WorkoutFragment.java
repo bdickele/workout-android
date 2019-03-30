@@ -63,11 +63,11 @@ public class WorkoutFragment extends Fragment {
     }
 
     private void configureAndShowExercisesFragment() {
-        exercisesFragment = (WorkoutExercisesFragment) getChildFragmentManager().findFragmentById(R.id.workout_exercises_frame_layout);
+        exercisesFragment = (WorkoutExercisesFragment) getChildFragmentManager().findFragmentById(R.id.workout_exercises_layout);
         if (exercisesFragment == null) {
             exercisesFragment = new WorkoutExercisesFragment();
             getChildFragmentManager().beginTransaction()
-                    .add(R.id.workout_exercises_frame_layout, exercisesFragment)
+                    .add(R.id.workout_exercises_layout, exercisesFragment)
                     .commit();
         }
     }

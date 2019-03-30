@@ -8,10 +8,8 @@ import org.dickele.workout.parser.FromMdToJava;
 import org.dickele.workout.reference.ExerciseRef;
 
 import java.io.File;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,25 +51,7 @@ public class InMemoryDb {
                         Collectors.mapping(w -> w, Collectors.toList())))
                 .values()
                 .stream()
-                .map(routineWorkouts -> {
-                    //TODO Passer workouts a un constructeur de Routine pour faire tout ces calculs dans l'objet Routine
-                    // Moyen plus elegant de maintenir l'ordre des exercices ?
-                    final List<ExerciseRef> exerciseRefs = new ArrayList<>();
-                    final LocalDate firstDate = routineWorkouts.get(0).getDate();
-                    final LocalDate lastDate = routineWorkouts.get(routineWorkouts.size() - 1).getDate();
-                    final Map<ExerciseRef, List<WorkoutExercise>> mapExercises = new HashMap<>();
-                    routineWorkouts.forEach(workout ->
-                            workout.getExercises().forEach(workoutExercise -> {
-                                final ExerciseRef exerciseRef = workoutExercise.getExerciseRef();
-                                if (!exerciseRefs.contains(exerciseRef)) {
-                                    exerciseRefs.add(exerciseRef);
-                                }
-                                mapExercises.getOrDefault(exerciseRef, new ArrayList<>()).add(workoutExercise);
-                            })
-                    );
-                    return new Routine(routineWorkouts.get(0).getRoutine(), firstDate, lastDate,
-                            routineWorkouts, exerciseRefs, mapExercises);
-                })
+                .map(Routine::buildRoutine)
                 .collect(Collectors.toList());
     }
 

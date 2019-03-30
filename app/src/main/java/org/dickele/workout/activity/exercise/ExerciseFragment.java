@@ -76,7 +76,7 @@ public class ExerciseFragment extends Fragment {
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 
-        picDifficulty.setImageResource(getDifficultyPic(exercise.getRef().getDifficulty()));
+        picDifficulty.setImageResource(ViewUtil.getDifficultyPic_S(exercise.getRef().getDifficulty()));
         final WorkoutExercise bestPerformance = exercise.getBestPerformance();
         textBestTotal.setText("" + bestPerformance.getTotal());
         textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
@@ -100,22 +100,6 @@ public class ExerciseFragment extends Fragment {
             getChildFragmentManager().beginTransaction()
                     .add(R.id.exercise_reps_layout, exercisesFragment)
                     .commit();
-        }
-    }
-
-    //TODO Mettre en commun
-    private int getDifficultyPic(final int difficulty) {
-        switch (difficulty) {
-            case 1:
-                return R.mipmap.baseline_looks_1_black_18;
-            case 2:
-                return R.mipmap.baseline_looks_2_black_18;
-            case 3:
-                return R.mipmap.baseline_looks_3_black_18;
-            case 4:
-                return R.mipmap.baseline_looks_4_black_18;
-            default:
-                return R.mipmap.baseline_looks_1_black_18;
         }
     }
 }

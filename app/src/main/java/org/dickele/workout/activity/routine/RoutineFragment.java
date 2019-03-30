@@ -82,7 +82,7 @@ public class RoutineFragment extends Fragment {
         }
 
         textExerciseCode.setText(exerciseRef.name());
-        picDifficulty.setImageResource(getDifficultyPic(exerciseRef.getDifficulty()));
+        picDifficulty.setImageResource(ViewUtil.getDifficultyPic_M(exerciseRef.getDifficulty()));
         textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
 
         final List<WorkoutExercise> routineExercises = serviceRead.getRoutineExercises(routine, exerciseRef);
@@ -106,19 +106,4 @@ public class RoutineFragment extends Fragment {
         }
     }
 
-    //TODO Mettre en commun : attention taille 24
-    private int getDifficultyPic(final int difficulty) {
-        switch (difficulty) {
-            case 1:
-                return R.mipmap.baseline_looks_1_black_24;
-            case 2:
-                return R.mipmap.baseline_looks_2_black_24;
-            case 3:
-                return R.mipmap.baseline_looks_3_black_24;
-            case 4:
-                return R.mipmap.baseline_looks_4_black_24;
-            default:
-                return R.mipmap.baseline_looks_1_black_24;
-        }
-    }
 }

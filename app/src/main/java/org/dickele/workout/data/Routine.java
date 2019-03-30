@@ -4,6 +4,8 @@ import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.reference.RoutineRef;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -25,5 +27,24 @@ public class Routine {
     private final List<ExerciseRef> exerciseRefs;
 
     private final Map<ExerciseRef, List<WorkoutExercise>> mapExercices;
+
+    public static Routine buildRoutine(final List<Workout> routineWorkouts) {
+        // Moyen plus elegant de maintenir l'ordre des exercices ?
+        final List<ExerciseRef> exerciseRefs = new ArrayList<>();
+        final LocalDate firstDate = routineWorkouts.get(0).getDate();
+        final LocalDate lastDate = routineWorkouts.get(routineWorkouts.size() - 1).getDate();
+        final Map<ExerciseRef, List<WorkoutExercise>> mapExercises = new HashMap<>();
+        routineWorkouts.forEach(workout ->
+                workout.getExercises().forEach(workoutExercise -> {
+                    final ExerciseRef exerciseRef = workoutExercise.getExerciseRef();
+                    if (!exerciseRefs.contains(exerciseRef)) {
+                        exerciseRefs.add(exerciseRef);
+                    }
+                    mapExercises.getOrDefault(exerciseRef, new ArrayList<>()).add(workoutExercise);
+                })
+        );
+        return new Routine(routineWorkouts.get(0).getRoutine(), firstDate, lastDate,
+                routineWorkouts, exerciseRefs, mapExercises);
+    }
 
 }
