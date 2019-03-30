@@ -27,6 +27,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
@@ -108,7 +109,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadWorkoutFile(final boolean refresh) {
-        //TODO Mettre un spinner pendant le chargement
+        final ContentLoadingProgressBar progressBar = findViewById(R.id.progressBar);
+        progressBar.show();
+
         final File file = new File(getBaseContext().getFilesDir(), FILE_NAME);
         boolean dataLoaded = false;
         if (!refresh) {
@@ -133,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
         this.workouts = InMemoryDb.getInstance().getWorkouts();
 
         updateDataRelatedToWorkouts();
+
+        progressBar.hide();
     }
 
     private boolean loadWorkoutEmbeddedFile(final File targetFile) {

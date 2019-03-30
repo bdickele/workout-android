@@ -4,7 +4,7 @@
 - Layout fiche exercice
     - Ajouter peut-etre l'indication du programme dans la liste
 
-- Layout liste sessions
+- Amélioration du graph
 
 - Depuis l'écran exercice d'une routine, mettre un menu pour accéder à l'historique complet
 
