@@ -1,8 +1,6 @@
 package org.dickele.workout.data;
 
 import org.apache.commons.lang3.StringUtils;
-import org.dickele.workout.reference.ExerciseRef;
-import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.util.WorkoutChronologicalComparator;
 
 import java.time.LocalDate;

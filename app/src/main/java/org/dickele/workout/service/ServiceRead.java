@@ -1,10 +1,10 @@
 package org.dickele.workout.service;
 
 import org.dickele.workout.data.Exercise;
+import org.dickele.workout.data.ExerciseRef;
+import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
-import org.dickele.workout.reference.ExerciseRef;
-import org.dickele.workout.reference.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 
 import java.util.List;

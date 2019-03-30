@@ -1,4 +1,4 @@
-package org.dickele.workout.activity.exercise.exercise;
+package org.dickele.workout.activity.exercise.reps;
 
 import android.content.Context;
 import android.view.LayoutInflater;

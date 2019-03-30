@@ -1,8 +1,5 @@
 package org.dickele.workout.data;
 
-import org.dickele.workout.reference.ExerciseRef;
-import org.dickele.workout.reference.RoutineRef;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +31,7 @@ public class WorkoutExercise {
     private int deltaFirstRoutineWorkout = 0;
 
     public static WorkoutExercise build(final RoutineRef routine, final ExerciseRef exerciseRef,
-                                        final List<Integer> reps, final String comment) {
+            final List<Integer> reps, final String comment) {
         final WorkoutExercise workoutExercise = new WorkoutExercise();
         workoutExercise.routine = routine;
         workoutExercise.exerciseRef = exerciseRef;

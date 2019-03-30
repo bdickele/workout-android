@@ -1,8 +1,5 @@
 package org.dickele.workout.data;
 
-import org.dickele.workout.reference.ExerciseRef;
-import org.dickele.workout.reference.RoutineRef;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;

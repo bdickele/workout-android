@@ -3,8 +3,8 @@ package org.dickele.workout.util;
 import android.content.Context;
 
 import org.dickele.workout.R;
-import org.dickele.workout.reference.ExerciseRef;
-import org.dickele.workout.reference.RoutineRef;
+import org.dickele.workout.data.ExerciseRef;
+import org.dickele.workout.data.RoutineRef;
 
 import java.lang.reflect.Field;
 

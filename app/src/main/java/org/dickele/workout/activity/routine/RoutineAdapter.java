@@ -1,7 +1,7 @@
 package org.dickele.workout.activity.routine;
 
-import org.dickele.workout.reference.ExerciseRef;
-import org.dickele.workout.reference.RoutineRef;
+import org.dickele.workout.data.ExerciseRef;
+import org.dickele.workout.data.RoutineRef;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.dickele.workout.activity.exercise.exercise;
+package org.dickele.workout.activity.routine.reps;
 
 import android.view.View;
 import android.widget.TextView;
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-class ExerciseRepViewHolder extends RecyclerView.ViewHolder {
+class RoutineExerciseRepViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.exercise_date)
     TextView textDate;
@@ -26,10 +26,9 @@ class ExerciseRepViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.exercise_comment)
     TextView textComment;
 
-    ExerciseRepViewHolder(final View itemView) {
+    RoutineExerciseRepViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
-
     }
 
     void updateExercise(final WorkoutExercise exercise) {

@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
-import org.dickele.workout.reference.ExerciseRef;
-import org.dickele.workout.reference.RoutineRef;
+import org.dickele.workout.data.ExerciseRef;
+import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 import org.dickele.workout.util.ViewUtil;

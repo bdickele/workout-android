@@ -1,4 +1,4 @@
-package org.dickele.workout.reference;
+package org.dickele.workout.data;
 
 public enum RoutineRef {
 

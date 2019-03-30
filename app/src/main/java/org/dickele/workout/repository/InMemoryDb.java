@@ -1,11 +1,11 @@
 package org.dickele.workout.repository;
 
 import org.dickele.workout.data.Exercise;
+import org.dickele.workout.data.ExerciseRef;
 import org.dickele.workout.data.Routine;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.parser.FromMdToJava;
-import org.dickele.workout.reference.ExerciseRef;
 
 import java.io.File;
 import java.util.ArrayList;

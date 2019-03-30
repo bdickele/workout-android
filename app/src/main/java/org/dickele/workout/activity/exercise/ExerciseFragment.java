@@ -10,10 +10,10 @@ import android.widget.TextView;
 import com.jjoe64.graphview.GraphView;
 
 import org.dickele.workout.R;
-import org.dickele.workout.activity.exercise.exercise.ExerciseRepsFragment;
+import org.dickele.workout.activity.exercise.reps.ExerciseRepsFragment;
 import org.dickele.workout.data.Exercise;
+import org.dickele.workout.data.ExerciseRef;
 import org.dickele.workout.data.WorkoutExercise;
-import org.dickele.workout.reference.ExerciseRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 import org.dickele.workout.util.GraphUtil;
