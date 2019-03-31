@@ -6,7 +6,7 @@
 - Ecran paramètres :
     - saisie et sauvegarde de l'adresse email
     - envoi des sessions au format MD
-    - envoi des sessions au format PDF
+    - envoi des sessions au format PDF (possible sans une librairie payante ?)
 
 - Icone de l'application
 
