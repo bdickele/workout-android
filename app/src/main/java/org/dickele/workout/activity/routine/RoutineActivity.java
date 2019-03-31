@@ -1,15 +1,21 @@
 package org.dickele.workout.activity.routine;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
+import org.dickele.workout.activity.exercise.ExerciseActivity;
+import org.dickele.workout.activity.exercise.ExerciseFragment;
 import org.dickele.workout.data.ExerciseRef;
 import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 import org.dickele.workout.util.ViewUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +23,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 public class RoutineActivity extends AppCompatActivity {
+
+    private List<ExerciseRef> exerciceRefs = new ArrayList<>();
+
+    private ViewPager pager;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -28,19 +38,19 @@ public class RoutineActivity extends AppCompatActivity {
         setTitle(ViewUtil.getRoutineLongName(getApplicationContext(), routine));
 
         final ServiceRead serviceRead = new ServiceRead(InMemoryDb.getInstance());
-        final List<ExerciseRef> exercises = serviceRead.getRoutineExercises(routine);
+        exerciceRefs = serviceRead.getRoutineExercises(routine);
 
         // ViewPager configuration
-        final ViewPager pager = findViewById(R.id.routine_viewpager);
-        pager.setAdapter(new RoutineAdapter(getSupportFragmentManager(), routine, exercises) {
+        pager = findViewById(R.id.routine_viewpager);
+        pager.setAdapter(new RoutineAdapter(getSupportFragmentManager(), routine, exerciceRefs) {
             //
         });
 
         final String exerciseName = getIntent().getStringExtra(RoutineFragment.EXERCISE_NAME);
         int position = 0;
         if (StringUtils.isNotEmpty(exerciseName)) {
-            for (int i = 0; i < exercises.size(); i++) {
-                if (exerciseName.equals(exercises.get(i).name())) {
+            for (int i = 0; i < exerciceRefs.size(); i++) {
+                if (exerciseName.equals(exerciceRefs.get(i).name())) {
                     position = i;
                     break;
                 }
@@ -55,6 +65,32 @@ public class RoutineActivity extends AppCompatActivity {
                         ViewUtil.getRoutineLongName(getApplicationContext(), routine));
             }
         });
+
+        // Configuration of main toolbar
+        setSupportActionBar(findViewById(R.id.toolbar_main));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity_routine, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_exercise_history:
+                gotToExercise(exerciceRefs.get(pager.getCurrentItem()));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void gotToExercise(final ExerciseRef exerciseRef) {
+        final Intent intent = new Intent(this, ExerciseActivity.class);
+        intent.putExtra(ExerciseFragment.EXERCISE_NAME, exerciseRef.name());
+        startActivity(intent);
     }
 
 }

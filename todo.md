@@ -1,13 +1,13 @@
-- Layout fiche exercice
-    - Ajouter l'indication de la routine dans la liste
-
-- Amélioration du graph
-
-- Depuis l'écran exercice d'une routine, mettre un menu pour accéder à l'historique complet
+- Amélioration du graph :
+    - Trop de dates marquées sur l'historique complet
+    - Désactiver swipe sur le graphe
+    - Pour pouvoir glisser sur le graphe (si c'est possible) et afficher les valeurs avec toast (plutôt que par clic)
 
 - Ecran paramètres :
     - saisie et sauvegarde de l'adresse email
     - envoi des sessions au format MD
     - envoi des sessions au format PDF
 
-- Couleur de la barre de navigation tout en bas
+- Icone de l'application
+
+- Couleur de la barre de navigation tout en bas (possible avec un theme ?)

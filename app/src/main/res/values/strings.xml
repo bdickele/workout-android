@@ -12,6 +12,7 @@
 
     <string name="menu_workouts">Sessions</string>
     <string name="menu_exercises">Exercices</string>
+    <string name="complete_history">Historique complet de l\'exercice</string>
 
     <string name="first_workout">Première séance :</string>
     <string name="last_workout">Dernière séance :</string>
