@@ -12,8 +12,7 @@
         android:id="@+id/toolbar_main"
         layout="@layout/toolbar_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="0dp" />
+        android:layout_height="wrap_content" />
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progressBar"

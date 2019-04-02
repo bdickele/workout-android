@@ -3,11 +3,17 @@ package org.dickele.workout.parser;
 import android.content.Context;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.data.WorkoutExercise;
+import org.dickele.workout.util.StringUtil;
 import org.dickele.workout.util.ViewUtil;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,7 +30,23 @@ public final class FromJavaToMd {
 
     private static final String EMPTY_LINE = "";
 
-    public static List<String> createLines(final List<Workout> workouts, final Context context) {
+    public static Pair<String, File> createFile(final List<Workout> workouts, final Context context) {
+        final List<String> lines = createLines(workouts, context);
+
+        try {
+            final File tmpFile = File.createTempFile("workout_" + LocalDate.now().format(StringUtil.DATE_FORMATTER_YYYYMMDD), ".md");
+            final FileWriter writer = new FileWriter(tmpFile);
+            for (final String line : lines) {
+                writer.write(line);
+            }
+            writer.close();
+            return new ImmutablePair<>(null, tmpFile);
+        } catch (final Exception e) {
+            return new ImmutablePair<>(e.getMessage(), null);
+        }
+    }
+
+    private static List<String> createLines(final List<Workout> workouts, final Context context) {
         final List<String> result = new ArrayList<>();
         RoutineRef previousRoutine = null;
         for (final Workout workout : workouts) {

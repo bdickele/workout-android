@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import com.google.android.material.tabs.TabLayout;
 
 import org.apache.commons.io.FileUtils;
+import org.dickele.workout.activity.parameters.ParametersActivity;
 import org.dickele.workout.activity.routine.RoutineActivity;
 import org.dickele.workout.activity.routine.RoutineFragment;
 import org.dickele.workout.activity.workout.WorkoutActivity;
@@ -68,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_main_reload:
                 reloadWorkouts();
                 return true;
+            case R.id.menu_main_parameters:
+                goToParameters();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -97,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
     public void goToWorkout(final Integer workoutID) {
         final Intent intent = new Intent(this, WorkoutActivity.class);
         intent.putExtra(WorkoutFragment.WORKOUT_ID, workoutID);
+        startActivity(intent);
+    }
+
+    public void goToParameters() {
+        final Intent intent = new Intent(this, ParametersActivity.class);
         startActivity(intent);
     }
 

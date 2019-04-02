@@ -12,6 +12,8 @@ public final class StringUtil {
 
     public static final DateTimeFormatter DATE_FORMATTER_DDMMYYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+    public static final DateTimeFormatter DATE_FORMATTER_YYYYMMDD = DateTimeFormatter.ofPattern("yyyy_MM_dd");
+
     public static final DateTimeFormatter DATE_FORMATTER_LONG = DateTimeFormatter.ofPattern("EEEE d LLLL yyyy");
 
     public static String getStringForTotalReps(final WorkoutExercise e) {

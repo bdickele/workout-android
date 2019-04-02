@@ -20,6 +20,10 @@
     <string name="exercise_difficulty_label">Difficulté</string>
     <string name="exercise_best_performance_label">Record</string>
 
+    <string name="email">Email</string>
+    <string name="export">Exporter</string>
+    <string name="export_label">Exporter les sessions et envoyer par email</string>
+
     <string name="routine_L1_P1">Niveau 1 - programme 1</string>
     <string name="routine_L1_P2">Niveau 1 - programme 2</string>
     <string name="routine_L2">Niveau 2</string>

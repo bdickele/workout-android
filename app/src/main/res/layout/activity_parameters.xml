@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.parameters.ParametersActivity">
+
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/label_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:layout_below="@id/toolbar_main"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:minWidth="300dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_below="@id/label_email"
+        android:layout_alignStart="@id/label_email"
+        android:layout_marginTop="8dp"
+        android:inputType="textEmailAddress"
+        android:autofillHints="@string/email"
+        android:hint="@string/email" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/email"
+        android:layout_marginTop="12dp"
+        android:layout_alignStart="@id/email"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:id="@+id/label_export"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/export_label"
+        android:layout_below="@id/divider1"
+        android:layout_marginTop="32dp"
+        android:layout_alignStart="@id/label_email" />
+
+    <Button
+        android:id="@+id/button_export"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_export"
+        android:layout_alignStart="@id/label_export"
+        android:layout_marginTop="8dp"
+        android:background="@color/shapeRoutineBackground"
+        android:text="@string/export"
+        android:textColor="@color/shapeRoutineForeground"
+        style="?android:attr/borderlessButtonStyle" />
+
+</RelativeLayout>
