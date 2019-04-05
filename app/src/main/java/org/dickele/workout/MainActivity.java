@@ -10,10 +10,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import org.apache.commons.io.FileUtils;
 import org.dickele.workout.activity.parameters.ParametersActivity;
-import org.dickele.workout.activity.routine.RoutineActivity;
-import org.dickele.workout.activity.routine.RoutineFragment;
-import org.dickele.workout.activity.workout.WorkoutActivity;
-import org.dickele.workout.activity.workout.WorkoutFragment;
+import org.dickele.workout.activity.workoutlist.WorkoutListScreen2Activity;
 import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
@@ -91,16 +88,9 @@ public class MainActivity extends AppCompatActivity {
         tabs.setupWithViewPager(pager);
     }
 
-    public void gotToRoutine(final RoutineRef routine) {
-        final Intent intent = new Intent(this, RoutineActivity.class);
-        intent.putExtra(RoutineFragment.ROUTINE_NAME, routine.name());
-        intent.putExtra(RoutineFragment.EXERCISE_NAME, "");
-        startActivity(intent);
-    }
-
-    public void goToWorkout(final Integer workoutID) {
-        final Intent intent = new Intent(this, WorkoutActivity.class);
-        intent.putExtra(WorkoutFragment.WORKOUT_ID, workoutID);
+    public void goToRoutineWorkouts(final RoutineRef routine) {
+        final Intent intent = new Intent(this, WorkoutListScreen2Activity.class);
+        intent.putExtra(WorkoutListScreen2Activity.ROUTINE_NAME, routine.name());
         startActivity(intent);
     }
 

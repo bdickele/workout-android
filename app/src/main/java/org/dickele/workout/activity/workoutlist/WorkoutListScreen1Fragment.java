@@ -18,17 +18,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RoutineListFragment extends Fragment {
+public class WorkoutListScreen1Fragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_routine_workouts, container, false);
+        final View view = inflater.inflate(R.layout.fragment_workoutlist_screen1, container, false);
 
         final List<Routine> routines = InMemoryDb.getInstance().getRoutines().stream()
                 .sorted(new RoutineAnteChronologicalComparator())
                 .collect(Collectors.toList());
 
-        final RoutineListItemAdapter adapter = new RoutineListItemAdapter(routines);
+        final WorkoutListScreen1ItemAdapter adapter = new WorkoutListScreen1ItemAdapter(routines);
         final RecyclerView recyclerView = view.findViewById(R.id.routines_recycler_view);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

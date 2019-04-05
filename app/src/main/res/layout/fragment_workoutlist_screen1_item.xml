@@ -21,21 +21,37 @@
         android:textSize="@dimen/shapeTextSize"
         android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/routine_workouts_recycler_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toEndOf="@id/routine_code"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/routine_workouts_recycler_view"
-        android:layout_alignStart="@id/routine_code"
         android:layout_marginBottom="8dp"
-        android:background="?android:attr/listDivider" />
+        android:layout_toEndOf="@id/routine_code">
+
+        <TextView
+            android:id="@+id/routine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/routine_dates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/routine_name"
+            android:layout_alignStart="@id/routine_name"
+            android:layout_marginTop="4dp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/routine_dates"
+            android:layout_alignStart="@id/routine_dates"
+            android:layout_marginTop="12dp"
+            android:background="?android:attr/listDivider" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

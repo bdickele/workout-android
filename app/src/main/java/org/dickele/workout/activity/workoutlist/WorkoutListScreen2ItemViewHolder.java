@@ -7,22 +7,31 @@ import org.dickele.workout.R;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.util.StringUtil;
 
+import java.util.stream.Collectors;
+
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-class RoutineWorkoutItemViewHolder extends RecyclerView.ViewHolder {
+class WorkoutListScreen2ItemViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.workout_date)
     TextView textDate;
 
-    RoutineWorkoutItemViewHolder(final View itemView) {
+    @BindView(R.id.workout_exercises)
+    TextView textExercises;
+
+    WorkoutListScreen2ItemViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }
 
     void updateWorkout(final Workout workout) {
         textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_LONG));
+        final String exercises = workout.getExercises().stream()
+                .map(workoutExercise -> workoutExercise.getExerciseRef().name())
+                .collect(Collectors.joining("  "));
+        textExercises.setText(exercises);
     }
 
 }

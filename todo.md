@@ -8,6 +8,8 @@
     - saisie et sauvegarde de l'adresse email
     - envoi des sessions au format MD
 
+- Affichage long des dates : première lettre de la date en majuscule
+
 - Icone de l'application : ne s'affiche pas correctement sur le telephone
 
 - Couleur de la barre de navigation tout en bas (possible avec un theme ?)

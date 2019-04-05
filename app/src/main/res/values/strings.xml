@@ -14,9 +14,7 @@
     <string name="menu_exercises">Exercices</string>
     <string name="complete_history">Historique complet de l\'exercice</string>
 
-    <string name="first_workout">Première séance :</string>
-    <string name="last_workout">Dernière séance :</string>
-    <string name="exercise_and_label">Exercice %1$s</string>
+    <string name="from_to">Du %1$s au %2$s</string>
     <string name="exercise_difficulty_label">Difficulté</string>
     <string name="exercise_best_performance_label">Record</string>
 

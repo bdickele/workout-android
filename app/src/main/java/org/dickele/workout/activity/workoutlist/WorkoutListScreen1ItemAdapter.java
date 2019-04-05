@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.dickele.workout.MainActivity;
 import org.dickele.workout.R;
 import org.dickele.workout.data.Routine;
 
@@ -13,25 +14,28 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RoutineListItemAdapter extends RecyclerView.Adapter<RoutineListItemViewHolder> {
+public class WorkoutListScreen1ItemAdapter extends RecyclerView.Adapter<WorkoutListScreen1ItemViewHolder> {
 
     private final List<Routine> routines;
 
-    RoutineListItemAdapter(final List<Routine> routines) {
+    WorkoutListScreen1ItemAdapter(final List<Routine> routines) {
         this.routines = routines;
     }
 
     @NonNull
     @Override
-    public RoutineListItemViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
+    public WorkoutListScreen1ItemViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
         final Context context = viewGroup.getContext();
         final LayoutInflater inflater = LayoutInflater.from(context);
-        final View view = inflater.inflate(R.layout.fragment_routine_workouts_item, viewGroup, false);
-        return new RoutineListItemViewHolder(view);
+        final View view = inflater.inflate(R.layout.fragment_workoutlist_screen1_item, viewGroup, false);
+
+        view.setOnClickListener(v -> ((MainActivity) view.getContext()).goToRoutineWorkouts(this.routines.get(i).getRef()));
+
+        return new WorkoutListScreen1ItemViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final RoutineListItemViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final WorkoutListScreen1ItemViewHolder viewHolder, final int i) {
         viewHolder.updateRoutine(this.routines.get(i));
     }
 
