@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.dickele.workout.MainActivity;
 import org.dickele.workout.R;
 import org.dickele.workout.data.Routine;
 
@@ -28,9 +27,6 @@ public class WorkoutListScreen1ItemAdapter extends RecyclerView.Adapter<WorkoutL
         final Context context = viewGroup.getContext();
         final LayoutInflater inflater = LayoutInflater.from(context);
         final View view = inflater.inflate(R.layout.fragment_workoutlist_screen1_item, viewGroup, false);
-
-        view.setOnClickListener(v -> ((MainActivity) view.getContext()).goToRoutineWorkouts(this.routines.get(i).getRef()));
-
         return new WorkoutListScreen1ItemViewHolder(view);
     }
 

@@ -3,6 +3,7 @@ package org.dickele.workout.activity.workoutlist;
 import android.view.View;
 import android.widget.TextView;
 
+import org.dickele.workout.MainActivity;
 import org.dickele.workout.R;
 import org.dickele.workout.data.Routine;
 import org.dickele.workout.util.StringUtil;
@@ -29,6 +30,8 @@ class WorkoutListScreen1ItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateRoutine(final Routine routine) {
+        itemView.setOnClickListener(v -> ((MainActivity) itemView.getContext()).goToRoutineWorkouts(routine.getRef()));
+
         textRoutineCode.setText(routine.getRef().getShortCode());
         textRoutineName.setText(ViewUtil.getRoutineLongName(itemView.getContext(), routine.getRef()));
         textRoutineDates.setText(itemView.getContext().getString(R.string.from_to,
