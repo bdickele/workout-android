@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
 import org.dickele.workout.activity.workout.exercise.WorkoutExercisesFragment;
 import org.dickele.workout.data.Workout;
@@ -53,9 +52,8 @@ public class WorkoutFragment extends Fragment {
 
         configureAndShowExercisesFragment();
 
-        textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_LONG));
+        textDate.setText(StringUtil.getLongDate(workout.getDate()));
         textComment.setText(workout.getComment());
-        textComment.setVisibility(StringUtils.isEmpty(workout.getComment()) ? View.GONE : View.VISIBLE);
 
         exercisesFragment.updateExercises(workout.getExercises());
 

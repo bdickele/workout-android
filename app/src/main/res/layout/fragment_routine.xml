@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/exercise"
-            android:textSize="@dimen/subtitle" />
+            android:textSize="@dimen/exercise" />
 
         <TextView
             android:id="@+id/exercise_code"
@@ -25,7 +25,7 @@
             android:textColor="@color/shapeExerciseBackground"
             android:layout_toEndOf="@id/exercise_label"
             android:layout_alignBaseline="@id/exercise_label"
-            android:textSize="@dimen/subtitle" />
+            android:textSize="@dimen/exercise" />
 
         <TextView
             android:id="@+id/exercise_difficulty_label"
@@ -34,7 +34,7 @@
             android:text="@string/exercise_difficulty_label"
             android:layout_toStartOf="@id/exercise_difficulty"
             android:layout_alignBaseline="@id/exercise_label"
-            android:textSize="@dimen/subtitle" />
+            android:textSize="@dimen/exercise" />
 
         <ImageView
             android:id="@+id/exercise_difficulty"

@@ -43,7 +43,7 @@ public final class GraphUtil {
 
         graph.getSeries().forEach(serie -> serie.setOnDataPointTapListener(
                 (mSeries, dataPoint) -> Toast.makeText(context,
-                        GraphUtil.convertXValueToLocalDate(dataPoint.getX()).format(StringUtil.DATE_FORMATTER_LONG)
+                        StringUtil.getLongDate(GraphUtil.convertXValueToLocalDate(dataPoint.getX()))
                                 + " : " + Double.valueOf(dataPoint.getY()).intValue(),
                         Toast.LENGTH_SHORT).show()));
     }

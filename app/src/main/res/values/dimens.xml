@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="shapeTextSize">16sp</dimen>
-    <dimen name="subtitle">16sp</dimen>
     <dimen name="toolbarTextSize">21sp</dimen>
+    <dimen name="shapeTextSize">16sp</dimen>
+    <dimen name="subtitle">18sp</dimen>
+    <dimen name="exercise">16sp</dimen>
 
     <dimen name="exerciseListBestTotal">14sp</dimen>
     <dimen name="exerciseListBestReps">12sp</dimen>

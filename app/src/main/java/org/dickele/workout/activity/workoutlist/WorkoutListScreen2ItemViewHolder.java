@@ -27,7 +27,7 @@ class WorkoutListScreen2ItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     void updateWorkout(final Workout workout) {
-        textDate.setText(workout.getDate().format(StringUtil.DATE_FORMATTER_LONG));
+        textDate.setText(StringUtil.getLongDate(workout.getDate()));
         final String exercises = workout.getExercises().stream()
                 .map(workoutExercise -> workoutExercise.getExerciseRef().name())
                 .collect(Collectors.joining("  "));

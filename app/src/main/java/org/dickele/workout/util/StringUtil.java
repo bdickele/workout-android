@@ -2,6 +2,7 @@ package org.dickele.workout.util;
 
 import org.dickele.workout.data.WorkoutExercise;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.List;
@@ -14,7 +15,12 @@ public final class StringUtil {
 
     public static final DateTimeFormatter DATE_FORMATTER_YYYYMMDD = DateTimeFormatter.ofPattern("yyyy_MM_dd");
 
-    public static final DateTimeFormatter DATE_FORMATTER_LONG = DateTimeFormatter.ofPattern("EEEE d LLLL yyyy");
+    private static final DateTimeFormatter DATE_FORMATTER_LONG = DateTimeFormatter.ofPattern("EEEE d LLLL yyyy");
+
+    public static String getLongDate(final LocalDate date) {
+        final String s = date.format(DATE_FORMATTER_LONG);
+        return s.substring(0, 1).toUpperCase() + s.substring(1);
+    }
 
     public static String getStringForTotalReps(final WorkoutExercise e) {
         return e.getTotal() == 0 ? "0" :
