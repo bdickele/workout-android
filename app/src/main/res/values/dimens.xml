@@ -4,6 +4,7 @@
     <dimen name="shapeTextSize">16sp</dimen>
     <dimen name="subtitle">18sp</dimen>
     <dimen name="exercise">16sp</dimen>
+    <dimen name="repsLegend">12sp</dimen>
 
     <dimen name="exerciseListBestTotal">14sp</dimen>
     <dimen name="exerciseListBestReps">12sp</dimen>

@@ -15,4 +15,6 @@
     <color name="shapeRoutineBackground">#0A6AE7</color>
     <color name="shapeRoutineForeground">#fff</color>
 
+    <color name="chart_line_color">#3333</color>
+
 </resources>

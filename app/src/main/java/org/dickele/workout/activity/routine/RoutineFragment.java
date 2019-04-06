@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jjoe64.graphview.GraphView;
+import com.github.mikephil.charting.charts.LineChart;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
@@ -44,8 +44,8 @@ public class RoutineFragment extends Fragment {
     @BindView(R.id.exercise_description)
     TextView textDescription;
 
-    @BindView(R.id.exercise_graph)
-    GraphView graphView;
+    @BindView(R.id.chart)
+    LineChart chart;
 
     public RoutineFragment() {
         //
@@ -87,7 +87,7 @@ public class RoutineFragment extends Fragment {
 
         final List<WorkoutExercise> routineExercises = serviceRead.getRoutineExercises(routine, exerciseRef);
 
-        GraphUtil.configureExercisesGraph(graphView, getActivity(), routineExercises, true);
+        GraphUtil.configureLineGraph(chart, routineExercises);
 
         configureAndShowExercisesFragment();
 

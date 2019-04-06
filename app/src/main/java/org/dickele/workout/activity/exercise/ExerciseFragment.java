@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jjoe64.graphview.GraphView;
+import com.github.mikephil.charting.charts.LineChart;
 
 import org.dickele.workout.R;
 import org.dickele.workout.activity.exercise.reps.ExerciseRoutinesFragment;
@@ -51,8 +51,8 @@ public class ExerciseFragment extends Fragment {
     @BindView(R.id.exercise_description)
     TextView textDescription;
 
-    @BindView(R.id.exercise_graph)
-    GraphView graphView;
+    @BindView(R.id.chart)
+    LineChart chart;
 
     public ExerciseFragment() {
         //
@@ -84,7 +84,8 @@ public class ExerciseFragment extends Fragment {
         picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
                 R.mipmap.baseline_whatshot_black_18 : R.mipmap.baseline_fitness_center_black_18);
         textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
-        GraphUtil.configureExercisesGraph(graphView, getActivity(), exerciseExercises, false);
+
+        GraphUtil.configureLineGraph(chart, exerciseExercises);
 
         configureAndShowRoutineExercisesFragment();
 
@@ -102,4 +103,5 @@ public class ExerciseFragment extends Fragment {
                     .commit();
         }
     }
+
 }
