@@ -2044,3 +2044,79 @@ Idem : fatigué, on va voir.
 |F|20 19 19 19|Temps de récup. allongés|
 |K2|23 23 22|Temps de récup. allongés|
 |G|6x86| |
+
+## 27/03/2019
+
+Fatigué, on va voir.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|11 11 10 10 10| |
+|E2d|14 13 13 13 13 13| |
+|E2g|14 13 13 13 13 13| |
+|F|20 19 19 19| |
+|K2|3x23| |
+|G|6x86| |
+
+## 28/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x7| |
+|A6|9 9 9 8 8 8| |
+|A2|12 12 12 11 11 11|Grosse pause après la 3e série|
+|I1|12 12 11 11 11 11| |
+|C3|12 12 11 11 11 11|Temps de récupération allongés, devient dur.|
+|J1|20| |
+|K|26| |
+|L|26| |
+|I4|8| |
+|I5|8| |
+
+## 31/03/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|6x8| |
+|A6|9 9 9 8 8 8|Très très dur|
+|A2|12 12 12 12 11 11| |
+|I1|12 12 12 11 11 11| |
+|C3|12 12 12 11 11 11| |
+|J1|24| |
+|K|28| |
+|L|16, 12|Douleur à l'épaule gauche à la 16e répétition|
+|I4|9| |
+|I5|8| |
+|H|11 11 7 12 11| |
+|G|6x87| |
+
+## 02/04/2019
+
+Très fatigué, on essaye.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|11 11 11 10 10| |
+|K2|24 23 23| |
+|E2d|14 14 13 13 13 13| |
+|E2g|14 14 13 13 13 13| |
+|F|20 20 19 19| |
+|G|6x87| |
+
+## 03/04/2019
+
+Ca devient trop dur, trop long.
+Envisager le niveau 8, ne serait-ce que pour casser la routine.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|9 9 9 8 8 8| |
+|A6|9 9 9 8 8 8| |
+|A2|12 12 12 12 11 11| |
+|I1|12 12 12 11 11 11|Devien très dur. Temps de récup. allongés.|
+|C3|12 12 12 11 11 11|Temps de récup. allongés.|
+|J1|20| |
+|K|30| |
+|L|20| |
+|I4|8| |
+|I5|8| |
