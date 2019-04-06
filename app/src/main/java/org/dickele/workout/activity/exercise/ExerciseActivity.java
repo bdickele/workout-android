@@ -35,7 +35,8 @@ public class ExerciseActivity extends AppCompatActivity {
         pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
-                ((Toolbar) findViewById(R.id.toolbar_main)).setTitle(exercises.get(position).getRef().name());
+                ((Toolbar) findViewById(R.id.toolbar_main))
+                        .setTitle(getString(R.string.exercise_and_code, exercises.get(position).getRef().name()));
             }
         });
     }

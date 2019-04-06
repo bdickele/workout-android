@@ -5,6 +5,7 @@
     <string name="routine">Programme</string>
     <string name="routines">Programmes</string>
     <string name="exercise">Exercice</string>
+    <string name="exercise_and_code">Exercice %1$s</string>
     <string name="exercises">Exercices</string>
     <string name="more">Plus</string>
     <string name="reload">Recharger</string>

@@ -4,6 +4,7 @@ import org.dickele.workout.data.Exercise;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -23,6 +24,7 @@ public class ExerciseAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
+    @NonNull
     public Fragment getItem(final int exerciseIndex) {
         return ExerciseFragment.newInstance(exercises.get(exerciseIndex));
     }

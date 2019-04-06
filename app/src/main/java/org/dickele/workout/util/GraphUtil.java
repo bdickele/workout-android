@@ -51,23 +51,18 @@ public final class GraphUtil {
         chart.setDrawBorders(false);
         chart.setHighlightPerDragEnabled(true);
         chart.setHighlightPerTapEnabled(true);
-        chart.setOnChartValueSelectedListener(new ChartValueSelectionListener(chart));
+        chart.setOnChartValueSelectedListener(new ChartValueSelectionListener(chart, exerciseExercises));
 
         final LineData lineData = new LineData(dataSet);
         chart.setData(lineData);
         chart.invalidate(); // refresh
     }
 
-    private static String convertDateAsFlotToString(final float dateAsFloat,
-            final DateTimeFormatter formatter) {
-        return LocalDate.ofEpochDay(Float.valueOf(dateAsFloat).longValue()).format(formatter);
-    }
-
     private static class DateFormatter extends ValueFormatter {
 
         @Override
         public String getFormattedValue(final float value) {
-            return convertDateAsFlotToString(value, DATE_FORMATTER_DDMMYY);
+            return LocalDate.ofEpochDay(Float.valueOf(value).longValue()).format(DATE_FORMATTER_DDMMYY);
         }
     }
 
@@ -75,18 +70,41 @@ public final class GraphUtil {
 
         private final LineChart chart;
 
-        private ChartValueSelectionListener(final LineChart chart) {
+        private final List<WorkoutExercise> exerciseExercises;
+
+        private static final Description description;
+
+        static {
+            description = new Description();
+            description.setTextSize(12);
+            description.setTextAlign(Paint.Align.LEFT);
+            description.setPosition(80f, 40f);
+        }
+
+        private ChartValueSelectionListener(final LineChart chart, final List<WorkoutExercise> exerciseExercises) {
             this.chart = chart;
+            this.exerciseExercises = exerciseExercises;
         }
 
         @Override
         public void onValueSelected(final Entry e, final Highlight h) {
-            final String s = convertDateAsFlotToString(e.getX(), DATE_FORMATTER_DDMMYYYY) + " : " + Double.valueOf(e.getY()).intValue();
-            final Description description = new Description();
+            // Value for x-axis is not a date, it's a float, let's convert it back
+            final LocalDate date = LocalDate.ofEpochDay(Float.valueOf(e.getX()).longValue());
+            final WorkoutExercise exercise = exerciseExercises.stream()
+                    .filter(ex -> date.equals(ex.getDate()))
+                    .findAny()
+                    .orElse(null);
+
+            if (exercise == null) {
+                onNothingSelected();
+                return;
+            }
+
+            final String s = date.format(DATE_FORMATTER_DDMMYYYY) + " : "
+                    + exercise.getTotal()
+                    + " (" + StringUtil.getStringForReps(exercise.getReps()) + ")";
+
             description.setText(s);
-            description.setTextSize(12);
-            description.setTextAlign(Paint.Align.CENTER);
-            description.setPosition(220f, 80f);
             chart.setDescription(description);
         }
 
