@@ -1,5 +1,6 @@
 package org.dickele.workout.activity.parameters;
 
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -15,12 +16,16 @@ import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.util.SimpleTextWatcher;
 
 import java.io.File;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.FileProvider;
 import androidx.core.widget.ContentLoadingProgressBar;
+
+import static android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION;
 
 public class ParametersActivity extends AppCompatActivity {
 
@@ -74,27 +79,46 @@ public class ParametersActivity extends AppCompatActivity {
     }
 
     public void exportWorkouts() {
-        //TODO Mettre les libelles dans string.xml
         final ContentLoadingProgressBar progressBar = findViewById(R.id.progressBar);
         progressBar.show();
 
-        final Pair<String, File> fileResult = FromJavaToMd.createFile(InMemoryDb.getInstance().getWorkouts(), this);
+        try {
+            createDirAndFile();
+        } catch (final Exception e) {
+            Toast.makeText(this, "Error : " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Logger.getLogger(this.getClass().getSimpleName()).severe(e.getMessage());
+        }
+
+        progressBar.hide();
+    }
+
+    private void createDirAndFile() {
+        final ContextWrapper cw = new ContextWrapper(this);
+        final File directory = new File(getFilesDir(), "backups");
+
+        if (!directory.exists()) {
+            directory.mkdir();
+        }
+
+        final String path = directory.getPath();
+
+        final Pair<String, File> fileResult = FromJavaToMd.createFile(path, InMemoryDb.getInstance().getWorkouts(), this);
         if (fileResult.getLeft() != null) {
-            Toast.makeText(this, "Erreur : " + fileResult.getLeft(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error : " + fileResult.getLeft(), Toast.LENGTH_LONG).show();
             return;
         }
+
         final File file = fileResult.getRight();
-        Toast.makeText(this, "Fichier créé", Toast.LENGTH_SHORT).show();
-        //TODO La creation de l'Uri plante
+        final Uri contentUri = FileProvider.getUriForFile(this, "org.dickele.workout.fileprovider", file);
+
         final Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("*/*");
+        intent.setFlags(FLAG_GRANT_READ_URI_PERMISSION);
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{textEmail.getText().toString()});
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Workouts backup");
-        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
+        intent.putExtra(Intent.EXTRA_STREAM, contentUri);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-        Toast.makeText(this, "Fichier envoyé par email", Toast.LENGTH_SHORT).show();
-        progressBar.hide();
     }
 }

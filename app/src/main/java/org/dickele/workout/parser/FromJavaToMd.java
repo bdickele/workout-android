@@ -30,17 +30,24 @@ public final class FromJavaToMd {
 
     private static final String EMPTY_LINE = "";
 
-    public static Pair<String, File> createFile(final List<Workout> workouts, final Context context) {
+    private static final String LINE_BREAK = System.getProperty("line.separator");
+
+    public static Pair<String, File> createFile(final String dir, final List<Workout> workouts, final Context context) {
         final List<String> lines = createLines(workouts, context);
 
         try {
-            final File tmpFile = File.createTempFile("workout_" + LocalDate.now().format(StringUtil.DATE_FORMATTER_YYYYMMDD), ".md");
-            final FileWriter writer = new FileWriter(tmpFile);
+            final File file = new File(dir, "workout_" + LocalDate.now().format(StringUtil.DATE_FORMATTER_YYYYMMDD) + ".md");
+
+            if (file.exists()) {
+                file.delete();
+            }
+            final FileWriter writer = new FileWriter(file);
             for (final String line : lines) {
                 writer.write(line);
+                writer.write(LINE_BREAK);
             }
             writer.close();
-            return new ImmutablePair<>(null, tmpFile);
+            return new ImmutablePair<>(null, file);
         } catch (final Exception e) {
             return new ImmutablePair<>(e.getMessage(), null);
         }

@@ -22,6 +22,9 @@
     <string name="email">Email</string>
     <string name="export">Exporter</string>
     <string name="export_label">Exporter les sessions et envoyer par email</string>
+    <string name="file_created">Fichier créé</string>
+    <string name="file_sent">Fichier envoyé par email</string>
+    <string name="email_subject">Fichier de sauvegarde de sessions</string>
 
     <string name="routine_L1_P1">Niveau 1 - programme 1</string>
     <string name="routine_L1_P2">Niveau 1 - programme 2</string>

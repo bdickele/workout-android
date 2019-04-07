@@ -2113,7 +2113,7 @@ Envisager le niveau 8, ne serait-ce que pour casser la routine.
 |B|9 9 9 8 8 8| |
 |A6|9 9 9 8 8 8| |
 |A2|12 12 12 12 11 11| |
-|I1|12 12 12 11 11 11|Devien très dur. Temps de récup. allongés.|
+|I1|12 12 12 11 11 11|Devient très dur. Temps de récup. allongés.|
 |C3|12 12 12 11 11 11|Temps de récup. allongés.|
 |J1|20| |
 |K|30| |
