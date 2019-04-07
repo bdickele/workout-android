@@ -37,30 +37,30 @@ public final class ViewUtil {
     public static int getDifficultyPic_S(final int difficulty) {
         switch (difficulty) {
             case 1:
-                return R.mipmap.baseline_looks_1_black_18;
+                return R.drawable.ic_looks_1_black_18dp;
             case 2:
-                return R.mipmap.baseline_looks_2_black_18;
+                return R.drawable.ic_looks_2_black_18dp;
             case 3:
-                return R.mipmap.baseline_looks_3_black_18;
+                return R.drawable.ic_looks_3_black_18dp;
             case 4:
-                return R.mipmap.baseline_looks_4_black_18;
+                return R.drawable.ic_looks_4_black_18dp;
             default:
-                return R.mipmap.baseline_looks_1_black_18;
+                return R.drawable.ic_looks_1_black_18dp;
         }
     }
 
     public static int getDifficultyPic_M(final int difficulty) {
         switch (difficulty) {
             case 1:
-                return R.mipmap.baseline_looks_1_black_24;
+                return R.drawable.ic_looks_1_black_24dp;
             case 2:
-                return R.mipmap.baseline_looks_2_black_24;
+                return R.drawable.ic_looks_2_black_24dp;
             case 3:
-                return R.mipmap.baseline_looks_3_black_24;
+                return R.drawable.ic_looks_3_black_24dp;
             case 4:
-                return R.mipmap.baseline_looks_4_black_24;
+                return R.drawable.ic_looks_4_black_24dp;
             default:
-                return R.mipmap.baseline_looks_1_black_24;
+                return R.drawable.ic_looks_1_black_24dp;
         }
     }
 }

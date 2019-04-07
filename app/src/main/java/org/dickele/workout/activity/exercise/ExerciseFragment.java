@@ -83,7 +83,7 @@ public class ExerciseFragment extends Fragment {
         textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
         textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
         picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
-                R.mipmap.baseline_whatshot_black_18 : R.mipmap.baseline_fitness_center_black_18);
+                R.drawable.ic_whatshot_black_18dp : R.drawable.ic_fitness_center_black_18dp);
         textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
 
         GraphUtil.configureLineGraph(chart, exerciseExercises);

@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="@id/exercise_difficulty_label"
         app:layout_constraintStart_toEndOf="@id/exercise_difficulty_label"
         android:layout_marginStart="8dp"
-        android:src="@mipmap/baseline_looks_1_black_18" />
+        android:src="@drawable/ic_looks_1_black_18dp" />
 
     <ImageView
         android:id="@+id/exercise_best_pic"
@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toStartOf="@id/exercise_best_total"
         app:layout_constraintBottom_toBottomOf="@id/exercise_difficulty"
         android:layout_marginEnd="8dp"
-        android:src="@mipmap/baseline_fitness_center_black_18" />
+        android:src="@drawable/ic_fitness_center_black_18dp" />
 
     <TextView
         android:id="@+id/exercise_best_total"

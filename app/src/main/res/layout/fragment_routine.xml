@@ -42,7 +42,7 @@
         android:layout_marginStart="8dp"
         android:layout_alignParentEnd="true"
         android:layout_alignBottom="@id/exercise_difficulty_label"
-        android:src="@mipmap/baseline_looks_1_black_24" />
+        android:src="@drawable/ic_looks_1_black_24dp" />
 
     <TextView
         android:id="@+id/exercise_description"
