@@ -10,4 +10,5 @@
     app:titleTextAppearance="@style/Toolbar.TitleText"
     android:background="@color/mainMenuBackground"
     android:title="@string/app_name"
+    app:contentInsetStartWithNavigation="0dp"
     android:elevation="0dp" />

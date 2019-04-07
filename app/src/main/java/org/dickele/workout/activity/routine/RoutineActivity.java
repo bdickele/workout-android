@@ -66,25 +66,30 @@ public class RoutineActivity extends AppCompatActivity {
             }
         });
 
-        // Configuration of main toolbar
         setSupportActionBar(findViewById(R.id.toolbar_main));
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(final Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity_routine, menu);
-        return true;
+        // Used to display back button in toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
+            // Management of back button in toolbar
+            case android.R.id.home:
+                finish();
+                return true;
             case R.id.menu_exercise_history:
                 gotToExercise(exerciceRefs.get(pager.getCurrentItem()));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity_routine, menu);
+        return true;
     }
 
     private void gotToExercise(final ExerciseRef exerciseRef) {

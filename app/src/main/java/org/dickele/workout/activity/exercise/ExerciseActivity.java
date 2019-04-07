@@ -1,6 +1,7 @@
 package org.dickele.workout.activity.exercise;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import org.dickele.workout.R;
 import org.dickele.workout.data.Exercise;
@@ -39,6 +40,22 @@ public class ExerciseActivity extends AppCompatActivity {
                         .setTitle(getString(R.string.exercise_and_code, exercises.get(position).getRef().name()));
             }
         });
+        
+        setSupportActionBar(findViewById(R.id.toolbar_main));
+        // Used to display back button in toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        // Management of back button in toolbar
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }
