@@ -13,7 +13,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RoutineExerciseRepAdapter extends RecyclerView.Adapter<RoutineExerciseRepViewHolder> {
+class RoutineExerciseRepAdapter extends RecyclerView.Adapter<RoutineExerciseRepViewHolder> {
 
     private final List<WorkoutExercise> exercises;
 

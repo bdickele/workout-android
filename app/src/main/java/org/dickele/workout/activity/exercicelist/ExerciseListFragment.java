@@ -1,17 +1,13 @@
 package org.dickele.workout.activity.exercicelist;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.dickele.workout.R;
-import org.dickele.workout.activity.exercise.ExerciseActivity;
-import org.dickele.workout.activity.exercise.ExerciseFragment;
 import org.dickele.workout.data.Exercise;
 import org.dickele.workout.repository.InMemoryDb;
-import org.dickele.workout.util.ItemClickSupport;
 
 import java.util.List;
 
@@ -33,16 +29,7 @@ public class ExerciseListFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        ItemClickSupport.addTo(recyclerView, R.layout.fragment_exercise_list_item)
-                .setOnItemClickListener((RecyclerView recyclerView1, int position, View v) ->
-                        gotToExercise(exercises.get(position)));
-
         return view;
     }
 
-    private void gotToExercise(final Exercise exercise) {
-        final Intent intent = new Intent(getActivity(), ExerciseActivity.class);
-        intent.putExtra(ExerciseFragment.EXERCISE_NAME, exercise.getRef().name());
-        startActivity(intent);
-    }
 }

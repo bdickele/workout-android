@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/workout_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.workoutlist.WorkoutListScreen2Activity"></activity>
-        <activity android:name=".activity.parameters.ParametersActivity" />
         <activity android:name=".activity.workout.WorkoutActivity" />
         <activity android:name=".activity.routine.RoutineActivity" />
         <activity android:name=".activity.exercise.ExerciseActivity" />
+        <activity android:name=".activity.workoutlist.WorkoutListScreen2Activity" />
+        <activity android:name=".activity.parameters.ParametersActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

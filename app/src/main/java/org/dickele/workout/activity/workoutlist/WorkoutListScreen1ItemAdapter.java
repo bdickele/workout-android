@@ -13,7 +13,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class WorkoutListScreen1ItemAdapter extends RecyclerView.Adapter<WorkoutListScreen1ItemViewHolder> {
+class WorkoutListScreen1ItemAdapter extends RecyclerView.Adapter<WorkoutListScreen1ItemViewHolder> {
 
     private final List<Routine> routines;
 

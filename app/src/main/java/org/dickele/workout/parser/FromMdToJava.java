@@ -49,7 +49,7 @@ public final class FromMdToJava {
     private static List<Workout> extractWorkoutsFromLines(final List<String> allLines) {
         final List<Workout> result = new ArrayList<>();
 
-        Integer ID = 1;
+        int ID = 1;
         RoutineRef currentRoutine = null;
         Workout currentWorkout = null;
         boolean dealingWithExercises = false;
@@ -94,17 +94,19 @@ public final class FromMdToJava {
                 continue;
             }
 
-            if (!dealingWithExercises) {
+            if (!dealingWithExercises && currentWorkout != null) {
                 currentWorkout.addCommentLine(line);
                 continue;
             }
 
-            try {
-                final WorkoutExercise workoutExercise = extractExercise(currentWorkout.getRoutine(), line);
-                currentWorkout.addExercise(workoutExercise);
-            } catch (final Exception e) {
-                LOGGER.severe("Error while extracting workout exerciseRef for line " + line + " : " + e.getCause());
-                throw e;
+            if (currentWorkout != null) {
+                try {
+                    final WorkoutExercise workoutExercise = extractExercise(currentWorkout.getRoutine(), line);
+                    currentWorkout.addExercise(workoutExercise);
+                } catch (final Exception e) {
+                    LOGGER.severe("Error while extracting workout exerciseRef for line " + line + " : " + e.getCause());
+                    throw e;
+                }
             }
         }
 
@@ -180,7 +182,7 @@ public final class FromMdToJava {
                 result.add(currentValue);
             }
 
-            previousValue = currentValue.intValue();
+            previousValue = currentValue;
         }
 
         return result;

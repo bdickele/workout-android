@@ -2,7 +2,7 @@ package org.dickele.workout.parser;
 
 import java.time.format.DateTimeFormatter;
 
-public final class ParserConst {
+final class ParserConst {
 
     static final String INDICATOR_ROUTINE = "# ";
 

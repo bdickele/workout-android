@@ -72,13 +72,14 @@ public class ExerciseFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_exercise, container, false);
         ButterKnife.bind(this, view);
 
-        final ExerciseRef exerciseRef = ExerciseRef.valueOf(getArguments().getString(ExerciseFragment.EXERCISE_NAME));
+        final ExerciseRef exerciseRef = getArguments() != null ? ExerciseRef.valueOf(getArguments().getString(ExerciseFragment.EXERCISE_NAME)) : ExerciseRef.A;
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 
         picDifficulty.setImageResource(ViewUtil.getDifficultyPic_S(exercise.getRef().getDifficulty()));
         final WorkoutExercise bestPerformance = exercise.getBestPerformance();
-        textBestTotal.setText("" + bestPerformance.getTotal());
+        final String bestPerfTotal = "" + bestPerformance.getTotal();
+        textBestTotal.setText(bestPerfTotal);
         textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
         textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
         picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?

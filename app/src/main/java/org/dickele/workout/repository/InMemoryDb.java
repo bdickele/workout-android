@@ -62,7 +62,7 @@ public class InMemoryDb {
                         mapExerciseToWorkoutExercises.computeIfAbsent(workoutExercise.getExerciseRef(), k -> new ArrayList<>())
                                 .add(workoutExercise)));
         exercises = Stream.of(ExerciseRef.values())
-                .map(exerciseRef -> new Exercise(exerciseRef, mapExerciseToWorkoutExercises.getOrDefault(exerciseRef, new ArrayList<>())))
+                .map(exerciseRef -> new Exercise(exerciseRef, mapExerciseToWorkoutExercises.computeIfAbsent(exerciseRef, k -> new ArrayList<>())))
                 .filter(exercise -> !exercise.getExercises().isEmpty())
                 .collect(Collectors.toList());
     }
@@ -81,10 +81,6 @@ public class InMemoryDb {
 
     public Workout getWorkout(final Integer id) {
         return mapIdToWorkout.get(id);
-    }
-
-    public int getNumberOfWorkouts() {
-        return workouts == null ? 0 : workouts.size();
     }
 
 }

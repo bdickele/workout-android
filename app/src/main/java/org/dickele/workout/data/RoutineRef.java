@@ -1,5 +1,6 @@
 package org.dickele.workout.data;
 
+@SuppressWarnings("ALL")
 public enum RoutineRef {
 
     L1_P1("1.1"),

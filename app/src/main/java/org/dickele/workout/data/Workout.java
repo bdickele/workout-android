@@ -29,7 +29,7 @@ public class Workout {
 
     private String comment;
 
-    private List<WorkoutExercise> exercises = new ArrayList<>();
+    private final List<WorkoutExercise> exercises;
 
     public Workout(final Integer id, final RoutineRef routine, final LocalDate date) {
         this(id, routine, date, null, new ArrayList<>());
@@ -46,13 +46,6 @@ public class Workout {
         } else {
             this.comment += "\n" + s;
         }
-    }
-
-    public WorkoutExercise getExercise(final ExerciseRef exercise) {
-        return exercises.stream()
-                .filter(workoutExercise -> workoutExercise.getExerciseRef() == exercise)
-                .findAny()
-                .orElse(null);
     }
 
     /**

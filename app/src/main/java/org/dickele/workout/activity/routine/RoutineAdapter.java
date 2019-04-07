@@ -5,11 +5,12 @@ import org.dickele.workout.data.RoutineRef;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-public class RoutineAdapter extends FragmentStatePagerAdapter {
+class RoutineAdapter extends FragmentStatePagerAdapter {
 
     private final RoutineRef routine;
 
@@ -27,6 +28,7 @@ public class RoutineAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
+    @NonNull
     public Fragment getItem(final int exerciseIndex) {
         return RoutineFragment.newInstance(routine, exercises.get(exerciseIndex));
     }

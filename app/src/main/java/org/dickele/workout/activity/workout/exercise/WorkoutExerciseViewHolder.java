@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.dickele.workout.R;
+import org.dickele.workout.activity.workout.WorkoutActivity;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.util.StringUtil;
 
@@ -35,6 +36,8 @@ class WorkoutExerciseViewHolder extends RecyclerView.ViewHolder {
         textReps.setText(StringUtil.getStringForReps(exercise.getReps()));
         textTotal.setText(StringUtil.getStringForTotalReps(exercise));
         textComment.setText(exercise.getComment());
+
+        itemView.setOnClickListener(v -> ((WorkoutActivity) itemView.getContext()).gotToRoutine(exercise.getRoutine(), exercise.getExerciseRef()));
     }
 
 }

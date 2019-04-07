@@ -37,7 +37,7 @@ public class Routine {
                     if (!exerciseRefs.contains(exerciseRef)) {
                         exerciseRefs.add(exerciseRef);
                     }
-                    mapExercises.getOrDefault(exerciseRef, new ArrayList<>()).add(workoutExercise);
+                    mapExercises.computeIfAbsent(exerciseRef, k -> new ArrayList<>()).add(workoutExercise);
                 })
         );
         return new Routine(routineWorkouts.get(0).getRoutine(), firstDate, lastDate,

@@ -6,9 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.dickele.workout.R;
-import org.dickele.workout.activity.workout.WorkoutActivity;
 import org.dickele.workout.data.WorkoutExercise;
-import org.dickele.workout.util.ItemClickSupport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,23 +43,10 @@ public class WorkoutExercisesFragment extends Fragment {
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_workout_exercises, container, false);
         ButterKnife.bind(this, view);
-
         adapter = new WorkoutExerciseAdapter(this.exercises);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        ItemClickSupport.addTo(recyclerView, R.layout.fragment_workout_exercise_item)
-                .setOnItemClickListener((RecyclerView recyclerView, int position, View v) -> {
-                    final WorkoutExercise workoutExercise = exercises.get(position);
-                    ((WorkoutActivity) v.getContext()).gotToRoutine(workoutExercise.getRoutine(), workoutExercise.getExerciseRef().name());
-                });
-
         return view;
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
 }

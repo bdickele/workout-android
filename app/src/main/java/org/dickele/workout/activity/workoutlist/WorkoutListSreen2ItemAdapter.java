@@ -14,7 +14,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class WorkoutListSreen2ItemAdapter extends RecyclerView.Adapter<WorkoutListScreen2ItemViewHolder> {
+class WorkoutListSreen2ItemAdapter extends RecyclerView.Adapter<WorkoutListScreen2ItemViewHolder> {
 
     private final List<Workout> workouts;
 

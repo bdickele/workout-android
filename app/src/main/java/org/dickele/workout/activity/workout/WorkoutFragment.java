@@ -48,7 +48,7 @@ public class WorkoutFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_workout, container, false);
         ButterKnife.bind(this, view);
 
-        final Workout workout = InMemoryDb.getInstance().getWorkout(getArguments().getInt(WORKOUT_ID, 1));
+        final Workout workout = InMemoryDb.getInstance().getWorkout(getArguments() != null ? getArguments().getInt(WORKOUT_ID, 1) : 1);
 
         configureAndShowExercisesFragment();
 

@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.dickele.workout.MainActivity;
 import org.dickele.workout.R;
 import org.dickele.workout.data.Exercise;
 import org.dickele.workout.data.WorkoutExercise;
@@ -43,11 +44,14 @@ class ExerciseListItemViewHolder extends RecyclerView.ViewHolder {
         textCode.setText(exercise.getRef().name());
         picDifficulty.setImageResource(ViewUtil.getDifficultyPic_S(exercise.getRef().getDifficulty()));
         final WorkoutExercise bestPerformance = exercise.getBestPerformance();
-        textBestTotal.setText("" + bestPerformance.getTotal());
+        final String bestPerfTotal = "" + bestPerformance.getTotal();
+        textBestTotal.setText(bestPerfTotal);
         textBestReps.setText(StringUtil.getStringForReps(bestPerformance.getReps()));
         textBestDate.setText(bestPerformance.getDate().format(StringUtil.DATE_FORMATTER_DDMMYYYY));
         picBestPerformance.setImageResource(exercise.bestPerformanceIsAHotTopic() ?
                 R.mipmap.baseline_whatshot_black_18 : R.mipmap.baseline_fitness_center_black_18);
+
+        itemView.setOnClickListener(v -> ((MainActivity) itemView.getContext()).gotToExercise(exercise));
     }
 
 }

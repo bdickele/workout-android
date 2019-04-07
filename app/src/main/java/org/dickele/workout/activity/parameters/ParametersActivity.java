@@ -1,6 +1,5 @@
 package org.dickele.workout.activity.parameters;
 
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -78,7 +77,7 @@ public class ParametersActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
-    public void exportWorkouts() {
+    private void exportWorkouts() {
         final ContentLoadingProgressBar progressBar = findViewById(R.id.progressBar);
         progressBar.show();
 
@@ -93,7 +92,6 @@ public class ParametersActivity extends AppCompatActivity {
     }
 
     private void createDirAndFile() {
-        final ContextWrapper cw = new ContextWrapper(this);
         final File directory = new File(getFilesDir(), "backups");
 
         if (!directory.exists()) {

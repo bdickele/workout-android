@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * Binds a view (= workout view) and a list of data (= list of workouts)
  */
-public class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExerciseViewHolder> {
+class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExerciseViewHolder> {
 
     private final List<WorkoutExercise> exercises;
 

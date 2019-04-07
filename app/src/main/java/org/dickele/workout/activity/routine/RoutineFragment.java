@@ -69,7 +69,7 @@ public class RoutineFragment extends Fragment {
 
         final ServiceRead serviceRead = new ServiceRead(InMemoryDb.getInstance());
 
-        final String routineName = getArguments().getString(ROUTINE_NAME);
+        final String routineName = getArguments() != null ? getArguments().getString(ROUTINE_NAME) : RoutineRef.L1_P1.name();
         final RoutineRef routine = RoutineRef.valueOf(routineName);
 
         final String exerciseName = getArguments().getString(EXERCISE_NAME);

@@ -16,7 +16,7 @@ import java.util.Map;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ExerciseRoutineAdapter extends RecyclerView.Adapter<ExerciseRoutineViewHolder> {
+class ExerciseRoutineAdapter extends RecyclerView.Adapter<ExerciseRoutineViewHolder> {
 
     private final List<RoutineRef> routineRefs;
 
