@@ -33,6 +33,7 @@
             android:id="@+id/exercise_difficulty_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/textColor2"
             android:text="@string/exercise_difficulty_label" />
 
         <ImageView
@@ -62,7 +63,8 @@
             android:layout_toEndOf="@id/exercise_best_pic"
             android:layout_alignBottom="@+id/exercise_best_pic"
             android:layout_marginStart="8dp"
-            android:textSize="@dimen/exerciseListBestTotal" />
+            android:textSize="@dimen/exerciseListBestTotal"
+            android:textColor="@color/textColor1" />
 
         <TextView
             android:id="@+id/exercise_best_reps"
@@ -71,7 +73,8 @@
             android:layout_toEndOf="@id/exercise_best_total"
             android:layout_alignBaseline="@+id/exercise_best_total"
             android:layout_marginStart="16dp"
-            android:textSize="@dimen/exerciseListBestReps" />
+            android:textSize="@dimen/exerciseListBestReps"
+            android:textColor="@color/textColor2" />
 
         <TextView
             android:id="@+id/exercise_best_date"

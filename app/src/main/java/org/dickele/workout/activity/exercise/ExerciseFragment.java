@@ -76,7 +76,7 @@ public class ExerciseFragment extends Fragment {
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 
-        picDifficulty.setImageResource(ViewUtil.getDifficultyPic_S(exercise.getRef().getDifficulty()));
+        picDifficulty.setImageResource(ViewUtil.getDifficultyPic_M(exercise.getRef().getDifficulty()));
         final WorkoutExercise bestPerformance = exercise.getBestPerformance();
         final String bestPerfTotal = "" + bestPerformance.getTotal();
         textBestTotal.setText(bestPerfTotal);

@@ -12,21 +12,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:minWidth="100dp" />
+        android:minWidth="100dp"
+        android:textColor="@color/textColor1" />
 
     <TextView
         android:id="@+id/exercise_reps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/exercise_date"
-        android:layout_alignBaseline="@id/exercise_date" />
+        android:layout_alignBaseline="@id/exercise_date"
+        android:textColor="@color/textColor1" />
 
     <TextView
         android:id="@+id/exercise_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/exercise_reps"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/textColor1" />
 
     <TextView
         android:id="@+id/exercise_comment"
@@ -35,6 +38,7 @@
         android:layout_below="@id/exercise_reps"
         android:layout_alignStart="@id/exercise_date"
         android:layout_marginTop="4dp"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        android:textColor="@color/textColor2" />
 
 </RelativeLayout>

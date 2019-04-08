@@ -18,25 +18,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:descendantFocusability="blocksDescendants">
+            android:descendantFocusability="blocksDescendants"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/routine_session_list"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:textSize="@dimen/subtitle"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/textColor2" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/workouts_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:overScrollMode="never"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="8dp" />
+                android:layout_marginTop="16dp" />
 
         </LinearLayout>
 

@@ -13,7 +13,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:descendantFocusability="blocksDescendants"
-            android:layout_marginStart="8dp">
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
 
             <TextView
                 android:id="@+id/workout_date"
@@ -21,13 +22,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:textSize="@dimen/subtitle"
+                android:textColor="@color/textColor2"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/workout_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:textColor="@color/textColor2" />
 
             <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/workout_exercises_layout"

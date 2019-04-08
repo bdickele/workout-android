@@ -9,7 +9,6 @@
         <item name="android:statusBarColor">@color/mainMenuBackground</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:windowBackground">@color/screenBackground</item>
-
     </style>
 
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">

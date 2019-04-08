@@ -35,8 +35,8 @@ public class RoutineFragment extends Fragment {
 
     private RoutineExerciseRepsFragment exercisesFragment;
 
-    @BindView(R.id.exercise_code)
-    TextView textExerciseCode;
+    @BindView(R.id.exercise_label)
+    TextView textExerciseLabel;
 
     @BindView(R.id.exercise_difficulty)
     ImageView picDifficulty;
@@ -81,7 +81,7 @@ public class RoutineFragment extends Fragment {
             exerciseRef = ExerciseRef.valueOf(exerciseName);
         }
 
-        textExerciseCode.setText(exerciseRef.name());
+        textExerciseLabel.setText(getString(R.string.exercise_and_code, exerciseRef.name()));
         picDifficulty.setImageResource(ViewUtil.getDifficultyPic_M(exerciseRef.getDifficulty()));
         textDescription.setText(ViewUtil.getExerciseDescription(view.getContext(), exerciseRef));
 
