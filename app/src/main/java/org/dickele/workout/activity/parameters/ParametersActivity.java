@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,22 @@ public class ParametersActivity extends AppCompatActivity {
         configureParameterEmail();
 
         buttonExport.setOnClickListener(v -> exportWorkouts());
+
+        setSupportActionBar(findViewById(R.id.toolbar_main));
+        // Used to display back button in toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        // Management of back button in toolbar
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void configureParameterEmail() {
