@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/exercise_best_total"
         app:layout_constraintBottom_toBottomOf="@id/exercise_difficulty"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="6dp"
         android:src="@drawable/ic_fitness_center_black_18dp" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/exercise_best_reps"
         app:layout_constraintBottom_toBottomOf="@+id/exercise_best_pic"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="12dp"
         android:textSize="@dimen/exerciseListBestTotal"
         android:textColor="@color/textColor1" />
 
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/exercise_best_date"
         app:layout_constraintBaseline_toBaselineOf="@+id/exercise_best_total"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="12dp"
         android:textSize="@dimen/exerciseListBestReps"
         android:textColor="@color/textColor2" />
 
