@@ -5,7 +5,9 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp">
+    android:layout_marginEnd="8dp"
+    android:nestedScrollingEnabled="false"
+    android:overScrollMode="never">
 
     <TextView
         android:id="@+id/routine_code"
@@ -27,7 +29,9 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/routine_code"
         android:layout_marginStart="8dp"
-        android:minHeight="60dp" />
+        android:minHeight="60dp"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never" />
 
     <View
         android:layout_width="match_parent"
