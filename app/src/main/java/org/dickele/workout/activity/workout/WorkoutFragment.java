@@ -10,6 +10,7 @@ import org.dickele.workout.R;
 import org.dickele.workout.activity.workout.exercise.WorkoutExercisesFragment;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
+import org.dickele.workout.util.ArgumentConst;
 import org.dickele.workout.util.StringUtil;
 
 import androidx.annotation.NonNull;
@@ -18,8 +19,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WorkoutFragment extends Fragment {
-
-    public static final String WORKOUT_ID = "WORKOUT_ID";
 
     private WorkoutExercisesFragment exercisesFragment;
 
@@ -35,7 +34,7 @@ public class WorkoutFragment extends Fragment {
 
     static WorkoutFragment newInstance(final int workoutIndex) {
         final Bundle args = new Bundle();
-        args.putInt(WORKOUT_ID, workoutIndex);
+        args.putInt(ArgumentConst.WORKOUT_ID, workoutIndex);
 
         final WorkoutFragment frag = new WorkoutFragment();
         frag.setArguments(args);
@@ -48,7 +47,7 @@ public class WorkoutFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_workout, container, false);
         ButterKnife.bind(this, view);
 
-        final Workout workout = InMemoryDb.getInstance().getWorkout(getArguments() != null ? getArguments().getInt(WORKOUT_ID, 1) : 1);
+        final Workout workout = InMemoryDb.getInstance().getWorkout(getArguments() != null ? getArguments().getInt(ArgumentConst.WORKOUT_ID, 1) : 1);
 
         configureAndShowExercisesFragment();
 

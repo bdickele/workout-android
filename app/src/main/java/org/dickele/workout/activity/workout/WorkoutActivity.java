@@ -6,12 +6,12 @@ import android.view.MenuItem;
 
 import org.dickele.workout.R;
 import org.dickele.workout.activity.routine.RoutineExerciseActivity;
-import org.dickele.workout.activity.routine.RoutineExerciseFragment;
 import org.dickele.workout.data.ExerciseRef;
 import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
+import org.dickele.workout.util.ArgumentConst;
 import org.dickele.workout.util.ViewUtil;
 
 import java.util.List;
@@ -29,7 +29,7 @@ public class WorkoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_workout);
         final InMemoryDb db = InMemoryDb.getInstance();
 
-        final int workoutID = getIntent().getIntExtra(WorkoutFragment.WORKOUT_ID, 0);
+        final int workoutID = getIntent().getIntExtra(ArgumentConst.WORKOUT_ID, 0);
         final Workout workout = db.getWorkout(workoutID);
 
         // The list of workouts to consider here is the list of workouts for a given routine
@@ -68,8 +68,8 @@ public class WorkoutActivity extends AppCompatActivity {
 
     public void gotToRoutine(final RoutineRef routine, final ExerciseRef exerciseRef) {
         final Intent intent = new Intent(WorkoutActivity.this, RoutineExerciseActivity.class);
-        intent.putExtra(RoutineExerciseFragment.ROUTINE_NAME, routine.name());
-        intent.putExtra(RoutineExerciseFragment.EXERCISE_NAME, exerciseRef.name());
+        intent.putExtra(ArgumentConst.ROUTINE_NAME, routine.name());
+        intent.putExtra(ArgumentConst.EXERCISE_NAME, exerciseRef.name());
         startActivity(intent);
     }
 

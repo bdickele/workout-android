@@ -1,51 +1,36 @@
 package org.dickele.workout.activity.exercise.reps;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import org.dickele.workout.R;
+import org.dickele.workout.data.Exercise;
 import org.dickele.workout.data.RoutineRef;
-import org.dickele.workout.data.WorkoutExercise;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
-class ExerciseRoutineAdapter extends RecyclerView.Adapter<ExerciseRoutineViewHolder> {
+public class ExerciseRoutineAdapter extends FragmentStatePagerAdapter {
+
+    private final Exercise exercise;
 
     private final List<RoutineRef> routineRefs;
 
-    private final Map<RoutineRef, List<WorkoutExercise>> mapRoutineToExercises;
-
-    ExerciseRoutineAdapter(final List<RoutineRef> routineRefs,
-            final Map<RoutineRef, List<WorkoutExercise>> mapRoutineToExercises) {
-        this.routineRefs = routineRefs;
-        this.mapRoutineToExercises = mapRoutineToExercises;
+    protected ExerciseRoutineAdapter(final FragmentManager mgr, final Exercise exercise) {
+        super(mgr);
+        this.exercise = exercise;
+        this.routineRefs = exercise.getRoutineRefs();
     }
 
+    @Override
+    public int getCount() {
+        return exercise.getRoutineRefs().size();
+    }
+
+    @Override
     @NonNull
-    @Override
-    public ExerciseRoutineViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
-        final Context context = viewGroup.getContext();
-        final LayoutInflater inflater = LayoutInflater.from(context);
-        final View view = inflater.inflate(R.layout.fragment_exercise_routines_item, viewGroup, false);
-        return new ExerciseRoutineViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull final ExerciseRoutineViewHolder viewHolder, final int i) {
-        final RoutineRef routineRef = this.routineRefs.get(i);
-        viewHolder.updateRoutineReps(routineRef, mapRoutineToExercises.getOrDefault(routineRef, new ArrayList<>()));
-    }
-
-    @Override
-    public int getItemCount() {
-        return routineRefs == null ? 0 : routineRefs.size();
+    public Fragment getItem(final int index) {
+        return ExerciseRoutineFragment.newInstance(exercise.getRef(), routineRefs.get(index));
     }
 
 }

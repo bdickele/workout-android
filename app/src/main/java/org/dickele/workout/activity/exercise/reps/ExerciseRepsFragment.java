@@ -1,4 +1,4 @@
-package org.dickele.workout.activity.routine.reps;
+package org.dickele.workout.activity.exercise.reps;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,20 +18,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RoutineExerciseRepsFragment extends Fragment {
+public class ExerciseRepsFragment extends Fragment {
 
     @BindView(R.id.reps_recycler_view)
     RecyclerView recyclerView;
 
-    private RoutineExerciseRepAdapter adapter;
+    private ExerciseRepAdapter adapter;
 
     private final List<WorkoutExercise> exercises = new ArrayList<>();
 
-    public RoutineExerciseRepsFragment() {
+    public ExerciseRepsFragment() {
         //
     }
 
-    public void updateExercises(final List<WorkoutExercise> exercises) {
+    void updateExercises(final List<WorkoutExercise> exercises) {
         this.exercises.clear();
         this.exercises.addAll(exercises);
         if (adapter != null) {
@@ -44,7 +44,7 @@ public class RoutineExerciseRepsFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_exercise_reps, container, false);
         ButterKnife.bind(this, view);
 
-        adapter = new RoutineExerciseRepAdapter(this.exercises);
+        adapter = new ExerciseRepAdapter(this.exercises);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 

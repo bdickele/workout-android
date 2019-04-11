@@ -3,16 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/routines_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/routines_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:nestedScrollingEnabled="false" />
-
-    </androidx.core.widget.NestedScrollView>
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="false" />
 
 </RelativeLayout>

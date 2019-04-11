@@ -14,12 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+//TODO SUPPRIMER SI PLUS UTILISE
 class ExerciseRoutineViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.routine_code)
     TextView textCode;
 
-    @BindView(R.id.exercise_reps_recycler_view)
+    @BindView(R.id.reps_recycler_view)
     RecyclerView recyclerView;
 
     ExerciseRoutineViewHolder(final View itemView) {

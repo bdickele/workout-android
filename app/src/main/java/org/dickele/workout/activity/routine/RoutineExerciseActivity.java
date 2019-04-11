@@ -8,11 +8,11 @@ import android.view.MenuItem;
 import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
 import org.dickele.workout.activity.exercise.ExerciseActivity;
-import org.dickele.workout.activity.exercise.ExerciseFragment;
 import org.dickele.workout.data.ExerciseRef;
 import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
+import org.dickele.workout.util.ArgumentConst;
 import org.dickele.workout.util.ViewUtil;
 
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class RoutineExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routine);
 
-        final String routineName = getIntent().getStringExtra(RoutineExerciseFragment.ROUTINE_NAME);
+        final String routineName = getIntent().getStringExtra(ArgumentConst.ROUTINE_NAME);
         final RoutineRef routine = RoutineRef.valueOf(routineName);
         setTitle(ViewUtil.getRoutineLongName(getApplicationContext(), routine));
 
@@ -46,7 +46,7 @@ public class RoutineExerciseActivity extends AppCompatActivity {
             //
         });
 
-        final String exerciseName = getIntent().getStringExtra(RoutineExerciseFragment.EXERCISE_NAME);
+        final String exerciseName = getIntent().getStringExtra(ArgumentConst.EXERCISE_NAME);
         int position = 0;
         if (StringUtils.isNotEmpty(exerciseName)) {
             for (int i = 0; i < exerciceRefs.size(); i++) {
@@ -94,7 +94,7 @@ public class RoutineExerciseActivity extends AppCompatActivity {
 
     private void gotToExercise(final ExerciseRef exerciseRef) {
         final Intent intent = new Intent(this, ExerciseActivity.class);
-        intent.putExtra(ExerciseFragment.EXERCISE_NAME, exerciseRef.name());
+        intent.putExtra(ArgumentConst.EXERCISE_NAME, exerciseRef.name());
         startActivity(intent);
     }
 

@@ -10,13 +10,13 @@ import com.google.android.material.tabs.TabLayout;
 
 import org.apache.commons.io.FileUtils;
 import org.dickele.workout.activity.exercise.ExerciseActivity;
-import org.dickele.workout.activity.exercise.ExerciseFragment;
 import org.dickele.workout.activity.parameters.ParametersActivity;
 import org.dickele.workout.activity.workoutlist.WorkoutListScreen2Activity;
 import org.dickele.workout.data.Exercise;
 import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
+import org.dickele.workout.util.ArgumentConst;
 import org.dickele.workout.util.ViewUtil;
 
 import java.io.File;
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToRoutineWorkouts(final RoutineRef routine) {
         final Intent intent = new Intent(this, WorkoutListScreen2Activity.class);
-        intent.putExtra(WorkoutListScreen2Activity.ROUTINE_NAME, routine.name());
+        intent.putExtra(ArgumentConst.ROUTINE_NAME, routine.name());
         startActivity(intent);
     }
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void gotToExercise(final Exercise exercise) {
         final Intent intent = new Intent(this, ExerciseActivity.class);
-        intent.putExtra(ExerciseFragment.EXERCISE_NAME, exercise.getRef().name());
+        intent.putExtra(ArgumentConst.EXERCISE_NAME, exercise.getRef().name());
         startActivity(intent);
     }
 

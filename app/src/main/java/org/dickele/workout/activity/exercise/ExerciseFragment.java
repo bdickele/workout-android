@@ -10,12 +10,13 @@ import android.widget.TextView;
 import com.github.mikephil.charting.charts.LineChart;
 
 import org.dickele.workout.R;
-import org.dickele.workout.activity.exercise.reps.ExerciseRoutinesFragment;
+import org.dickele.workout.activity.exercise.reps.ExerciseRoutineFragment;
 import org.dickele.workout.data.Exercise;
 import org.dickele.workout.data.ExerciseRef;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
+import org.dickele.workout.util.ArgumentConst;
 import org.dickele.workout.util.GraphUtil;
 import org.dickele.workout.util.StringUtil;
 import org.dickele.workout.util.ViewUtil;
@@ -27,11 +28,10 @@ import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+//TODO SUPPRIMER ?
 public class ExerciseFragment extends Fragment {
 
-    public static final String EXERCISE_NAME = "EXERCISE_NAME";
-
-    private ExerciseRoutinesFragment repsPerRoutineFragment;
+    private ExerciseRoutineFragment repsPerRoutineFragment;
 
     @BindView(R.id.exercise_difficulty)
     ImageView picDifficulty;
@@ -60,7 +60,7 @@ public class ExerciseFragment extends Fragment {
 
     static ExerciseFragment newInstance(final Exercise exercise) {
         final Bundle args = new Bundle();
-        args.putString(EXERCISE_NAME, exercise.getRef().name());
+        args.putString(ArgumentConst.EXERCISE_NAME, exercise.getRef().name());
 
         final ExerciseFragment frag = new ExerciseFragment();
         frag.setArguments(args);
@@ -72,7 +72,7 @@ public class ExerciseFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_exercise, container, false);
         ButterKnife.bind(this, view);
 
-        final ExerciseRef exerciseRef = getArguments() != null ? ExerciseRef.valueOf(getArguments().getString(ExerciseFragment.EXERCISE_NAME)) : ExerciseRef.A;
+        final ExerciseRef exerciseRef = getArguments() != null ? ExerciseRef.valueOf(getArguments().getString(ArgumentConst.EXERCISE_NAME)) : ExerciseRef.A;
         final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
 
@@ -89,16 +89,15 @@ public class ExerciseFragment extends Fragment {
         GraphUtil.configureLineGraph(chart, exerciseExercises);
 
         configureAndShowRoutineExercisesFragment();
-
-        repsPerRoutineFragment.updateExercise(exercise);
+        //repsPerRoutineFragment.updateExercise(exercise);
 
         return view;
     }
 
     private void configureAndShowRoutineExercisesFragment() {
-        repsPerRoutineFragment = (ExerciseRoutinesFragment) getChildFragmentManager().findFragmentById(R.id.exercise_routines_layout);
+        repsPerRoutineFragment = (ExerciseRoutineFragment) getChildFragmentManager().findFragmentById(R.id.exercise_routines_layout);
         if (repsPerRoutineFragment == null) {
-            repsPerRoutineFragment = new ExerciseRoutinesFragment();
+            repsPerRoutineFragment = new ExerciseRoutineFragment();
             getChildFragmentManager().beginTransaction()
                     .add(R.id.exercise_routines_layout, repsPerRoutineFragment)
                     .commit();

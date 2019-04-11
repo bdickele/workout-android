@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+//TODO SUPPRIMER ?
 class ExerciseAdapter extends FragmentStatePagerAdapter {
 
     private final List<Exercise> exercises;

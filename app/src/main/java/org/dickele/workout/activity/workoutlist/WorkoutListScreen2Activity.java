@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import org.dickele.workout.R;
-import org.dickele.workout.activity.routine.RoutineExerciseFragment;
 import org.dickele.workout.activity.workout.WorkoutActivity;
-import org.dickele.workout.activity.workout.WorkoutFragment;
 import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.data.Workout;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
+import org.dickele.workout.util.ArgumentConst;
 import org.dickele.workout.util.ViewUtil;
 
 import java.util.List;
@@ -22,14 +21,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class WorkoutListScreen2Activity extends AppCompatActivity {
 
-    public static final String ROUTINE_NAME = "ROUTINE_NAME";
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workoutlist_screen2);
 
-        final String routineName = getIntent().getStringExtra(RoutineExerciseFragment.ROUTINE_NAME);
+        final String routineName = getIntent().getStringExtra(ArgumentConst.ROUTINE_NAME);
         final RoutineRef routine = RoutineRef.valueOf(routineName);
         setTitle(ViewUtil.getRoutineLongName(getApplicationContext(), routine));
 
@@ -61,7 +58,7 @@ public class WorkoutListScreen2Activity extends AppCompatActivity {
 
     public void goToWorkout(final Integer workoutID) {
         final Intent intent = new Intent(this, WorkoutActivity.class);
-        intent.putExtra(WorkoutFragment.WORKOUT_ID, workoutID);
+        intent.putExtra(ArgumentConst.WORKOUT_ID, workoutID);
         startActivity(intent);
     }
 }

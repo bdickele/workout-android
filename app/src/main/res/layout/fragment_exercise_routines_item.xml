@@ -17,8 +17,17 @@
         android:textSize="@dimen/shapeTextSize"
         android:textStyle="bold" />
 
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/reps_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/routine_code"
+        app:layout_constraintStart_toStartOf="@id/routine_code"
+        android:layout_marginTop="8dp" />
+
+    <!--
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/exercise_reps_recycler_view"
+        android:id="@+id/reps_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="60dp"
@@ -26,13 +35,6 @@
         app:layout_constraintStart_toStartOf="@id/routine_code"
         android:nestedScrollingEnabled="false"
         android:overScrollMode="never" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        app:layout_constraintTop_toBottomOf="@id/exercise_reps_recycler_view"
-        app:layout_constraintStart_toStartOf="@id/exercise_reps_recycler_view"
-        android:layout_marginBottom="8dp"
-        android:background="?android:attr/listDivider" />
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
