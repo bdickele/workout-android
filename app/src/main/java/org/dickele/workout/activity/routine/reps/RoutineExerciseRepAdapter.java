@@ -26,7 +26,7 @@ class RoutineExerciseRepAdapter extends RecyclerView.Adapter<RoutineExerciseRepV
     public RoutineExerciseRepViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup, final int i) {
         final Context context = viewGroup.getContext();
         final LayoutInflater inflater = LayoutInflater.from(context);
-        final View view = inflater.inflate(R.layout.fragment_routine_exercise_reps_item, viewGroup, false);
+        final View view = inflater.inflate(R.layout.fragment_exercise_reps_item, viewGroup, false);
         return new RoutineExerciseRepViewHolder(view);
     }
 
