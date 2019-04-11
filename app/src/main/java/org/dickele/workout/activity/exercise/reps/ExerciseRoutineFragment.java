@@ -44,7 +44,7 @@ public class ExerciseRoutineFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_exercise_routines_item, container, false);
+        final View view = inflater.inflate(R.layout.fragment_exercise_per_routine, container, false);
         ButterKnife.bind(this, view);
 
         final ExerciseRef exerciseRef = ExerciseRef.valueOf(getArguments().getString(ArgumentConst.EXERCISE_NAME));

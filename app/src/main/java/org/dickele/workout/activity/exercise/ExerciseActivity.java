@@ -7,10 +7,12 @@ import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 
+import org.apache.commons.lang3.StringUtils;
 import org.dickele.workout.R;
 import org.dickele.workout.activity.exercise.reps.ExerciseRoutineAdapter;
 import org.dickele.workout.data.Exercise;
 import org.dickele.workout.data.ExerciseRef;
+import org.dickele.workout.data.RoutineRef;
 import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
@@ -82,7 +84,10 @@ public class ExerciseActivity extends AppCompatActivity {
         pager.setAdapter(new ExerciseRoutineAdapter(getSupportFragmentManager(), exercise) {
             //
         });
-        pager.setCurrentItem(0);
+
+        final String routineName = getIntent().getStringExtra(ArgumentConst.ROUTINE_NAME);
+        final RoutineRef routineRef = StringUtils.isEmpty(routineName) ? exercise.getRoutineRefs().get(0) : RoutineRef.valueOf(routineName);
+        pager.setCurrentItem(exercise.getRoutineRefs().indexOf(routineRef));
     }
 
     @Override

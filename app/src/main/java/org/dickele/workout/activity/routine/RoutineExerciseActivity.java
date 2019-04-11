@@ -28,13 +28,15 @@ public class RoutineExerciseActivity extends AppCompatActivity {
 
     private ViewPager pager;
 
+    private RoutineRef routine;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routine);
 
         final String routineName = getIntent().getStringExtra(ArgumentConst.ROUTINE_NAME);
-        final RoutineRef routine = RoutineRef.valueOf(routineName);
+        routine = RoutineRef.valueOf(routineName);
         setTitle(ViewUtil.getRoutineLongName(getApplicationContext(), routine));
 
         final ServiceRead serviceRead = new ServiceRead(InMemoryDb.getInstance());
@@ -95,6 +97,7 @@ public class RoutineExerciseActivity extends AppCompatActivity {
     private void gotToExercise(final ExerciseRef exerciseRef) {
         final Intent intent = new Intent(this, ExerciseActivity.class);
         intent.putExtra(ArgumentConst.EXERCISE_NAME, exerciseRef.name());
+        intent.putExtra(ArgumentConst.ROUTINE_NAME, routine.name());
         startActivity(intent);
     }
 
