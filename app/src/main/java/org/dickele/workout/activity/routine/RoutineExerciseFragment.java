@@ -27,7 +27,7 @@ import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RoutineFragment extends Fragment {
+public class RoutineExerciseFragment extends Fragment {
 
     public static final String ROUTINE_NAME = "ROUTINE_NAME";
 
@@ -47,16 +47,16 @@ public class RoutineFragment extends Fragment {
     @BindView(R.id.chart)
     LineChart chart;
 
-    public RoutineFragment() {
+    public RoutineExerciseFragment() {
         //
     }
 
-    static RoutineFragment newInstance(final RoutineRef routine, final ExerciseRef exercise) {
+    static RoutineExerciseFragment newInstance(final RoutineRef routine, final ExerciseRef exercise) {
         final Bundle args = new Bundle();
         args.putString(EXERCISE_NAME, exercise.name());
         args.putString(ROUTINE_NAME, routine.name());
 
-        final RoutineFragment frag = new RoutineFragment();
+        final RoutineExerciseFragment frag = new RoutineExerciseFragment();
         frag.setArguments(args);
 
         return frag;
@@ -64,7 +64,7 @@ public class RoutineFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_routine, container, false);
+        final View view = inflater.inflate(R.layout.fragment_routine_exercise, container, false);
         ButterKnife.bind(this, view);
 
         final ServiceRead serviceRead = new ServiceRead(InMemoryDb.getInstance());

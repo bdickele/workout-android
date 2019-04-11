@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
-public class RoutineActivity extends AppCompatActivity {
+public class RoutineExerciseActivity extends AppCompatActivity {
 
     private List<ExerciseRef> exerciceRefs = new ArrayList<>();
 
@@ -33,7 +33,7 @@ public class RoutineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routine);
 
-        final String routineName = getIntent().getStringExtra(RoutineFragment.ROUTINE_NAME);
+        final String routineName = getIntent().getStringExtra(RoutineExerciseFragment.ROUTINE_NAME);
         final RoutineRef routine = RoutineRef.valueOf(routineName);
         setTitle(ViewUtil.getRoutineLongName(getApplicationContext(), routine));
 
@@ -42,11 +42,11 @@ public class RoutineActivity extends AppCompatActivity {
 
         // ViewPager configuration
         pager = findViewById(R.id.routine_viewpager);
-        pager.setAdapter(new RoutineAdapter(getSupportFragmentManager(), routine, exerciceRefs) {
+        pager.setAdapter(new RoutineExerciseAdapter(getSupportFragmentManager(), routine, exerciceRefs) {
             //
         });
 
-        final String exerciseName = getIntent().getStringExtra(RoutineFragment.EXERCISE_NAME);
+        final String exerciseName = getIntent().getStringExtra(RoutineExerciseFragment.EXERCISE_NAME);
         int position = 0;
         if (StringUtils.isNotEmpty(exerciseName)) {
             for (int i = 0; i < exerciceRefs.size(); i++) {

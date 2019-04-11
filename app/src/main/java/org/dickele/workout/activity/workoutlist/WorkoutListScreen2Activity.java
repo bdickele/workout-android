@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import org.dickele.workout.R;
-import org.dickele.workout.activity.routine.RoutineFragment;
+import org.dickele.workout.activity.routine.RoutineExerciseFragment;
 import org.dickele.workout.activity.workout.WorkoutActivity;
 import org.dickele.workout.activity.workout.WorkoutFragment;
 import org.dickele.workout.data.RoutineRef;
@@ -29,7 +29,7 @@ public class WorkoutListScreen2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workoutlist_screen2);
 
-        final String routineName = getIntent().getStringExtra(RoutineFragment.ROUTINE_NAME);
+        final String routineName = getIntent().getStringExtra(RoutineExerciseFragment.ROUTINE_NAME);
         final RoutineRef routine = RoutineRef.valueOf(routineName);
         setTitle(ViewUtil.getRoutineLongName(getApplicationContext(), routine));
 
