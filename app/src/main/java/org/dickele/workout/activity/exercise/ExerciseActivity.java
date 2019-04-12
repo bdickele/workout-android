@@ -17,6 +17,7 @@ import org.dickele.workout.data.WorkoutExercise;
 import org.dickele.workout.repository.InMemoryDb;
 import org.dickele.workout.service.ServiceRead;
 import org.dickele.workout.util.ArgumentConst;
+import org.dickele.workout.util.GraphExerciseSelectionListener;
 import org.dickele.workout.util.GraphUtil;
 import org.dickele.workout.util.StringUtil;
 import org.dickele.workout.util.ViewUtil;
@@ -77,9 +78,6 @@ public class ExerciseActivity extends AppCompatActivity {
                 R.drawable.ic_whatshot_black_18dp : R.drawable.ic_fitness_center_black_18dp);
         textDescription.setText(ViewUtil.getExerciseDescription(this, exerciseRef));
 
-        final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
-        GraphUtil.configureLineGraph(chart, exerciseExercises);
-
         final ViewPager pager = findViewById(R.id.routine_reps_viewpager);
         pager.setAdapter(new ExerciseRoutineAdapter(getSupportFragmentManager(), exercise) {
             //
@@ -88,6 +86,9 @@ public class ExerciseActivity extends AppCompatActivity {
         final String routineName = getIntent().getStringExtra(ArgumentConst.ROUTINE_NAME);
         final RoutineRef routineRef = StringUtils.isEmpty(routineName) ? exercise.getRoutineRefs().get(0) : RoutineRef.valueOf(routineName);
         pager.setCurrentItem(exercise.getRoutineRefs().indexOf(routineRef));
+
+        final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
+        GraphUtil.configureLineGraph(chart, new GraphListener(pager, exercise.getRoutineRefs()), exerciseExercises);
     }
 
     @Override
@@ -99,6 +100,28 @@ public class ExerciseActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private static class GraphListener implements GraphExerciseSelectionListener {
+
+        private final ViewPager pager;
+
+        private final List<RoutineRef> routineRefs;
+
+        private GraphListener(final ViewPager pager, final List<RoutineRef> routineRefs) {
+            this.pager = pager;
+            this.routineRefs = routineRefs;
+        }
+
+        @Override
+        public void onExerciseSelected(final WorkoutExercise workoutExercise) {
+            pager.setCurrentItem(routineRefs.indexOf(workoutExercise.getRoutine()));
+        }
+
+        @Override
+        public void onNothingSelected() {
+
         }
     }
 

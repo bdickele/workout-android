@@ -7,7 +7,6 @@
 - Bouton Exporter : faire des coins arrondis
 
 - Sélection d'un point sur un graphe :
-    - Sélectionner la page de la routine correspondante
     - Si plusieurs routines : est-ce qu'on peut changer la couleur de fond pour la partie du graphe correspondante à cette routine ?
     - Mise en avant de la répétition correspondante :
         - Scroller jusqu'à cette répétition si pas visible

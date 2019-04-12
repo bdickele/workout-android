@@ -2113,10 +2113,65 @@ Envisager le niveau 8, ne serait-ce que pour casser la routine.
 |B|9 9 9 8 8 8| |
 |A6|9 9 9 8 8 8| |
 |A2|12 12 12 12 11 11| |
-|I1|12 12 12 11 11 11|Devient très dur. Temps de récup. allongés.|
+|I1|12 12 12 11 11 11|Devien très dur. Temps de récup. allongés.|
 |C3|12 12 12 11 11 11|Temps de récup. allongés.|
 |J1|20| |
 |K|30| |
 |L|20| |
 |I4|8| |
 |I5|8| |
+
+# Niveau 8 (L8)
+
+## 07/04/2019
+
+Séance 1
+Essayer de mieux respecter les temps de récupération.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 10 6 7 6 6| |
+|J|6x5|Amplitude 1/2|
+|A7|3x4| |
+|A1|3x4| |
+|I1|12 12 12 12 11 10| |
+|C3|12 12 10 10 10 7|Temps de récupération mieux respectés|
+|H|11 11 11 10 10| |
+|E2d|14 14 13 13 12 12|Temps de récupération mieux respectés|
+|E2g|14 14 13 13 12 12|Temps de récupération mieux respectés|
+|G|6x88| |
+
+## 09/04/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|30 18| |
+|J1|13 11| |
+|K|10 10 11 11|Amplitude normale, position débutant|
+|A6|12 12| |
+|G|3x88|Stop après 3, ça tire trop|
+|I4|8 4| |
+|I5|8 5| |
+|I6|15 15|Position débutant|
+|F|20 17 17 17|Temps de récupération mieux respectés|
+|K2|20 16 14| |
+|M|4 4 4|Position pas du tout confortable|
+
+## 11/04/2019
+
+Séance 1
+Essayer de mieux respecter les temps de récupération.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 10 8 8 6 6| |
+|J|6x6|Amplitude 1/2|
+|A7|3x5| |
+|A1|3x5| |
+|I1|12 12 12 12 12 11| |
+|C3|12 12 11 10 10 10| |
+|E2d|14 14 13 13 12 12| |
+|E2g|14 14 13 13 12 12| |
+|G|6x89| |
