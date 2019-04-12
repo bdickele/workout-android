@@ -1,11 +1,10 @@
-- Gros bug : dans la fiche exercice (historique complet) on ne peut pas scroller jusque tout en bas des répétitions
+- Graphe : dans certains cas trop de dates affichées, cf. exercice G
+- Graphe : éviter les chiffres à virgule, cf. exercice I5
 
 - Mettre a jour fichier fragments
 
 - Couleur du menu (menu en haut à droite)
 - Bouton Exporter : faire des coins arrondis
-
-- Fiche exercice : éviter les chiffres à virgule, cf. exercice I5
 
 - Sélection d'un point sur un graphe :
     - Sélectionner la page de la routine correspondante
