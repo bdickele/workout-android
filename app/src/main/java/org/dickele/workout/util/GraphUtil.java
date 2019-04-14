@@ -28,7 +28,7 @@ public final class GraphUtil {
     private static final DateTimeFormatter DATE_FORMATTER_DDMMYYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public static void configureLineGraph(final LineChart chart, final List<WorkoutExercise> exerciseExercises) {
-        configureLineGraph(chart, null, exerciseExercises);
+        configureLineGraph(chart, new DefaultGraphExerciseSelectionListener(), exerciseExercises);
     }
 
     public static void configureLineGraph(final LineChart chart,
