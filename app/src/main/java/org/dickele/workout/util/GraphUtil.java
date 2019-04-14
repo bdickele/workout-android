@@ -6,6 +6,7 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -16,6 +17,7 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import org.dickele.workout.R;
 import org.dickele.workout.data.WorkoutExercise;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -23,7 +25,7 @@ import java.util.stream.Collectors;
 
 public final class GraphUtil {
 
-    private static final DateTimeFormatter DATE_FORMATTER_DDMMYY = DateTimeFormatter.ofPattern("dd/MM/yy");
+    private static final DateTimeFormatter DATE_FORMATTER_DDMM = DateTimeFormatter.ofPattern("dd/MM");
 
     private static final DateTimeFormatter DATE_FORMATTER_DDMMYYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -47,9 +49,19 @@ public final class GraphUtil {
         chart.setContentDescription(null);
         chart.setDescription(null);
 
+        // XAxis granularity set to one day to avoid duplicate values
         final XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setValueFormatter(new DateFormatter());
+        xAxis.setValueFormatter(new XAxisDateFormatter());
+        xAxis.setGranularity(1f);
+
+        // YAxis : granularity set to 1 to avoid duplicate values (as we rounded values)
+        final YAxis yAxisLeft = chart.getAxisLeft();
+        yAxisLeft.setValueFormatter(new YAxisFormatter());
+        yAxisLeft.setGranularity(1f);
+        final YAxis yAxisRight = chart.getAxisRight();
+        yAxisRight.setValueFormatter(new YAxisFormatter());
+        yAxisRight.setGranularity(1f);
 
         final Legend legend = chart.getLegend();
         legend.setEnabled(false);
@@ -64,11 +76,21 @@ public final class GraphUtil {
         chart.invalidate(); // refresh
     }
 
-    private static class DateFormatter extends ValueFormatter {
+    private static class XAxisDateFormatter extends ValueFormatter {
 
         @Override
         public String getFormattedValue(final float value) {
-            return LocalDate.ofEpochDay(Float.valueOf(value).longValue()).format(DATE_FORMATTER_DDMMYY);
+            return LocalDate.ofEpochDay(Float.valueOf(value).longValue()).format(DATE_FORMATTER_DDMM);
+        }
+    }
+
+    private static class YAxisFormatter extends ValueFormatter {
+
+        private final DecimalFormat format = new DecimalFormat("###,###,###,##0");
+
+        @Override
+        public String getFormattedValue(final float value) {
+            return format.format(value);
         }
     }
 

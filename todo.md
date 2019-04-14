@@ -1,6 +1,3 @@
-- Graphe : dans certains cas trop de dates affichées, cf. exercice G
-- Graphe : éviter les chiffres à virgule, cf. exercice I5
-
 - Mettre a jour fichier fragments
 
 - Couleur du menu (menu en haut à droite)
