@@ -5,9 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class WorkoutExercise {
+
+    @EqualsAndHashCode.Include
+    private Integer id;
 
     private ExerciseRef exerciseRef;
 
@@ -30,9 +35,10 @@ public class WorkoutExercise {
     // Delta compared to first workout of the same routine
     private int deltaFirstRoutineWorkout = 0;
 
-    public static WorkoutExercise build(final RoutineRef routine, final ExerciseRef exerciseRef,
+    public static WorkoutExercise build(final Integer id, final RoutineRef routine, final ExerciseRef exerciseRef,
             final List<Integer> reps, final String comment) {
         final WorkoutExercise workoutExercise = new WorkoutExercise();
+        workoutExercise.id = id;
         workoutExercise.routine = routine;
         workoutExercise.exerciseRef = exerciseRef;
         workoutExercise.reps = reps;

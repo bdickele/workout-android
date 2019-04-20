@@ -49,7 +49,8 @@ public final class FromMdToJava {
     private static List<Workout> extractWorkoutsFromLines(final List<String> allLines) {
         final List<Workout> result = new ArrayList<>();
 
-        int ID = 1;
+        int workoutID = 1;
+        int workoutExerciseID = 1;
         RoutineRef currentRoutine = null;
         Workout currentWorkout = null;
         boolean dealingWithExercises = false;
@@ -78,7 +79,7 @@ public final class FromMdToJava {
             try {
                 final LocalDate workoutDate = extractWorkoutDate(line);
                 if (workoutDate != null) {
-                    currentWorkout = new Workout(ID++, currentRoutine, workoutDate);
+                    currentWorkout = new Workout(workoutID++, currentRoutine, workoutDate);
                     result.add(currentWorkout);
                     dealingWithExercises = false;
                     continue;
@@ -101,7 +102,7 @@ public final class FromMdToJava {
 
             if (currentWorkout != null) {
                 try {
-                    final WorkoutExercise workoutExercise = extractExercise(currentWorkout.getRoutine(), line);
+                    final WorkoutExercise workoutExercise = extractExercise(workoutExerciseID++, currentWorkout.getRoutine(), line);
                     currentWorkout.addExercise(workoutExercise);
                 } catch (final Exception e) {
                     LOGGER.severe("Error while extracting workout exerciseRef for line " + line + " : " + e.getCause());
@@ -113,7 +114,7 @@ public final class FromMdToJava {
         return Workout.enhanceAndSortWorkouts(result);
     }
 
-    private static WorkoutExercise extractExercise(final RoutineRef routine, final String line) {
+    private static WorkoutExercise extractExercise(final Integer id, final RoutineRef routine, final String line) {
         final List<String> exerciseColumns = Arrays.stream(line.split(COLUMN_SEPARATOR_FOR_SPLITTING))
                 .map(String::trim)
                 .collect(toList());
@@ -121,7 +122,7 @@ public final class FromMdToJava {
         final String reps = exerciseColumns.get(2);
         final String comment = exerciseColumns.get(3);
 
-        return WorkoutExercise.build(routine, ExerciseRef.valueOf(exoName), extractReps(reps), comment);
+        return WorkoutExercise.build(id, routine, ExerciseRef.valueOf(exoName), extractReps(reps), comment);
     }
 
     /**

@@ -8,23 +8,18 @@
 
     <color name="textColor1">#000</color>
     <color name="textColor2">#008577</color>
-    <!--
-    <color name="mainMenuBackground">#304231</color>
-    <color name="mainMenuBackground">#9D2F1B</color>
-    -->
+
     <color name="mainMenuBackground">#8B2A19</color>
     <color name="mainMenuSelectedColor">#ffffff</color>
     <color name="mainMenuTextColor">#bbbbbb</color>
     <color name="navigationBarColor">#000000</color>
 
-    <!--
-    <color name="shapeExerciseBackground">#333300</color>
-    -->
     <color name="shapeExerciseBackground">#BE4327</color>
     <color name="shapeExerciseForeground">#fff</color>
     <color name="shapeRoutineBackground">#0A6AE7</color>
     <color name="shapeRoutineForeground">#fff</color>
 
     <color name="chart_line_color">#3333</color>
+    <color name="selectedExerciseBackground">#D4E5FD</color>
 
 </resources>

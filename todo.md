@@ -5,12 +5,8 @@
 
 - Sélection d'un point sur un graphe :
     - Si plusieurs routines : est-ce qu'on peut changer la couleur de fond pour la partie du graphe correspondante à cette routine ?
-    - Mise en avant de la répétition correspondante :
-        - Scroller jusqu'à cette répétition si pas visible
-        - Changer la couleur de fond de cette répétition
 
 - Pour la version 2
-    - Utiliser le constraint layout
     - Stockage en base de données
     - Création session
     - Edition session

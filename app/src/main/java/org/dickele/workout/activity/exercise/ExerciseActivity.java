@@ -22,14 +22,18 @@ import org.dickele.workout.util.GraphUtil;
 import org.dickele.workout.util.StringUtil;
 import org.dickele.workout.util.ViewUtil;
 
+import java.util.Collections;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ExerciseActivity extends AppCompatActivity {
+public class ExerciseActivity extends AppCompatActivity implements GraphExerciseSelectionListener {
 
     @BindView(R.id.exercise_difficulty)
     ImageView picDifficulty;
@@ -52,6 +56,13 @@ public class ExerciseActivity extends AppCompatActivity {
     @BindView(R.id.chart)
     LineChart chart;
 
+    @BindView(R.id.routine_reps_viewpager)
+    ViewPager pager;
+
+    private Exercise exercise;
+
+    private WorkoutExercise exerciseSelectedInGraph;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +77,7 @@ public class ExerciseActivity extends AppCompatActivity {
         final ExerciseRef exerciseRef = ExerciseRef.valueOf(getIntent().getStringExtra(ArgumentConst.EXERCISE_NAME));
         setTitle(getString(R.string.exercise_and_code, exerciseRef.name()));
 
-        final Exercise exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
+        exercise = new ServiceRead(InMemoryDb.getInstance()).getExercise(exerciseRef);
 
         picDifficulty.setImageResource(ViewUtil.getDifficultyPic_M(exercise.getRef().getDifficulty()));
         final WorkoutExercise bestPerformance = exercise.getBestPerformance();
@@ -78,7 +89,7 @@ public class ExerciseActivity extends AppCompatActivity {
                 R.drawable.ic_whatshot_black_18dp : R.drawable.ic_fitness_center_black_18dp);
         textDescription.setText(ViewUtil.getExerciseDescription(this, exerciseRef));
 
-        final ViewPager pager = findViewById(R.id.routine_reps_viewpager);
+        pager = findViewById(R.id.routine_reps_viewpager);
         pager.setAdapter(new ExerciseRoutineAdapter(getSupportFragmentManager(), exercise) {
             //
         });
@@ -88,7 +99,59 @@ public class ExerciseActivity extends AppCompatActivity {
         pager.setCurrentItem(exercise.getRoutineRefs().indexOf(routineRef));
 
         final List<WorkoutExercise> exerciseExercises = exercise.getExercises();
-        GraphUtil.configureLineGraph(chart, new GraphListener(pager, exercise.getRoutineRefs()), exerciseExercises);
+        GraphUtil.configureLineGraph(chart, exerciseExercises, Collections.singletonList(this));
+
+        pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
+                selectWorkoutExercise();
+            }
+        });
+    }
+
+    private RecyclerView getExerciseListForSelectedExercise() {
+        Fragment routineFragment = null;
+
+        for (final Fragment fragment : getSupportFragmentManager().getFragments()) {
+            final Bundle bundle = fragment.getArguments();
+            if (bundle == null) {
+                continue;
+            }
+            final String routineName = bundle.getString(ArgumentConst.ROUTINE_NAME);
+            final RoutineRef routineRef = RoutineRef.valueOf(routineName);
+            if (exerciseSelectedInGraph == null || routineRef == exerciseSelectedInGraph.getRoutine()) {
+                routineFragment = fragment;
+                break;
+            }
+        }
+
+        return (routineFragment == null || routineFragment.getView() == null) ?
+                null : routineFragment.getView().findViewById(R.id.reps_recycler_view);
+    }
+
+    private void selectWorkoutExercise() {
+        final RecyclerView recyclerView = getExerciseListForSelectedExercise();
+        if (recyclerView == null || recyclerView.getAdapter() == null) {
+            return;
+        }
+
+        // That call will trigger refresh of list items and thus background color
+        recyclerView.getAdapter().notifyDataSetChanged();
+
+        if (exerciseSelectedInGraph == null) {
+            return;
+        }
+
+        final List<WorkoutExercise> exercises = exercise.getMapRoutineToExercises().get(exerciseSelectedInGraph.getRoutine());
+        final int exerciseIndex = exercises == null ? -1 : exercises.indexOf(exerciseSelectedInGraph);
+
+        final LinearLayoutManager layoutManager = ((LinearLayoutManager) recyclerView.getLayoutManager());
+        final int firstVisiblePosition = layoutManager.findFirstCompletelyVisibleItemPosition();
+        final int lastVisiblePosition = layoutManager.findLastCompletelyVisibleItemPosition();
+
+        if ((exerciseIndex < firstVisiblePosition) || (exerciseIndex > lastVisiblePosition)) {
+            layoutManager.scrollToPosition(exerciseIndex);
+        }
     }
 
     @Override
@@ -103,26 +166,26 @@ public class ExerciseActivity extends AppCompatActivity {
         }
     }
 
-    private static class GraphListener implements GraphExerciseSelectionListener {
+    public WorkoutExercise getExerciseSelectedInGraph() {
+        return exerciseSelectedInGraph;
+    }
 
-        private final ViewPager pager;
-
-        private final List<RoutineRef> routineRefs;
-
-        private GraphListener(final ViewPager pager, final List<RoutineRef> routineRefs) {
-            this.pager = pager;
-            this.routineRefs = routineRefs;
+    @Override
+    public void onExerciseSelected(final WorkoutExercise workoutExercise) {
+        exerciseSelectedInGraph = workoutExercise;
+        final int currentPageIndex = pager.getCurrentItem();
+        final int routineIndex = exercise.getRoutineRefs().indexOf(workoutExercise.getRoutine());
+        if (routineIndex != currentPageIndex) {
+            pager.setCurrentItem(routineIndex);
+        } else {
+            selectWorkoutExercise();
         }
+    }
 
-        @Override
-        public void onExerciseSelected(final WorkoutExercise workoutExercise) {
-            pager.setCurrentItem(routineRefs.indexOf(workoutExercise.getRoutine()));
-        }
-
-        @Override
-        public void onNothingSelected() {
-
-        }
+    @Override
+    public void onNothingSelected() {
+        exerciseSelectedInGraph = null;
+        selectWorkoutExercise();
     }
 
 }

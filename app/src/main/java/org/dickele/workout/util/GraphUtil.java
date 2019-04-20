@@ -20,6 +20,7 @@ import org.dickele.workout.data.WorkoutExercise;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,12 +31,12 @@ public final class GraphUtil {
     private static final DateTimeFormatter DATE_FORMATTER_DDMMYYYY = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public static void configureLineGraph(final LineChart chart, final List<WorkoutExercise> exerciseExercises) {
-        configureLineGraph(chart, new DefaultGraphExerciseSelectionListener(), exerciseExercises);
+        configureLineGraph(chart, exerciseExercises, Collections.emptyList());
     }
 
     public static void configureLineGraph(final LineChart chart,
-            final GraphExerciseSelectionListener listener,
-            final List<WorkoutExercise> exerciseExercises) {
+            final List<WorkoutExercise> exerciseExercises,
+            final List<GraphExerciseSelectionListener> listeners) {
         final List<Entry> data = exerciseExercises.stream()
                 .map(exercise -> new Entry(exercise.getDate().toEpochDay(), exercise.getTotal()))
                 .collect(Collectors.toList());
@@ -69,7 +70,7 @@ public final class GraphUtil {
         chart.setDrawBorders(false);
         chart.setHighlightPerDragEnabled(true);
         chart.setHighlightPerTapEnabled(true);
-        chart.setOnChartValueSelectedListener(new ChartValueSelectionListener(chart, listener, exerciseExercises));
+        chart.setOnChartValueSelectedListener(new ChartValueSelectionListener(chart, exerciseExercises, listeners));
 
         final LineData lineData = new LineData(dataSet);
         chart.setData(lineData);
@@ -100,7 +101,7 @@ public final class GraphUtil {
 
         private final List<WorkoutExercise> exerciseExercises;
 
-        private final GraphExerciseSelectionListener listener;
+        private final List<GraphExerciseSelectionListener> listeners;
 
         private static final Description description;
 
@@ -112,10 +113,10 @@ public final class GraphUtil {
         }
 
         private ChartValueSelectionListener(final LineChart chart,
-                final GraphExerciseSelectionListener listener,
-                final List<WorkoutExercise> exerciseExercises) {
+                final List<WorkoutExercise> exerciseExercises,
+                final List<GraphExerciseSelectionListener> listeners) {
             this.chart = chart;
-            this.listener = listener;
+            this.listeners = listeners;
             this.exerciseExercises = exerciseExercises;
         }
 
@@ -133,7 +134,7 @@ public final class GraphUtil {
                 return;
             }
 
-            listener.onExerciseSelected(exercise);
+            listeners.forEach(l -> l.onExerciseSelected(exercise));
 
             final String s = date.format(DATE_FORMATTER_DDMMYYYY) + " : "
                     + exercise.getTotal()
@@ -146,7 +147,7 @@ public final class GraphUtil {
         @Override
         public void onNothingSelected() {
             chart.setDescription(null);
-            listener.onNothingSelected();
+            listeners.forEach(GraphExerciseSelectionListener::onNothingSelected);
         }
     }
 }
