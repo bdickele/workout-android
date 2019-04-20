@@ -9,6 +9,7 @@
         <item name="android:statusBarColor">@color/mainMenuBackground</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:windowBackground">@color/screenBackground</item>
+        <item name="popupTheme">@style/MyPopupTheme</item>
     </style>
 
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -18,6 +19,13 @@
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">@dimen/toolbarTextSize</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- For popup menu like the one with the Export item -->
+    <style name="MyPopupTheme" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/screenBackground</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+
     </style>
 
 </resources>

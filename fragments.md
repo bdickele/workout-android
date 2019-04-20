@@ -41,10 +41,9 @@ Liste de tous les exercices pratiqués au moins une fois
 Toutes les sessions d'un exercice
 
 - activity_exercise
-    - exercise_viewpager = viewpager pour passer d'un exercice à l'autre
-        - fragment_exercise / ExerciseFragment = vue complète d'un exercice
-            - exercise_routines_layout = FrameLayout pour les séries de l'exercice groupées par routine
-            - fragment_exercise_routines / ExerciseRoutinesFragment = fragment qui contient les séries de l'exercice par routine
-                - routines_recycler_view = liste des routines (avec leurs séries)
-                    - fragment_exercise_routines_item = code routine + ses séries
-                        - fragment_exercise_reps_item = une série de l'exercice (pas de fragment pour l'ensemble des séries)
+    - routine_reps_viewpager = viewpager pour passer d'une routine à l'autre
+        - fragment_exercise_per_routine / ExerciseRoutineFragment = fragment pour les exercices d'une routine
+            - reps_layout = FrameLayout contenant la liste des sessions de l'exercice pour une routine
+                - fragment_exercise_reps / ExerciseRepsFragment
+                    - reps_recycler_view = liste des sessions de l'exercice
+                        - fragment_exercise_reps_item = une session de l'exercice
