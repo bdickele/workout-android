@@ -2174,4 +2174,123 @@ Essayer de mieux respecter les temps de récupération.
 |C3|12 12 11 10 10 10| |
 |E2d|14 14 13 13 12 12| |
 |E2g|14 14 13 13 12 12| |
+|H|0|Zappé : plus de force|
 |G|6x89| |
+
+## 14/04/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|32 20| |
+|J1|14 11| |
+|K|5 5 5 6|Pieds sur la 1ère marche de l'escabeau|
+|A6|13 12| |
+|G|6x89| |
+|I4|8 5| |
+|I5|8 5| |
+|I6|11 6|Position intermédiaire. ! La barre a glissé, chute sur le dos|
+|F|20 18 17 17|Temps de récupération mieux respectés|
+|K2|21 17 14| |
+
+## 16/04/2019
+
+Séance 1
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|11 11 11 8 8| |
+|B|12 10 8 8 7 7| |
+|J|6x7|Amplitude 1/2|
+|A7|3x6| |
+|A1|3x6| |
+|I1|12 12 12 10 6 8|Epuisé|
+|C3|12 12 10 10 10 10|Temps de récup bien allongés, trop fatigué|
+|E2d|0|Trop fatigué|
+|E2g|0|Trop fatigué|
+|G|6x90| |
+
+## 20/04/2019
+
+Séance 2. Montpellier
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|32 22| |
+|J1|12 11| |
+|K|6 6 6 6| |
+|A6|13 12| |
+|G|6x90| |
+|I4|8 6| |
+|I5|7 5| |
+|I6|12 12|Position intermédiaire|
+|F|0|Manque de temps|
+|K2|0|Manque de temps|
+
+## 28/04/2019
+
+Séance 1. Reprise après les vacances. On y va tranquillement sur les temps de récupération et sur certaines séries.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|10 10 8 8 7 7| |
+|J|6x7|Amplitude 1/2|
+|A7|3x6| |
+|A1|3x6| |
+|I1|10 10 10 10 9 10| |
+|C3|6x10|Grosse pause|
+|E2d|6x12| |
+|E2g|6x12| |
+|H|5 x 10| |
+|G|6x90| |
+
+## 01/05/2019
+
+Séance 2. Mal aux abdos : G zappé.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|30 22| |
+|J1|14 12| |
+|K|7 7 7 7| |
+|A6|12 12| |
+|I4|8 6| |
+|I5|6 5| |
+|I6|14 14| |
+|F|18 17 17 17 | |
+|K2|18 18 15| |
+
+## 04/05/2019
+
+Séance 1
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 12 8 8 7 7| |
+|J|6x8|Amplitude 1/2|
+|A7|3x7| |
+|A1|3x7| |
+|I1|12 10 12 10 10 10| |
+|C3|12 12 11 10 10 10| |
+|E2d|13 13 13 12 12 12| |
+|E2g|13 13 13 12 12 12| |
+|H|0|Zappé, trop mal aux épaules|
+|G|6x92| |
+
+## 06/05/2019
+
+Séance 2. Mal aux abdos : G zappé.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|32 22| |
+|J1|15 12| |
+|K|8 8 8 8| |
+|A6|13 12| |
+|G|6x60| |
+|I4|8 7| |
+|I5|7 5| |
+|I6|17 15|Passer ensuite à la position avancée|
+|F|18 18 17 17 | |
+|K2|18 18 18| |
