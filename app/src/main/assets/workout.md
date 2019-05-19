@@ -2294,3 +2294,83 @@ Séance 2. Mal aux abdos : G zappé.
 |I6|17 15|Passer ensuite à la position avancée|
 |F|18 18 17 17 | |
 |K2|18 18 18| |
+
+## 08/05/2019
+
+Séance 1. E2 zappé par manque de temps.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|10 10 10 5 5| |
+|B|12 12 9 8 7 7| |
+|J|6x4|Amplitude normale|
+|A7|3x8| |
+|A1|3x8| |
+|I1|12 12 12 10 10 10|Très très dur|
+|C3|12 12 12 10 10 10|Très dur, temps de récup. allongés|
+|G|6x94| |
+
+## 10/05/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|34 24| |
+|J1|16 12| |
+|K|9 9 9 9| |
+|A6|13 12| |
+|G|6x62| |
+|I4|9 6| |
+|I5|6 6| |
+|I6|10 10|Position avancée|
+|F|18 18 18 17| |
+|K2|19 19 18| |
+
+## 14/05/2019
+
+Séance 1
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|13 13 13 12 12 12| |
+|E2g|13 13 13 12 12 12| |
+|B|12 12 9 8 8 8| |
+|J|6x5|Amplitude normale|
+|A7|3x9| |
+|A1|3x9| |
+|I1|12 12 12 12 10 10| |
+|C3|12 12 12 12 10 10| |
+|G|6x96| |
+
+## 16/05/2019
+
+Séance 2. Séance coupée en 2, après F.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|36 24| |
+|J1|17 12| |
+|K|10 10 10 10| |
+|A6|12 12| |
+|F|18 18 18 18| |
+|K2|19 19 19| |
+|I4|8 6| |
+|I5|6 5| |
+|I6|11 11|Position avancée|
+|G|6x65| |
+
+## 18/05/2019
+
+Séance 1
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|5x10| |
+|B|12 12 10 9 8 8| |
+|J|6x6|Amplitude normale|
+|A7|10 10 9| |
+|A1|3x9| |
+|I1|12 12 8 9 8 8|Plus de force, pas assez de récup entre les séances ?|
+|C3|12 12 12 12 11 10| |
+|G|6x96| |
