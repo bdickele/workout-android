@@ -2374,3 +2374,92 @@ Séance 1
 |I1|12 12 8 9 8 8|Plus de force, pas assez de récup entre les séances ?|
 |C3|12 12 12 12 11 10| |
 |G|6x96| |
+
+## 21/05/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|38 26| |
+|J1|12 12| |
+|K|11 11 11 11|Surélever les pieds à la prochaine séance|
+|A6|13 12| |
+|G|6x96| |
+|I4|9 7| |
+|I5|7 6| |
+|I6|12 11|Position avancée|
+|F|19 18 18 18| |
+|K2|20 19 19| |
+
+## 23/05/2019
+
+Séance 1. Séance raccourcie par manque de temps et d'énergie.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 12 10 10 9 8| |
+|J|6x7|Amplitude normale|
+|A7|10 10 10| |
+|A1|10 9 9| |
+|I1|12|Stop après une série : douleur au bras droit.|
+|C3|12 12 12 12 12 10| |
+|E2d|13 13 13| |
+|E2g|13 13 13| |
+
+## 25/05/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|36 28| |
+|J1|15 14| |
+|K|3 4 4 4|2e marche de l'escabeau|
+|A6|14 12| |
+|I4|9 7| |
+|I5|7 7| |
+|I6|13 11|Position avancée|
+|F|20 18 18 18| |
+|K2|20 20 19| |
+|G|6x98| |
+
+## 27/05/2019
+
+Séance 1 partie 1
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 12 11 11 9 8| |
+|J|6x8|Amplitude normale|
+|I1|12 12 12 12 10 10| |
+|C3|12 12 12 12 12 12| |
+
+## 29/05/2019
+
+Séance 1 partie 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|A7|11 10 10| |
+|A1|10 10 10| |
+|E2d|13 13 13 13 12 12| |
+|E2g|13 13 13 13 12 12| |
+
+## 31/05/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|10 10 10 6 6| |
+|L|36 28|Très très dur|
+|J1|16 14| |
+|K|5 5 5 5| |
+|A6|16 12| |
+|G|6x100| |
+|I4|10 7| |
+|I5|8 7| |
+|I6|14 11|Position avancée|
+|F|20 19|Stop après la 2e série : plus de temps et d'énergie |
+|K2|20 20 20| |
