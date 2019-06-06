@@ -2463,3 +2463,45 @@ Séance 2
 |I6|14 11|Position avancée|
 |F|20 19|Stop après la 2e série : plus de temps et d'énergie |
 |K2|20 20 20| |
+
+## 03/06/2019
+
+Séance 1 partie 1.
+Même si I1 et C3 ont été zappés, la séance est trop longue (1h50) : il faudra plus couper.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|10 10 10 7 7| |
+|B|12 12 12 11 10 8| |
+|J|9 9 8 8 8 8|Amplitude normale|
+|A7|11 7 7|Ultra dur|
+|A1|7 7 7|Ultra dur|
+|E2d|13 13 13 13 13 12| |
+|E2g|13 13 13 13 13 12| |
+|G|6x100| |
+
+## 04/06/2019
+
+Séance 1 partie 2 et avance sur séance 2.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|I1|12 12 12 12 12 10| |
+|C3|13 12 12 12 12 12| |
+|F|20 19 18 18| |
+|K2|21 20 20| |
+
+## 05/06/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|38 28|Très très dur|
+|J1|16 15| |
+|K|4x6| |
+|A6|14 13| |
+|G|6x70| |
+|I4|10 7| |
+|I5|7 5|Vraiment beaucoup de mal avec cet exercice|
+|I6|14 12|Position avancée|
