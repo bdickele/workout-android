@@ -2505,3 +2505,29 @@ Séance 2
 |I4|10 7| |
 |I5|7 5|Vraiment beaucoup de mal avec cet exercice|
 |I6|14 12|Position avancée|
+
+## 07/06/2019
+
+Séance 1. Séance raccourcie.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 12 12 12 11 8|Pause plus importante après la 3e répétition|
+|J|9 9 9 9 8 8|Amplitude normale|
+|A7|10 9 9| |
+|A1|9 9 9| |
+|I1|6x12|Le refaire en respectant mieux les temps de récupération avant de passer au niveau suivant.|
+|C3|13 13 13 12 12 12|Temps de récupération allongés|
+|G|6x102| |
+
+## 09/06/2019
+
+Fin séance 1, et quelques exercices séance 2.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|10 10 10 8 8| |
+|E2d|6x13| |
+|E2g|6x13| |
+|K2|21 21 20|Mal aux cuisses mais pas aux triceps. Pas très intéressant de faire K2 dans ces circonstances|
+|F|15|Stop, trop mal aux cuisses : éviter de faire F dans ces circonstances : après E2 et K2.|
