@@ -2531,3 +2531,75 @@ Fin séance 1, et quelques exercices séance 2.
 |E2g|6x13| |
 |K2|21 21 20|Mal aux cuisses mais pas aux triceps. Pas très intéressant de faire K2 dans ces circonstances|
 |F|15|Stop, trop mal aux cuisses : éviter de faire F dans ces circonstances : après E2 et K2.|
+
+## 10/06/2019
+
+Séance 2 (sans K2 fait la veille).
+Pauses plus importantes après I5 et I6 (pauses "famille").
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|40 28| |
+|J1|17 15| |
+|K|4x7| |
+|A6|15 13| |
+|G|6x104| |
+|I4|11 7| |
+|I5|8 7| |
+|I6|15 13|Position avancée.|
+|F|20 19 19 18| |
+
+## 12/06/2019
+
+Séance 1 raccourcie
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 12 12 12 12 10|Temps de récup allongés|
+|J|6x9|Amplitude normale|
+|A7|10 10 10| |
+|A1|10 10 10| |
+|I1|12 12 12 12 10 9| |
+|C3|13 13 13 13 12 12| |
+|G|6x104| |
+
+## 14/06/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|42 30| |
+|J1|18 16| |
+|K|4x8| |
+|A6|16 14| |
+|G|6x105| |
+|I4|11 7| |
+|I5|8 7| |
+|I6|14 12|Position avancée.|
+|F|20 19 19 19| |
+|K|21 21 21| |
+
+## 16/06/2019
+
+Bout de séance 1
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|10 10 10 10 8| |
+|E2d|6x13| |
+|E2g|6x13| |
+
+## 17/06/2019
+
+Séance 1
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|12 12 12 12 12 12| |
+|J|6x10|Amplitude normale|
+|A7|11 10 10| |
+|A1|11 10 10| |
+|I1|12 12 12 12 12 12| |
+|C3|13 13 13 13 13 13|Temps de récup. allongés|
+|G|6x106| |
