@@ -2578,7 +2578,7 @@ Séance 2
 |I5|8 7| |
 |I6|14 12|Position avancée.|
 |F|20 19 19 19| |
-|K|21 21 21| |
+|K2|21 21 21| |
 
 ## 16/06/2019
 
@@ -2603,3 +2603,30 @@ Séance 1
 |I1|12 12 12 12 12 12| |
 |C3|13 13 13 13 13 13|Temps de récup. allongés|
 |G|6x106| |
+
+## 19/06/2019
+
+Séance 2
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|42 34| |
+|J1|19 17| |
+|K|4x9| |
+|A6|17 14| |
+|G|6x107| |
+|I4|12 8|12e et 8e à l'arrache|
+|I5|8 7| |
+|I6|15 12|Position avancée.|
+|F|20 20 19 19| |
+|K2|22 21 21| |
+
+## 20/06/2019
+
+Avance sur séance 1
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|10 10 10 10 10| |
+|E2d|14 13 13 13 13 13| |
+|E2g|14 13 13 13 13 13| |
