@@ -2630,3 +2630,18 @@ Avance sur séance 1
 |H|10 10 10 10 10| |
 |E2d|14 13 13 13 13 13| |
 |E2g|14 13 13 13 13 13| |
+
+## 21/06/2019
+
+Séance 1.
+Pour B et I1 passer à 15 pour les 2 premières séries.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|15 15 12 10 10 9| |
+|J|11 11 11 10 10 10|Amplitude normale|
+|A7|11 11 10| |
+|A1|11 11 10| |
+|I1|15 15 10 10 11 10|Douleur au biceps droit. L'exo est devenu très dur.|
+|C3|14 13 13 13 13 13| |
+|G|6x108| |
