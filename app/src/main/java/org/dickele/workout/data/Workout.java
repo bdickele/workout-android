@@ -36,7 +36,6 @@ public class Workout {
     }
 
     public void addExercise(final WorkoutExercise exercise) {
-        exercise.setDate(date);
         exercises.add(exercise);
     }
 
@@ -72,14 +71,14 @@ public class Workout {
                 workout.getExercises().stream()
                         .filter(workoutExercise -> workoutExercise.getTotal() > 0)
                         .forEach(workoutExercise -> {
-                            final ExerciseRef exercise = workoutExercise.getExerciseRef();
+                            final ExerciseRef exerciseRef = workoutExercise.getExerciseRef();
                             final int totalReps = workoutExercise.getTotal();
 
-                            mapExerciseToFirstTotalReps.putIfAbsent(exercise, totalReps);
-                            workoutExercise.setDeltaFirstRoutineWorkout(totalReps - mapExerciseToFirstTotalReps.getOrDefault(exercise, totalReps));
+                            mapExerciseToFirstTotalReps.putIfAbsent(exerciseRef, totalReps);
+                            workoutExercise.setDeltaFirstRoutineWorkout(totalReps - mapExerciseToFirstTotalReps.getOrDefault(exerciseRef, totalReps));
 
-                            workoutExercise.setDeltaPreviousRoutineWorkout(totalReps - mapExerciseToPreviousReps.getOrDefault(exercise, totalReps));
-                            mapExerciseToPreviousReps.put(exercise, totalReps);
+                            workoutExercise.setDeltaPreviousRoutineWorkout(totalReps - mapExerciseToPreviousReps.getOrDefault(exerciseRef, totalReps));
+                            mapExerciseToPreviousReps.put(exerciseRef, totalReps);
                         }));
     }
 }

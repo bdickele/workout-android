@@ -44,6 +44,11 @@ public class Exercise {
                 lastTimePerformed = workoutExercise.getDate();
             }
         });
+
+        if (bestPerformanceIsAHotTopic()) {
+            allExercises.forEach(workoutExercise ->
+                    workoutExercise.setCurrentBestPerformance(workoutExercise.getDate().equals(bestPerformance.getDate())));
+        }
     }
 
     /**
@@ -51,7 +56,8 @@ public class Exercise {
      * and if that last workout was performed during the past 30 days
      */
     public boolean bestPerformanceIsAHotTopic() {
-        return lastTimePerformed.isAfter(LocalDate.now().minusDays(31))
+        return bestPerformance != null
+                && lastTimePerformed.isAfter(LocalDate.now().minusDays(31))
                 && lastTimePerformed.equals(bestPerformance.getDate());
     }
 }

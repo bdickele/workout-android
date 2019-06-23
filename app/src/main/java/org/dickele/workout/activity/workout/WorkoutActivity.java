@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+
 import org.dickele.workout.R;
 import org.dickele.workout.activity.routine.RoutineExerciseActivity;
 import org.dickele.workout.data.ExerciseRef;
@@ -16,10 +20,9 @@ import org.dickele.workout.util.ViewUtil;
 
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
-
+/**
+ * Overall view of a workout, that is level, date, comment and list of exercises
+ */
 public class WorkoutActivity extends AppCompatActivity {
 
     @Override

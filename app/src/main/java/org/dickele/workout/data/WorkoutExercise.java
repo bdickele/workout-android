@@ -1,7 +1,6 @@
 package org.dickele.workout.data;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
@@ -12,22 +11,22 @@ import lombok.EqualsAndHashCode;
 public class WorkoutExercise {
 
     @EqualsAndHashCode.Include
-    private Integer id;
+    private final Integer id;
 
-    private ExerciseRef exerciseRef;
+    private final ExerciseRef exerciseRef;
 
-    private RoutineRef routine;
+    private final RoutineRef routine;
 
-    private LocalDate date;
+    private final LocalDate date;
 
-    private List<Integer> reps = new ArrayList<>();
+    private final List<Integer> reps;
 
-    private String comment;
+    private final String comment;
 
     // Stats : need to be computed
 
     // Total number of reps
-    private int total = 0;
+    private final int total;
 
     // Delta compared to previous workout, if previous one was of the same routine
     private int deltaPreviousRoutineWorkout = 0;
@@ -35,16 +34,22 @@ public class WorkoutExercise {
     // Delta compared to first workout of the same routine
     private int deltaFirstRoutineWorkout = 0;
 
-    public static WorkoutExercise build(final Integer id, final RoutineRef routine, final ExerciseRef exerciseRef,
-            final List<Integer> reps, final String comment) {
-        final WorkoutExercise workoutExercise = new WorkoutExercise();
-        workoutExercise.id = id;
-        workoutExercise.routine = routine;
-        workoutExercise.exerciseRef = exerciseRef;
-        workoutExercise.reps = reps;
-        workoutExercise.total = reps.stream().mapToInt(Integer::intValue).sum();
-        workoutExercise.comment = comment;
-        return workoutExercise;
+    private boolean currentBestPerformance;
+
+    private WorkoutExercise(final Integer id, final ExerciseRef exerciseRef, final RoutineRef routine,
+            final LocalDate date, final List<Integer> reps, final String comment) {
+        this.id = id;
+        this.exerciseRef = exerciseRef;
+        this.routine = routine;
+        this.date = date;
+        this.reps = reps;
+        this.comment = comment;
+        this.total = reps.stream().mapToInt(Integer::intValue).sum();
+    }
+
+    public static WorkoutExercise build(final Integer id, final RoutineRef routine, final LocalDate date,
+            final ExerciseRef exerciseRef, final List<Integer> reps, final String comment) {
+        return new WorkoutExercise(id, exerciseRef, routine, date, reps, comment);
     }
 
 }

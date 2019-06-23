@@ -5,16 +5,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.dickele.workout.R;
 import org.dickele.workout.data.WorkoutExercise;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 /**
- * Binds a view (= workout view) and a list of data (= list of workouts)
+ * Binds a view and its data.
+ * We receive a list of exercises for a given workout so that we can build
+ * a fragment for each exercise of the list.
+ * We are dealing here with the list of exercises, not with the detailed view
+ * of an exercise.
  */
 class WorkoutExerciseAdapter extends RecyclerView.Adapter<WorkoutExerciseViewHolder> {
 

@@ -20,6 +20,7 @@
         android:textSize="@dimen/shapeTextSize"
         android:textStyle="bold" />
 
+
     <TextView
         android:id="@+id/exercise_reps"
         android:layout_width="wrap_content"
@@ -28,6 +29,17 @@
         android:layout_marginTop="4dp"
         android:layout_marginStart="16dp"
         android:textColor="@color/textColor1" />
+
+    <ImageView
+        android:id="@+id/exercise_best_pic"
+        android:contentDescription="@string/exercise_best_performance_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/exercise_reps"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_whatshot_black_18dp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/exercise_total"

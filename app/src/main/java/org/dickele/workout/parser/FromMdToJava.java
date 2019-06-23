@@ -102,7 +102,8 @@ public final class FromMdToJava {
 
             if (currentWorkout != null) {
                 try {
-                    final WorkoutExercise workoutExercise = extractExercise(workoutExerciseID++, currentWorkout.getRoutine(), line);
+                    final WorkoutExercise workoutExercise = extractExercise(workoutExerciseID++, currentWorkout.getRoutine(),
+                            currentWorkout.getDate(), line);
                     currentWorkout.addExercise(workoutExercise);
                 } catch (final Exception e) {
                     LOGGER.severe("Error while extracting workout exerciseRef for line " + line + " : " + e.getCause());
@@ -114,7 +115,8 @@ public final class FromMdToJava {
         return Workout.enhanceAndSortWorkouts(result);
     }
 
-    private static WorkoutExercise extractExercise(final Integer id, final RoutineRef routine, final String line) {
+    private static WorkoutExercise extractExercise(final Integer id, final RoutineRef routine,
+            final LocalDate date, final String line) {
         final List<String> exerciseColumns = Arrays.stream(line.split(COLUMN_SEPARATOR_FOR_SPLITTING))
                 .map(String::trim)
                 .collect(toList());
@@ -122,7 +124,7 @@ public final class FromMdToJava {
         final String reps = exerciseColumns.get(2);
         final String comment = exerciseColumns.get(3);
 
-        return WorkoutExercise.build(id, routine, ExerciseRef.valueOf(exoName), extractReps(reps), comment);
+        return WorkoutExercise.build(id, routine, date, ExerciseRef.valueOf(exoName), extractReps(reps), comment);
     }
 
     /**
