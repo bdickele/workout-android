@@ -2645,3 +2645,80 @@ Pour B et I1 passer à 15 pour les 2 premières séries.
 |I1|15 15 10 10 11 10|Douleur au biceps droit. L'exo est devenu très dur.|
 |C3|14 13 13 13 13 13| |
 |G|6x108| |
+
+## 25/06/2019
+
+Séance 2, raccourcie à cause de la chaleur.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|44 36| |
+|J1|20 17| |
+|K|10 10 9 9| |
+|A6|18 14| |
+|G|6x110| |
+|I4|12 8| |
+|I5|9 7|9e à l'arrache|
+|I6|15 13|Position avancée.|
+
+## 28/06/2019
+
+Séance 1 raccourcie à cause de la chaleur. Temps de récup allongés.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|11 10 10 10 10|Exercice effectué "à part" (bien avant la séance)|
+|B|15 15 12 12 12 9| |
+|J|11 11 11 11 11 11|Amplitude normale|
+|A7|11 11 11| |
+|A1|11 11 11| |
+|I1|15|Stop, douleur à l'épaule droite.|
+|C3|14 14 13 13 13 13| |
+|G|6x112| |
+
+## 30/06/2019
+
+Séance rattrapage. Il fait très chaud.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|14 13 13 13 13 13| |
+|E2g|14 13 13 13 13 13| |
+|K2|22 22 21| |
+
+## 02/07/2019
+
+Séance 2, raccourcie à cause de la chaleur.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|46 36| |
+|J1|17 16| |
+|K|10 10 10 10| |
+|A6|19 14|Pause|
+|G|6x114| |
+|I4|12 8|Mouvements moins amples|
+|I5|9 8| |
+|I6|14 14|Position avancée.|
+|F|20 20 19 19| |
+
+## 03/07/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|11 11 10 10 10| |
+|K2|22 22 22| |
+
+## 05/07/2019
+
+Séance 1 (sans E2)
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|15 15 13 13 12 10|Triceps douloureux|
+|J|12 12 11 11 11 11|Amplitude normale|
+|A7|12 11 11| |
+|A1|12 11 11| |
+|I1|15 15 11 11 11 11| |
+|C3|14 14 14 14 13 13| |
+|G|6x116| |
