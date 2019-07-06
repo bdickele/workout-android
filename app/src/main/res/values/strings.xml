@@ -10,6 +10,12 @@
     <string name="more">Plus</string>
     <string name="reload">Recharger</string>
     <string name="parameters">Paramètres</string>
+    <string name="stopwatch">Chronomètre</string>
+
+    <string name="intervalometer">Intervalomètre</string>
+    <string name="interval">Intervalle</string>
+    <string name="reset">Init.</string>
+    <string name="endO_of_rep">Fin série</string>
 
     <string name="menu_workouts">Sessions</string>
     <string name="menu_exercises">Exercices</string>

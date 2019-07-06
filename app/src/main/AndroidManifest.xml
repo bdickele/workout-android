@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.chrono.ChronometerActivity"></activity>
         <activity android:name=".activity.workout.WorkoutActivity" />
         <activity android:name=".activity.routine.RoutineExerciseActivity" />
         <activity android:name=".activity.exercise.ExerciseActivity" />

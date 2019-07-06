@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.ContentLoadingProgressBar;
+import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.tabs.TabLayout;
 
 import org.apache.commons.io.FileUtils;
+import org.dickele.workout.activity.chrono.ChronometerActivity;
 import org.dickele.workout.activity.exercise.ExerciseActivity;
 import org.dickele.workout.activity.parameters.ParametersActivity;
 import org.dickele.workout.activity.workoutlist.WorkoutListScreen2Activity;
@@ -26,10 +31,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.ContentLoadingProgressBar;
-import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_main_parameters:
                 goToParameters();
                 return true;
+            case R.id.menu_main_stopwatch:
+                goToStopwatch();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -98,14 +102,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToParameters() {
-        final Intent intent = new Intent(this, ParametersActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, ParametersActivity.class));
     }
 
     public void gotToExercise(final Exercise exercise) {
         final Intent intent = new Intent(this, ExerciseActivity.class);
         intent.putExtra(ArgumentConst.EXERCISE_NAME, exercise.getRef().name());
         startActivity(intent);
+    }
+
+    public void goToStopwatch() {
+        startActivity(new Intent(this, ChronometerActivity.class));
     }
 
     // ====================================================================================
