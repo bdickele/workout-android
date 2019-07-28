@@ -2730,3 +2730,149 @@ Séance 1 (sans E2)
 |H|11 11 11 10 10| |
 |E2d|14 14 13 13 13 13| |
 |E2g|14 14 13 13 13 13| |
+
+## 08/07/2019
+
+Séance 2. K zappé à cause de douleurs dans le bas du dos.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|48 36| |
+|J1|19 16| |
+|A6|15 14| |
+|G|6x118| |
+|I4|13 8| |
+|I5|9 9| |
+|I6|15 12|Position avancée.|
+|F|20 20 20 19| |
+|K2|22 22 22| |
+
+## 10/07/2019
+
+Séance 1 (sans E2 et H)
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|15 15 14 13 13 11| |
+|J|12 12 12 12 11 11| |
+|A7|12 12 11| |
+|A1|12 11 11| |
+|I1|15 15|Stop : encore une douleur au bras droit|
+|C3|14 14 14 14 14 14| |
+|G|6x120| |
+
+## 12/07/2019
+
+Séance 2 + H
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|H|11 11 11 11 10| |
+|L|48 26| |
+|J1|20 17| |
+|K|11 11 10 10| |
+|A6|18 15| |
+|G|6x120| |
+|I4|13 9| |
+|I5|9 9| |
+|I6|15 13|Position avancée.|
+|F|20 20 20 20|Temps de récupération allongés|
+|K2|23 22 22| |
+
+## 13/07/2019
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|E2d|14 14 14 13 13 13| |
+|E2g|14 14 14 13 13 13| |
+
+## 15/07/2019
+
+Séance 1 (sans E2 et H). Ca devient trop dur, de toute façon il est temps de passer au niveau 9.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|15 15 15 13 13 12|Trop dur|
+|J|12 12 12 12 12 12| |
+|A7|12 12 12| |
+|A1|12 12 11| |
+|I1|15 15 11 11 11 11| |
+|C3|15 14 14 14 14 14|Très dur dès a 2e série. Temps de récup. allongés|
+|G|6x122| |
+
+## 17/07/2019
+
+Séance 2 très allégée à cause de douleurs dans le bas du dos.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|48 38| |
+|J1|21 18| |
+|A6|13 13| |
+|G|6x122| |
+|I4|13 10| |
+|I5|10 9| |
+|I6|16 13|Position avancée.|
+
+## 15/07/2019
+
+Séance 1 (sans E2 et H).
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B|15 15 15 13 13 13|Temps de récup. allongés|
+|J|13 13 12 12 12 12| |
+|A7|13 12 12| |
+|A1|12 12 12| |
+|I1|15 15 12 11 11 11|Temps de récup. allongés pour limiter la douleur aux épaules|
+|C3|15 15 14 14 14 14| |
+|G|6x124| |
+
+# Niveau 9 (L9)
+
+## 25/07/2019
+
+Première séance après une pause à cause de la canicule.
+Séance raccourcie justement à cause de la chaleur.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|27| |
+|B|20|5 à la "première"|
+|I1|26|(20)|
+|J|37 20|Amplitude 1/2 puis normale (10)|
+|G|400|(300)|
+|K|13 30|Amplitude 1/3 (douleurs dans le bas du dos) puis 1/2|
+|C3|40| |
+|A6|20 20|Amplitude 1/2 puis normale|
+|H|15| |
+|A7|20 20|Amplitude 1/2 puis normale|
+
+## 26/07/2019
+
+Fin de la séance de la veille
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|58| |
+|K2|22 22 20| |
+|F|20 20 20 20 10|Temps de récupération allongés|
+
+## 28/07/2019
+
+F zappé : plus d'énergie.
+
+|Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|30| |
+|B|20|(8)|
+|I1|33| |
+|J|40 20|Amplitude 1/2 puis normale (10)|
+|G|500|(350)|
+|K|31 42|Amplitude 1/3 puis 1/2|
+|C3|48| |
+|A6|25 20|Amplitude 1/2 puis normale|
+|H|20| |
+|A7|25 20|Amplitude 1/2 puis normale|
+|L|62| |
+|K2|22 20 22| |

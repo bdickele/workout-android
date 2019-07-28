@@ -13,15 +13,24 @@ import org.dickele.workout.R;
 
 public class ChronometerActivity extends AppCompatActivity {
 
+    // --------------------------------------------
+
     private boolean chronoRunning;
 
     private Chronometer chronometer;
 
     private ImageButton buttonChronoPlay;
 
-    private ImageButton buttonChronoStop;
-
     private long pauseOffset = 0;
+
+    // --------------------------------------------
+
+    private Chronometer interval;
+
+    private long intervalBase = SystemClock.elapsedRealtime();
+
+    // When adding or substracting seconds to interval, here is the value to add/substract (in ms)
+    private final int intervalOffset = 30000;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -34,8 +43,13 @@ public class ChronometerActivity extends AppCompatActivity {
         chronometer = findViewById(R.id.chronometer);
         buttonChronoPlay = findViewById(R.id.button_chrono_play);
         buttonChronoPlay.setOnClickListener(v -> playOrPauseChrono());
-        buttonChronoStop = findViewById(R.id.button_chrono_stop);
+        final ImageButton buttonChronoStop = findViewById(R.id.button_chrono_stop);
         buttonChronoStop.setOnClickListener(v -> stopChrono());
+
+        interval = findViewById(R.id.interval);
+        interval.setBase(intervalBase);
+        findViewById(R.id.button_interval_plus).setOnClickListener(v -> addInterval());
+        findViewById(R.id.button_interval_minus).setOnClickListener(v -> substractInterval());
 
         setSupportActionBar(findViewById(R.id.toolbar_main));
         // Used to display back button in toolbar
@@ -69,7 +83,6 @@ public class ChronometerActivity extends AppCompatActivity {
         buttonChronoPlay.setImageResource(R.drawable.ic_pause_black_32dp);
         chronometer.setBase(SystemClock.elapsedRealtime() - pauseOffset);
         chronometer.start();
-
     }
 
     private void pauseChrono() {
@@ -83,8 +96,17 @@ public class ChronometerActivity extends AppCompatActivity {
         pauseChrono();
         chronometer.setBase(SystemClock.elapsedRealtime());
         pauseOffset = 0;
-
     }
 
     // -------------------------------------------------------------------
+
+    private void addInterval() {
+        intervalBase += intervalOffset;
+        //interval.setBase(SystemClock.elapsedRealtime() + 1000);
+        interval.setBase(intervalBase);
+    }
+
+    private void substractInterval() {
+
+    }
 }

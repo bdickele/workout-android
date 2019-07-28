@@ -14,8 +14,8 @@
 
     <string name="intervalometer">Intervalomètre</string>
     <string name="interval">Intervalle</string>
-    <string name="reset">Init.</string>
-    <string name="endO_of_rep">Fin série</string>
+    <string name="reset">R.A.Z.</string>
+    <string name="nb_rep_performed">Nb de séries effectuées</string>
 
     <string name="menu_workouts">Sessions</string>
     <string name="menu_exercises">Exercices</string>

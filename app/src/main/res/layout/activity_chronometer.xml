@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="@id/titleChronometer"
         app:layout_constraintTop_toBottomOf="@+id/titleChronometer"
         android:layout_marginTop="8dp"
-        android:textSize="40dp" />
+        android:textSize="50dp" />
 
     <ImageButton
         android:id="@+id/button_chrono_play"
@@ -71,5 +71,42 @@
         app:layout_constraintTop_toBottomOf="@+id/divider"
         android:layout_marginTop="8dp"
         android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/titleInterval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/interval"
+        app:layout_constraintStart_toStartOf="@id/titleIntervalometer"
+        app:layout_constraintTop_toBottomOf="@+id/titleIntervalometer"
+        android:layout_marginTop="32dp" />
+
+    <Chronometer
+        android:id="@+id/interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120dp"
+        app:layout_constraintStart_toEndOf="@id/titleInterval"
+        app:layout_constraintBottom_toBottomOf="@id/titleInterval"
+        android:layout_marginStart="16dp"
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/button_interval_plus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/ic_add_circle_outline_black_24dp"
+        app:layout_constraintStart_toEndOf="@id/interval"
+        app:layout_constraintBottom_toBottomOf="@id/interval"
+        android:layout_marginStart="12dp" />
+
+    <ImageButton
+        android:id="@+id/button_interval_minus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/ic_remove_circle_outline_black_24dp"
+        app:layout_constraintStart_toEndOf="@id/button_interval_plus"
+        app:layout_constraintBottom_toBottomOf="@id/button_interval_plus"
+        android:layout_marginStart="12dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
