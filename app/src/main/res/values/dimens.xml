@@ -13,4 +13,6 @@
     <dimen name="exerciseListBestReps">12sp</dimen>
     <dimen name="exerciseListBestDate">12sp</dimen>
 
+    <dimen name="intervalometerHeader1">19sp</dimen>
+    <dimen name="intervalometerHeader2">16sp</dimen>
 </resources>

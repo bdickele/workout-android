@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <!-- Main chronometer -->
+
     <TextView
         android:id="@+id/titleChronometer"
         android:layout_width="wrap_content"
@@ -61,12 +63,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
+    <!-- Intervalometer -->
+
     <TextView
         android:id="@+id/titleIntervalometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/intervalometer"
-        android:textSize="@dimen/subtitle"
+        android:textSize="@dimen/intervalometerHeader1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
         android:layout_marginTop="8dp"
@@ -77,6 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/interval"
+        android:textSize="@dimen/intervalometerHeader2"
         app:layout_constraintStart_toStartOf="@id/titleIntervalometer"
         app:layout_constraintTop_toBottomOf="@+id/titleIntervalometer"
         android:layout_marginTop="32dp" />
@@ -108,5 +113,53 @@
         app:layout_constraintStart_toEndOf="@id/button_interval_plus"
         app:layout_constraintBottom_toBottomOf="@id/button_interval_plus"
         android:layout_marginStart="12dp" />
+
+    <Chronometer
+        android:id="@+id/intervalometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120dp"
+        app:layout_constraintStart_toStartOf="@id/titleInterval"
+        app:layout_constraintTop_toBottomOf="@+id/titleInterval"
+        android:layout_marginTop="24dp"
+        android:textSize="50dp" />
+
+    <ImageButton
+        android:id="@+id/button_intervalometer_play"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/ic_play_black_32dp"
+        app:layout_constraintStart_toEndOf="@id/intervalometer"
+        app:layout_constraintBottom_toBottomOf="@id/intervalometer"
+        android:layout_marginStart="16dp" />
+
+    <ImageButton
+        android:id="@+id/button_intervalometer_stop"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/ic_stop_black_32dp"
+        app:layout_constraintStart_toEndOf="@id/button_intervalometer_play"
+        app:layout_constraintBottom_toBottomOf="@id/button_intervalometer_play"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/titleNbLap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/intervalometerHeader2"
+        android:text="@string/nb_lap_performed"
+        app:layout_constraintStart_toStartOf="@id/intervalometer"
+        app:layout_constraintTop_toBottomOf="@+id/intervalometer"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/nbLap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/intervalometerHeader1"
+        app:layout_constraintStart_toEndOf="@id/titleNbLap"
+        app:layout_constraintBottom_toBottomOf="@+id/titleNbLap"
+        android:layout_marginStart="8dp"
+        android:text="0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
