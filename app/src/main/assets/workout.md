@@ -2876,3 +2876,127 @@ F zappé : plus d'énergie.
 |A7|25 20|Amplitude 1/2 puis normale|
 |L|62| |
 |K2|22 20 22| |
+
+## 20/08
+
+Reprise, on y va tranquille. Les exercices G et H seront zappés désormais : je ferai une séance dédiée gainage calquée sur les séances de physio.
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|28| |
+|B|20| |
+|I1|20| |
+|J|32 20|Amplitude 1/2 puis normale|
+|K|30 20|Amplitude 1/3 puis 1/2|
+|C3|33| |
+
+## 22/08
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|A6|25 20|Amplitude 1/2 puis normale|
+|A7|25 20|Amplitude 1/2 puis normale|
+|L|50| |
+|K2|18 18 18| |
+|F|20 18 18 18| |
+
+## 26/08
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|30| |
+|B|20| |
+
+## 27/08
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|I1|26| |
+|J|40 20|Amplitude 1/2 puis normale|
+|K|32 20|Amplitude 1/3 puis 1/2|
+|C3|38| |
+|A6|29 20|Amplitude 1/2 puis normale|
+
+## 28/08
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|A7|30 20|Amplitude 1/2 puis normale|
+|L|60| |
+|K2|20 20 18| |
+|F|20 20 18 18| |
+
+## 31/08
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|35| |
+|B|20| |
+|I1|34| |
+|J|44 20|Amplitude 1/2 puis normale|
+|K|38 20|Amplitude 1/3 puis 1/2|
+|C3|45| |
+|A6|30 20|Amplitude 1/2 puis normale. TR allongés, ça devient dur.|
+|A7|24 20|Amplitude 1/2 puis normale. Beaucoup de mal à reprendre à mon souffle.|
+|L|70| |
+|K2|3x20| |
+
+## 03/09
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|35| |
+|B|20| |
+|I1|39| |
+|J|44 20|Amplitude 1/2 puis normale|
+|K|45 20|Amplitude 1/3 puis 1/2|
+|C3|50| |
+
+## 05/09
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|33| |
+|B|20| |
+|I1|44| |
+|J|46 20|Amplitude 1/2 puis normale|
+|K|48 20|Amplitude 1/3 puis 1/2|
+|C3|52| |
+|A6|31 20|Amplitude 1/2 puis normale|
+|A7|25 20|Amplitude 1/2 puis normale|
+
+## 06/09
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|L|82| |
+|K2|21 21 20| |
+|F|20 20 20 20 5|Temps de récupération allongés|
+
+## 11/09
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|35| |
+|B|20| |
+|I1|47| |
+|J|50 20|Amplitude 1/2 puis normale|
+|K|50 20|Amplitude 1/3 puis 1/2|
+|C3|54| |
+|A6|32 20|Amplitude 1/2 puis normale|
+
+## 16/09
+
+Exercice|Répétitions|Commentaire|
+|---|---|---|
+|B1|38| |
+|B|20| |
+|I1|49| |
+|J|52 20|Amplitude 1/2 puis normale|
+|K|52 20|Amplitude 1/3 puis 1/2|
+|C3|35| |
+|A6|34 20|Amplitude 1/2 puis normale|
+|A7|20 20|Amplitude 1/2 puis normale. Besoin d'un break avant de continuer.|
+|L|76| |
+|K2|21 21 21| |
+|F|20 18 18 20 10|Temps de récupération allongés|
